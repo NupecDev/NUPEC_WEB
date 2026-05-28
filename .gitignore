@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+
+# Next.js build output
+.next/
+out/
+
+# Sanity build output
+.sanity/
+
+# Environment variables — NEVER commit these
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+.env.staging
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Package manager locks (keep only one — this project uses npm)
+yarn.lock
+pnpm-lock.yaml
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.suo
+
+# Vercel
+.vercel
+
+# Turbopack cache
+.turbo/
