@@ -106,17 +106,16 @@
 
 
 :root{
-  --theme-color: #F3A952;
-  --secondary-color: #064ACB;
-  --pink-color: #FFC0CB;
+  --theme-color: #1B365D;
+  --secondary-color: #0085ca;
   --violet-color: #7F00FF;
-  --crimson-color: #DC143C;
+  --crimson-color: #1B365D;
   --orange-color: #00FF00;
   --text-color: #717171;
-  --title-color: #111111;
-  --text-font: 'Roboto', sans-serif;
-  --title-font: 'Source Sans Pro', sans-serif;
-  --secondary-font: 'Caveat', cursive;
+  --title-color: #1B365D;
+  --text-font: 'Montserrat', sans-serif, regular;
+  --title-font: 'Montserrat', sans-serif, bold;
+  --secondary-font: 'Montserrat', sans-serif;
 }
 
 
@@ -1019,7 +1018,8 @@ img {
   position:inherit;
   float:left;
   z-index:2;
-  margin: 0px 20px;
+  margin: 0px 25px;
+  max-width: 80px;
   -webkit-transition:all 300ms ease;
   -moz-transition:all 300ms ease;
   -ms-transition:all 300ms ease;
@@ -1041,7 +1041,7 @@ img {
   text-align:center;
   font-size:16px;
   line-height:20px;
-  padding: 35px 0px;
+  padding: 22px 0px;
   letter-spacing: 0.05em;
   opacity:1;
   color: #111111;
@@ -1057,7 +1057,8 @@ img {
 
 .main-menu .navigation > li.current > a,
 .main-menu .navigation > li:hover > a{
-  
+  color: #0085ca;
+  font-size: 18px;
 }
 
 .main-menu .navigation > li > ul,
@@ -1135,7 +1136,7 @@ img {
 }
 
 .main-menu .navigation > li > ul > li.dropdown > a:after{
-  font-family: 'Font Awesome 5 Pro';
+  font-family: 'Montserrat', sans-serif;
   content: "\f105";
   position:absolute;
   right:20px;
@@ -1154,6 +1155,7 @@ img {
   top:0%;
   margin-top: 15px;
   background: var(--secondary-color);
+  text-align: center;
   width:230px;
   z-index:100;
   display:none;
@@ -2758,3 +2760,559 @@ button.ltr {
 .google-map-section .map-inner{
   height: 570px;
 }
+
+/* ============================================================
+   NUPEC · Canine Landing
+   Extiende clases del template sin sobreescribir originales
+   ============================================================ */
+
+/* — Subnav contextual ---------------------------------------- */
+.canine-subnav {
+  background: var(--title-color);
+  padding: 14px 0;
+}
+
+.canine-subnav__inner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.canine-subnav__bar {
+  width: 4px;
+  height: 32px;
+  background: var(--theme-color);
+  flex-shrink: 0;
+  border-radius: 2px;
+}
+
+.canine-subnav__title {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.canine-subnav__breadcrumb {
+  font-size: 12px;
+  color: rgba(255,255,255,0.65);
+  letter-spacing: 0.05em;
+}
+
+.canine-subnav__breadcrumb strong {
+  color: rgba(255,255,255,0.95);
+}
+
+.canine-subnav__switcher {
+  margin-left: auto;
+  display: flex;
+  gap: 24px;
+}
+
+.canine-subnav__switch {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+  transition: color 300ms ease, border-color 300ms ease;
+}
+
+.canine-subnav__switch--active,
+.canine-subnav__switch:hover {
+  color: #fff;
+  border-bottom-color: var(--theme-color);
+}
+
+/* — Hero canino (extiende banner-style-two) ------------------ */
+.canine-hero {
+  padding: 160px 0 100px;
+  background: var(--title-color);
+  overflow: hidden;
+}
+
+.canine-hero .bg-layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.canine-hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 65%;
+  height: 100%;
+  background: linear-gradient(90deg,
+    rgba(27,54,93,0.97) 0%,
+    rgba(0,133,202,0.82) 65%,
+    rgba(0,133,202,0) 100%);
+  pointer-events: none;
+}
+
+.canine-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1.5px solid rgba(255,255,255,0.6);
+  padding: 6px 14px;
+  border-radius: 2px;
+  margin-bottom: 24px;
+}
+
+.canine-hero__badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--theme-color);
+  flex-shrink: 0;
+}
+
+.canine-hero__badge-name {
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.canine-hero__badge-sub {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: rgba(255,255,255,0.75);
+  text-transform: uppercase;
+}
+
+.canine-hero__title-row {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.canine-hero__accent-bar {
+  width: 4px;
+  min-height: 120px;
+  background: #fff;
+  flex-shrink: 0;
+  margin-top: 4px;
+  border-radius: 2px;
+}
+
+.canine-hero__h1 {
+  font-size: 44px;
+  line-height: 1.08;
+  font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 0 0 18px;
+}
+
+.canine-hero__desc {
+  font-size: 17px;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.9);
+  max-width: 460px;
+  margin: 0;
+}
+
+/* — Tabs de subcategorías (extiende chooseus tab-btns) ------- */
+.canine-tabs {
+  background: #fff;
+  border-bottom: 2px solid #DFDFDF;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.canine-tabs__strip {
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.canine-tabs__strip::-webkit-scrollbar {
+  display: none;
+}
+
+.canine-tabs__tab {
+  position: relative;
+  padding: 20px 22px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-color);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 300ms ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  /* underline animado — mismo patrón que chooseus-section .tab-btns */
+}
+
+.canine-tabs__tab::after {
+  position: absolute;
+  content: '';
+  background: var(--theme-color);
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -2px;
+  transition: width 300ms ease;
+}
+
+.canine-tabs__tab:hover,
+.canine-tabs__tab--active {
+  color: var(--theme-color);
+}
+
+.canine-tabs__tab:hover::after,
+.canine-tabs__tab--active::after {
+  width: 100%;
+}
+
+/* — Grid de productos (extiende service-block-two) ----------- */
+.canine-products {
+  background: rgba(102,111,119,0.07);
+}
+
+.canine-products__eyebrow {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--theme-color);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.canine-product-col {
+  margin-bottom: 30px;
+}
+
+/* Franja de color en la parte superior de la card */
+.canine-product-block__stripe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  border-radius: 20px 20px 0 0;
+}
+
+/* Área de imagen/placeholder del saco */
+.canine-product-block__img-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 20px 20px;
+  background: rgba(102,111,119,0.05);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  min-height: 120px;
+}
+
+.canine-product-block__bag-ph {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 70px;
+  height: 100px;
+  border: 2px solid;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.canine-product-block__bag-brand {
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+.canine-product-block__bag-name {
+  font-size: 7px;
+  font-weight: 700;
+  text-align: center;
+  word-break: break-word;
+  line-height: 1.3;
+}
+
+.canine-product-block__body {
+  padding: 0 10px;
+}
+
+.canine-product-block__name {
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.canine-product-block__desc {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.canine-product-block__footer {
+  padding: 14px 10px 0;
+  margin-top: 14px;
+  border-top: 1px solid #DFDFDF;
+}
+
+.canine-product-block__cta {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--theme-color);
+  text-decoration: none;
+  transition: color 300ms ease;
+}
+
+.canine-product-block__cta:hover {
+  color: var(--title-color);
+}
+
+.canine-product-block__img {
+  width: 100%;
+  max-width: 160px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* — Category CTA -------------------------------------------- */
+.canine-products__cat-cta-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+/* — Empty state --------------------------------------------- */
+.canine-products__empty {
+  padding: 60px 20px;
+  text-align: center;
+  color: var(--text-color);
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+/* — Expertos (extiende chooseus-style-two) ------------------- */
+.canine-experts {
+  background: var(--title-color);
+}
+
+.canine-experts .sec-title .sub-title,
+.canine-experts .sec-title h2,
+.canine-experts .sec-title p {
+  color: #fff;
+}
+
+.canine-experts .sec-title .sub-title {
+  color: var(--theme-color);
+}
+
+/* — Banner héroes (extiende banner-section) ------------------ */
+.canine-banner {
+  padding: 160px 0;
+  overflow: hidden;
+}
+
+.canine-banner .bg-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* Ken Burns — mismo que banner-carousel .bg-layer activo */
+  transform: scale(1);
+  transition: transform 8000ms linear;
+}
+
+.canine-banner:hover .bg-layer {
+  transform: scale(1.08);
+}
+
+.canine-banner__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+    rgba(0,0,0,0.65) 0%,
+    rgba(0,0,0,0.25) 55%,
+    rgba(0,0,0,0) 100%);
+  pointer-events: none;
+}
+
+.canine-banner__eyebrow {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 16px;
+}
+
+.canine-banner__title {
+  font-size: 52px;
+  line-height: 1.06;
+  font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 0 0 16px;
+  max-width: 700px;
+}
+
+.canine-banner__desc {
+  font-size: 17px;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.9);
+  max-width: 480px;
+  margin: 0;
+}
+
+/* — Estadísticas científicas (extiende funfact-section) ------ */
+.canine-science {
+  background: rgba(102,111,119,0.07);
+}
+
+.canine-science__inner {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(205,192,192,0.2);
+  padding: 50px 40px;
+}
+
+.canine-science__block .inner-box {
+  padding-left: 90px;
+  padding-bottom: 10px;
+}
+
+/* icon-box: reutiliza .funfact-block-two .inner-box .icon-box sin cambios */
+
+.canine-science__block .count-outer {
+  font-size: 60px;
+  line-height: 1;
+  font-weight: 700;
+  font-family: var(--title-font);
+  color: var(--theme-color);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.canine-science__block p {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--title-color);
+  margin-bottom: 6px;
+}
+
+.canine-science__sub {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+/* RESPONSIVE ------------------------------------------------- */
+@media (max-width: 991px) {
+  .canine-subnav__breadcrumb,
+  .canine-subnav__switcher { display: none; }
+
+  .canine-hero { padding: 120px 0 80px; }
+  .canine-hero__h1 { font-size: 32px; }
+  .canine-hero .bg-layer { width: 100%; opacity: 0.25; }
+  .canine-hero__overlay { width: 100%; }
+
+  .canine-banner { padding: 100px 0; }
+  .canine-banner__title { font-size: 36px; }
+}
+
+@media (max-width: 767px) {
+  .canine-hero { padding: 100px 0 60px; }
+  .canine-hero__accent-bar { display: none; }
+
+  .canine-tabs { position: static; }
+
+  .canine-banner { padding: 80px 0; }
+  .canine-banner__title { font-size: 28px; }
+
+  .canine-science__inner { padding: 30px 20px; }
+}
+
+/** Language Switcher **/
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0 20px 0 0;
+  padding: 0;
+  gap: 0;
+}
+
+.lang-switcher li {
+  display: flex;
+  align-items: center;
+}
+
+.lang-switcher a,
+.lang-switcher__active {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--title-color);
+  padding: 2px 4px;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+
+.lang-switcher a:hover {
+  color: var(--theme-color);
+}
+
+.lang-switcher__active {
+  color: var(--theme-color);
+}
+
+.lang-switcher__sep {
+  font-size: 11px;
+  color: #bdbdbd;
+  margin: 0 2px;
+}
+
+.sticky-header .lang-switcher a,
+.sticky-header .lang-switcher__active {
+  color: var(--title-color);
+}
+
+.sticky-header .lang-switcher a:hover,
+.sticky-header .lang-switcher__active {
+  color: var(--theme-color);
+}
+

@@ -61,7 +61,7 @@
 }
 
 .switcher #styleOptions li a.pink-color {
-  background: var(--pink-color);
+  background: var(--theme-color);
 }
 
 .switcher #styleOptions li a.violet-color {

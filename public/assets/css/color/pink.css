@@ -36,7 +36,7 @@
 .blog-details-content .author-box .social-links li a:hover
 
 {
-  color: var(--pink-color) !important;
+  color: var(--theme-color) !important;
 }
 
 
@@ -76,7 +76,7 @@ button.ltr,
 .video-section .video-btn .play-btn
 
 {
-  background: var(--pink-color) !important;
+  background: var(--theme-color) !important;
 }
 
 
@@ -93,6 +93,6 @@ button.ltr,
 .pagination li a.current
 
 {
-  border-color: var(--pink-color) !important;
+  border-color: var(--theme-color) !important;
 }
 
