@@ -3265,6 +3265,259 @@ button.ltr {
   .canine-science__inner { padding: 30px 20px; }
 }
 
+/* ═══════════════════════════════════════════════════════════════
+   CATEGORY PAGE — shared styles for all /nutricion-X/[categoria]
+   ═══════════════════════════════════════════════════════════════ */
+
+/* — CategoryHero: extends canine-hero with layout additions ─── */
+.cat-hero__layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.cat-hero__left {
+  flex: 1 1 400px;
+}
+
+.cat-hero__breadcrumb {
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.04em;
+}
+
+.cat-hero__breadcrumb a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.cat-hero__breadcrumb a:hover { color: #fff; }
+.cat-hero__breadcrumb strong { color: #fff; }
+
+.cat-hero__stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 10px;
+  padding: 30px 40px;
+  min-width: 220px;
+}
+
+.cat-hero__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 18px 0;
+}
+
+.cat-hero__stat-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.15);
+  width: 100%;
+}
+
+.cat-hero__stat-num {
+  font-size: 46px;
+  font-weight: 800;
+  line-height: 1;
+  font-family: var(--title-font);
+  margin-bottom: 6px;
+}
+
+.cat-hero__stat-label {
+  font-size: 13px;
+  color: rgba(255,255,255,0.75);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+/* — CategoryAbout ──────────────────────────────────────────── */
+.cat-about {
+  background: #fff;
+}
+
+.cat-about__stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-left: 4px solid var(--theme-color);
+  padding-left: 30px;
+}
+
+.cat-about__stat-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 22px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+}
+
+.cat-about__stat-row:last-child {
+  border-bottom: none;
+}
+
+.cat-about__stat-num {
+  font-size: 38px;
+  font-weight: 800;
+  font-family: var(--title-font);
+  color: var(--theme-color);
+  line-height: 1;
+  min-width: 80px;
+}
+
+.cat-about__stat-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cat-about__stat-text strong {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--title-color);
+}
+
+.cat-about__stat-text span {
+  font-size: 13px;
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+/* — CategoryProductGrid: group labels ──────────────────────── */
+.cat-products__group {
+  margin-bottom: 50px;
+}
+
+.cat-products__group:last-child {
+  margin-bottom: 0;
+}
+
+.cat-products__group-label {
+  display: inline-flex;
+  align-items: center;
+  border-left: 4px solid;
+  padding: 8px 16px 8px 14px;
+  margin-bottom: 28px;
+  background: rgba(0,0,0,0.03);
+  border-radius: 0 6px 6px 0;
+}
+
+.cat-products__group-label span {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* — CategoryFeatures: inherits canine-experts, just rename ─── */
+.cat-features {}
+
+/* — CategoryWizardCTA ──────────────────────────────────────── */
+.cat-wizard-cta {
+  background: var(--secondary-color, #1B365D);
+  position: relative;
+  overflow: hidden;
+}
+
+.cat-wizard-cta .bg-layer {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.08;
+}
+
+.cat-wizard-cta .sec-title.light h2,
+.cat-wizard-cta .sec-title.light .sub-title,
+.cat-wizard-cta .sec-title.light p {
+  color: #fff;
+}
+
+.cat-wizard-cta .sec-title.light .sub-title {
+  opacity: 0.75;
+}
+
+/* — OtherCategories ────────────────────────────────────────── */
+.cat-other-categories__strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.cat-other-categories__card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.08);
+  overflow: hidden;
+  text-decoration: none;
+  transition: box-shadow 0.25s, transform 0.25s;
+  background: #fff;
+}
+
+.cat-other-categories__card:hover {
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  transform: translateY(-3px);
+}
+
+.cat-other-categories__bar {
+  height: 6px;
+  width: 100%;
+}
+
+.cat-other-categories__body {
+  padding: 20px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.cat-other-categories__name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--title-color);
+  line-height: 1.3;
+}
+
+.cat-other-categories__arrow {
+  font-size: 14px;
+  color: var(--theme-color);
+  flex-shrink: 0;
+}
+
+/* — RESPONSIVE ─────────────────────────────────────────────── */
+@media (max-width: 991px) {
+  .cat-hero__layout { flex-direction: column; }
+  .cat-hero__stats {
+    flex-direction: row;
+    width: 100%;
+    padding: 20px 24px;
+    gap: 0;
+  }
+  .cat-hero__stat { flex: 1; padding: 0 16px; }
+  .cat-hero__stat-divider { width: 1px; height: auto; align-self: stretch; }
+  .cat-hero__stat-num { font-size: 34px; }
+
+  .cat-about__stats { padding-left: 20px; }
+  .cat-about__stat-num { font-size: 30px; min-width: 64px; }
+}
+
+@media (max-width: 767px) {
+  .cat-hero__stats { flex-direction: column; padding: 16px 20px; }
+  .cat-hero__stat { padding: 12px 0; }
+  .cat-hero__stat-divider { height: 1px; width: 100%; }
+
+  .cat-other-categories__strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 /** Language Switcher **/
 .lang-switcher {
   display: flex;

@@ -116,6 +116,56 @@ export default defineType({
     }),
 
     defineField({
+      name: "guaranteedAnalysis",
+      title: "Análisis garantizado",
+      type: "array",
+      group: "contenido",
+      description: "Valores nutricionales garantizados (proteína, grasa, fibra, humedad, etc.)",
+      of: [
+        {
+          type: "object",
+          name: "nutrient",
+          title: "Nutriente",
+          fields: [
+            defineField({ name: "label", title: "Nutriente", type: "string", validation: (r) => r.required() }),
+            defineField({ name: "value", title: "Valor", type: "string", validation: (r) => r.required() }),
+            defineField({ name: "min", title: "Mín.", type: "boolean", initialValue: false }),
+          ],
+          preview: { select: { title: "label", subtitle: "value" } },
+        },
+      ],
+    }),
+
+    defineField({
+      name: "seo",
+      title: "SEO",
+      type: "object",
+      group: "contenido",
+      fields: [
+        defineField({
+          name: "metaTitle",
+          title: "Meta título",
+          type: "object",
+          fields: [
+            defineField({ name: "es", title: "Español", type: "string" }),
+            defineField({ name: "en", title: "Inglés", type: "string" }),
+            defineField({ name: "fr", title: "Francés", type: "string" }),
+          ],
+        }),
+        defineField({
+          name: "metaDescription",
+          title: "Meta descripción",
+          type: "object",
+          fields: [
+            defineField({ name: "es", title: "Español", type: "text", rows: 2 }),
+            defineField({ name: "en", title: "Inglés", type: "text", rows: 2 }),
+            defineField({ name: "fr", title: "Francés", type: "text", rows: 2 }),
+          ],
+        }),
+      ],
+    }),
+
+    defineField({
       name: "technicalSheet",
       title: "Ficha técnica (PDF)",
       type: "file",

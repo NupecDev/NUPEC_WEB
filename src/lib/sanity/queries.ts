@@ -64,6 +64,16 @@ export const productBySlugQuery = groq`
   }
 `;
 
+export const categoryBySlugQuery = groq`
+  *[_type == "category" && slug.current == $slug][0] {
+    _id,
+    "name": name[$lang],
+    "slug": slug.current,
+    species,
+    "description": description[$lang]
+  }
+`;
+
 // ── Wizard ─────────────────────────────────────────────────────────────────────
 
 export const wizardProductsQuery = groq`

@@ -175,6 +175,73 @@
       "ingredientesDesc": "Matières premières sélectionnées avec analyse par lot."
     }
   },
+  "categoryPage": {
+    "hero": {
+      "breadHome": "Accueil",
+      "switchCanina": "Nutrition Canine",
+      "switchFelina": "Nutrition Féline",
+      "cta": "Voir les produits",
+      "statFormulas": "Formules",
+      "statDigestibility": "Digestibilité moy.",
+      "statStages": "Étapes de vie"
+    },
+    "about": {
+      "subtitle": "La science dans chaque formule",
+      "title": "Qu'est-ce que la {category} NUPEC ?",
+      "bodyTwo": "Chaque aliment répond aux normes AAFCO et est vérifié par lot dans notre laboratoire à Querétaro.",
+      "fallbackDescription": "Ligne de nutrition {category} formulée pour les besoins spécifiques de votre animal.",
+      "digestibilidadLabel": "Digestibilité Prouvée",
+      "digestibilidadLabelDesc": "Études in vivo en panel canin sous protocoles AAFCO.",
+      "estudiosLabel": "Études Cliniques Publiées",
+      "estudiosLabelDesc": "En collaboration avec des universités vétérinaires mexicaines.",
+      "ingredientesLabel": "Ingrédients Traçables",
+      "ingredientesLabelDesc": "Matières premières sélectionnées avec analyse par lot."
+    },
+    "products": {
+      "subtitle": "Catalogue de produits",
+      "title": "Trouvez votre aliment idéal",
+      "verProducto": "Voir le produit",
+      "sinProductos": "Bientôt disponible – cette catégorie est en préparation.",
+      "lifeStage": {
+        "cachorro": "Chiot",
+        "adulto": "Adulte",
+        "senior": "Senior",
+        "general": "Général"
+      },
+      "breedSize": {
+        "mini": "Races Mini",
+        "pequena": "Petites Races",
+        "mediana": "Races Moyennes",
+        "grande": "Grandes Races",
+        "todas": "Toutes races"
+      }
+    },
+    "features": {
+      "subtitle": "Avantages de la gamme",
+      "title": "Pourquoi Choisir Cette Gamme ?",
+      "description": "Chaque formule est conçue pour répondre aux besoins spécifiques de votre animal avec des ingrédients de haute qualité.",
+      "cta": "Voir tous les produits",
+      "lifeStageTitle": "Étape de vie",
+      "lifeStageDesc": "Formules distinctes pour chiot, adulte et senior.",
+      "breedSizeTitle": "Taille de race",
+      "breedSizeDesc": "Taille de croquette et densité énergétique adaptées à chaque gabarit.",
+      "digestionTitle": "Digestion optimale",
+      "digestionDesc": "92% de digestibilité prouvée dans des études in vivo.",
+      "skinCoatTitle": "Peau et pelage",
+      "skinCoatDesc": "Oméga 3 & 6 pour un pelage brillant et une peau saine."
+    },
+    "wizardCta": {
+      "subtitle": "Assistant NUPEC",
+      "title": "Vous ne savez pas lequel choisir dans cette gamme ?",
+      "description": "Notre assistant vous aide à trouver le produit idéal selon l'étape de vie et la taille de votre animal.",
+      "cta": "Trouver votre aliment"
+    },
+    "otherCategories": {
+      "subtitle": "Explorer d'autres gammes",
+      "title": "Explorez D'autres Lignes Canines",
+      "description": "La nutrition parfaite s'adapte à chaque besoin spécifique."
+    }
+  },
   "footer": {
     "aboutTitle": "À propos de NUPEC",
     "aboutDesc": "Nutrition scientifiquement formulée pour le bien-être des chiens et des chats à chaque étape de la vie.",

@@ -175,6 +175,73 @@
       "ingredientesDesc": "Materias primas seleccionadas con análisis por lote."
     }
   },
+  "categoryPage": {
+    "hero": {
+      "breadHome": "Inicio",
+      "switchCanina": "Nutrición Canina",
+      "switchFelina": "Nutrición Felina",
+      "cta": "Ver productos",
+      "statFormulas": "Fórmulas",
+      "statDigestibility": "Digestibilidad promedio",
+      "statStages": "Etapas de vida"
+    },
+    "about": {
+      "subtitle": "Ciencia en cada fórmula",
+      "title": "¿Qué es la {category} NUPEC?",
+      "bodyTwo": "Cada alimento cumple con los estándares AAFCO y es verificado por lote en nuestro laboratorio en Querétaro.",
+      "fallbackDescription": "Línea de nutrición {category} formulada para las necesidades específicas de tu mascota.",
+      "digestibilidadLabel": "Digestibilidad Comprobada",
+      "digestibilidadLabelDesc": "Estudios in vivo en panel canino bajo protocolos AAFCO.",
+      "estudiosLabel": "Estudios Clínicos Publicados",
+      "estudiosLabelDesc": "En colaboración con universidades veterinarias mexicanas.",
+      "ingredientesLabel": "Ingredientes Trazables",
+      "ingredientesLabelDesc": "Materias primas seleccionadas con análisis por lote."
+    },
+    "products": {
+      "subtitle": "Catálogo de productos",
+      "title": "Encuentra tu alimento ideal",
+      "verProducto": "Ver producto",
+      "sinProductos": "Próximamente – esta categoría está en preparación.",
+      "lifeStage": {
+        "cachorro": "Cachorro",
+        "adulto": "Adulto",
+        "senior": "Senior",
+        "general": "General"
+      },
+      "breedSize": {
+        "mini": "Razas Mini",
+        "pequena": "Razas Pequeñas",
+        "mediana": "Razas Medianas",
+        "grande": "Razas Grandes",
+        "todas": "Todas las razas"
+      }
+    },
+    "features": {
+      "subtitle": "Ventajas de la línea",
+      "title": "¿Por Qué Elegir Esta Línea?",
+      "description": "Cada fórmula está diseñada para cubrir necesidades específicas de tu mascota con ingredientes de alta calidad.",
+      "cta": "Ver todos los productos",
+      "lifeStageTitle": "Etapa de vida",
+      "lifeStageDesc": "Fórmulas diferenciadas para cachorro, adulto y senior.",
+      "breedSizeTitle": "Tamaño de raza",
+      "breedSizeDesc": "Kibble y densidad energética adaptados a cada talla.",
+      "digestionTitle": "Digestión óptima",
+      "digestionDesc": "92% de digestibilidad comprobada en estudios in vivo.",
+      "skinCoatTitle": "Piel y pelo",
+      "skinCoatDesc": "Omega 3 y 6 para un pelaje brillante y piel sana."
+    },
+    "wizardCta": {
+      "subtitle": "Asistente NUPEC",
+      "title": "¿No sabes cuál elegir dentro de esta línea?",
+      "description": "Nuestro asistente te ayuda a encontrar el producto ideal según la etapa de vida y tamaño de tu mascota.",
+      "cta": "Encontrar tu alimento"
+    },
+    "otherCategories": {
+      "subtitle": "Explora más líneas",
+      "title": "Explora Otras Líneas Caninas",
+      "description": "La nutrición perfecta se adapta a cada necesidad específica."
+    }
+  },
   "footer": {
     "aboutTitle": "Sobre NUPEC",
     "aboutDesc": "Nutrición científicamente formulada para el bienestar de perros y gatos en cada etapa de vida.",
