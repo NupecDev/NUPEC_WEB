@@ -175,6 +175,100 @@
       "ingredientesDesc": "Materias primas seleccionadas con análisis por lote."
     }
   },
+  "clinical": {
+    "grid": {
+      "title": "LÍNEA CLÍNICA CANINA",
+      "subtitle": "Selecciona el producto para ver su ficha técnica completa.",
+      "rxLabel": "PRESCRIPCIÓN VET.",
+      "viewCard": "VER FICHA TÉCNICA",
+      "hepaticName": "HEPATIC",
+      "hepaticPatho": "Insuficiencia hepática aguda y crónica",
+      "hepaticB1": "Proteína restringida de alta digestibilidad",
+      "hepaticB2": "Zinc quelado hepatoprotector",
+      "hepaticB3": "Alta densidad energética",
+      "acuteHepaticName": "ACUTE HEPATIC",
+      "acuteHepaticPatho": "Manejo agudo de crisis hepatopáticas",
+      "acuteHepaticB1": "Proteína mínima de emergencia",
+      "acuteHepaticB2": "Aminoácidos de cadena ramificada",
+      "acuteHepaticB3": "Soporte antioxidante intensivo",
+      "cardiacName": "CARDIAC",
+      "cardiacPatho": "Insuficiencia cardíaca congestiva",
+      "cardiacB1": "Sodio y fósforo muy reducidos",
+      "cardiacB2": "Taurina y L-carnitina",
+      "cardiacB3": "Alta palatabilidad",
+      "hypoallergenicName": "HYPOALLERGENIC",
+      "hypoallergenicPatho": "Dermatitis atópica y alergias alimentarias",
+      "hypoallergenicB1": "Proteína hidrolizada única fuente",
+      "hypoallergenicB2": "Sin gluten ni lácteos",
+      "hypoallergenicB3": "Ácidos grasos omega-3 y 6"
+    },
+    "tree": {
+      "title": "¿CUÁNDO INDICAR CADA PRODUCTO?",
+      "subtitle": "Diagrama orientativo · siempre acompañado de evaluación clínica y bioquímica",
+      "rootEyebrow": "EVALUACIÓN INICIAL",
+      "rootQuestion": "¿Qué patología presenta el paciente?",
+      "hepaticBranch": "RAMA HEPÁTICA",
+      "hepaticQuestion": "¿Problema hepático?",
+      "hepaticAcuteQuestion": "¿Cuadro agudo o crónico?",
+      "cardiacBranch": "RAMA CARDÍACA",
+      "cardiacQuestion": "¿Problema cardíaco?",
+      "cardiacContext": "Insuficiencia cardíaca congestiva o cardiopatía crónica",
+      "allergyBranch": "RAMA ALÉRGICA",
+      "allergyQuestion": "¿Alergia o intolerancia alimentaria?",
+      "allergyContext": "Dermatitis atópica o sensibilidad gastrointestinal",
+      "yes": "SÍ",
+      "acute": "AGUDO",
+      "chronic": "CRÓNICO",
+      "indicate": "INDICAR",
+      "productHepatic": "HEPATIC",
+      "productAcuteHepatic": "ACUTE HEPATIC",
+      "productCardiac": "CARDIAC",
+      "productHypo": "HYPOALLERGENIC",
+      "disclaimerBold": "Importante:",
+      "disclaimerText": "este diagrama es orientativo. La indicación final depende del perfil bioquímico, comorbilidades, edad y respuesta del paciente. Consulta con el equipo médico NUPEC para casos compuestos."
+    },
+    "transition": {
+      "title": "GUÍA DE TRANSICIÓN DIETÉTICA",
+      "subtitle": "Protocolo general para introducción de cualquier fórmula clínica NUPEC",
+      "day12": "Día 1–2",
+      "day3": "Día 3",
+      "day4": "Día 4",
+      "day5": "Día 5",
+      "day6": "Día 6+",
+      "labelPrev": "alimento anterior",
+      "labelClin": "NUPEC clínico",
+      "noteBold": "Nota clínica:",
+      "noteText": "en pacientes con anorexia severa, valorar nutrición enteral asistida (sonda nasoesofágica o esofagostomía) previa a la transición dietética voluntaria."
+    },
+    "backing": {
+      "title": "RESPALDO CIENTÍFICO NUPEC",
+      "subtitle": "Tres pilares que sostienen cada fórmula terapéutica",
+      "formulaTitle": "FÓRMULA HIGH TECH",
+      "formulaDesc": "Procesos de extrusión y selección de materias primas auditados por nutriólogos certificados. Tecnología propia de micro-encapsulado para preservar nutrientes sensibles.",
+      "digestibilityTitle": "DIGESTIBILIDAD >90%",
+      "digestibilityDesc": "Pruebas in vivo verificadas en laboratorio NUPEC Querétaro. Alta biodisponibilidad de proteínas y aminoácidos esenciales en todas las fórmulas clínicas.",
+      "qualityTitle": "CALIDAD Y TECNOLOGÍA DE PUNTA",
+      "qualityDesc": "+75 controles de calidad por lote · trazabilidad completa · certificaciones internacionales en planta. Formulado por especialistas en medicina interna veterinaria.",
+      "cta": "VER RESPALDO CIENTÍFICO COMPLETO"
+    },
+    "vetResources": {
+      "title": "RECURSOS PARA EL VETERINARIO",
+      "subtitle": "Material técnico descargable · acceso libre para profesionales",
+      "catalogTitle": "Catálogo línea clínica canina",
+      "catalogSub": "Las 4 fórmulas · indicaciones, análisis y presentaciones",
+      "catalogSize": "4.2 MB",
+      "managementTitle": "Guía de manejo nutricional por patología",
+      "managementSub": "Protocolos por sistema y compatibilidad terapéutica",
+      "managementSize": "2.8 MB",
+      "transitionTitle": "Protocolos de transición dietética",
+      "transitionSub": "Esquemas detallados por presentación clínica",
+      "transitionSize": "1.6 MB",
+      "studyTitle": "Estudio clínico: eficacia línea terapéutica NUPEC",
+      "studySub": "n=98 pacientes · seguimiento 12 semanas",
+      "studySize": "3.6 MB",
+      "download": "DESCARGAR"
+    }
+  },
   "categoryPage": {
     "hero": {
       "breadHome": "Inicio",
@@ -242,6 +336,109 @@
       "description": "La nutrición perfecta se adapta a cada necesidad específica."
     }
   },
+  "productPage": {
+    "hero": {
+      "breadHome": "Inicio",
+      "switchCanina": "Nutrición Canina",
+      "switchFelina": "Nutrición Felina",
+      "ctaDetails": "Ver detalles",
+      "ctaBack": "Ver categoría",
+      "presentations": "Presentaciones",
+      "lifeStage": {
+        "cachorro": "Cachorro",
+        "adulto": "Adulto",
+        "senior": "Senior"
+      },
+      "breedSize": {
+        "mini": "Razas Mini",
+        "pequena": "Razas Pequeñas",
+        "mediana": "Razas Medianas",
+        "grande": "Razas Grandes",
+        "todas": "Todas las razas"
+      }
+    },
+    "keyBenefits": {
+      "subtitle": "Beneficios clave",
+      "title": "Beneficios Clave",
+      "digestibilityTitle": "Alta Digestibilidad",
+      "digestibilityDesc": "92% de digestibilidad comprobada en estudios in vivo bajo protocolos AAFCO.",
+      "palatabilityTitle": "Palatabilidad Superior",
+      "palatabilityDesc": "Aceptación >95% en paneles de prueba canino. Tu perro lo va a amar.",
+      "proteinTitle": "Proteína de Calidad",
+      "proteinDesc": "Fuentes de proteína animal seleccionadas para un desarrollo muscular óptimo.",
+      "omegaTitle": "Omega 3 y 6",
+      "omegaDesc": "Para un pelaje brillante y piel sana en cada etapa de vida.",
+      "breedSpecificTitle": "Fórmula por Raza",
+      "breedSpecificDesc": "Kibble y densidad energética adaptados al tamaño y metabolismo de cada raza.",
+      "jointSupportTitle": "Soporte Articular",
+      "jointSupportDesc": "Glucosamina y condroitín sulfato para articulaciones fuertes y movilidad plena.",
+      "therapeuticTitle": "Uso Terapéutico",
+      "therapeuticDesc": "Fórmula clínica validada por médicos veterinarios especializados en nutrición.",
+      "vetApprovedTitle": "Respaldo Veterinario",
+      "vetApprovedDesc": "Formulado y avalado por nutriólogos veterinarios certificados.",
+      "functionalTitle": "Premio Funcional",
+      "functionalDesc": "Recompensas con beneficios reales: no sólo sabor, sino nutrición.",
+      "supplementTitle": "Suplemento Certificado",
+      "supplementDesc": "Complemento nutricional validado para cubrir déficits específicos.",
+      "hydrationTitle": "Hidratación Extra",
+      "hydrationDesc": "Alta humedad para favorecer la hidratación y la función renal."
+    },
+    "description": {
+      "subtitle": "Descripción del producto",
+      "title": "{name}",
+      "badge": "NUPEC",
+      "presentationsTitle": "Presentaciones disponibles",
+      "ingredientsTitle": "Ingredientes",
+      "downloadSheet": "Descargar ficha técnica"
+    },
+    "feedingGuide": {
+      "subtitle": "Guía de alimentación",
+      "title": "Guía de Alimentación",
+      "colLabel": "Etapa / Raza",
+      "colWeight": "Peso",
+      "colGrams": "Ración diaria",
+      "colMeals": "Tomas",
+      "meals": "tomas",
+      "day": "día",
+      "calcTitle": "Calculadora de ración",
+      "calcDesc": "Mueve el control para ver la ración aproximada para el peso de tu perro.",
+      "weight": "Peso",
+      "perDay": "gramos por día",
+      "reference": "Referencia",
+      "disclaimer": "Valores orientativos. Ajusta según la condición corporal, actividad física y recomendación veterinaria."
+    },
+    "analysis": {
+      "subtitle": "Análisis garantizado",
+      "title": "Análisis Garantizado",
+      "description": "Valores mínimos y máximos certificados por lote en nuestro laboratorio en Querétaro.",
+      "disclaimer": "Valores en base seca. Consulta la ficha técnica completa para el análisis detallado.",
+      "protein": "Proteína Cruda",
+      "fat": "Grasa Cruda",
+      "fiber": "Fibra Cruda",
+      "moisture": "Humedad",
+      "ash": "Cenizas"
+    },
+    "benefitsBanner": {
+      "puppyTitle": "Cachorros Con La Energía Para Crecer Fuertes",
+      "puppyDesc": "Nutrición de alta densidad energética formulada para el desarrollo en las primeras etapas de vida.",
+      "adultTitle": "Adultos Con La Fuerza Para Cada Aventura",
+      "adultDesc": "Energía sostenida y digestibilidad óptima para perros activos y de trabajo.",
+      "seniorTitle": "Seniors Con La Vitalidad De Siempre",
+      "seniorDesc": "Soporte articular, antioxidantes y proteína de calidad para los años dorados.",
+      "genericTitle": "Nutrición Que Transforma Vidas",
+      "genericDesc": "Cada bolsa NUPEC está respaldada por ciencia veterinaria y formulada para el bienestar real.",
+      "cta": "Ver toda la línea"
+    },
+    "related": {
+      "subtitle": "También te puede interesar",
+      "title": "Productos Relacionados",
+      "cta": "Ver producto",
+      "viewAll": "Ver todos los productos"
+    },
+    "highTech": {
+      "badgeLabel": "Fórmula\nHighTech"
+    }
+  },
   "footer": {
     "aboutTitle": "Sobre NUPEC",
     "aboutDesc": "Nutrición científicamente formulada para el bienestar de perros y gatos en cada etapa de vida.",
@@ -261,5 +458,30 @@
     "email": "hola@nupec.mx",
     "phone": "+52 (442) 000-0000",
     "copyright": "NUPEC. Todos los derechos reservados."
+  },
+  "clinicalProduct": {
+    "indications": {
+      "title": "INDICACIONES CLÍNICAS",
+      "rxNote": "Producto de prescripción veterinaria. Requiere diagnóstico y seguimiento profesional."
+    },
+    "mechanism": {
+      "title": "MECANISMO DE ACCIÓN",
+      "subtitle": "Cómo actúa NUPEC {name} en el organismo",
+      "note": "Los resultados clínicos pueden variar según el paciente. Consulte al médico veterinario tratante."
+    },
+    "cases": {
+      "title": "CASOS CLÍNICOS — {name}",
+      "subtitle": "Experiencias documentadas por veterinarios en consulta",
+      "historyTitle": "Historia clínica",
+      "interventionTitle": "Intervención nutricional",
+      "outcomeTitle": "Resultado clínico",
+      "duration": "Duración"
+    },
+    "vetResources": {
+      "title": "RECURSOS TÉCNICOS — {name}",
+      "subtitle": "Material descargable para profesionales de la salud animal",
+      "download": "DESCARGAR PDF",
+      "unavailable": "PRÓXIMAMENTE"
+    }
   }
 }

@@ -29,7 +29,7 @@ export default function BannerHeroes() {
           <p className="canine-banner__desc">{t('description')}</p>
           <div className="btn-box mt_30">
             <Link
-              href={`/${lang}/nutricion-canina/nutricion-diaria/adulto`}
+              href={`/${lang}/nutricion-canina`}
               className="theme-btn btn-two"
             >
               <span>{t('cta')}</span>

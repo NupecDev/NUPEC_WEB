@@ -23,13 +23,18 @@ export const productsByCategoryQuery = groq`
   ] | order(name.es asc) {
     _id,
     "name": name[$lang],
-    "slug": slug.current,
+    "slug": select(
+      slug.current match ($categoria + "/*") => string::split(slug.current, "/")[1],
+      slug.current
+    ),
     "tagline": tagline[$lang],
     image,
     lifeStage,
     breedSize,
     specialNeeds,
-    presentations
+    "presentations": presentations[]{
+      "value": select(_type == "presentation" => weight, @)
+    }.value
   }
 `;
 
@@ -38,18 +43,23 @@ export const productBySlugQuery = groq`
     _type == "product" &&
     species == $species &&
     category->slug.current == $categoria &&
-    slug.current == $slug &&
+    (slug.current == $slug || slug.current == ($categoria + "/" + $slug)) &&
     isActive == true
   ][0] {
     _id,
     "name": name[$lang],
-    "slug": slug.current,
+    "slug": select(
+      slug.current match ($categoria + "/*") => string::split(slug.current, "/")[1],
+      slug.current
+    ),
     "tagline": tagline[$lang],
     "description": description[$lang],
     "ingredients": ingredients[$lang],
     image,
     technicalSheet,
-    presentations,
+    "presentations": presentations[]{
+      "value": select(_type == "presentation" => weight, @)
+    }.value,
     lifeStage,
     breedSize,
     specialNeeds,
@@ -60,6 +70,55 @@ export const productBySlugQuery = groq`
     "feedingGuide": feedingGuide->{
       rows,
       "notes": notes[$lang]
+    },
+    "guaranteedAnalysis": guaranteedAnalysis[]{
+      label,
+      value,
+      min
+    },
+    "highTech": highTech[]{
+      icon,
+      "title": title[$lang],
+      "description": description[$lang]
+    },
+    "keyBenefits": keyBenefits[]{
+      icon,
+      "description": description[$lang]
+    },
+    "kibble": {
+      "image": kibble.image,
+      "description": kibble.description[$lang]
+    },
+
+    // ── Clinical-only fields ─────────────────────────────────────
+    "clinicalIndications": clinicalIndications[]{
+      "label": label[$lang],
+      icon
+    },
+    "mechanismOfAction": mechanismOfAction[] | order(step asc) {
+      step,
+      "title": title[$lang],
+      "description": description[$lang],
+      icon
+    },
+    "clinicalCases": clinicalCases[]->{
+      _id,
+      "title": title[$lang],
+      "slug": slug.current,
+      patient,
+      "diagnosis": diagnosis[$lang],
+      "history": history[$lang],
+      "intervention": intervention[$lang],
+      "duration": duration[$lang],
+      "outcome": outcome[$lang],
+      metrics,
+      author,
+      isPublished
+    },
+    "technicalResources": technicalResources[]{
+      "title": title[$lang],
+      "subtitle": subtitle[$lang],
+      "fileUrl": file.asset->url
     }
   }
 `;
@@ -70,7 +129,8 @@ export const categoryBySlugQuery = groq`
     "name": name[$lang],
     "slug": slug.current,
     species,
-    "description": description[$lang]
+    "description": description[$lang],
+    "excerpt": excerpt[$lang]
   }
 `;
 

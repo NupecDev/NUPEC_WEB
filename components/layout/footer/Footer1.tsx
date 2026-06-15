@@ -94,7 +94,7 @@ export default function Footer1() {
                 <div className="footer-bottom centred">
                     <div className="auto-container">
                         <div className="copyright">
-                            <p><Link href="/">Medicinsk</Link> &copy; {new Date().getFullYear()} All Right Reserved</p>
+                            <p><Link href="/">NUPEC</Link> &copy; {new Date().getFullYear()} All Right Reserved</p>
                         </div>
                     </div>
                 </div>

@@ -10,6 +10,7 @@ export default defineType({
     { name: "alimentacion", title: "Alimentación" },
     { name: "presentaciones", title: "Presentaciones" },
     { name: "wizard", title: "Wizard / Filtros" },
+    { name: "clinica", title: "Clínica (solo nutricion-clinica)" },
   ],
 
   fields: [
@@ -173,6 +174,122 @@ export default defineType({
       options: { accept: ".pdf" },
     }),
 
+    // ── HighTech ──────────────────────────────────────────────────
+    defineField({
+      name: "highTech",
+      title: "HighTech",
+      type: "array",
+      group: "contenido",
+      description: "Tecnologías / características técnicas destacadas del producto",
+      of: [
+        {
+          type: "object",
+          name: "highTechItem",
+          title: "HighTech item",
+          fields: [
+            defineField({
+              name: "icon",
+              title: "Icono",
+              type: "string",
+              description: "Nombre del icono (Lucide) o URL de SVG",
+              validation: (r) => r.required(),
+            }),
+            defineField({
+              name: "title",
+              title: "Título",
+              type: "object",
+              fields: [
+                defineField({ name: "es", title: "Español", type: "string", validation: (r) => r.required() }),
+                defineField({ name: "en", title: "Inglés", type: "string" }),
+                defineField({ name: "fr", title: "Francés", type: "string" }),
+              ],
+            }),
+            defineField({
+              name: "description",
+              title: "Descripción",
+              type: "object",
+              fields: [
+                defineField({ name: "es", title: "Español", type: "text", rows: 2 }),
+                defineField({ name: "en", title: "Inglés", type: "text", rows: 2 }),
+                defineField({ name: "fr", title: "Francés", type: "text", rows: 2 }),
+              ],
+            }),
+          ],
+          preview: { select: { title: "title.es", subtitle: "icon" } },
+        },
+      ],
+    }),
+
+    // ── Beneficios clave ──────────────────────────────────────────
+    defineField({
+      name: "keyBenefits",
+      title: "Beneficios clave",
+      type: "array",
+      group: "contenido",
+      description: "Lista de beneficios visibles en la página del producto",
+      of: [
+        {
+          type: "object",
+          name: "keyBenefitItem",
+          title: "Beneficio",
+          fields: [
+            defineField({
+              name: "icon",
+              title: "Icono",
+              type: "string",
+              description: "Nombre del icono (Lucide) o URL de SVG",
+              validation: (r) => r.required(),
+            }),
+            defineField({
+              name: "description",
+              title: "Descripción",
+              type: "object",
+              fields: [
+                defineField({ name: "es", title: "Español", type: "string", validation: (r) => r.required() }),
+                defineField({ name: "en", title: "Inglés", type: "string" }),
+                defineField({ name: "fr", title: "Francés", type: "string" }),
+              ],
+            }),
+          ],
+          preview: { select: { title: "description.es", subtitle: "icon" } },
+        },
+      ],
+    }),
+
+    // ── Croqueta ──────────────────────────────────────────────────
+    defineField({
+      name: "kibble",
+      title: "Croqueta",
+      type: "object",
+      group: "contenido",
+      description: "Imagen y descripción de la croqueta (entrada única)",
+      fields: [
+        defineField({
+          name: "image",
+          title: "Imagen",
+          type: "image",
+          options: { hotspot: true },
+          fields: [
+            defineField({
+              name: "alt",
+              title: "Texto alternativo",
+              type: "string",
+            }),
+          ],
+        }),
+        defineField({
+          name: "description",
+          title: "Descripción",
+          type: "object",
+          fields: [
+            defineField({ name: "es", title: "Español", type: "text", rows: 3 }),
+            defineField({ name: "en", title: "Inglés", type: "text", rows: 3 }),
+            defineField({ name: "fr", title: "Francés", type: "text", rows: 3 }),
+          ],
+        }),
+      ],
+    }),
+
     // ── Alimentación ──────────────────────────────────────────────
     defineField({
       name: "feedingGuide",
@@ -271,6 +388,137 @@ export default defineType({
         ],
         layout: "grid",
       },
+    }),
+
+    // ── Clínica ───────────────────────────────────────────────────
+    // Solo aplica cuando category.slug == "nutricion-clinica"
+
+    defineField({
+      name: "clinicalIndications",
+      title: "Indicaciones clínicas",
+      type: "array",
+      group: "clinica",
+      description: "Lista de condiciones/patologías para las que está indicado el producto",
+      of: [
+        {
+          type: "object",
+          name: "indication",
+          fields: [
+            defineField({
+              name: "label",
+              title: "Indicación",
+              type: "object",
+              fields: [
+                defineField({ name: "es", title: "Español", type: "string", validation: (r) => r.required() }),
+                defineField({ name: "en", title: "Inglés", type: "string" }),
+                defineField({ name: "fr", title: "Francés", type: "string" }),
+              ],
+            }),
+            defineField({
+              name: "icon",
+              title: "Icono (Lucide o nombre de clase)",
+              type: "string",
+            }),
+          ],
+          preview: { select: { title: "label.es" } },
+        },
+      ],
+    }),
+
+    defineField({
+      name: "mechanismOfAction",
+      title: "Mecanismo de acción",
+      type: "array",
+      group: "clinica",
+      description: "Pasos numerados (máx. 4) que explican cómo actúa el producto",
+      of: [
+        {
+          type: "object",
+          name: "mechanismStep",
+          fields: [
+            defineField({ name: "step", title: "Número de paso", type: "number", validation: (r) => r.required().min(1).max(4) }),
+            defineField({
+              name: "title",
+              title: "Título del paso",
+              type: "object",
+              fields: [
+                defineField({ name: "es", title: "Español", type: "string", validation: (r) => r.required() }),
+                defineField({ name: "en", title: "Inglés", type: "string" }),
+                defineField({ name: "fr", title: "Francés", type: "string" }),
+              ],
+            }),
+            defineField({
+              name: "description",
+              title: "Descripción",
+              type: "object",
+              fields: [
+                defineField({ name: "es", title: "Español", type: "text", rows: 2 }),
+                defineField({ name: "en", title: "Inglés", type: "text", rows: 2 }),
+                defineField({ name: "fr", title: "Francés", type: "text", rows: 2 }),
+              ],
+            }),
+            defineField({
+              name: "icon",
+              title: "Icono (Lucide o nombre de clase)",
+              type: "string",
+            }),
+          ],
+          preview: { select: { title: "title.es", subtitle: "step" } },
+        },
+      ],
+    }),
+
+    defineField({
+      name: "clinicalCases",
+      title: "Casos clínicos",
+      type: "array",
+      group: "clinica",
+      description: "Casos clínicos asociados a este producto",
+      of: [{ type: "reference", to: [{ type: "clinicalCase" }] }],
+    }),
+
+    defineField({
+      name: "technicalResources",
+      title: "Recursos técnicos",
+      type: "array",
+      group: "clinica",
+      description: "PDFs y documentos descargables para veterinarios",
+      of: [
+        {
+          type: "object",
+          name: "technicalResource",
+          fields: [
+            defineField({
+              name: "title",
+              title: "Título",
+              type: "object",
+              fields: [
+                defineField({ name: "es", title: "Español", type: "string", validation: (r) => r.required() }),
+                defineField({ name: "en", title: "Inglés", type: "string" }),
+                defineField({ name: "fr", title: "Francés", type: "string" }),
+              ],
+            }),
+            defineField({
+              name: "subtitle",
+              title: "Subtítulo / descripción breve",
+              type: "object",
+              fields: [
+                defineField({ name: "es", title: "Español", type: "string" }),
+                defineField({ name: "en", title: "Inglés", type: "string" }),
+                defineField({ name: "fr", title: "Francés", type: "string" }),
+              ],
+            }),
+            defineField({
+              name: "file",
+              title: "Archivo (PDF)",
+              type: "file",
+              options: { accept: ".pdf" },
+              validation: (r) => r.required(),
+            }),
+          ],
+          preview: { select: { title: "title.es" } },
+        },
+      ],
     }),
 
     defineField({

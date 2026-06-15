@@ -7,16 +7,17 @@ import { useParams } from 'next/navigation';
 type CategoryHeroProps = {
   categoryName: string;
   categoryDescription: string | null;
+  categoryExcerpt: string | null;
   species: 'canino' | 'felino';
   categorySlug: string;
 };
 
 const CATEGORY_COLOR: Record<string, string> = {
-  'nutricion-diaria':        '#78BE20',
-  'nutricion-especializada': '#E35205',
-  'nutricion-clinica':       '#C4262E',
-  'premios-funcionales':     '#78BE20',
-  'suplementos':             '#E8A200',
+  'nutricion-diaria':        '#0085CA',
+  'nutricion-especializada': '#0085CA',
+  'nutricion-clinica':       '#0085CA',
+  'premios-funcionales':     '#0085CA',
+  'suplementos':             '#0085CA',
   'alimentos-humedos':       '#0085CA',
 };
 
@@ -29,12 +30,12 @@ const CATEGORY_STATS: Record<string, { formulas: string; digestibility: string; 
   'alimentos-humedos':       { formulas: '10', digestibility: '90%', stages: '3' },
 };
 
-export default function CategoryHero({ categoryName, categoryDescription, species, categorySlug }: CategoryHeroProps) {
+export default function CategoryHero({ categoryName, categoryDescription, categoryExcerpt, species, categorySlug }: CategoryHeroProps) {
   const t = useTranslations('categoryPage.hero');
   const params = useParams();
   const lang = params.lang as string;
 
-  const accentColor = CATEGORY_COLOR[categorySlug] ?? '#78BE20';
+  const accentColor = CATEGORY_COLOR[categorySlug] ?? '#1B365D';
   const stats = CATEGORY_STATS[categorySlug] ?? { formulas: '—', digestibility: '—', stages: '—' };
   const speciesBase = species === 'canino' ? 'nutricion-canina' : 'nutricion-felina';
   const speciesLabel = species === 'canino' ? t('switchCanina') : t('switchFelina');
@@ -83,8 +84,8 @@ export default function CategoryHero({ categoryName, categoryDescription, specie
                 <div className="canine-hero__accent-bar" style={{ background: accentColor }} />
                 <div>
                   <h1 className="canine-hero__h1">{categoryName}</h1>
-                  {categoryDescription && (
-                    <p className="canine-hero__desc">{categoryDescription}</p>
+                  {categoryExcerpt && (
+                    <h5 className="text-white">{categoryExcerpt}</h5>
                   )}
                 </div>
               </div>

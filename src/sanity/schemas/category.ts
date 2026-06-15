@@ -48,6 +48,17 @@ export default defineType({
       ],
     }),
     defineField({
+      name: "excerpt",
+      title: "Extracto",
+      type: "object",
+      description: "Texto corto que aparece en listados y cards de categoría",
+      fields: [
+        defineField({ name: "es", title: "Español", type: "text", rows: 2 }),
+        defineField({ name: "en", title: "Inglés", type: "text", rows: 2 }),
+        defineField({ name: "fr", title: "Francés", type: "text", rows: 2 }),
+      ],
+    }),
+    defineField({
       name: "order",
       title: "Orden en navegación",
       type: "number",

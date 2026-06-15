@@ -4,9 +4,10 @@ import { useEffect, useState } from "react";
 type ProgressBarProps = {
   label: string;
   percent: number;
+  displayValue?: string;
 };
 
-export default function ProgressBar({ label, percent }: ProgressBarProps) {
+export default function ProgressBar({ label, percent, displayValue }: ProgressBarProps) {
   const [width, setWidth] = useState(0);
 
   useEffect(() => {
@@ -19,7 +20,7 @@ export default function ProgressBar({ label, percent }: ProgressBarProps) {
 
   return (
     <div className="progress-box">
-      <p>{label}</p>
+            <p className="pb-4">{label}</p>
       <div className="bar">
         <div
           className="bar-inner count-bar"
@@ -28,7 +29,7 @@ export default function ProgressBar({ label, percent }: ProgressBarProps) {
             transition: "width 1.2s ease-in-out",
           }}
         >
-          <div className="count-text">{percent}%</div>
+          <div className="count-text">{displayValue ?? `${percent}%`}</div>
         </div>
       </div>
     </div>

@@ -115,6 +115,7 @@ export default function ProductGridCaninaClient({ lang, productsByCategory }: Pr
 
                       <div className="canine-product-block__footer">
                         <Link
+                        
                           href={`/${lang}/nutricion-canina/${activeCategory}/${product.slug}`}
                           className="canine-product-block__cta"
                         >
