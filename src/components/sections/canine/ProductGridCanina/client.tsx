@@ -1,144 +1,159 @@
 'use client';
 
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { urlFor } from '@/lib/sanity/client';
 import { useCaninaTab } from '../CaninaTabContext';
 
-export type ProductCard = {
+export type CategoryIntro = {
   _id: string;
   name: string;
   slug: string;
-  tagline?: string;
-  color?: string;
-  image?: { asset: { _ref: string }; alt: string };
-  lifeStage?: 'cachorro' | 'adulto' | 'senior';
-  breedSize?: 'mini' | 'pequena' | 'mediana' | 'grande' | 'todas';
+  description?: string;
+  excerpt?: string;
+  complementaryText?: string;
+  familyImage?: { asset: { _ref: string }; alt?: string };
 };
 
 const CATEGORY_COLOR: Record<string, string> = {
-  'nutricion-diaria':        '#78BE20',
-  'nutricion-especializada': '#E35205',
-  'nutricion-clinica':       '#C4262E',
-  'premios-funcionales':     '#78BE20',
-  'suplementos':             '#E8A200',
+  'nutricion-diaria':        '#0085CA',
+  'nutricion-especializada': '#0085CA',
+  'nutricion-clinica':       '#0085CA',
+  'premios-funcionales':     '#0085CA',
+  'suplementos':             '#0085CA',
   'alimentos-humedos':       '#0085CA',
 };
 
-function getPrimary(product: ProductCard, categorySlug: string): string {
-  if (product.color) return product.color;
-  if (product.lifeStage === 'cachorro') return '#0085CA';
-  if (product.lifeStage === 'senior')   return '#54301A';
-  if (product.lifeStage === 'adulto')   return '#78BE20';
-  return CATEGORY_COLOR[categorySlug] ?? '#78BE20';
-}
-
-function getSecondary(product: ProductCard): string | undefined {
-  if (product.breedSize === 'mini')    return '#ECB3CB';
-  if (product.breedSize === 'pequena') return '#0085CA';
-  return undefined;
-}
-
 type Props = {
   lang: string;
-  productsByCategory: Record<string, ProductCard[]>;
+  categories: CategoryIntro[];
 };
 
-export default function ProductGridCaninaClient({ lang, productsByCategory }: Props) {
+export default function CategoryIntroClient({ lang, categories }: Props) {
   const t = useTranslations('canine.products');
-
   const { activeCategory } = useCaninaTab();
-  const products = productsByCategory[activeCategory] ?? [];
+
+  const category = categories.find((c) => c.slug === activeCategory) ?? categories[0];
+  const accentColor = CATEGORY_COLOR[activeCategory] ?? '#78BE20';
+
+  // Track previous slug to detect changes and trigger animation
+  const prevSlugRef = useRef<string | undefined>(undefined);
+  const [animKey, setAnimKey] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  useEffect(() => {
+    if (prevSlugRef.current !== undefined && prevSlugRef.current !== activeCategory) {
+      setIsAnimating(true);
+      const t = setTimeout(() => {
+        setAnimKey((k) => k + 1);
+        setIsAnimating(false);
+      }, 260);
+      return () => clearTimeout(t);
+    }
+    prevSlugRef.current = activeCategory;
+  }, [activeCategory]);
+
+  // Sync prevSlugRef after animKey bump
+  useEffect(() => {
+    prevSlugRef.current = activeCategory;
+  }, [animKey, activeCategory]);
+
+  if (!category) return null;
 
   return (
-    <section className="service-section alternat-2 p_relative canine-products">
+    <section className="service-section alternat-2 p_relative canine-intro">
       <div
         className="pattern-layer"
         style={{ backgroundImage: 'url(/assets/images/shape/shape-13.png)' }}
       />
+
+      {/* Accent bar tied to category color */}
+      <div className="canine-intro__color-bar" style={{ background: accentColor }} />
+
       <div className="auto-container">
         <div className="sec-title mb_50">
           <span className="sub-title mb_5">{t('subtitle')}</span>
           <h2>{t('title')}</h2>
-          <p className="canine-products__eyebrow">{t('eyebrow')}</p>
         </div>
 
-        {products.length === 0 ? (
-          <div className="canine-products__empty">
-            <p>{t('sinProductos')}</p>
-          </div>
-        ) : (
-          <div className="row clearfix">
-            {products.map((product) => {
-              const primary   = getPrimary(product, activeCategory);
-              const secondary = getSecondary(product);
-              return (
-                <div key={product._id} className="col-lg-4 col-md-6 col-sm-12 canine-product-col">
-                  <div className="service-block-two canine-product-block">
-                    <div className="inner-box">
-                      <div
-                        className="canine-product-block__stripe"
-                        style={{
-                          background: secondary
-                            ? `linear-gradient(90deg, ${primary} 50%, ${secondary} 50%)`
-                            : primary,
-                        }}
-                      />
-
-                      <div className="canine-product-block__img-wrap">
-                        {product.image?.asset ? (
-                          <Image
-                            src={urlFor(product.image).width(200).height(200).url()}
-                            alt={product.image.alt}
-                            width={200}
-                            height={200}
-                            className="canine-product-block__img"
-                          />
-                        ) : (
-                          <div
-                            className="canine-product-block__bag-ph"
-                            style={{ borderColor: primary, color: primary }}
-                          >
-                            <span className="canine-product-block__bag-brand">NUPEC</span>
-                            <span className="canine-product-block__bag-name">{product.name}</span>
-                          </div>
-                        )}
-                      </div>
-
-                      <div className="canine-product-block__body">
-                        <h3 className="canine-product-block__name" style={{ color: primary }}>
-                          {product.name}
-                        </h3>
-                        {product.tagline && (
-                          <p className="canine-product-block__desc">{product.tagline}</p>
-                        )}
-                      </div>
-
-                      <div className="canine-product-block__footer">
-                        <Link
-                        
-                          href={`/${lang}/nutricion-canina/${activeCategory}/${product.slug}`}
-                          className="canine-product-block__cta"
-                        >
-                          {t('verProducto')} <i className="icon-22" />
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
+        <div
+          key={animKey}
+          className={`canine-intro__panel${isAnimating ? ' canine-intro__panel--exit' : ' canine-intro__panel--enter'}`}
+        >
+          {/* Image column */}
+          <div className="canine-intro__img-col">
+            <div
+              className="canine-intro__img-frame"
+              style={{ borderColor: accentColor }}
+            >
+              {category.familyImage?.asset ? (
+                <Image
+                  src={urlFor(category.familyImage).width(1200).url()}
+                  alt={category.familyImage.alt ?? category.name}
+                  width={1200}
+                  height={900}
+                  className="canine-intro__img"
+                  priority
+                />
+              ) : (
+                <div
+                  className="canine-intro__img-placeholder"
+                  style={{ borderColor: accentColor, color: accentColor }}
+                >
+                  <span className="canine-intro__ph-brand">NUPEC</span>
+                  <span className="canine-intro__ph-line">{category.name}</span>
                 </div>
-              );
-            })}
-          </div>
-        )}
+              )}
 
-        <div className="canine-products__cat-cta-wrap">
-          <Link
-            href={`/${lang}/nutricion-canina/${activeCategory}`}
-            className="theme-btn btn-one"
-          >
-            {t('verCategoria')} <i className="icon-22" />
-          </Link>
+              {/* Floating category badge */}
+              <div
+                className="canine-intro__badge"
+                style={{ background: accentColor }}
+              >
+                <span>{category.name}</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Text column */}
+          <div className="canine-intro__text-col">
+            <div
+              className="canine-intro__accent-bar"
+              style={{ background: accentColor }}
+            />
+
+            <div className="canine-intro__text-body">
+              <h3
+                className="canine-intro__category-name"
+                style={{ color: accentColor }}
+              >
+                {category.name}
+              </h3>
+
+              {(category.description || category.excerpt) && (
+                <p className="canine-intro__description">
+                  {category.description ?? category.excerpt}
+                </p>
+              )}
+
+              {category.complementaryText && (
+                <p className="canine-intro__complementary">
+                  {category.complementaryText}
+                </p>
+              )}
+
+              <div className="canine-intro__cta-row">
+                <Link
+                  href={`/${lang}/nutricion-canina/${activeCategory}`}
+                  className="theme-btn btn-one"
+                >
+                  {t('verCategoria')} <i className="icon-22" />
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

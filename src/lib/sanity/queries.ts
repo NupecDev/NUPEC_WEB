@@ -12,6 +12,19 @@ export const categoriesBySpeciesQuery = groq`
   }
 `;
 
+export const categoryIntrosBySpeciesQuery = groq`
+  *[_type == "category" && species == $species] | order(order asc) {
+    _id,
+    "name": name[$lang],
+    "slug": slug.current,
+    species,
+    "description": description[$lang],
+    "excerpt": excerpt[$lang],
+    "complementaryText": complementaryText[$lang],
+    familyImage
+  }
+`;
+
 // ── Productos ─────────────────────────────────────────────────────────────────
 
 export const productsByCategoryQuery = groq`

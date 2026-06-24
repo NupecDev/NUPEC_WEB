@@ -1,31 +1,13 @@
 import type { JSX } from 'react';
 import { client } from '@/lib/sanity/client';
-import { productsByCategoryQuery } from '@/lib/sanity/queries';
-import ProductGridCaninaClient, { type ProductCard } from './client';
+import { categoryIntrosBySpeciesQuery } from '@/lib/sanity/queries';
+import CategoryIntroClient, { type CategoryIntro } from './client';
 
-const CATEGORY_SLUGS = [
-  'nutricion-diaria',
-  'nutricion-especializada',
-  'nutricion-clinica',
-  'premios-funcionales',
-  'suplementos',
-  'alimentos-humedos',
-] as const;
+export default async function CategoryIntroCanina({ lang }: { lang: string }): Promise<JSX.Element> {
+  const categories = await client.fetch<CategoryIntro[]>(categoryIntrosBySpeciesQuery, {
+    species: 'canino',
+    lang,
+  });
 
-export default async function ProductGridCanina({ lang }: { lang: string }): Promise<JSX.Element> {
-  const results = await Promise.all(
-    CATEGORY_SLUGS.map((slug) =>
-      client
-        .fetch<ProductCard[]>(productsByCategoryQuery, {
-          species: 'canino',
-          categoria: slug,
-          lang,
-        })
-        .then((products) => [slug, products] as const)
-    )
-  );
-
-  const productsByCategory = Object.fromEntries(results);
-
-  return <ProductGridCaninaClient lang={lang} productsByCategory={productsByCategory} />;
+  return <CategoryIntroClient lang={lang} categories={categories} />;
 }

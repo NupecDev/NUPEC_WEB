@@ -59,6 +59,27 @@ export default defineType({
       ],
     }),
     defineField({
+      name: "familyImage",
+      title: "Imagen familia de productos",
+      type: "image",
+      description: "Foto grupal de todos los productos de esta categoría (usada en la sección introductoria de la línea)",
+      options: { hotspot: true },
+      fields: [
+        defineField({ name: "alt", title: "Texto alternativo", type: "string" }),
+      ],
+    }),
+    defineField({
+      name: "complementaryText",
+      title: "Texto complementario",
+      type: "object",
+      description: "Párrafo adicional que acompaña la introducción a la categoría",
+      fields: [
+        defineField({ name: "es", title: "Español", type: "text", rows: 4 }),
+        defineField({ name: "en", title: "Inglés", type: "text", rows: 4 }),
+        defineField({ name: "fr", title: "Francés", type: "text", rows: 4 }),
+      ],
+    }),
+    defineField({
       name: "order",
       title: "Orden en navegación",
       type: "number",
