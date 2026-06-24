@@ -11,6 +11,7 @@ export type ProductCard = {
   name: string;
   slug: string;
   tagline?: string;
+  color?: string;
   image?: { asset: { _ref: string }; alt: string };
   lifeStage?: 'cachorro' | 'adulto' | 'senior';
   breedSize?: 'mini' | 'pequena' | 'mediana' | 'grande' | 'todas';
@@ -26,6 +27,7 @@ const CATEGORY_COLOR: Record<string, string> = {
 };
 
 function getPrimary(product: ProductCard, categorySlug: string): string {
+  if (product.color) return product.color;
   if (product.lifeStage === 'cachorro') return '#0085CA';
   if (product.lifeStage === 'senior')   return '#54301A';
   if (product.lifeStage === 'adulto')   return '#78BE20';

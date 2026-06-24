@@ -28,6 +28,7 @@ export const productsByCategoryQuery = groq`
       slug.current
     ),
     "tagline": tagline[$lang],
+    color,
     image,
     lifeStage,
     breedSize,
@@ -53,6 +54,7 @@ export const productBySlugQuery = groq`
       slug.current
     ),
     "tagline": tagline[$lang],
+    color,
     "description": description[$lang],
     "ingredients": ingredients[$lang],
     image,

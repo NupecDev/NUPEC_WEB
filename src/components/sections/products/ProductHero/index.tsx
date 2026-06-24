@@ -9,6 +9,7 @@ import { urlFor } from '@/lib/sanity/client';
 export type ProductHeroData = {
   name: string;
   tagline?: string;
+  color?: string;
   lifeStage?: 'cachorro' | 'adulto' | 'senior';
   breedSize?: string;
   presentations?: string[];
@@ -39,6 +40,7 @@ export default function ProductHero({ product }: { product: ProductHeroData }) {
 
   const speciesBase = product.species === 'canino' ? 'nutricion-canina' : 'nutricion-felina';
   const accentColor =
+    product.color ??
     (product.lifeStage && LIFE_STAGE_COLOR[product.lifeStage]) ??
     CATEGORY_COLOR[product.category.slug] ??
     '#78BE20';

@@ -48,15 +48,19 @@ const TREND_SYMBOL: Record<string, string> = {
   neutral: '→',
 };
 
-function CaseCard({ caseData, accentColor }: { caseData: ClinicalCaseData; accentColor: string }) {
+function CaseArticle({ caseData, index, accentColor, t }: {
+  caseData: ClinicalCaseData;
+  index: number;
+  accentColor: string;
+  t: ReturnType<typeof useTranslations<'clinicalProduct.cases'>>;
+}) {
   const [open, setOpen] = useState(false);
-  const t = useTranslations('clinicalProduct.cases');
 
   return (
-    <article className="clin-case__card">
-      {/* Header (always visible) */}
-      <div
-        className="clin-case__header"
+    <article className="clin-case__article">
+      {/* Header — always visible, click to expand */}
+      <header
+        className={`clin-case__article-header${open ? ' clin-case__article-header--open' : ''}`}
         style={{ borderLeftColor: accentColor }}
         onClick={() => setOpen((v) => !v)}
         role="button"
@@ -64,13 +68,15 @@ function CaseCard({ caseData, accentColor }: { caseData: ClinicalCaseData; accen
         tabIndex={0}
         onKeyDown={(e) => e.key === 'Enter' && setOpen((v) => !v)}
       >
-        <div className="clin-case__header-left">
+        <span className="clin-case__article-num" style={{ color: accentColor }}>
+          {String(index + 1).padStart(2, '0')}
+        </span>
+        <div className="clin-case__header-content">
           <span className="clin-case__diagnosis" style={{ color: accentColor }}>
             {caseData.diagnosis}
           </span>
           <h3 className="clin-case__title">{caseData.title}</h3>
 
-          {/* Patient badges */}
           {caseData.patient && (
             <div className="clin-case__patient-badges">
               {caseData.patient.species && (
@@ -89,30 +95,15 @@ function CaseCard({ caseData, accentColor }: { caseData: ClinicalCaseData; accen
           )}
         </div>
 
-        {/* Metrics preview */}
-        {caseData.metrics && caseData.metrics.length > 0 && (
-          <div className="clin-case__metrics-preview">
-            {caseData.metrics.slice(0, 3).map((m, i) => (
-              <div key={i} className="clin-case__metric" style={{ borderColor: accentColor }}>
-                <span className="clin-case__metric-label">{m.label}</span>
-                <span className="clin-case__metric-value" style={{ color: accentColor }}>
-                  {m.trend ? TREND_SYMBOL[m.trend] : ''}{m.value}
-                </span>
-              </div>
-            ))}
-          </div>
-        )}
-
         <div className={`clin-case__toggle${open ? ' clin-case__toggle--open' : ''}`} style={{ color: accentColor }}>
           {open ? '−' : '+'}
         </div>
-      </div>
+      </header>
 
-      {/* Expanded content */}
+      {/* Body — expandible */}
       {open && (
         <div className="clin-case__body">
           <div className="clin-case__body-grid">
-            {/* History */}
             {caseData.history && (
               <div className="clin-case__section">
                 <h4 className="clin-case__section-title" style={{ color: accentColor }}>
@@ -124,7 +115,6 @@ function CaseCard({ caseData, accentColor }: { caseData: ClinicalCaseData; accen
               </div>
             )}
 
-            {/* Intervention */}
             {caseData.intervention && (
               <div className="clin-case__section">
                 <h4 className="clin-case__section-title" style={{ color: accentColor }}>
@@ -141,7 +131,6 @@ function CaseCard({ caseData, accentColor }: { caseData: ClinicalCaseData; accen
               </div>
             )}
 
-            {/* Outcome */}
             {caseData.outcome && (
               <div className="clin-case__section clin-case__section--outcome">
                 <h4 className="clin-case__section-title" style={{ color: accentColor }}>
@@ -154,7 +143,6 @@ function CaseCard({ caseData, accentColor }: { caseData: ClinicalCaseData; accen
             )}
           </div>
 
-          {/* All metrics */}
           {caseData.metrics && caseData.metrics.length > 0 && (
             <div className="clin-case__all-metrics">
               {caseData.metrics.map((m, i) => (
@@ -168,7 +156,6 @@ function CaseCard({ caseData, accentColor }: { caseData: ClinicalCaseData; accen
             </div>
           )}
 
-          {/* Author */}
           {caseData.author?.name && (
             <div className="clin-case__author">
               <strong>{caseData.author.name}</strong>
@@ -202,10 +189,10 @@ export default function ClinicalCases({ cases, productName, accentColor = '#C426
           </div>
         </div>
 
-        {/* Case cards */}
+        {/* Case articles — all expanded for continuous reading */}
         <div className="clin-cases__list">
-          {published.map((c) => (
-            <CaseCard key={c._id} caseData={c} accentColor={accentColor} />
+          {published.map((c, i) => (
+            <CaseArticle key={c._id} caseData={c} index={i} accentColor={accentColor} t={t} />
           ))}
         </div>
       </div>

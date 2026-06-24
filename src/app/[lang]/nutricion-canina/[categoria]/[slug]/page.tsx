@@ -51,6 +51,7 @@ type KeyBenefitItem = {
 type ProductData = ProductHeroData & {
   _id: string;
   slug: string;
+  color?: string;
   description?: string;
   ingredients?: string;
   specialNeeds?: string[];
@@ -86,6 +87,7 @@ export default async function ProductPage({
   if (!product) notFound();
 
   const accentColor =
+    product.color ??
     (product.lifeStage && LIFE_STAGE_COLOR[product.lifeStage]) ??
     CATEGORY_COLOR[categoria] ??
     '#78BE20';

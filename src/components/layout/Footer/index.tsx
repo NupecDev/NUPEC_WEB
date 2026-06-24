@@ -26,7 +26,9 @@ export default function Footer() {
             {/* About */}
             <div className="col-lg-3 col-md-6 col-sm-12 footer-column">
               <div className="footer-widget about-widget">
-                <div className="widget-title"><h3>{t('aboutTitle')}</h3></div>
+                <div className="widget-title">
+                  <img src="/assets/images/logos/logo-white.jpg" alt="NUPEC" width={203} height={40} />
+                  </div>
                 <div className="widget-content">
                   <p>{t('aboutDesc')}</p>
                   <ul className="social-links clearfix">

@@ -4745,3 +4745,201 @@ sup {
   line-height: 0;
 }
 
+/* ── Clinical Cases — blog reading mode ──────────────────────────────────── */
+
+.clin-cases__list {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.clin-case__article {
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  overflow: hidden;
+}
+
+.clin-case__article-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 28px 32px 24px;
+  border-left: 5px solid;
+  background: #fafafa;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s;
+}
+
+.clin-case__article-header:hover {
+  background: #f4f4f4;
+}
+
+.clin-case__article-header--open {
+  background: #f0f0f0;
+}
+
+.clin-case__header-content {
+  flex: 1;
+}
+
+.clin-case__toggle {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 2px;
+  transition: transform 0.2s;
+}
+
+.clin-case__toggle--open {
+  transform: rotate(0deg);
+}
+
+.clin-case__article-num {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1;
+  opacity: 0.18;
+  flex-shrink: 0;
+}
+
+.clin-case__diagnosis {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.clin-case__title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 10px;
+  color: #1B365D;
+}
+
+.clin-case__patient-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.clin-case__badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: #f0f0f0;
+  color: #555;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.clin-case__body {
+  padding: 28px 32px 32px;
+}
+
+.clin-case__body-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 40px;
+  margin-bottom: 28px;
+}
+
+.clin-case__section-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.clin-case__section--outcome {
+  grid-column: 1 / -1;
+}
+
+.clin-case__duration {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.clin-case__rich {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #444;
+}
+
+.clin-case__rich p { margin-bottom: 8px; }
+.clin-case__rich p:last-child { margin-bottom: 0; }
+.clin-case__rich ul { padding-left: 18px; }
+.clin-case__rich li { margin-bottom: 4px; }
+
+.clin-case__all-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 20px 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 20px;
+}
+
+.clin-case__metric {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 16px;
+  border: 1.5px solid;
+  border-radius: 4px;
+  min-width: 120px;
+}
+
+.clin-case__metric-label {
+  font-size: 11px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 2px;
+}
+
+.clin-case__metric-value {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.clin-case__author {
+  font-size: 13px;
+  color: #888;
+}
+
+.clin-title-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.section-eyebrow {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #1B365D;
+}
+
+.section-sub {
+  font-size: 15px;
+  color: #666;
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .clin-case__body-grid { grid-template-columns: 1fr; }
+  .clin-case__article-header { flex-direction: column; gap: 8px; }
+  .clin-case__article-num { font-size: 24px; }
+  .clin-case__body { padding: 20px 18px 24px; }
+  .clin-case__article-header { padding: 20px 18px 16px; }
+}
+

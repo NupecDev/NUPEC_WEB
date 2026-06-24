@@ -89,6 +89,19 @@ export default defineType({
     }),
 
     defineField({
+      name: "color",
+      title: "Color representativo",
+      type: "string",
+      group: "contenido",
+      description: "Color hexadecimal que identifica este producto (ej. #78BE20). Se usa en el hero, tarjetas y acentos de la página.",
+      validation: (r) =>
+        r.custom((val: string | undefined) => {
+          if (!val) return true;
+          return /^#[0-9A-Fa-f]{6}$/.test(val) || "Debe ser un código hex válido (ej. #78BE20)";
+        }),
+    }),
+
+    defineField({
       name: "image",
       title: "Imagen principal",
       type: "image",
