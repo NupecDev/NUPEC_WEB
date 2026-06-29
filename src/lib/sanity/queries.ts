@@ -91,6 +91,10 @@ export const productBySlugQuery = groq`
       value,
       min
     },
+    "claims": claims[]{
+      icon,
+      "text": text[$lang]
+    },
     "highTech": highTech[]{
       icon,
       "title": title[$lang],
@@ -134,6 +138,12 @@ export const productBySlugQuery = groq`
       "title": title[$lang],
       "subtitle": subtitle[$lang],
       "fileUrl": file.asset->url
+    },
+    "differentiators": differentiators[]{
+      icon,
+      "title": title[$lang],
+      "subtitle": subtitle[$lang],
+      "description": description[$lang]
     }
   }
 `;
@@ -145,7 +155,8 @@ export const categoryBySlugQuery = groq`
     "slug": slug.current,
     species,
     "description": description[$lang],
-    "excerpt": excerpt[$lang]
+    "excerpt": excerpt[$lang],
+    familyImage
   }
 `;
 

@@ -23,7 +23,7 @@ export default function MechanismOfAction({ steps, productName, accentColor = CL
   if (!steps || steps.length === 0) return null;
 
   return (
-    <section className="moa p_relative pt_80 pb_80" style={{ background: accentColor }}>
+    <section className="moa p_relative pt_80 pb_80" style={{ background: accentColor ? `${accentColor}4D` : undefined }}>
       <div className="auto-container">
         {/* Title */}
         <div className="sec-title mb_60 text-center">

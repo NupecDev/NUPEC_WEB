@@ -5157,3 +5157,158 @@ sup {
   .clin-case__article-header { padding: 20px 18px 16px; }
 }
 
+
+/* ── ProductDescription claims ──────────────────────────────── */
+.sp-description__claims {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sp-description__claim-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+.sp-description__claim-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.sp-description__claim-icon-img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* ── ClinicalDifferentiators ─────────────────────────────────── */
+.clin-diff--dark {
+  background: #1a1a1a;
+}
+
+.clin-diff--light {
+  background: #f8f4ef;
+}
+
+.clin-diff__header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 48px;
+}
+
+.clin-diff__eyebrow {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.clin-diff__col {
+  margin-bottom: 40px;
+}
+
+.clin-diff__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-right: 24px;
+}
+
+.clin-diff--dark .clin-diff__card {
+  color: #fff;
+}
+
+.clin-diff__icon-wrap {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.clin-diff__icon-img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.clin-diff__icon-class {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.clin-diff__title {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.35;
+  margin-bottom: 6px;
+}
+
+.clin-diff--dark .clin-diff__title {
+  color: #fff;
+}
+
+.clin-diff--light .clin-diff__title {
+  color: #1a1a1a;
+}
+
+.clin-diff__subtitle {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.clin-diff__desc {
+  font-size: 14px;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.clin-diff--dark .clin-diff__desc {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.clin-diff--light .clin-diff__desc {
+  color: #555;
+}
+
+@media (max-width: 991px) {
+  .clin-diff__card { padding-right: 12px; }
+}
+
+@media (max-width: 767px) {
+  .clin-diff__icon-wrap { width: 60px; height: 60px; }
+  .clin-diff__title { font-size: 12px; }
+}
+
+/* Preloader logo */
+.preloader-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.preloader-logo img {
+  width: 100px;
+  height: auto;
+}

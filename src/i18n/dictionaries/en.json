@@ -267,6 +267,22 @@
       "studySub": "n=98 patients · 12-week follow-up",
       "studySize": "3.6 MB",
       "download": "DOWNLOAD"
+    },
+    "sanuren": {
+      "eyebrow": "SANUREN CENTER",
+      "title": "Studies and tests behind every formula",
+      "subtitle": "At the SANUREN Center we apply rigorous scientific protocols before any formula reaches the market.",
+      "imageAlt": "SANUREN Center laboratory - animal nutrition testing",
+      "digestibilityTitle": "In vivo digestibility testing",
+      "digestibilityDesc": "We evaluate the real digestibility of each formula in our own facilities with volunteer animals under certified veterinary supervision. Our results exceed 90% apparent digestibility coefficient.",
+      "palatabilityTitle": "Palatability studies",
+      "palatabilityDesc": "We measure food acceptance through double-bowl tests and voluntary intake recording. We ensure every product exceeds market reference standards.",
+      "safetyTitle": "Safety and quality controls",
+      "safetyDesc": "More than 75 control points per batch: microbiology, heavy metals, mycotoxins, and ingredient traceability from supplier to final packaging.",
+      "efficacyTitle": "Clinical efficacy testing",
+      "efficacyDesc": "Therapeutic formulas validated with real-patient follow-up in collaboration with veterinary universities and partner clinics. Published data available for veterinarians.",
+      "traceabilityTitle": "Traceability and certifications",
+      "traceabilityDesc": "Plant certified to international standards. Each batch has complete records of raw materials, processing, and distribution, guaranteeing full transparency."
     }
   },
   "categoryPage": {
@@ -389,7 +405,8 @@
       "badge": "NUPEC",
       "presentationsTitle": "Available presentations",
       "ingredientsTitle": "Ingredients",
-      "downloadSheet": "Download technical sheet"
+      "claimsTitle": "Key features",
+      "downloadSheet": "Download Monograph"
     },
     "feedingGuide": {
       "subtitle": "Feeding guide",
@@ -482,6 +499,16 @@
       "subtitle": "Downloadable material for animal health professionals",
       "download": "DOWNLOAD PDF",
       "unavailable": "COMING SOON"
+    },
+    "differentiators": {
+      "title": "CLINICAL DIFFERENTIATORS"
+    },
+    "feedingGuide": {
+      "title": "DOSING TABLE",
+      "colLabel": "Description",
+      "colWeight": "Body weight",
+      "colAmount": "Daily amount",
+      "rxNote": "Amount should be adjusted based on the patient's clinical condition. Consult with the attending veterinarian."
     }
   }
 }

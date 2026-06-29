@@ -267,6 +267,22 @@
       "studySub": "n=98 patients · suivi 12 semaines",
       "studySize": "3,6 Mo",
       "download": "TÉLÉCHARGER"
+    },
+    "sanuren": {
+      "eyebrow": "CENTRE SANUREN",
+      "title": "Etudes et tests qui soutiennent chaque formule",
+      "subtitle": "Au Centre SANUREN, nous appliquons des protocoles scientifiques rigoureux avant qu'une formule arrive sur le marche.",
+      "imageAlt": "Laboratoire du Centre SANUREN - tests de nutrition animale",
+      "digestibilityTitle": "Tests de digestibilite in vivo",
+      "digestibilityDesc": "Nous evaluons la digestibilite reelle de chaque formule dans nos propres installations avec des animaux volontaires sous supervision veterinaire certifiee. Nos resultats depassent 90% de coefficient de digestibilite apparent.",
+      "palatabilityTitle": "Etudes de palatabilite",
+      "palatabilityDesc": "Nous mesurons l'acceptation de l'aliment par des tests a double bol et enregistrement de la consommation volontaire. Chaque produit depasse le standard de reference du marche.",
+      "safetyTitle": "Controles d'innocuite et de securite",
+      "safetyDesc": "Plus de 75 points de controle par lot : microbiologie, metaux lourds, mycotoxines et tracabilite des ingredients du fournisseur a l'emballage final.",
+      "efficacyTitle": "Tests d'efficacite clinique",
+      "efficacyDesc": "Formules therapeutiques validees avec suivi sur des patients reels en collaboration avec des universites veterinaires et cliniques partenaires. Donnees publiees disponibles pour les veterinaires.",
+      "traceabilityTitle": "Tracabilite et certifications",
+      "traceabilityDesc": "Usine certifiee aux normes internationales. Chaque lot dispose d'un enregistrement complet des matieres premieres, du traitement et de la distribution, garantissant une transparence totale."
     }
   },
   "categoryPage": {
@@ -389,7 +405,8 @@
       "badge": "NUPEC",
       "presentationsTitle": "Présentations disponibles",
       "ingredientsTitle": "Ingrédients",
-      "downloadSheet": "Télécharger la fiche technique"
+      "claimsTitle": "Caractéristiques clés",
+      "downloadSheet": "Télécharger la Monographie"
     },
     "feedingGuide": {
       "subtitle": "Guide d'alimentation",
@@ -482,6 +499,16 @@
       "subtitle": "Matériel téléchargeable pour les professionnels de santé animale",
       "download": "TÉLÉCHARGER PDF",
       "unavailable": "BIENTÔT DISPONIBLE"
+    },
+    "differentiators": {
+      "title": "DIFFÉRENCIATEURS CLINIQUES"
+    },
+    "feedingGuide": {
+      "title": "TABLEAU DE DOSAGE",
+      "colLabel": "Description",
+      "colWeight": "Poids corporel",
+      "colAmount": "Quantité journalière",
+      "rxNote": "La quantité doit être ajustée selon l'état clinique du patient. Consultez le médecin vétérinaire traitant."
     }
   }
 }

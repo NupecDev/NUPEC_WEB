@@ -40,10 +40,16 @@ const portableTextComponents = {
   },
 };
 
+type ClaimItem = {
+  icon?: string;
+  text: string;
+};
+
 type Props = {
   name: string;
   description?: string | PortableTextBlock[];
   ingredients?: string;
+  claims?: ClaimItem[];
   presentations?: string[];
   technicalSheet?: { asset: { _ref: string } };
   image?: { asset: { _ref: string }; alt: string };
@@ -54,6 +60,7 @@ export default function ProductDescription({
   name,
   description,
   ingredients,
+  claims,
   presentations,
   technicalSheet,
   image,
@@ -130,6 +137,27 @@ export default function ProductDescription({
                       {t('ingredientsTitle')}
                     </h4>
                     <p className="sp-description__ingredients">{ingredients}</p>
+                  </div>
+                )}
+
+                {/* Claims */}
+                {claims && claims.length > 0 && (
+                  <div className="sp-description__block mb_25">
+                    <h4 className="sp-description__block-title" style={{ color: accentColor }}>
+                      {t('claimsTitle')}
+                    </h4>
+                    <ul className="sp-description__claims">
+                      {claims.map((claim, i) => (
+                        <li key={i} className="sp-description__claim-item">
+                          {claim.icon && (
+                            claim.icon.startsWith('http') || claim.icon.startsWith('/')
+                              ? <img src={claim.icon} alt="" className="sp-description__claim-icon-img" />
+                              : <i className={`sp-description__claim-icon ${claim.icon}`} style={{ color: accentColor }} />
+                          )}
+                          <span>{claim.text}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 )}
 

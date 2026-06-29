@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Preloader() {
@@ -6,8 +7,7 @@ export default function Preloader() {
 
   useEffect(() => {
     const handleLoad = () => setLoading(false);
-    
-    // Hide preloader when window is fully loaded
+
     if (document.readyState === "complete") {
       setLoading(false);
     } else {
@@ -24,38 +24,34 @@ export default function Preloader() {
           <div id="handle-preloader" className="handle-preloader">
               <div className="animation-preloader">
                   <div className="load-inner">
-                      <div className="spinner"></div>
-                      <div className="txt-loading">
-                          <span data-text-preloader="m" className="letters-loading">
-                              m
-                          </span>
-                          <span data-text-preloader="e" className="letters-loading">
-                              e
-                          </span>
-                          <span data-text-preloader="d" className="letters-loading">
-                              d
-                          </span>
-                          <span data-text-preloader="i" className="letters-loading">
-                              i
-                          </span>
-                          <span data-text-preloader="c" className="letters-loading">
-                              c
-                          </span>
-                          <span data-text-preloader="i" className="letters-loading">
-                              i
-                          </span>
-                          <span data-text-preloader="n" className="letters-loading">
-                              n
-                          </span>
-                          <span data-text-preloader="s" className="letters-loading">
-                              s
-                          </span>
-                          <span data-text-preloader="k" className="letters-loading">
-                              k
-                          </span>
+                      <div className="preloader-logo">
+                          <Image
+                              src="/assets/images/logos/NUPEC_isotipo_grises.png"
+                              alt="NUPEC"
+                              width={100}
+                              height={100}
+                              priority
+                          />
                       </div>
+                      {/* <div className="txt-loading">
+                          <span data-text-preloader="N" className="letters-loading">
+                              N
+                          </span>
+                          <span data-text-preloader="U" className="letters-loading">
+                              U
+                          </span>
+                          <span data-text-preloader="P" className="letters-loading">
+                              P
+                          </span>
+                          <span data-text-preloader="E" className="letters-loading">
+                              E
+                          </span>
+                          <span data-text-preloader="C" className="letters-loading">
+                              C
+                          </span>
+                      </div> */}
                   </div>
-              </div>  
+              </div>
           </div>
       </div>
   </div>

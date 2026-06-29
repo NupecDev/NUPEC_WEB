@@ -15,12 +15,14 @@ import ProductRelated from '@/components/sections/products/ProductRelated';
 import ProductHighTech, { type HighTechItem } from '@/components/sections/products/ProductHighTech';
 
 // Clinical-only components
+import ClinicalFeedingGuide from '@/components/sections/products/ClinicalFeedingGuide';
 import ClinicalIndications, { type ClinicalIndicationItem } from '@/components/sections/products/ClinicalIndications';
 import MechanismOfAction, { type MechanismStep } from '@/components/sections/products/MechanismOfAction';
 import ClinicalTransitionGuide from '@/components/sections/products/ClinicalTransitionGuide';
 import ClinicalCases, { type ClinicalCaseData } from '@/components/sections/products/ClinicalCases';
 import VetResources, { type TechnicalResource } from '@/components/sections/products/VetResources';
 import ClinicalProductGrid from '@/components/sections/products/ClinicalProductGrid';
+import ClinicalDifferentiators from '@/components/sections/products/ClinicalDifferentiators';
 
 const CATEGORY_COLOR: Record<string, string> = {
   'nutricion-diaria':        '#78BE20',
@@ -57,10 +59,11 @@ type ProductData = ProductHeroData & {
   specialNeeds?: string[];
   technicalSheet?: { asset: { _ref: string } };
   feedingGuide?: {
-    rows: { label: string; weightKg: number; gramsPerDay: number; mealsPerDay?: number }[];
+    rows: { label?: string; weightRange: string; dailyAmount: string }[];
     notes?: string;
   } | null;
   guaranteedAnalysis?: GuaranteedAnalysisItem[];
+  claims?: { icon?: string; text: string }[];
   highTech?: HighTechItem[];
   keyBenefits?: KeyBenefitItem[];
   // Clinical fields
@@ -68,6 +71,7 @@ type ProductData = ProductHeroData & {
   mechanismOfAction?: MechanismStep[];
   clinicalCases?: ClinicalCaseData[];
   technicalResources?: TechnicalResource[];
+  differentiators?: { icon: string; title: string; subtitle?: string; description: string }[];
 };
 
 export default async function ProductPage({
@@ -101,6 +105,22 @@ export default async function ProductPage({
         {/* 1. Hero */}
         <ProductHero product={{ ...product, species: 'canino' }} />
 
+                {/* 4. Análisis garantizado */}
+        <ProductGuaranteedAnalysis
+          guaranteedAnalysis={product.guaranteedAnalysis}
+          accentColor={accentColor}
+        />
+        {/* 5. Descripción + ingredientes */}
+        <ProductDescription
+          name={product.name}
+          description={product.description}
+          ingredients={product.ingredients}
+          claims={product.claims}
+          presentations={product.presentations}
+          technicalSheet={product.technicalSheet}
+          image={product.image}
+          accentColor={accentColor}
+        />
         {/* 2. Indicaciones clínicas — strip debajo del hero */}
         {product.clinicalIndications && product.clinicalIndications.length > 0 && (
           <ClinicalIndications
@@ -108,34 +128,32 @@ export default async function ProductPage({
             accentColor={accentColor}
           />
         )}
-
+        {product.differentiators && product.differentiators.length > 0 && (
+          <ClinicalDifferentiators
+            items={product.differentiators}
+            accentColor={accentColor}
+          />
+        )}
         {/* 3. Mecanismo de acción — pasos numerados */}
         {product.mechanismOfAction && product.mechanismOfAction.length > 0 && (
           <MechanismOfAction
             steps={product.mechanismOfAction}
             productName={product.name}
-            accentColor="#1B365D"
+            accentColor={product.color}
           />
         )}
 
-        {/* 4. Análisis garantizado */}
-        <ProductGuaranteedAnalysis
-          guaranteedAnalysis={product.guaranteedAnalysis}
-          accentColor={accentColor}
-        />
 
-        {/* 5. Descripción + ingredientes */}
-        <ProductDescription
-          name={product.name}
-          description={product.description}
-          ingredients={product.ingredients}
-          presentations={product.presentations}
-          technicalSheet={product.technicalSheet}
-          image={product.image}
-          accentColor={accentColor}
-        />
+        {/* 6. Tabla de dosificación */}
+        {product.feedingGuide && product.feedingGuide.rows && product.feedingGuide.rows.length > 0 && (
+          <ClinicalFeedingGuide
+            rows={product.feedingGuide.rows}
+            notes={product.feedingGuide.notes ?? undefined}
+            accentColor={accentColor}
+          />
+        )}
 
-        {/* 6. Protocolo de transición recomendado */}
+        {/* 7. Protocolo de transición recomendado */}
         <ClinicalTransitionGuide />
 
         {/* 7. Casos clínicos */}
@@ -160,7 +178,7 @@ export default async function ProductPage({
         <ClinicalProductGrid lang={lang} categorySlug={categoria} species="canino" />
 
         {/* 10. CTA veterinario */}
-        <CategoryWizardCTA />
+        {/* <CategoryWizardCTA /> */}
       </PageLayout>
     );
   }
@@ -174,6 +192,7 @@ export default async function ProductPage({
           name={product.name}
           description={product.description}
           ingredients={product.ingredients}
+          claims={product.claims}
           presentations={product.presentations}
           technicalSheet={product.technicalSheet}
           image={product.image}

@@ -20,11 +20,11 @@ export default function ClinicalIndications({ indications, accentColor = CLINICA
   if (!indications || indications.length === 0) return null;
 
   return (
-    <section className="clin-indications p_relative pt_60 pb_60">
+    <section className="clin-indications p_relative pb_60">
       <div className="auto-container">
         <div className="clin-indications__inner">
           {/* Label strip */}
-          <div className="clin-indications__header">
+          <div className="clin-indications__header clin-title-row">
             <div className="canine-hero__accent-bar" style={{ background: accentColor }} />
             <span className="clin-indications__eyebrow" style={{ color: accentColor }}>
               {t('title')}

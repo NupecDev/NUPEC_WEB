@@ -1,11 +1,14 @@
 'use client';
 
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import { urlFor } from '@/lib/sanity/client';
 
 type CategoryAboutProps = {
   categoryName: string;
   categoryDescription: string | null;
   categorySlug: string;
+  familyImage?: { asset: { _ref: string }; alt?: string } | null;
 };
 
 const CATEGORY_STATS: Record<string, { num: string; label: string }[]> = {
@@ -32,7 +35,7 @@ const DEFAULT_STATS = [
   { num: '100%', label: 'ingredientesLabel' },
 ];
 
-export default function CategoryAbout({ categoryName, categoryDescription, categorySlug }: CategoryAboutProps) {
+export default function CategoryAbout({ categoryName, categoryDescription, categorySlug, familyImage }: CategoryAboutProps) {
   const t = useTranslations('categoryPage.about');
   const stats = CATEGORY_STATS[categorySlug] ?? DEFAULT_STATS;
 
@@ -58,8 +61,19 @@ export default function CategoryAbout({ categoryName, categoryDescription, categ
             </div>
           </div>
 
-          {/* Right: stats column */}
+          {/* Right: family image + stats */}
           <div className="col-lg-5 col-md-12 col-sm-12">
+            {familyImage && (
+              <div className="cat-about__family-image mb_30">
+                <Image
+                  src={urlFor(familyImage).width(600).auto('format').url()}
+                  alt={familyImage.alt ?? categoryName}
+                  width={600}
+                  height={400}
+                  style={{ width: '100%', height: 'auto' }}
+                />
+              </div>
+            )}
             <div className="cat-about__stats">
               {stats.map(({ num, label }, i) => (
                 <div key={i} className="cat-about__stat-row">

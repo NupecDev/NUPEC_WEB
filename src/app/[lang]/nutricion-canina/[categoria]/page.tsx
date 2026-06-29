@@ -13,6 +13,7 @@ import ClinicalDecisionTree from '@/components/sections/products/ClinicalDecisio
 import ClinicalTransitionGuide from '@/components/sections/products/ClinicalTransitionGuide';
 import ClinicalScientificBacking from '@/components/sections/products/ClinicalScientificBacking';
 import VetResources from '@/components/sections/products/VetResources';
+import SanurenStudies from '@/components/sections/products/SanurenStudies';
 
 const VALID_SLUGS = [
   'nutricion-diaria',
@@ -30,6 +31,7 @@ type CategoryData = {
   species: 'canino' | 'felino';
   description: string | null;
   excerpt: string | null;
+  familyImage: { asset: { _ref: string }; alt?: string } | null;
 };
 
 export async function generateStaticParams() {
@@ -71,10 +73,12 @@ export default async function CategoryPage({
             categoryName={category.name}
             categoryDescription={category.description}
             categorySlug={categoria}
+            familyImage={category.familyImage}
           />
           <ClinicalProductGrid lang={lang} categorySlug={categoria} species="canino" />
-          <ClinicalDecisionTree />
-          <ClinicalTransitionGuide />
+          <SanurenStudies />
+          {/* <ClinicalDecisionTree /> */}
+          {/* <ClinicalTransitionGuide /> */}
           <ClinicalScientificBacking />
           <VetResources resources={[]} productName={category.name} />
           <OtherCategories currentCategorySlug={categoria} species="canino" />
@@ -85,6 +89,7 @@ export default async function CategoryPage({
             categoryName={category.name}
             categoryDescription={category.description}
             categorySlug={categoria}
+            familyImage={category.familyImage}
           />
           <CategoryProductGrid lang={lang} species="canino" categorySlug={categoria} />
           <OtherCategories currentCategorySlug={categoria} species="canino" />
@@ -95,6 +100,7 @@ export default async function CategoryPage({
             categoryName={category.name}
             categoryDescription={category.description}
             categorySlug={categoria}
+            familyImage={category.familyImage}
           />
           <CategoryProductGrid lang={lang} species="canino" categorySlug={categoria} />
           <CategoryFeatures categorySlug={categoria} />

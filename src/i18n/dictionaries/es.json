@@ -267,6 +267,22 @@
       "studySub": "n=98 pacientes · seguimiento 12 semanas",
       "studySize": "3.6 MB",
       "download": "DESCARGAR"
+    },
+    "sanuren": {
+      "eyebrow": "CENTRO SANUREN",
+      "title": "Estudios y pruebas que respaldan cada formula",
+      "subtitle": "En el Centro SANUREN aplicamos protocolos cientificos rigurosos antes de que cualquier formula llegue al mercado.",
+      "imageAlt": "Laboratorio Centro SANUREN - pruebas de nutricion animal",
+      "digestibilityTitle": "Pruebas de digestibilidad in vivo",
+      "digestibilityDesc": "Evaluamos la digestibilidad real de cada formula en instalaciones propias con animales voluntarios bajo supervision veterinaria certificada. Nuestros resultados superan el 90% en coeficiente de digestibilidad aparente.",
+      "palatabilityTitle": "Estudios de palatabilidad",
+      "palatabilityDesc": "Medimos la aceptacion del alimento mediante pruebas de doble cuenco y registro de consumo voluntario. Garantizamos que cada producto supere el estandar de referencia de mercado.",
+      "safetyTitle": "Controles de inocuidad y seguridad",
+      "safetyDesc": "Mas de 75 puntos de control por lote: microbiologia, metales pesados, micotoxinas y trazabilidad de ingredientes desde el proveedor hasta el empaque final.",
+      "efficacyTitle": "Pruebas de eficacia clinica",
+      "efficacyDesc": "Formulas terapeuticas validadas con seguimiento en pacientes reales en colaboracion con universidades veterinarias y clinicas asociadas. Datos publicados disponibles para el veterinario.",
+      "traceabilityTitle": "Trazabilidad y certificaciones",
+      "traceabilityDesc": "Planta certificada con estandares internacionales. Cada lote cuenta con registro completo de materias primas, procesamiento y distribucion, garantizando transparencia total."
     }
   },
   "categoryPage": {
@@ -389,7 +405,8 @@
       "badge": "NUPEC",
       "presentationsTitle": "Presentaciones disponibles",
       "ingredientsTitle": "Ingredientes",
-      "downloadSheet": "Descargar ficha técnica"
+      "claimsTitle": "Características destacadas",
+      "downloadSheet": "Descargar monografía"
     },
     "feedingGuide": {
       "subtitle": "Guía de alimentación",
@@ -465,8 +482,8 @@
       "rxNote": "Producto de prescripción veterinaria. Requiere diagnóstico y seguimiento profesional."
     },
     "mechanism": {
-      "title": "MECANISMO DE ACCIÓN",
-      "subtitle": "Cómo actúa NUPEC {name} en el organismo",
+      "title": "RESULTADOS CLINICOS",
+      "subtitle": "Cambios tras el uso de  NUPEC {name}",
       "note": "Los resultados clínicos pueden variar según el paciente. Consulte al médico veterinario tratante."
     },
     "cases": {
@@ -478,10 +495,20 @@
       "duration": "Duración"
     },
     "vetResources": {
-      "title": "RECURSOS TÉCNICOS — {name}",
-      "subtitle": "Material descargable para profesionales de la salud animal",
+      "title": "CONTENIDO DESCARGABLE — {name}",
+      "subtitle": "Material descargable para veterinarios y tutores.",
       "download": "DESCARGAR PDF",
       "unavailable": "PRÓXIMAMENTE"
+    },
+    "differentiators": {
+      "title": "DIFERENCIADORES CLÍNICOS"
+    },
+    "feedingGuide": {
+      "title": "TABLA DE DOSIFICACIÓN",
+      "colLabel": "Descripción",
+      "colWeight": "Peso corporal",
+      "colAmount": "Cantidad diaria",
+      "rxNote": "La cantidad debe ajustarse según el estado clínico del paciente. Consulte con el médico veterinario tratante."
     }
   }
 }

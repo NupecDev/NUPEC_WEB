@@ -187,6 +187,41 @@ export default defineType({
       options: { accept: ".pdf" },
     }),
 
+    // ── Claims ───────────────────────────────────────────────────
+    defineField({
+      name: "claims",
+      title: "Claims del producto",
+      type: "array",
+      group: "contenido",
+      description: "Afirmaciones nutricionales o diferenciadores cortos (ej. 'Sin colorantes artificiales', 'Proteína > 30%')",
+      of: [
+        {
+          type: "object",
+          name: "claimItem",
+          title: "Claim",
+          fields: [
+            defineField({
+              name: "icon",
+              title: "Icono",
+              type: "string",
+              description: "Clase del template o URL de imagen",
+            }),
+            defineField({
+              name: "text",
+              title: "Texto",
+              type: "object",
+              fields: [
+                defineField({ name: "es", title: "Español", type: "string", validation: (r) => r.required() }),
+                defineField({ name: "en", title: "Inglés", type: "string" }),
+                defineField({ name: "fr", title: "Francés", type: "string" }),
+              ],
+            }),
+          ],
+          preview: { select: { title: "text.es", subtitle: "icon" } },
+        },
+      ],
+    }),
+
     // ── HighTech ──────────────────────────────────────────────────
     defineField({
       name: "highTech",
@@ -477,6 +512,62 @@ export default defineType({
             }),
           ],
           preview: { select: { title: "title.es", subtitle: "step" } },
+        },
+      ],
+    }),
+
+    defineField({
+      name: "differentiators",
+      title: "Diferenciadores clínicos",
+      type: "array",
+      group: "clinica",
+      description: "Ventajas competitivas del producto (Control dual del cobre, Detoxificación del amoniaco, etc.)",
+      of: [
+        {
+          type: "object",
+          name: "differentiatorItem",
+          title: "Diferenciador",
+          fields: [
+            defineField({
+              name: "icon",
+              title: "Icono",
+              type: "string",
+              description: "URL de imagen (/assets/…) o clase del template (flaticon-liver)",
+              validation: (r) => r.required(),
+            }),
+            defineField({
+              name: "title",
+              title: "Título",
+              type: "object",
+              fields: [
+                defineField({ name: "es", title: "Español", type: "string", validation: (r) => r.required() }),
+                defineField({ name: "en", title: "Inglés", type: "string" }),
+                defineField({ name: "fr", title: "Francés", type: "string" }),
+              ],
+            }),
+            defineField({
+              name: "subtitle",
+              title: "Subtítulo",
+              type: "object",
+              description: "Línea secundaria en color acento (opcional, ej. versión en inglés del título)",
+              fields: [
+                defineField({ name: "es", title: "Español", type: "string" }),
+                defineField({ name: "en", title: "Inglés", type: "string" }),
+                defineField({ name: "fr", title: "Francés", type: "string" }),
+              ],
+            }),
+            defineField({
+              name: "description",
+              title: "Descripción",
+              type: "object",
+              fields: [
+                defineField({ name: "es", title: "Español", type: "text", rows: 3, validation: (r) => r.required() }),
+                defineField({ name: "en", title: "Inglés", type: "text", rows: 3 }),
+                defineField({ name: "fr", title: "Francés", type: "text", rows: 3 }),
+              ],
+            }),
+          ],
+          preview: { select: { title: "title.es", subtitle: "icon" } },
         },
       ],
     }),
