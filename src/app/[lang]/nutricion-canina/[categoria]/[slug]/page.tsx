@@ -23,6 +23,7 @@ import ClinicalCases, { type ClinicalCaseData } from '@/components/sections/prod
 import VetResources, { type TechnicalResource } from '@/components/sections/products/VetResources';
 import ClinicalProductGrid from '@/components/sections/products/ClinicalProductGrid';
 import ClinicalDifferentiators from '@/components/sections/products/ClinicalDifferentiators';
+import IngredientShowcase, { type IngredientItem } from '@/components/sections/products/IngredientShowcase';
 
 const CATEGORY_COLOR: Record<string, string> = {
   'nutricion-diaria':        '#78BE20',
@@ -72,6 +73,7 @@ type ProductData = ProductHeroData & {
   clinicalCases?: ClinicalCaseData[];
   technicalResources?: TechnicalResource[];
   differentiators?: { icon: string; title: string; subtitle?: string; description: string }[];
+  ingredientHighlights?: IngredientItem[];
 };
 
 export default async function ProductPage({
@@ -143,6 +145,13 @@ export default async function ProductPage({
           />
         )}
 
+        {/* 3.5. Ingredientes activos — slider con respaldo científico */}
+        {product.ingredientHighlights && product.ingredientHighlights.length > 0 && (
+          <IngredientShowcase
+            ingredients={product.ingredientHighlights}
+            accentColor={accentColor}
+          />
+        )}
 
         {/* 6. Tabla de dosificación */}
         {product.feedingGuide && product.feedingGuide.rows && product.feedingGuide.rows.length > 0 && (

@@ -144,6 +144,29 @@ export const productBySlugQuery = groq`
       "title": title[$lang],
       "subtitle": subtitle[$lang],
       "description": description[$lang]
+    },
+    "ingredientHighlights": ingredientHighlights[]->{
+      _id,
+      "name": name[$lang],
+      "eyebrow": eyebrow[$lang],
+      "summary": summary[$lang],
+      image,
+      "keyPoints": keyPoints[]{
+        icon,
+        "text": text[$lang]
+      },
+      "studies": studies[]{
+        type,
+        "title": title[$lang],
+        duration,
+        "result": result[$lang],
+        externalUrl,
+        "pdf": pdf.asset->{ url }
+      },
+      "badges": badges[]{
+        image,
+        "label": label[$lang]
+      }
     }
   }
 `;

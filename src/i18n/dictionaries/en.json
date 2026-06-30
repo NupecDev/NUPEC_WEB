@@ -509,6 +509,20 @@
       "colWeight": "Body weight",
       "colAmount": "Daily amount",
       "rxNote": "Amount should be adjusted based on the patient's clinical condition. Consult with the attending veterinarian."
+    },
+    "ingredientShowcase": {
+      "sectionLabel": "ACTIVE INGREDIENTS",
+      "studiesLabel": "SCIENTIFIC EVIDENCE",
+      "prev": "Previous ingredient",
+      "next": "Next ingredient",
+      "slideNav": "Ingredient navigation",
+      "study": {
+        "clinical": "Clinical study",
+        "lab": "In vitro laboratory",
+        "field": "Field study",
+        "meta": "Meta-analysis",
+        "review": "Scientific review"
+      }
     }
   }
 }

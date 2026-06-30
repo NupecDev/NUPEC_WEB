@@ -509,6 +509,20 @@
       "colWeight": "Poids corporel",
       "colAmount": "Quantité journalière",
       "rxNote": "La quantité doit être ajustée selon l'état clinique du patient. Consultez le médecin vétérinaire traitant."
+    },
+    "ingredientShowcase": {
+      "sectionLabel": "INGRÉDIENTS ACTIFS",
+      "studiesLabel": "PREUVES SCIENTIFIQUES",
+      "prev": "Ingrédient précédent",
+      "next": "Ingrédient suivant",
+      "slideNav": "Navigation des ingrédients",
+      "study": {
+        "clinical": "Étude clinique",
+        "lab": "Laboratoire in vitro",
+        "field": "Étude en conditions réelles",
+        "meta": "Méta-analyse",
+        "review": "Revue scientifique"
+      }
     }
   }
 }

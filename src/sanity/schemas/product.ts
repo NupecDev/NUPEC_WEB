@@ -573,6 +573,15 @@ export default defineType({
     }),
 
     defineField({
+      name: "ingredientHighlights",
+      title: "Ingredientes activos destacados",
+      type: "array",
+      group: "clinica",
+      description: "Ingredientes científicamente respaldados que definen este producto. Se muestran en un slider hero con estudios y puntos clave. Los ingredientes son reutilizables entre productos.",
+      of: [{ type: "reference", to: [{ type: "ingredient" }] }],
+    }),
+
+    defineField({
       name: "clinicalCases",
       title: "Casos clínicos",
       type: "array",
