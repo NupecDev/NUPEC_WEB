@@ -24,7 +24,7 @@ export default function Footer1() {
                                     <div className="widget-content">
                                         <p>To provide accessible and equitable healthcare for all individuals, regardless of their  or socioeconomic status.</p>
                                         <ul className="social-links clearfix">
-                                            <li><Link href="/"><i className="fab fa-facebook-f"></i></Link></li>
+                                            <li><Link href="https://www.facebook.com/NUPEC.PREMIUM/"><i className="fab fa-facebook-f"></i></Link></li>
                                             <li><Link href="/"><i className="fab fa-dribbble"></i></Link></li>
                                             <li><Link href="/"><i className="fab fa-twitter"></i></Link></li>
                                         </ul>

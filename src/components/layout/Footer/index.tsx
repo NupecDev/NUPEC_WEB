@@ -32,9 +32,8 @@ export default function Footer() {
                 <div className="widget-content">
                   <p>{t('aboutDesc')}</p>
                   <ul className="social-links clearfix">
-                    <li><Link href="/"><i className="fab fa-facebook-f" /></Link></li>
-                    <li><Link href="/"><i className="fab fa-instagram" /></Link></li>
-                    <li><Link href="/"><i className="fab fa-youtube" /></Link></li>
+                    <li><Link href="https://www.facebook.com/NUPEC.PREMIUM/"><i className="fab fa-facebook-f" /></Link></li>
+                    <li><Link href="https://www.instagram.com/nupec_oficial"><i className="fab fa-instagram" /></Link></li>
                   </ul>
                 </div>
               </div>
