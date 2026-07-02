@@ -386,7 +386,7 @@
       "badge": "NUPEC",
       "presentationsTitle": "Présentations disponibles",
       "ingredientsTitle": "Ingrédients",
-      "claimsTitle": "Caractéristiques clés",
+      "claimsTitle": "Principaux avantages",
       "downloadSheet": "Télécharger la Monographie"
     },
     "feedingGuide": {
@@ -454,7 +454,7 @@
     "clinical": "Nutrition Clinique",
     "contactTitle": "Contact",
     "email": "bonjour@nupec.mx",
-    "phone": "+52 (442) 000-0000",
+    "phone": "(800) 926 8732",
     "copyright": "NUPEC. Tous droits réservés."
   },
   "clinicalProduct": {
@@ -492,7 +492,7 @@
       "rxNote": "La quantité doit être ajustée selon l'état clinique du patient. Consultez le médecin vétérinaire traitant."
     },
     "ingredientShowcase": {
-      "sectionLabel": "INGRÉDIENTS ACTIFS",
+      "sectionLabel": "INGRÉDIENTS FONCTIONNELS",
       "studiesLabel": "PREUVES SCIENTIFIQUES",
       "prev": "Ingrédient précédent",
       "next": "Ingrédient suivant",

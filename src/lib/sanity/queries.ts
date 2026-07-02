@@ -140,7 +140,7 @@ export const productBySlugQuery = groq`
       step,
       "title": title[$lang],
       "description": description[$lang],
-      icon
+      "iconUrl": icon.asset->url
     },
     "clinicalCases": clinicalCases[]->{
       _id,
@@ -165,7 +165,10 @@ export const productBySlugQuery = groq`
       icon,
       "title": title[$lang],
       "subtitle": subtitle[$lang],
-      "description": description[$lang]
+      "bullets": bullets[]{
+        "title": title[$lang],
+        "description": description[$lang]
+      }
     },
     "ingredientHighlights": ingredientHighlights[]->{
       _id,

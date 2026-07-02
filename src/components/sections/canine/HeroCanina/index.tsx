@@ -43,13 +43,7 @@ export default function HeroCanina() {
 
         <div className="auto-container">
           <div className="content-box p_relative z_5">
-            {/* Logo badge */}
-            <div className="canine-hero__badge">
-              <span className="canine-hero__badge-dot" />
-              <span className="canine-hero__badge-name">NUPEC</span>
-              <span className="canine-hero__badge-sub">SUPER PREMIUM</span>
-            </div>
-
+              <img src="/assets/images/logos/logo-white.jpg" alt="" width="203" height="40"/>
             <div className="canine-hero__title-row">
               <div className="canine-hero__accent-bar" />
               <div>

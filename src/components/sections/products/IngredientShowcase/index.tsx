@@ -8,10 +8,7 @@ import { Navigation, Pagination, EffectFade } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
 import { urlFor } from '@/lib/sanity/client';
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/effect-fade';
+import 'swiper/swiper-bundle.css';
 
 export type IngredientStudy = {
   type: 'clinical' | 'lab' | 'field' | 'meta' | 'review';
@@ -569,11 +566,14 @@ export default function IngredientShowcase({ ingredients, accentColor = '#C4262E
         }
 
         /* ── Fade transition ─────────────────────────── */
-        .swiper-fade .swiper-slide {
+        .ing-showcase__swiper.swiper-fade .swiper-slide {
+          opacity: 0 !important;
           pointer-events: none;
+          transition: opacity 0.4s ease !important;
         }
 
-        .swiper-fade .swiper-slide-active {
+        .ing-showcase__swiper.swiper-fade .swiper-slide-active {
+          opacity: 1 !important;
           pointer-events: auto;
         }
       `}</style>

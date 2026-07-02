@@ -3,11 +3,16 @@
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
+export type BulletItem = {
+  title: string;
+  description: string;
+};
+
 export type DifferentiatorItem = {
   icon: string;
   title: string;
   subtitle?: string;
-  description: string;
+  bullets?: BulletItem[];
 };
 
 type Props = {
@@ -54,8 +59,8 @@ export default function ClinicalDifferentiators({
                     <Image
                       src={item.icon}
                       alt={item.title}
-                      width={52}
-                      height={52}
+                      width={100}
+                      height={100}
                       className="clin-diff__icon-img"
                     />
                   ) : (
@@ -63,12 +68,23 @@ export default function ClinicalDifferentiators({
                   )}
                 </div>
 
-                {/* Text */}
-                <h3 className="clin-diff__title">{item.title}</h3>
+                {/* Header del diferenciador */}
+                <h2 className="clin-diff__title">{item.title}</h2>
                 {item.subtitle && (
                   <p className="clin-diff__subtitle" style={{ color: accentColor }}>{item.subtitle}</p>
                 )}
-                <p className="clin-diff__desc">{item.description}</p>
+
+                {/* Puntos clave */}
+                {item.bullets && item.bullets.length > 0 && (
+                  <ul className="clin-diff__bullets">
+                    {item.bullets.map((bullet, j) => (
+                      <li key={j} className="clin-diff__bullet">
+                        <strong className="clin-diff__bullet-title">{bullet.title}</strong>
+                        <span className="clin-diff__bullet-desc">{bullet.description}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             </div>
           ))}

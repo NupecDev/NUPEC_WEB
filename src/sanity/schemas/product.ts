@@ -507,8 +507,10 @@ export default defineType({
             }),
             defineField({
               name: "icon",
-              title: "Icono (Lucide o nombre de clase)",
-              type: "string",
+              title: "Imagen del icono",
+              type: "image",
+              description: "Imagen circular que representa este paso (PNG/WebP con fondo transparente recomendado)",
+              options: { hotspot: true },
             }),
           ],
           preview: { select: { title: "title.es", subtitle: "step" } },
@@ -547,9 +549,9 @@ export default defineType({
             }),
             defineField({
               name: "subtitle",
-              title: "Subtítulo",
+              title: "Subtítulo del diferenciador",
               type: "object",
-              description: "Línea secundaria en color acento (opcional, ej. versión en inglés del título)",
+              description: "Línea en color acento debajo del título principal (ej. 'AMMONIA DETOXIFICATION')",
               fields: [
                 defineField({ name: "es", title: "Español", type: "string" }),
                 defineField({ name: "en", title: "Inglés", type: "string" }),
@@ -557,13 +559,39 @@ export default defineType({
               ],
             }),
             defineField({
-              name: "description",
-              title: "Descripción",
-              type: "object",
-              fields: [
-                defineField({ name: "es", title: "Español", type: "text", rows: 3, validation: (r) => r.required() }),
-                defineField({ name: "en", title: "Inglés", type: "text", rows: 3 }),
-                defineField({ name: "fr", title: "Francés", type: "text", rows: 3 }),
+              name: "bullets",
+              title: "Puntos clave",
+              type: "array",
+              description: "Lista de sub-diferenciadores (ej. Inclusión de proteína mixta, Perfil de aminoácidos, Fibra soluble)",
+              of: [
+                {
+                  type: "object",
+                  name: "bulletItem",
+                  title: "Punto",
+                  fields: [
+                    defineField({
+                      name: "title",
+                      title: "Título del punto",
+                      type: "object",
+                      fields: [
+                        defineField({ name: "es", title: "Español", type: "string", validation: (r) => r.required() }),
+                        defineField({ name: "en", title: "Inglés", type: "string" }),
+                        defineField({ name: "fr", title: "Francés", type: "string" }),
+                      ],
+                    }),
+                    defineField({
+                      name: "description",
+                      title: "Descripción del punto",
+                      type: "object",
+                      fields: [
+                        defineField({ name: "es", title: "Español", type: "text", rows: 2, validation: (r) => r.required() }),
+                        defineField({ name: "en", title: "Inglés", type: "text", rows: 2 }),
+                        defineField({ name: "fr", title: "Francés", type: "text", rows: 2 }),
+                      ],
+                    }),
+                  ],
+                  preview: { select: { title: "title.es", subtitle: "description.es" } },
+                },
               ],
             }),
           ],

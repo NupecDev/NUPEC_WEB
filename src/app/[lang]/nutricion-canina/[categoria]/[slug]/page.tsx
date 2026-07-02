@@ -72,7 +72,7 @@ type ProductData = ProductHeroData & {
   mechanismOfAction?: MechanismStep[];
   clinicalCases?: ClinicalCaseData[];
   technicalResources?: TechnicalResource[];
-  differentiators?: { icon: string; title: string; subtitle?: string; description: string }[];
+  differentiators?: { icon: string; title: string; subtitle?: string; bullets?: { title: string; description: string }[] }[];
   ingredientHighlights?: IngredientItem[];
 };
 

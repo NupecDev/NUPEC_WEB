@@ -386,7 +386,7 @@
       "badge": "NUPEC",
       "presentationsTitle": "Presentaciones disponibles",
       "ingredientsTitle": "Ingredientes",
-      "claimsTitle": "Características destacadas",
+      "claimsTitle": "Beneficios Clave",
       "downloadSheet": "Descargar monografía"
     },
     "feedingGuide": {
@@ -454,7 +454,7 @@
     "clinical": "Nutrición Clínica",
     "contactTitle": "Contacto",
     "email": "hola@nupec.mx",
-    "phone": "+52 (442) 000-0000",
+    "phone": "(800) 926 8732",
     "copyright": "NUPEC. Todos los derechos reservados."
   },
   "clinicalProduct": {
@@ -463,8 +463,8 @@
       "rxNote": "Producto de prescripción veterinaria. Requiere diagnóstico y seguimiento profesional."
     },
     "mechanism": {
-      "title": "RESULTADOS CLINICOS",
-      "subtitle": "Cambios tras el uso de  NUPEC {name}",
+      "title": "SOPORTE CLINICO",
+      "subtitle": "RESULTADOS TRAS EL USO DE NUPEC {name}",
       "note": "Los resultados clínicos pueden variar según el paciente. Consulte al médico veterinario tratante."
     },
     "cases": {
@@ -492,7 +492,7 @@
       "rxNote": "La cantidad debe ajustarse según el estado clínico del paciente. Consulte con el médico veterinario tratante."
     },
     "ingredientShowcase": {
-      "sectionLabel": "INGREDIENTES ACTIVOS",
+      "sectionLabel": "INGREDIENTES FUNCIONALES",
       "studiesLabel": "EVIDENCIA CIENTÍFICA",
       "prev": "Ingrediente anterior",
       "next": "Ingrediente siguiente",

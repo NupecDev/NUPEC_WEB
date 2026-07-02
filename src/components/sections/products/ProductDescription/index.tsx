@@ -149,10 +149,12 @@ export default function ProductDescription({
                     <ul className="sp-description__claims">
                       {claims.map((claim, i) => (
                         <li key={i} className="sp-description__claim-item">
-                          {claim.icon && (
+                          {claim.icon ? (
                             claim.icon.startsWith('http') || claim.icon.startsWith('/')
                               ? <img src={claim.icon} alt="" className="sp-description__claim-icon-img" />
                               : <i className={`sp-description__claim-icon ${claim.icon}`} style={{ color: accentColor }} />
+                          ) : (
+                            <span className="sp-description__claim-dot" style={{ background: accentColor }} />
                           )}
                           <span>{claim.text}</span>
                         </li>

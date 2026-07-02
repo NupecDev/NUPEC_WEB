@@ -33,7 +33,7 @@ export default function Footer() {
                   <p>{t('aboutDesc')}</p>
                   <ul className="social-links clearfix">
                     <li><Link href="https://www.facebook.com/NUPEC.PREMIUM/"><i className="fab fa-facebook-f" /></Link></li>
-                    <li><Link href="https://www.instagram.com/nupec_oficial"><i className="fab fa-instagram" /></Link></li>
+                    <li><Link href="https://www.instagram.com/nupec_oficial/"><i className="fab fa-instagram" /></Link></li>
                   </ul>
                 </div>
               </div>
