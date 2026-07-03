@@ -168,11 +168,12 @@ export default function ProductDescription({
                   <div className="btn-box mt_30">
                     <a
                       href={`https://cdn.sanity.io/files/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/${technicalSheet.asset._ref.replace('file-', '').replace(/-([^-]+)$/, '.$1')}`}
-                      className="theme-btn btn-two"
+                      className="theme-btn btn-one sp-description__accent-btn"
+                      style={{ background: accentColor, '--sp-accent-color': accentColor } as React.CSSProperties}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <span>{t('downloadSheet')}</span>
+                      <span>{t('downloadSheet')}</span>                      
                     </a>
                   </div>
                 )}

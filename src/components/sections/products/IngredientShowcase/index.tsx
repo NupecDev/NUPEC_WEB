@@ -63,7 +63,16 @@ export default function IngredientShowcase({ ingredients, accentColor = '#C4262E
   return (
     <section className="ing-showcase p_relative">
       {/* Dark hero background */}
-      <div className="ing-showcase__bg" aria-hidden="true" />
+      <div
+        className="ing-showcase__bg"
+        aria-hidden="true"
+        style={{
+          background: `
+            radial-gradient(ellipse 60% 80% at 75% 50%, ${accentColor}20 0%, transparent 70%),
+            radial-gradient(ellipse 50% 60% at 20% 80%, rgba(27, 54, 93, 0.4) 0%, transparent 60%)
+          `,
+        }}
+      />
 
       <div className="auto-container p_relative">
 
@@ -274,9 +283,6 @@ export default function IngredientShowcase({ ingredients, accentColor = '#C4262E
         .ing-showcase__bg {
           position: absolute;
           inset: 0;
-          background:
-            radial-gradient(ellipse 60% 80% at 75% 50%, rgba(196, 38, 46, 0.08) 0%, transparent 70%),
-            radial-gradient(ellipse 50% 60% at 20% 80%, rgba(27, 54, 93, 0.4) 0%, transparent 60%);
           pointer-events: none;
         }
 

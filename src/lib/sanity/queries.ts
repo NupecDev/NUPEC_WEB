@@ -93,6 +93,7 @@ export const productBySlugQuery = groq`
     "description": description[$lang],
     "ingredients": ingredients[$lang],
     image,
+    bannerImage,
     technicalSheet,
     "presentations": presentations[]{
       "value": select(_type == "presentation" => weight, @)

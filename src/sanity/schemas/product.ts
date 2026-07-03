@@ -118,6 +118,15 @@ export default defineType({
     }),
 
     defineField({
+      name: "bannerImage",
+      title: "Imagen de fondo del hero",
+      type: "image",
+      group: "contenido",
+      description: "Imagen de fondo que aparece detrás del producto en el banner del hero. Formato paisaje recomendado (1920×600 px).",
+      options: { hotspot: true },
+    }),
+
+    defineField({
       name: "ingredients",
       title: "Ingredientes",
       type: "object",

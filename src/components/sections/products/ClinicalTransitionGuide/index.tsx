@@ -10,7 +10,7 @@ const STEPS = [
   { key: 'day6',  prev: 0,  clin: 100 },
 ];
 
-export default function ClinicalTransitionGuide() {
+export default function ClinicalTransitionGuide({ accentColor = '#C4262E' }: { accentColor?: string }) {
   const t = useTranslations('clinical.transition');
 
   return (
@@ -33,6 +33,7 @@ export default function ClinicalTransitionGuide() {
             <div
               key={key}
               className={`clin-transition__step${i === STEPS.length - 1 ? ' clin-transition__step--final' : ''}`}
+              style={i === STEPS.length - 1 ? { borderColor: accentColor } : undefined}
             >
               <div className="clin-transition__step-label">{t(key)}</div>
 
@@ -42,7 +43,7 @@ export default function ClinicalTransitionGuide() {
                   <div className="clin-transition__bar-prev" style={{ width: `${prev}%` }} />
                 )}
                 {clin > 0 && (
-                  <div className="clin-transition__bar-clin" style={{ width: `${clin}%` }} />
+                  <div className="clin-transition__bar-clin" style={{ width: `${clin}%`, background: accentColor }} />
                 )}
               </div>
 
@@ -53,7 +54,7 @@ export default function ClinicalTransitionGuide() {
                   {prev}% {t('labelPrev')}
                 </span>
                 <span className="clin-transition__legend-item clin-transition__legend-item--clin">
-                  <span className="clin-transition__dot clin-transition__dot--clin" />
+                  <span className="clin-transition__dot clin-transition__dot--clin" style={{ background: accentColor }} />
                   {clin}% {t('labelClin')}
                 </span>
               </div>
@@ -62,8 +63,8 @@ export default function ClinicalTransitionGuide() {
         </div>
 
         {/* Clinical note */}
-        <div className="clin-transition__note">
-          <div className="clin-transition__note-icon">i</div>
+        <div className="clin-transition__note" style={{ borderLeftColor: accentColor }}>
+          <div className="clin-transition__note-icon" style={{ background: accentColor }}>i</div>
           <div className="clin-transition__note-text">
             <strong>{t('noteBold')} </strong>
             {t('noteText')}

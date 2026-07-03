@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
@@ -14,6 +15,7 @@ export type ProductHeroData = {
   breedSize?: string;
   presentations?: string[];
   image?: { asset: { _ref: string }; alt: string };
+  bannerImage?: { asset: { _ref: string } };
   category: { name: string; slug: string };
   species: 'canino' | 'felino';
 };
@@ -48,7 +50,7 @@ export default function ProductHero({ product }: { product: ProductHeroData }) {
   return (
     <>
       {/* Subnav contextual — igual que CategoryHero */}
-      <div className="canine-subnav">
+      <div className="canine-subnav" style={{ background: accentColor }}>
         <div className="auto-container">
           <div className="canine-subnav__inner">
             <div className="canine-subnav__bar" />
@@ -77,8 +79,13 @@ export default function ProductHero({ product }: { product: ProductHeroData }) {
           style={{ backgroundImage: 'url(/assets/images/banner/nodes.png)' }}
           
         />
-        <div className="canine-hero__overlay" 
-        style={{ backgroundImage: 'url(https://nupec.com/wp-content/uploads/2018/12/npc-bk-producto-cachorro.jpg)' }}
+        <div
+          className="canine-hero__overlay"
+          style={{
+            backgroundImage: product.bannerImage?.asset
+              ? `url(${urlFor(product.bannerImage).width(1920).url()})`
+              : 'url(https://nupec.com/wp-content/uploads/2018/12/npc-bk-producto-cachorro.jpg)',
+          }}
         />
 
         <div className="auto-container">
@@ -131,13 +138,21 @@ export default function ProductHero({ product }: { product: ProductHeroData }) {
                 </div>
               )}
 
-              <div className="btn-box mt_30">
-                <Link href="#descripcion" className="theme-btn btn-two">
+              <div
+                className="btn-box mt_30"
+                style={{ '--product-accent': accentColor } as React.CSSProperties}
+              >
+                <Link
+                  href="#descripcion"
+                  className="theme-btn btn-one sp-hero__btn"
+                  style={{ background: accentColor }}
+                >
                   <span>{t('ctaDetails')}</span>
                 </Link>
                 <Link
                   href={`/${lang}/${speciesBase}/${product.category.slug}`}
-                  className="theme-btn btn-one ml_15"
+                  className="theme-btn btn-one ml_15 sp-hero__btn"
+                  style={{ background: accentColor }}
                 >
                   <span>{t('ctaBack')}</span>
                 </Link>

@@ -8,9 +8,10 @@ import DataBg from '../../../../components/elements/DataBg';
 
 type PageLayoutProps = {
   children: React.ReactNode;
+  accentColor?: string;
 };
 
-export default function PageLayout({ children }: PageLayoutProps) {
+export default function PageLayout({ children, accentColor }: PageLayoutProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenu, setMobileMenu] = useState(false);
 
@@ -43,7 +44,11 @@ export default function PageLayout({ children }: PageLayoutProps) {
   return (
     <>
       <DataBg />
-      <div className="page-wrapper" id="top">
+      <div
+        className="page-wrapper"
+        id="top"
+        style={accentColor ? { ['--page-accent' as string]: accentColor } : undefined}
+      >
         <Header scroll={isScrolled} handleMobileMenu={handleMobileMenu} />
         {children}
         <Footer />

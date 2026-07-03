@@ -55,6 +55,7 @@ type ProductData = ProductHeroData & {
   _id: string;
   slug: string;
   color?: string;
+  bannerImage?: { asset: { _ref: string } };
   description?: string;
   ingredients?: string;
   specialNeeds?: string[];
@@ -103,7 +104,7 @@ export default async function ProductPage({
 
   if (isClinical) {
     return (
-      <PageLayout>
+      <PageLayout accentColor={accentColor}>
         {/* 1. Hero */}
         <ProductHero product={{ ...product, species: 'canino' }} />
 
@@ -163,7 +164,7 @@ export default async function ProductPage({
         )}
 
         {/* 7. Protocolo de transición recomendado */}
-        <ClinicalTransitionGuide />
+        <ClinicalTransitionGuide accentColor={accentColor} />
 
         {/* 7. Casos clínicos */}
         {product.clinicalCases && product.clinicalCases.length > 0 && (
@@ -179,7 +180,7 @@ export default async function ProductPage({
           <VetResources
             resources={product.technicalResources}
             productName={product.name}
-            accentColor="#0085CA"
+            accentColor={accentColor}
           />
         )}
 
@@ -194,7 +195,7 @@ export default async function ProductPage({
 
   if (isPremios) {
     return (
-      <PageLayout>
+      <PageLayout accentColor={accentColor}>
         <ProductHero product={{ ...product, species: 'canino' }} />
 
         <ProductDescription
@@ -245,7 +246,7 @@ export default async function ProductPage({
   }
 
   return (
-    <PageLayout>
+    <PageLayout accentColor={accentColor}>
       {/* 1. Hero: imagen, nombre, tagline, presentaciones, breadcrumb */}
       <ProductHero product={{ ...product, species: 'canino' }} />
 
