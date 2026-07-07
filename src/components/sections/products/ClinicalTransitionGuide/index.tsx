@@ -3,11 +3,11 @@
 import { useTranslations } from 'next-intl';
 
 const STEPS = [
-  { key: 'day12', prev: 75, clin: 25 },
-  { key: 'day3',  prev: 50, clin: 50 },
-  { key: 'day4',  prev: 25, clin: 75 },
-  { key: 'day5',  prev: 10, clin: 90 },
-  { key: 'day6',  prev: 0,  clin: 100 },
+  { key: 'day13', prev: 75, clin: 25 },
+  { key: 'day46', prev: 50, clin: 50 },
+  { key: 'day79', prev: 25, clin: 75 },
+  { key: 'day10', prev: 10, clin: 90 },
+  { key: 'day11',  prev: 0,  clin: 100 },
 ];
 
 export default function ClinicalTransitionGuide({ accentColor = '#C4262E' }: { accentColor?: string }) {

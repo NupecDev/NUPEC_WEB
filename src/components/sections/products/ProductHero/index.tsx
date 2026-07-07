@@ -85,7 +85,8 @@ export default function ProductHero({ product }: { product: ProductHeroData }) {
             backgroundImage: product.bannerImage?.asset
               ? `url(${urlFor(product.bannerImage).width(1920).url()})`
               : 'url(https://nupec.com/wp-content/uploads/2018/12/npc-bk-producto-cachorro.jpg)',
-          }}
+            '--product-accent': accentColor,
+          } as React.CSSProperties}
         />
 
         <div className="auto-container">

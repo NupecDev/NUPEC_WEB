@@ -1,5 +1,6 @@
 'use client';
 
+import type { CSSProperties } from 'react';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
@@ -65,7 +66,10 @@ export default function CategoryHero({ categoryName, categoryDescription, catego
           className="bg-layer"
           style={{ backgroundImage: 'url(/assets/images/banner/canine-hero.jpg)' }}
         />
-        <div className="canine-hero__overlay" />
+        <div
+          className="canine-hero__overlay"
+          style={{ '--product-accent': accentColor } as CSSProperties}
+        />
 
         <div className="auto-container">
           <div className="cat-hero__layout p_relative z_5">
