@@ -15,6 +15,8 @@ import ClinicalScientificBacking from '@/components/sections/products/ClinicalSc
 import VetResources from '@/components/sections/products/VetResources';
 import SanurenStudies from '@/components/sections/products/SanurenStudies';
 
+export const dynamic = 'force-dynamic';
+
 const VALID_SLUGS = [
   'nutricion-diaria',
   'nutricion-especializada',
@@ -33,10 +35,6 @@ type CategoryData = {
   excerpt: string | null;
   familyImage: { asset: { _ref: string }; alt?: string } | null;
 };
-
-export async function generateStaticParams() {
-  return VALID_SLUGS.map((slug) => ({ categoria: slug }));
-}
 
 export default async function CategoryPage({
   params,
