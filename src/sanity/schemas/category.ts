@@ -1,4 +1,22 @@
 import { defineField, defineType } from "sanity";
+import type { SlugIsUniqueValidator } from "sanity";
+
+const isSlugUniquePerSpecies: SlugIsUniqueValidator = async (slug, context) => {
+  const { document, getClient } = context;
+  const client = getClient({ apiVersion: "2023-01-01" });
+  const id = document?._id.replace(/^drafts\./, "");
+  const species = document?.species;
+
+  const params = { draft: `drafts.${id}`, published: id, slug, species };
+  const query = `!defined(*[
+    _type == "category" &&
+    !(_id in [$draft, $published]) &&
+    species == $species &&
+    slug.current == $slug
+  ][0]._id)`;
+
+  return await client.fetch(query, params);
+};
 
 export default defineType({
   name: "category",
@@ -21,7 +39,11 @@ export default defineType({
       type: "slug",
       description:
         "Segmento de URL: /nutricion-canina/[slug] — debe coincidir con la ruta Next.js",
-      options: { source: "name.es", maxLength: 96 },
+      options: {
+        source: "name.es",
+        maxLength: 96,
+        isUnique: isSlugUniquePerSpecies,
+      },
       validation: (r) => r.required(),
     }),
     defineField({

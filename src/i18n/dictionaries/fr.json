@@ -389,6 +389,11 @@
       "claimsTitle": "Principaux avantages",
       "downloadSheet": "Télécharger la Monographie"
     },
+    "kibble": {
+      "subtitle": "La croquette",
+      "title": "Découvrez la croquette",
+      "badge": "NUPEC"
+    },
     "feedingGuide": {
       "subtitle": "Guide d'alimentation",
       "title": "Guide d'Alimentation",

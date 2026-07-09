@@ -198,7 +198,7 @@ export const productBySlugQuery = groq`
 `;
 
 export const categoryBySlugQuery = groq`
-  *[_type == "category" && slug.current == $slug][0] {
+  *[_type == "category" && slug.current == $slug && species == $species][0] {
     _id,
     "name": name[$lang],
     "slug": slug.current,

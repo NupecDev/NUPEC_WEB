@@ -109,7 +109,7 @@ export default function ProductKeyBenefits({ categorySlug, accentColor, keyBenef
           <div className="sec-title centred mb_50 pt-5">
             <h2>{t('title')}</h2>
           </div>
-          <div className="row clearfix">
+          <div className="row clearfix justify-content-center">
             {keyBenefits.map((b, i) => (
               <div key={i} className="col-lg-3 col-md-6 col-sm-12 funfact-block-two">
                 <SanityBenefitCard benefit={b} accentColor={accentColor} delay={i * 100} />
@@ -129,7 +129,7 @@ export default function ProductKeyBenefits({ categorySlug, accentColor, keyBenef
         <div className="sec-title centred mb_50 pt-5">
           <h2>{t('title')}</h2>
         </div>
-        <div className="row clearfix">
+        <div className="row clearfix justify-content-center">
           {fallbackBenefits.map((b, i) => (
             <div key={i} className="col-lg-3 col-md-6 col-sm-12 funfact-block-two">
               <div className="funfact-block-two sp-benefit-block wow fadeInUp" data-wow-delay={`${i * 100}ms`}>

@@ -7,6 +7,7 @@ import PageLayout from '@/components/layout/PageLayout';
 import ProductHero, { type ProductHeroData } from '@/components/sections/products/ProductHero';
 import ProductKeyBenefits from '@/components/sections/products/ProductKeyBenefits';
 import ProductDescription from '@/components/sections/products/ProductDescription';
+import ProductKibble from '@/components/sections/products/ProductKibble';
 import ProductFeedingGuide from '@/components/sections/products/ProductFeedingGuide';
 import ProductGuaranteedAnalysis from '@/components/sections/products/ProductGuaranteedAnalysis';
 import ProductBenefitsBanner from '@/components/sections/products/ProductBenefitsBanner';
@@ -68,6 +69,10 @@ type ProductData = ProductHeroData & {
   claims?: { icon?: string; text: string }[];
   highTech?: HighTechItem[];
   keyBenefits?: KeyBenefitItem[];
+  kibble?: {
+    image?: { asset: { _ref: string }; alt?: string };
+    description?: string;
+  };
   // Clinical fields
   clinicalIndications?: ClinicalIndicationItem[];
   mechanismOfAction?: MechanismStep[];
@@ -260,6 +265,16 @@ export default async function ProductPage({
         image={product.image}
         accentColor={accentColor}
       />
+
+      {/* 2.5. Croqueta: imagen y descripción (solo nutrición diaria y especializada) */}
+      {(categoria === 'nutricion-diaria' || categoria === 'nutricion-especializada') && (
+        <ProductKibble
+          name={product.name}
+          image={product.kibble?.image}
+          description={product.kibble?.description}
+          accentColor={accentColor}
+        />
+      )}
 
       {/* 3. HighTech: grid de características técnicas */}
       {product.highTech && product.highTech.length > 0 && (

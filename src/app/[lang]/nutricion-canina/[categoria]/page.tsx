@@ -47,6 +47,7 @@ export default async function CategoryPage({
 
   const category = await client.fetch<CategoryData | null>(categoryBySlugQuery, {
     slug: categoria,
+    species: 'canino',
     lang,
   });
 

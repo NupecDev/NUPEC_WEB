@@ -389,6 +389,11 @@
       "claimsTitle": "Beneficios Clave",
       "downloadSheet": "Descargar monografía"
     },
+    "kibble": {
+      "subtitle": "La croqueta",
+      "title": "Conoce la croqueta",
+      "badge": "NUPEC"
+    },
     "feedingGuide": {
       "subtitle": "Guía de alimentación",
       "title": "Guía de Alimentación",
