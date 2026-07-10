@@ -175,6 +175,79 @@
       "ingredientesDesc": "Materias primas seleccionadas con análisis por lote."
     }
   },
+  "feline": {
+    "hero": {
+      "subnav": "Nutrición Felina",
+      "breadHome": "Inicio",
+      "breadNutricion": "Nutrición",
+      "breadCanina": "Felina",
+      "switchCanina": "Nutrición Canina",
+      "switchFelina": "Nutrición Felina",
+      "title": "Nutrición Felina Científica Consciente",
+      "description": "Fórmulas desarrolladas por nuestro equipo de médicos veterinarios para cada etapa de vida de tu gato.",
+      "cta": "Encuentra tu alimento"
+    },
+    "products": {
+      "subtitle": "Nutrición Felina Científica",
+      "title": "Nuestras Líneas de Nutrición",
+      "eyebrow": "Cada fórmula desarrollada para la etapa de vida de tu gato",
+      "verProducto": "Ver producto",
+      "verCategoria": "Explorar línea completa",
+      "sinProductos": "Próximamente – esta categoría está en preparación.",
+      "adultoName": "Adulto",
+      "adultoDesc": "Mantenimiento para gatos adultos 1-7 años.",
+      "cachorroName": "Cachorro",
+      "cachorroDesc": "Crecimiento balanceado y desarrollo para gatitos 2-12 meses.",
+      "seniorName": "Senior",
+      "seniorDesc": "Soporte articular y antioxidantes para gatos +7 años.",
+      "adultoRazaPequenaName": "Adulto",
+      "adultoRazaPequenaDesc": "Fórmula de mantenimiento con alta palatabilidad.",
+      "cachorroRazaPequenaName": "Cachorro",
+      "cachorroRazaPequenaDesc": "Crecimiento equilibrado para gatitos.",
+      "seniorRazaPequenaName": "Senior",
+      "seniorRazaPequenaDesc": "Soporte funcional para gatos senior.",
+      "adultoMiniName": "Adulto",
+      "adultoMiniDesc": "Diseñado para gatos adultos, alta palatabilidad.",
+      "cachorroMiniName": "Cachorro",
+      "cachorroMiniDesc": "Crecimiento controlado para gatitos.",
+      "seniorMiniName": "Senior",
+      "seniorMiniDesc": "Apoyo geriátrico para gatos senior."
+    },
+    "experts": {
+      "subtitle": "Ciencia en cada fórmula",
+      "title": "Productos Diseñados por Expertos",
+      "description": "Cada fórmula NUPEC nace en nuestro laboratorio en Querétaro, formulada por médicos veterinarios zootecnistas con maestrías en nutrición animal.",
+      "cta": "Conoce el equipo científico",
+      "digestibilidadTitle": "Digestibilidad",
+      "digestibilidadDesc": "92% de digestibilidad promedio comprobada en estudios in vivo.",
+      "palatabilidadTitle": "Palatabilidad",
+      "palatabilidadDesc": "Aceptación >95% en pruebas con paneles de prueba felino.",
+      "investigacionTitle": "Investigación",
+      "investigacionDesc": "Colaboraciones con universidades veterinarias mexicanas.",
+      "calidadTitle": "Calidad Premium",
+      "calidadDesc": "Trazabilidad por lote y materias primas seleccionadas."
+    },
+    "banner": {
+      "eyebrow": "NUPEC Adulto",
+      "title": "Nutrimos Héroes Extraordinarios",
+      "description": "Energía y bienestar para gatos en cada etapa de vida.",
+      "cta": "Ver línea adulto"
+    },
+    "science": {
+      "subtitle": "Respaldo científico felino",
+      "title": "Datos que Sostienen Cada Bolsa",
+      "description": "Métricas verificadas en cada lote por nuestro laboratorio en Querétaro.",
+      "digestibilidadNum": "92%",
+      "digestibilidadLabel": "Digestibilidad Comprobada",
+      "digestibilidadDesc": "Estudios in vivo en panel felino bajo protocolos AAFCO.",
+      "estudiosNum": "+15",
+      "estudiosLabel": "Estudios Clínicos Publicados",
+      "estudiosDesc": "En colaboración con universidades veterinarias mexicanas.",
+      "ingredientesNum": "100%",
+      "ingredientesLabel": "Ingredientes Trazables",
+      "ingredientesDesc": "Materias primas seleccionadas con análisis por lote."
+    }
+  },
   "clinical": {
     "grid": {
       "title": "LÍNEA CLÍNICA CANINA",
@@ -214,8 +287,8 @@
       "day13": "Día 1–3",
       "day46": "Día 4-6",
       "day79": "Día 7-9",
-      "day10": "Día 10-12",    
-      "day11": "Día 12+",  
+      "day10": "Día 10-12",
+      "day11": "Día 12+",
       "labelPrev": "alimento anterior",
       "labelClin": "NUPEC clínico",
       "noteBold": "Nota clínica:",
@@ -439,7 +512,10 @@
       "viewAll": "Ver todos los productos"
     },
     "highTech": {
-      "badgeLabel": "Fórmula\nHighTech"
+      "badgeLabel": "Fórmula\nHighTech",
+      "title": "Fórmula High Tech",
+      "vetsTitle": "Diseñado por Vets",
+      "vetsBadgeLabel": "Diseñado\npor Vets"
     }
   },
   "footer": {

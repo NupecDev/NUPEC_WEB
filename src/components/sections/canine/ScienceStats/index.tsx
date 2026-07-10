@@ -5,8 +5,12 @@ import { useTranslations } from 'next-intl';
 const STAT_KEYS = ['digestibilidad', 'estudios', 'ingredientes'] as const;
 const ICONS = ['icon-37', 'icon-38', 'icon-39'] as const;
 
-export default function ScienceStats() {
-  const t = useTranslations('canine.science');
+type Props = {
+  species?: 'canino' | 'felino';
+};
+
+export default function ScienceStats({ species = 'canino' }: Props) {
+  const t = useTranslations(species === 'felino' ? 'feline.science' : 'canine.science');
 
   return (
     /*

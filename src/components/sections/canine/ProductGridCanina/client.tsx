@@ -28,11 +28,13 @@ const CATEGORY_COLOR: Record<string, string> = {
 
 type Props = {
   lang: string;
+  species?: 'canino' | 'felino';
   categories: CategoryIntro[];
 };
 
-export default function CategoryIntroClient({ lang, categories }: Props) {
-  const t = useTranslations('canine.products');
+export default function CategoryIntroClient({ lang, species = 'canino', categories }: Props) {
+  const t = useTranslations(species === 'felino' ? 'feline.products' : 'canine.products');
+  const speciesBase = species === 'felino' ? 'nutricion-felina' : 'nutricion-canina';
   const { activeCategory } = useCaninaTab();
 
   const category = categories.find((c) => c.slug === activeCategory) ?? categories[0];
@@ -146,7 +148,7 @@ export default function CategoryIntroClient({ lang, categories }: Props) {
 
               <div className="canine-intro__cta-row">
                 <Link
-                  href={`/${lang}/nutricion-canina/${activeCategory}`}
+                  href={`/${lang}/${speciesBase}/${activeCategory}`}
                   className="theme-btn btn-one"
                 >
                   {t('verCategoria')} <i className="icon-22" />

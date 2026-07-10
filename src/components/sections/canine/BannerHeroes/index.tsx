@@ -4,10 +4,19 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
 
-export default function BannerHeroes() {
-  const t = useTranslations('canine.banner');
+type Props = {
+  species?: 'canino' | 'felino';
+};
+
+export default function BannerHeroes({ species = 'canino' }: Props) {
+  const t = useTranslations(species === 'felino' ? 'feline.banner' : 'canine.banner');
   const params = useParams();
   const lang = params.lang as string;
+  const speciesBase = species === 'felino' ? 'nutricion-felina' : 'nutricion-canina';
+  const bannerImage =
+    species === 'felino'
+      ? '/assets/images/banner/feline-heroes.jpg'
+      : '/assets/images/banner/canine-heroes.jpg';
 
   return (
     /*
@@ -17,7 +26,7 @@ export default function BannerHeroes() {
     <section className="banner-section canine-banner p_relative">
       <div
         className="bg-layer"
-        style={{ backgroundImage: 'url(/assets/images/banner/canine-heroes.jpg)' }}
+        style={{ backgroundImage: `url(${bannerImage})` }}
       />
       {/* Overlay oscuro izquierda */}
       <div className="canine-banner__overlay" />
@@ -29,7 +38,7 @@ export default function BannerHeroes() {
           <p className="canine-banner__desc">{t('description')}</p>
           <div className="btn-box mt_30">
             <Link
-              href={`/${lang}/nutricion-canina`}
+              href={`/${lang}/${speciesBase}`}
               className="theme-btn btn-two"
             >
               <span>{t('cta')}</span>

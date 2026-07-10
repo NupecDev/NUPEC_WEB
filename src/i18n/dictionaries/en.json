@@ -175,6 +175,79 @@
       "ingredientesDesc": "Selected raw materials with lot-by-lot analysis."
     }
   },
+  "feline": {
+    "hero": {
+      "subnav": "Feline Nutrition",
+      "breadHome": "Home",
+      "breadNutricion": "Nutrition",
+      "breadCanina": "Feline",
+      "switchCanina": "Canine Nutrition",
+      "switchFelina": "Feline Nutrition",
+      "title": "Conscious Scientific Feline Nutrition",
+      "description": "Formulas developed by our team of veterinary doctors for every life stage of your cat.",
+      "cta": "Find your food"
+    },
+    "products": {
+      "subtitle": "Scientific Feline Nutrition",
+      "title": "Our Nutrition Lines",
+      "eyebrow": "Every formula developed for your cat's life stage",
+      "verProducto": "View product",
+      "verCategoria": "Explore full line",
+      "sinProductos": "Coming soon – this category is being prepared.",
+      "adultoName": "Adult",
+      "adultoDesc": "Maintenance for adult cats ages 1-7 years.",
+      "cachorroName": "Kitten",
+      "cachorroDesc": "Balanced growth and development for kittens 2-12 months.",
+      "seniorName": "Senior",
+      "seniorDesc": "Joint support and antioxidants for cats 7+ years.",
+      "adultoRazaPequenaName": "Adult",
+      "adultoRazaPequenaDesc": "Maintenance formula with high palatability.",
+      "cachorroRazaPequenaName": "Kitten",
+      "cachorroRazaPequenaDesc": "Balanced growth for kittens.",
+      "seniorRazaPequenaName": "Senior",
+      "seniorRazaPequenaDesc": "Functional support for senior cats.",
+      "adultoMiniName": "Adult",
+      "adultoMiniDesc": "Designed for adult cats, high palatability.",
+      "cachorroMiniName": "Kitten",
+      "cachorroMiniDesc": "Controlled growth for kittens.",
+      "seniorMiniName": "Senior",
+      "seniorMiniDesc": "Geriatric support for senior cats."
+    },
+    "experts": {
+      "subtitle": "Science in every formula",
+      "title": "Expert-Designed Products",
+      "description": "Every NUPEC formula is born in our laboratory in Querétaro, formulated by zootechnical veterinary doctors with master's degrees in animal nutrition.",
+      "cta": "Meet the scientific team",
+      "digestibilidadTitle": "Digestibility",
+      "digestibilidadDesc": "92% average digestibility proven in in-vivo studies.",
+      "palatabilidadTitle": "Palatability",
+      "palatabilidadDesc": "Over 95% acceptance in feline test panels.",
+      "investigacionTitle": "Research",
+      "investigacionDesc": "Collaborations with Mexican veterinary universities.",
+      "calidadTitle": "Premium Quality",
+      "calidadDesc": "Lot-level traceability and selected raw materials."
+    },
+    "banner": {
+      "eyebrow": "NUPEC Adult",
+      "title": "We Nourish Extraordinary Heroes",
+      "description": "Energy and wellbeing for cats at every life stage.",
+      "cta": "View adult line"
+    },
+    "science": {
+      "subtitle": "Feline scientific backing",
+      "title": "Data Behind Every Bag",
+      "description": "Metrics verified in every batch by our laboratory in Querétaro.",
+      "digestibilidadNum": "92%",
+      "digestibilidadLabel": "Proven Digestibility",
+      "digestibilidadDesc": "In-vivo studies in feline panels under AAFCO protocols.",
+      "estudiosNum": "+15",
+      "estudiosLabel": "Published Clinical Studies",
+      "estudiosDesc": "In collaboration with Mexican veterinary universities.",
+      "ingredientesNum": "100%",
+      "ingredientesLabel": "Traceable Ingredients",
+      "ingredientesDesc": "Selected raw materials with lot-by-lot analysis."
+    }
+  },
   "clinical": {
     "grid": {
       "title": "CANINE CLINICAL LINE",
@@ -214,7 +287,7 @@
       "day13": "Day 1–3",
       "day46": "Day 4-6",
       "day79": "Day 7-9",
-      "day10": "Day 10-12", 
+      "day10": "Day 10-12",
       "day11": "Day 12+",
       "labelPrev": "previous food",
       "labelClin": "NUPEC clinical",
@@ -439,7 +512,10 @@
       "viewAll": "View all products"
     },
     "highTech": {
-      "badgeLabel": "HighTech\nFormula"
+      "badgeLabel": "HighTech\nFormula",
+      "title": "High Tech Formula",
+      "vetsTitle": "Designed by Vets",
+      "vetsBadgeLabel": "Designed\nby Vets"
     }
   },
   "footer": {

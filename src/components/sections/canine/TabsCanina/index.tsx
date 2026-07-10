@@ -14,11 +14,16 @@ const TABS = [
   { key: 'wet',         slug: 'alimentos-humedos' },
 ] as const;
 
-export default function TabsCanina() {
+type Props = {
+  species?: 'canino' | 'felino';
+};
+
+export default function TabsCanina({ species = 'canino' }: Props) {
   const t        = useTranslations('nav.sub');
   const params   = useParams();
   const pathname = usePathname();
   const lang     = params.lang as string;
+  const speciesBase = species === 'felino' ? 'nutricion-felina' : 'nutricion-canina';
 
   const { activeCategory, setActiveCategory, hasProvider } = useCaninaTab();
 
@@ -43,7 +48,7 @@ export default function TabsCanina() {
             ) : (
               <Link
                 key={slug}
-                href={`/${lang}/nutricion-canina/${slug}`}
+                href={`/${lang}/${speciesBase}/${slug}`}
                 className={`canine-tabs__tab${isActive ? ' canine-tabs__tab--active' : ''}`}
               >
                 {t(key)}

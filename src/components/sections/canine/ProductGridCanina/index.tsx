@@ -3,11 +3,16 @@ import { client } from '@/lib/sanity/client';
 import { categoryIntrosBySpeciesQuery } from '@/lib/sanity/queries';
 import CategoryIntroClient, { type CategoryIntro } from './client';
 
-export default async function CategoryIntroCanina({ lang }: { lang: string }): Promise<JSX.Element> {
+type Props = {
+  lang: string;
+  species?: 'canino' | 'felino';
+};
+
+export default async function CategoryIntroCanina({ lang, species = 'canino' }: Props): Promise<JSX.Element> {
   const categories = await client.fetch<CategoryIntro[]>(categoryIntrosBySpeciesQuery, {
-    species: 'canino',
+    species,
     lang,
   });
 
-  return <CategoryIntroClient lang={lang} categories={categories} />;
+  return <CategoryIntroClient lang={lang} species={species} categories={categories} />;
 }

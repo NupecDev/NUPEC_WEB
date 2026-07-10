@@ -175,6 +175,79 @@
       "ingredientesDesc": "Matières premières sélectionnées avec analyse par lot."
     }
   },
+  "feline": {
+    "hero": {
+      "subnav": "Nutrition Féline",
+      "breadHome": "Accueil",
+      "breadNutricion": "Nutrition",
+      "breadCanina": "Féline",
+      "switchCanina": "Nutrition Canine",
+      "switchFelina": "Nutrition Féline",
+      "title": "Nutrition Féline Scientifique et Consciente",
+      "description": "Formules développées par notre équipe de médecins vétérinaires pour chaque étape de vie de votre chat.",
+      "cta": "Trouvez votre aliment"
+    },
+    "products": {
+      "subtitle": "Nutrition Féline Scientifique",
+      "title": "Nos Lignes de Nutrition",
+      "eyebrow": "Chaque formule développée pour l'étape de vie de votre chat",
+      "verProducto": "Voir le produit",
+      "verCategoria": "Explorer la ligne complète",
+      "sinProductos": "Bientôt disponible – cette catégorie est en préparation.",
+      "adultoName": "Adulte",
+      "adultoDesc": "Maintien pour chats adultes de 1 à 7 ans.",
+      "cachorroName": "Chaton",
+      "cachorroDesc": "Croissance équilibrée et développement pour chatons 2-12 mois.",
+      "seniorName": "Senior",
+      "seniorDesc": "Soutien articulaire et antioxydants pour chats +7 ans.",
+      "adultoRazaPequenaName": "Adulte",
+      "adultoRazaPequenaDesc": "Formule d'entretien à haute palatabilité.",
+      "cachorroRazaPequenaName": "Chaton",
+      "cachorroRazaPequenaDesc": "Croissance équilibrée pour chatons.",
+      "seniorRazaPequenaName": "Senior",
+      "seniorRazaPequenaDesc": "Soutien fonctionnel pour chats seniors.",
+      "adultoMiniName": "Adulte",
+      "adultoMiniDesc": "Conçu pour chats adultes, haute palatabilité.",
+      "cachorroMiniName": "Chaton",
+      "cachorroMiniDesc": "Croissance contrôlée pour chatons.",
+      "seniorMiniName": "Senior",
+      "seniorMiniDesc": "Soutien gériatrique pour chats seniors."
+    },
+    "experts": {
+      "subtitle": "La science dans chaque formule",
+      "title": "Produits Conçus par des Experts",
+      "description": "Chaque formule NUPEC naît dans notre laboratoire à Querétaro, formulée par des médecins vétérinaires zootechniciens avec des maîtrises en nutrition animale.",
+      "cta": "Rencontrez l'équipe scientifique",
+      "digestibilidadTitle": "Digestibilité",
+      "digestibilidadDesc": "92% de digestibilité moyenne prouvée par des études in vivo.",
+      "palatabilidadTitle": "Palatabilité",
+      "palatabilidadDesc": "Acceptation >95% dans les panels de test félin.",
+      "investigacionTitle": "Recherche",
+      "investigacionDesc": "Collaborations avec des universités vétérinaires mexicaines.",
+      "calidadTitle": "Qualité Premium",
+      "calidadDesc": "Traçabilité par lot et matières premières sélectionnées."
+    },
+    "banner": {
+      "eyebrow": "NUPEC Adulte",
+      "title": "Nous Nourrissons des Héros Extraordinaires",
+      "description": "Énergie et bien-être pour chats à chaque étape de vie.",
+      "cta": "Voir la gamme adulte"
+    },
+    "science": {
+      "subtitle": "Soutien scientifique félin",
+      "title": "Des Données qui Soutiennent Chaque Sac",
+      "description": "Métriques vérifiées dans chaque lot par notre laboratoire à Querétaro.",
+      "digestibilidadNum": "92%",
+      "digestibilidadLabel": "Digestibilité Prouvée",
+      "digestibilidadDesc": "Études in vivo en panel félin sous protocoles AAFCO.",
+      "estudiosNum": "+15",
+      "estudiosLabel": "Études Cliniques Publiées",
+      "estudiosDesc": "En collaboration avec des universités vétérinaires mexicaines.",
+      "ingredientesNum": "100%",
+      "ingredientesLabel": "Ingrédients Traçables",
+      "ingredientesDesc": "Matières premières sélectionnées avec analyse par lot."
+    }
+  },
   "clinical": {
     "grid": {
       "title": "GAMME CLINIQUE CANINE",
@@ -439,7 +512,10 @@
       "viewAll": "Voir tous les produits"
     },
     "highTech": {
-      "badgeLabel": "Formule\nHighTech"
+      "badgeLabel": "Formule\nHighTech",
+      "title": "Formule High Tech",
+      "vetsTitle": "Conçu par des Vétérinaires",
+      "vetsBadgeLabel": "Conçu par des\nVétérinaires"
     }
   },
   "footer": {

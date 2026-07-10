@@ -219,6 +219,7 @@ export default async function ProductPage({
             items={product.highTech}
             categoryName={product.category.name}
             accentColor={accentColor}
+            species="canino"
           />
         )}
 
@@ -282,6 +283,7 @@ export default async function ProductPage({
           items={product.highTech}
           categoryName={product.category.name}
           accentColor={accentColor}
+          species="canino"
         />
       )}
 

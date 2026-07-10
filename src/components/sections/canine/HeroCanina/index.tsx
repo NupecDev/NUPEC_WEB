@@ -4,10 +4,19 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
 
-export default function HeroCanina() {
-  const t = useTranslations('canine.hero');
+type Props = {
+  species?: 'canino' | 'felino';
+};
+
+export default function HeroCanina({ species = 'canino' }: Props) {
+  const t = useTranslations(species === 'felino' ? 'feline.hero' : 'canine.hero');
   const params = useParams();
   const lang = params.lang as string;
+  const speciesBase = species === 'felino' ? 'nutricion-felina' : 'nutricion-canina';
+  const heroImage =
+    species === 'felino'
+      ? '/assets/images/banner/feline-hero.jpg'
+      : '/assets/images/banner/canine-hero.jpg';
 
   return (
     <>
@@ -21,10 +30,10 @@ export default function HeroCanina() {
               {t('breadHome')} · {t('breadNutricion')} · <strong>{t('breadCanina')}</strong>
             </span> */}
             <div className="canine-subnav__switcher">
-              <Link href={`/${lang}/nutricion-canina`} className="canine-subnav__switch canine-subnav__switch--active">
+              <Link href={`/${lang}/nutricion-canina`} className={`canine-subnav__switch${species === 'canino' ? ' canine-subnav__switch--active' : ''}`}>
                 {t('switchCanina')}
               </Link>
-              <Link href={`/${lang}/nutricion-felina`} className="canine-subnav__switch">
+              <Link href={`/${lang}/nutricion-felina`} className={`canine-subnav__switch${species === 'felino' ? ' canine-subnav__switch--active' : ''}`}>
                 {t('switchFelina')}
               </Link>
             </div>
@@ -36,7 +45,7 @@ export default function HeroCanina() {
       <section className="banner-style-two canine-hero p_relative">
         <div
           className="bg-layer"
-          style={{ backgroundImage: 'url(/assets/images/banner/canine-hero.jpg)' }}
+          style={{ backgroundImage: `url(${heroImage})` }}
         />
         {/* Overlay degradado izquierda */}
         <div className="canine-hero__overlay" />
@@ -53,7 +62,7 @@ export default function HeroCanina() {
             </div>
 
             <div className="btn-box mt_30">
-              <Link href={`/${lang}/nutricion-canina/nutricion-diaria`} className="theme-btn btn-two">
+              <Link href={`/${lang}/${speciesBase}/nutricion-diaria`} className="theme-btn btn-two">
                 <span>{t('cta')}</span>
               </Link>
             </div>

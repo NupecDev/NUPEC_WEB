@@ -6,8 +6,12 @@ import { useParams } from 'next/navigation';
 
 const ICONS = ['icon-28', 'icon-29', 'icon-15', 'icon-30'] as const;
 
-export default function ExpertsCanina() {
-  const t = useTranslations('canine.experts');
+type Props = {
+  species?: 'canino' | 'felino';
+};
+
+export default function ExpertsCanina({ species = 'canino' }: Props) {
+  const t = useTranslations(species === 'felino' ? 'feline.experts' : 'canine.experts');
   const params = useParams();
   const lang = params.lang as string;
 
