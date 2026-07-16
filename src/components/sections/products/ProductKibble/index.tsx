@@ -6,15 +6,16 @@ import { urlFor } from '@/lib/sanity/client';
 
 type Props = {
   name: string;
-  image?: { asset: { _ref: string }; alt?: string };
+  image?: { asset: { _ref: string }; alt?: string; isGif?: boolean };
+  video?: { url: string; mimeType: string } | null;
   description?: string;
   accentColor: string;
 };
 
-export default function ProductKibble({ name, image, description, accentColor }: Props) {
+export default function ProductKibble({ name, video, image, description, accentColor }: Props) {
   const t = useTranslations('productPage.kibble');
 
-  if (!image?.asset && !description) return null;
+  if (!video?.url && !image?.asset && !description) return null;
 
   return (
     <section id="croqueta" className="about-section sp-description sec-pad p_relative">
@@ -24,7 +25,23 @@ export default function ProductKibble({ name, image, description, accentColor }:
           <div className="col-lg-5 col-md-12 col-sm-12 image-column">
             <div className="sp-description__img-wrap wow fadeInRight">
               <div className="sp-description__img-inner" style={{ borderColor: accentColor }}>
-                {image?.asset ? (
+                {video?.url ? (
+                  <video
+                    src={video.url}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="sp-description__img"
+                  />
+                ) : image?.asset && image.isGif ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={urlFor(image).url()}
+                    alt={image.alt ?? name}
+                    className="sp-description__img"
+                  />
+                ) : image?.asset ? (
                   <Image
                     src={urlFor(image).url()}
                     alt={image.alt ?? name}

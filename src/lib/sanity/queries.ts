@@ -92,8 +92,10 @@ export const productBySlugQuery = groq`
     color,
     "description": description[$lang],
     "ingredients": ingredients[$lang],
+    "warnings": warnings[$lang],
     image,
     bannerImage,
+    benefitsBannerImage,
     technicalSheet,
     "presentations": presentations[]{
       "value": select(_type == "presentation" => weight, @)
@@ -107,7 +109,20 @@ export const productBySlugQuery = groq`
     },
     "feedingGuide": feedingGuide->{
       rows,
-      "notes": notes[$lang]
+      "notes": notes[$lang],
+      "secondaryTitle": secondaryTitle[$lang],
+      "secondaryWeightColumnLabel": secondaryWeightColumnLabel[$lang],
+      "secondaryColumnGroups": secondaryColumnGroups[]{
+        "label": label[$lang],
+        "subColumns": subColumns[]{
+          "label": label[$lang]
+        }
+      },
+      "secondaryTableRows": secondaryTableRows[]{
+        weightLabel,
+        values
+      },
+      "secondaryNotes": secondaryNotes[$lang]
     },
     "guaranteedAnalysis": guaranteedAnalysis[]{
       label,
@@ -123,12 +138,20 @@ export const productBySlugQuery = groq`
       "title": title[$lang],
       "description": description[$lang]
     },
+    "highTechTitleOverride": highTechTitleOverride[$lang],
     "keyBenefits": keyBenefits[]{
       icon,
       "description": description[$lang]
     },
     "kibble": {
-      "image": kibble.image,
+      "image": kibble.image{
+        ...,
+        "isGif": asset->mimeType == "image/gif"
+      },
+      "video": kibble.video.asset->{
+        "url": url,
+        mimeType
+      },
       "description": kibble.description[$lang]
     },
 
@@ -205,7 +228,8 @@ export const categoryBySlugQuery = groq`
     species,
     "description": description[$lang],
     "excerpt": excerpt[$lang],
-    familyImage
+    familyImage,
+    bannerImage
   }
 `;
 
@@ -216,8 +240,8 @@ export const wizardProductsQuery = groq`
     _type == "product" &&
     species == $species &&
     isActive == true &&
-    ($lifeStage == null || lifeStage == $lifeStage) &&
-    ($breedSize == null || breedSize == $breedSize || breedSize == "todas") &&
+    ($lifeStage == null || $lifeStage in lifeStage) &&
+    ($breedSize == null || $breedSize in breedSize || "todas" in breedSize) &&
     ($specialNeed == null || $specialNeed in specialNeeds)
   ] | order(name.es asc) {
     _id,

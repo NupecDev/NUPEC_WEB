@@ -459,6 +459,7 @@
       "badge": "NUPEC",
       "presentationsTitle": "Available presentations",
       "ingredientsTitle": "Ingredients",
+      "warningsTitle": "Warnings",
       "claimsTitle": "Key Benefits",
       "downloadSheet": "Download Monograph"
     },
@@ -476,6 +477,10 @@
       "colMeals": "Meals",
       "meals": "meals",
       "day": "day",
+      "secondaryTitleDefault": "Mother's food intake during gestation and lactation",
+      "secondaryWeightColumnDefault": "Weight (kg)",
+      "colGramsPerDay": "g/day",
+      "colCupsPerDay": "Cups/day",
       "calcTitle": "Ration calculator",
       "calcDesc": "Move the slider to see the approximate ration for your dog's weight.",
       "weight": "Weight",

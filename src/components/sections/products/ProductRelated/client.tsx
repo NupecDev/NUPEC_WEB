@@ -49,7 +49,7 @@ export default function ProductRelatedClient({ lang, products, categorySlug, spe
         <div className="row clearfix">
           {products.map((product) => {
             const primary =
-              (product.lifeStage && LIFE_STAGE_COLOR[product.lifeStage]) ??
+              (product.lifeStage?.[0] && LIFE_STAGE_COLOR[product.lifeStage[0]]) ??
               CATEGORY_COLOR[categorySlug] ??
               '#78BE20';
 
@@ -62,7 +62,7 @@ export default function ProductRelatedClient({ lang, products, categorySlug, spe
                     <div className="canine-product-block__img-wrap">
                       {product.image?.asset ? (
                         <Image
-                          src={urlFor(product.image).width(200).height(200).url()}
+                          src={urlFor(product.image).width(320).url()}
                           alt={product.image.alt ?? product.name}
                           width={200}
                           height={200}

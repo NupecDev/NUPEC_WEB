@@ -459,6 +459,7 @@
       "badge": "NUPEC",
       "presentationsTitle": "Presentaciones disponibles",
       "ingredientsTitle": "Ingredientes",
+      "warningsTitle": "Advertencias",
       "claimsTitle": "Beneficios Clave",
       "downloadSheet": "Descargar monografía"
     },
@@ -476,6 +477,10 @@
       "colMeals": "Tomas",
       "meals": "tomas",
       "day": "día",
+      "secondaryTitleDefault": "Consumo de alimento de la madre en gestación y lactancia",
+      "secondaryWeightColumnDefault": "Peso (kg)",
+      "colGramsPerDay": "g/día",
+      "colCupsPerDay": "Tazas/día",
       "calcTitle": "Calculadora de ración",
       "calcDesc": "Mueve el control para ver la ración aproximada para el peso de tu perro.",
       "weight": "Peso",
@@ -514,7 +519,7 @@
     "highTech": {
       "badgeLabel": "Fórmula\nHighTech",
       "title": "Fórmula High Tech",
-      "vetsTitle": "Diseñado por Vets",
+      "vetsTitle": "Diseñado por Veterinarios",
       "vetsBadgeLabel": "Diseñado\npor Vets"
     }
   },

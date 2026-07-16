@@ -34,6 +34,7 @@ type CategoryData = {
   description: string | null;
   excerpt: string | null;
   familyImage: { asset: { _ref: string }; alt?: string } | null;
+  bannerImage: { asset: { _ref: string } } | null;
 };
 
 export default async function CategoryPage({
@@ -64,6 +65,7 @@ export default async function CategoryPage({
         categoryExcerpt={category.excerpt}
         species="canino"
         categorySlug={categoria}
+        bannerImage={category.bannerImage}
       />
 
       {isClinical ? (

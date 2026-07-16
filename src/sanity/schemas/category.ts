@@ -91,6 +91,13 @@ export default defineType({
       ],
     }),
     defineField({
+      name: "bannerImage",
+      title: "Imagen de fondo del banner",
+      type: "image",
+      description: "Imagen de fondo del hero de esta categoría. Formato paisaje recomendado (1920×600 px).",
+      options: { hotspot: true },
+    }),
+    defineField({
       name: "complementaryText",
       title: "Texto complementario",
       type: "object",

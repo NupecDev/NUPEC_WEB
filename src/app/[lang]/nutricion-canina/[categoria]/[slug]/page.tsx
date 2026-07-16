@@ -57,20 +57,35 @@ type ProductData = ProductHeroData & {
   slug: string;
   color?: string;
   bannerImage?: { asset: { _ref: string } };
+  benefitsBannerImage?: { asset: { _ref: string } };
   description?: string;
   ingredients?: string;
+  warnings?: string;
   specialNeeds?: string[];
   technicalSheet?: { asset: { _ref: string } };
   feedingGuide?: {
     rows: { label?: string; weightRange: string; dailyAmount: string }[];
     notes?: string;
+    secondaryTitle?: string;
+    secondaryWeightColumnLabel?: string;
+    secondaryColumnGroups?: {
+      label?: string;
+      subColumns?: { label?: string }[];
+    }[];
+    secondaryTableRows?: {
+      weightLabel: string;
+      values?: { grams?: string; cups?: string }[];
+    }[];
+    secondaryNotes?: string;
   } | null;
   guaranteedAnalysis?: GuaranteedAnalysisItem[];
   claims?: { icon?: string; text: string }[];
   highTech?: HighTechItem[];
+  highTechTitleOverride?: string;
   keyBenefits?: KeyBenefitItem[];
   kibble?: {
-    image?: { asset: { _ref: string }; alt?: string };
+    image?: { asset: { _ref: string }; alt?: string; isGif?: boolean };
+    video?: { url: string; mimeType: string } | null;
     description?: string;
   };
   // Clinical fields
@@ -100,7 +115,7 @@ export default async function ProductPage({
 
   const accentColor =
     product.color ??
-    (product.lifeStage && LIFE_STAGE_COLOR[product.lifeStage]) ??
+    (product.lifeStage?.[0] && LIFE_STAGE_COLOR[product.lifeStage[0]]) ??
     CATEGORY_COLOR[categoria] ??
     '#78BE20';
 
@@ -123,6 +138,7 @@ export default async function ProductPage({
           name={product.name}
           description={product.description}
           ingredients={product.ingredients}
+          warnings={product.warnings}
           claims={product.claims}
           presentations={product.presentations}
           technicalSheet={product.technicalSheet}
@@ -207,6 +223,7 @@ export default async function ProductPage({
           name={product.name}
           description={product.description}
           ingredients={product.ingredients}
+          warnings={product.warnings}
           claims={product.claims}
           presentations={product.presentations}
           technicalSheet={product.technicalSheet}
@@ -220,6 +237,7 @@ export default async function ProductPage({
             categoryName={product.category.name}
             accentColor={accentColor}
             species="canino"
+            titleOverride={product.highTechTitleOverride}
           />
         )}
 
@@ -239,6 +257,7 @@ export default async function ProductPage({
           lifeStage={product.lifeStage}
           categorySlug={categoria}
           species="canino"
+          bannerImage={product.benefitsBannerImage}
         />
 
         <ProductRelated
@@ -261,6 +280,7 @@ export default async function ProductPage({
         name={product.name}
         description={product.description}
         ingredients={product.ingredients}
+        warnings={product.warnings}
         presentations={product.presentations}
         technicalSheet={product.technicalSheet}
         image={product.image}
@@ -272,6 +292,7 @@ export default async function ProductPage({
         <ProductKibble
           name={product.name}
           image={product.kibble?.image}
+          video={product.kibble?.video}
           description={product.kibble?.description}
           accentColor={accentColor}
         />
@@ -284,6 +305,7 @@ export default async function ProductPage({
           categoryName={product.category.name}
           accentColor={accentColor}
           species="canino"
+          titleOverride={product.highTechTitleOverride}
         />
       )}
 
@@ -309,6 +331,7 @@ export default async function ProductPage({
         lifeStage={product.lifeStage}
         categorySlug={categoria}
         species="canino"
+        bannerImage={product.benefitsBannerImage}
       />
 
       {/* 8. Encuentra NUPEC cerca de ti */}

@@ -459,6 +459,7 @@
       "badge": "NUPEC",
       "presentationsTitle": "Présentations disponibles",
       "ingredientsTitle": "Ingrédients",
+      "warningsTitle": "Avertissements",
       "claimsTitle": "Principaux avantages",
       "downloadSheet": "Télécharger la Monographie"
     },
@@ -476,6 +477,10 @@
       "colMeals": "Repas",
       "meals": "repas",
       "day": "jour",
+      "secondaryTitleDefault": "Consommation alimentaire de la mère en gestation et lactation",
+      "secondaryWeightColumnDefault": "Poids (kg)",
+      "colGramsPerDay": "g/jour",
+      "colCupsPerDay": "Tasses/jour",
       "calcTitle": "Calculateur de ration",
       "calcDesc": "Déplacez le curseur pour voir la ration approximative selon le poids de votre chien.",
       "weight": "Poids",

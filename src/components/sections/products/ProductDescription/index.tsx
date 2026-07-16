@@ -49,6 +49,7 @@ type Props = {
   name: string;
   description?: string | PortableTextBlock[];
   ingredients?: string;
+  warnings?: string;
   claims?: ClaimItem[];
   presentations?: string[];
   technicalSheet?: { asset: { _ref: string } };
@@ -60,6 +61,7 @@ export default function ProductDescription({
   name,
   description,
   ingredients,
+  warnings,
   claims,
   presentations,
   technicalSheet,
@@ -137,6 +139,16 @@ export default function ProductDescription({
                       {t('ingredientsTitle')}
                     </h4>
                     <p className="sp-description__ingredients">{ingredients}</p>
+                  </div>
+                )}
+
+                {/* Warnings */}
+                {warnings && (
+                  <div className="sp-description__block mb_25">
+                    <h4 className="sp-description__block-title" style={{ color: accentColor }}>
+                      {t('warningsTitle')}
+                    </h4>
+                    <p className="sp-description__ingredients">{warnings}</p>
                   </div>
                 )}
 

@@ -11,8 +11,8 @@ export type ProductHeroData = {
   name: string;
   tagline?: string;
   color?: string;
-  lifeStage?: 'cachorro' | 'adulto' | 'senior';
-  breedSize?: string;
+  lifeStage?: ('cachorro' | 'adulto' | 'senior')[];
+  breedSize?: string[];
   presentations?: string[];
   image?: { asset: { _ref: string }; alt: string };
   bannerImage?: { asset: { _ref: string } };
@@ -41,9 +41,10 @@ export default function ProductHero({ product }: { product: ProductHeroData }) {
   const lang = params.lang as string;
 
   const speciesBase = product.species === 'canino' ? 'nutricion-canina' : 'nutricion-felina';
+  const primaryLifeStage = product.lifeStage?.[0];
   const accentColor =
     product.color ??
-    (product.lifeStage && LIFE_STAGE_COLOR[product.lifeStage]) ??
+    (primaryLifeStage && LIFE_STAGE_COLOR[primaryLifeStage]) ??
     CATEGORY_COLOR[product.category.slug] ??
     '#78BE20';
 
@@ -110,14 +111,19 @@ export default function ProductHero({ product }: { product: ProductHeroData }) {
               <div className="canine-hero__title-row mt_20">
                 <div className="canine-hero__accent-bar" style={{ background: accentColor }} />
                 <div>
-                  {product.lifeStage && (
-                    <span className="sp-hero__stage-tag" style={{ background: accentColor }}>
-                      {t(`lifeStage.${product.lifeStage}`)}
-                      {product.breedSize && product.breedSize !== 'todas'
-                        ? ` · ${t(`breedSize.${product.breedSize}`)}`
-                        : ''}
-                    </span>
-                  )}
+                  {(() => {
+                    const stageLabels = (product.lifeStage ?? []).map((s) => t(`lifeStage.${s}`));
+                    const breedLabels = (product.breedSize ?? [])
+                      .filter((b) => b !== 'todas')
+                      .map((b) => t(`breedSize.${b}`));
+                    const label = [...stageLabels, ...breedLabels].join(' · ');
+                    if (!label) return null;
+                    return (
+                      <span className="sp-hero__stage-tag" style={{ background: accentColor }}>
+                        {label}
+                      </span>
+                    );
+                  })()}
                   <h1 className="canine-hero__h1">{product.name}</h1>
                   {product.tagline && (
                     <p className="canine-hero__desc">{product.tagline}</p>
@@ -166,8 +172,8 @@ export default function ProductHero({ product }: { product: ProductHeroData }) {
                 <Image
                   src={urlFor(product.image).url()}
                   alt={product.image.alt ?? product.name}
-                  width={400}
-                  height={400}
+                  width={600}
+                  height={600}
                   className="sp-hero__img"
                   priority
                 />

@@ -127,6 +127,15 @@ export default defineType({
     }),
 
     defineField({
+      name: "benefitsBannerImage",
+      title: "Imagen de fondo del banner de beneficios",
+      type: "image",
+      group: "contenido",
+      description: "Imagen de fondo que aparece detrás del banner de beneficios (CTA hacia la categoría). Formato paisaje recomendado (1920×600 px).",
+      options: { hotspot: true },
+    }),
+
+    defineField({
       name: "ingredients",
       title: "Ingredientes",
       type: "object",
@@ -194,6 +203,19 @@ export default defineType({
       type: "file",
       group: "contenido",
       options: { accept: ".pdf" },
+    }),
+
+    defineField({
+      name: "warnings",
+      title: "Advertencias",
+      type: "object",
+      group: "contenido",
+      description: "Advertencias e indicaciones de seguridad del producto (ej. conservación, uso, precauciones)",
+      fields: [
+        defineField({ name: "es", title: "Español", type: "text", rows: 4 }),
+        defineField({ name: "en", title: "Inglés", type: "text", rows: 4 }),
+        defineField({ name: "fr", title: "Francés", type: "text", rows: 4 }),
+      ],
     }),
 
     // ── Claims ───────────────────────────────────────────────────
@@ -277,6 +299,20 @@ export default defineType({
       ],
     }),
 
+    defineField({
+      name: "highTechTitleOverride",
+      title: "HighTech - título alternativo",
+      type: "object",
+      group: "contenido",
+      description:
+        "Opcional. Sobreescribe el título del bloque HighTech para este producto (ej. 'Immunity Plus' en 1st Care) en lugar de 'Fórmula High Tech' / 'Diseñado por Veterinarios'.",
+      fields: [
+        defineField({ name: "es", title: "Español", type: "string" }),
+        defineField({ name: "en", title: "Inglés", type: "string" }),
+        defineField({ name: "fr", title: "Francés", type: "string" }),
+      ],
+    }),
+
     // ── Beneficios clave ──────────────────────────────────────────
     defineField({
       name: "keyBenefits",
@@ -323,9 +359,9 @@ export default defineType({
       fields: [
         defineField({
           name: "image",
-          title: "Imagen",
+          title: "Imagen o GIF",
           type: "image",
-          options: { hotspot: true },
+          options: { hotspot: true, accept: "image/*" },
           fields: [
             defineField({
               name: "alt",
@@ -333,6 +369,14 @@ export default defineType({
               type: "string",
             }),
           ],
+        }),
+        defineField({
+          name: "video",
+          title: "Video",
+          type: "file",
+          options: { accept: "video/*" },
+          description:
+            "Opcional. Si se sube un video, se reproduce en loop automático (autoplay) en lugar de la imagen/GIF.",
         }),
         defineField({
           name: "description",
@@ -397,25 +441,27 @@ export default defineType({
     defineField({
       name: "lifeStage",
       title: "Etapa de vida",
-      type: "string",
+      type: "array",
       group: "wizard",
-      description: "Usado por el wizard para filtrar productos",
+      description: "Usado por el wizard para filtrar productos. Selecciona todas las que apliquen (ej. cachorro y adulto para alimentos de gestación/lactancia).",
+      of: [{ type: "string" }],
       options: {
         list: [
           { title: "Cachorro", value: "cachorro" },
           { title: "Adulto", value: "adulto" },
           { title: "Senior", value: "senior" },
         ],
-        layout: "radio",
+        layout: "grid",
       },
     }),
 
     defineField({
       name: "breedSize",
       title: "Tamaño de raza",
-      type: "string",
+      type: "array",
       group: "wizard",
-      description: "Solo aplica para productos caninos",
+      description: "Solo aplica para productos caninos. Selecciona todas las que apliquen, o 'Todas las razas' si aplica a cualquier tamaño.",
+      of: [{ type: "string" }],
       options: {
         list: [
           { title: "Mini (hasta 4 kg adulto)", value: "mini" },
@@ -424,7 +470,7 @@ export default defineType({
           { title: "Grande (más de 25 kg adulto)", value: "grande" },
           { title: "Todas las razas", value: "todas" },
         ],
-        layout: "radio",
+        layout: "grid",
       },
     }),
 

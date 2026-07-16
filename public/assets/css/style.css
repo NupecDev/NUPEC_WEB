@@ -3107,7 +3107,7 @@ button.ltr {
 .canine-product-block__img {
   width: 100%;
   max-width: 160px;
-  height: auto;
+  height: 160px;
   object-fit: contain;
 }
 
@@ -4411,14 +4411,15 @@ button.ltr {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 340px;
+  width: 460px;
+  height: 460px;
   margin: auto;
 }
 
 .sp-hero__img {
   width: 100%;
-  height: auto;
-  object-fit:fill;
+  height: 100%;
+  object-fit: contain;
   filter: drop-shadow(0 20px 40px rgba(0,0,0,0.25));
 }
 
@@ -4582,9 +4583,9 @@ button.ltr {
 }
 
 .sp-description__img {
-  width: 60vw;
-  height: auto;
-  object-fit: fill;
+  width: 80%;
+  height: 300px;
+  object-fit: contain;
   margin: 10%;
 }
 
@@ -4710,6 +4711,48 @@ button.ltr {
   border-left: 3px solid var(--theme-color);
   padding: 12px 16px;
   border-radius: 0 6px 6px 0;
+}
+
+.sp-feeding-guide__secondary {
+  border-top: 1px solid rgba(0,0,0,0.08);
+  padding-top: 40px;
+}
+
+.sp-feeding-guide__secondary-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--title-color);
+}
+
+.sp-feeding-guide__table--grouped {
+  text-align: center;
+  min-width: 640px;
+}
+
+.sp-feeding-guide__table--grouped th,
+.sp-feeding-guide__table--grouped td {
+  text-align: center;
+  padding: 10px 12px;
+}
+
+.sp-feeding-guide__table--grouped th:first-child,
+.sp-feeding-guide__table--grouped td:first-child {
+  text-align: left;
+  font-weight: 700;
+  color: var(--title-color);
+}
+
+.sp-feeding-guide__table--grouped .sp-feeding-guide__unit-col {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: normal;
+  background: rgba(102,111,119,0.04);
+}
+
+.sp-feeding-guide__table--grouped .sp-feeding-guide__grams {
+  font-size: 15px;
+  font-weight: 800;
 }
 
 .sp-feeding-guide__calc {
@@ -4945,7 +4988,7 @@ button.ltr {
 
 /* ── Responsive ─────────────────────────────────────────────── */
 @media (max-width: 1199px) {
-  .sp-hero__img-wrap { width: 280px; }
+  .sp-hero__img-wrap { width: 380px; height: 380px; }
 }
 
 @media (max-width: 991px) {
@@ -4957,7 +5000,8 @@ button.ltr {
     min-height: unset;
   }
   .sp-hero__img-wrap {
-    width: 240px;
+    width: 320px;
+    height: 320px;
   }
   .sp-hero__left {
     max-width: 100%;
@@ -4975,7 +5019,7 @@ button.ltr {
 }
 
 @media (max-width: 767px) {
-  .sp-hero__img-wrap { width: 180px; }
+  .sp-hero__img-wrap { width: 240px; height: 240px; }
   .sp-feeding-guide__calc-num { font-size: 48px; }
   .sp-benefits-banner .canine-banner__title { font-size: 28px; }
 }

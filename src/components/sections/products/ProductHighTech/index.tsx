@@ -14,16 +14,19 @@ type Props = {
   categoryName: string;
   accentColor: string;
   species?: 'canino' | 'felino';
+  titleOverride?: string;
 };
 
-export default function ProductHighTech({ items, categoryName, accentColor, species = 'canino' }: Props) {
+export default function ProductHighTech({ items, categoryName, accentColor, species = 'canino', titleOverride }: Props) {
   const t = useTranslations('productPage.highTech');
 
   if (!items || items.length === 0) return null;
 
   const isFeline = species === 'felino';
-  const title = isFeline ? t('vetsTitle') : t('title');
-  const badgeSrc = isFeline
+  const title = titleOverride || (isFeline ? t('vetsTitle') : t('title'));
+  const badgeSrc = titleOverride
+    ? '/assets/images/logos/inmunity-plus.png'
+    : isFeline
     ? '/assets/images/logos/img_logo_disenadovets_felino.png'
     : '/assets/images/logos/Logo_HT_horizontal.jpg';
 

@@ -12,8 +12,8 @@ export type CategoryProductCard = {
   tagline?: string;
   color?: string;
   image?: { asset: { _ref: string }; alt: string };
-  lifeStage?: 'cachorro' | 'adulto' | 'senior';
-  breedSize?: 'mini' | 'pequena' | 'mediana' | 'grande' | 'todas';
+  lifeStage?: ('cachorro' | 'adulto' | 'senior')[];
+  breedSize?: ('mini' | 'pequena' | 'mediana' | 'grande' | 'todas')[];
 };
 
 type Props = {
@@ -47,13 +47,15 @@ const LIFE_STAGE_ORDER = ['cachorro', 'adulto', 'senior'];
 
 function getPrimary(product: CategoryProductCard, categorySlug: string): string {
   if (product.color) return product.color;
-  if (product.lifeStage && LIFE_STAGE_COLOR[product.lifeStage]) return LIFE_STAGE_COLOR[product.lifeStage];
+  const stage = product.lifeStage?.[0];
+  if (stage && LIFE_STAGE_COLOR[stage]) return LIFE_STAGE_COLOR[stage];
   return CATEGORY_COLOR[categorySlug] ?? '#78BE20';
 }
 
 function getSecondary(product: CategoryProductCard): string | undefined {
-  if (!product.breedSize) return undefined;
-  return BREED_SIZE_COLOR[product.breedSize];
+  const breed = product.breedSize?.[0];
+  if (!breed) return undefined;
+  return BREED_SIZE_COLOR[breed];
 }
 
 type Group = {
@@ -63,8 +65,8 @@ type Group = {
 };
 
 function groupProducts(products: CategoryProductCard[]): Group[] {
-  const hasLifeStage = products.some((p) => p.lifeStage);
-  const hasBreedSize = products.some((p) => p.breedSize && p.breedSize !== 'todas');
+  const hasLifeStage = products.some((p) => p.lifeStage && p.lifeStage.length > 0);
+  const hasBreedSize = products.some((p) => p.breedSize?.some((b) => b !== 'todas'));
 
   if (!hasLifeStage && !hasBreedSize) {
     return [{ lifeStage: null, breedSizeLabel: null, products }];
@@ -73,11 +75,19 @@ function groupProducts(products: CategoryProductCard[]): Group[] {
   const map = new Map<string, CategoryProductCard[]>();
 
   for (const product of products) {
-    const ls = product.lifeStage ?? 'general';
-    const bs = product.breedSize && product.breedSize !== 'todas' ? product.breedSize : 'todas';
-    const key = `${ls}::${bs}`;
-    if (!map.has(key)) map.set(key, []);
-    map.get(key)!.push(product);
+    const stages = product.lifeStage && product.lifeStage.length > 0 ? product.lifeStage : ['general'];
+    const breeds = product.breedSize && product.breedSize.filter((b) => b !== 'todas').length > 0
+      ? product.breedSize.filter((b) => b !== 'todas')
+      : ['todas'];
+
+    // Product appears once per (lifeStage x breedSize) combination it belongs to
+    for (const ls of stages) {
+      for (const bs of breeds) {
+        const key = `${ls}::${bs}`;
+        if (!map.has(key)) map.set(key, []);
+        map.get(key)!.push(product);
+      }
+    }
   }
 
   const groups: Group[] = [];
@@ -166,7 +176,7 @@ export default function CategoryProductGridClient({ lang, products, categorySlug
                             <div className="canine-product-block__img-wrap">
                               {product.image?.asset ? (
                                 <Image
-                                  src={urlFor(product.image).width(200).height(200).url()}
+                                  src={urlFor(product.image).width(320).url()}
                                   alt={product.image.alt}
                                   width={200}
                                   height={200}

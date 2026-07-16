@@ -4,6 +4,7 @@ import type { CSSProperties } from 'react';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
+import { urlFor } from '@/lib/sanity/client';
 
 type CategoryHeroProps = {
   categoryName: string;
@@ -11,6 +12,7 @@ type CategoryHeroProps = {
   categoryExcerpt: string | null;
   species: 'canino' | 'felino';
   categorySlug: string;
+  bannerImage?: { asset: { _ref: string } } | null;
 };
 
 const CATEGORY_COLOR: Record<string, string> = {
@@ -31,7 +33,7 @@ const CATEGORY_STATS: Record<string, { formulas: string; digestibility: string; 
   'alimentos-humedos':       { formulas: '10', digestibility: '90%', stages: '3' },
 };
 
-export default function CategoryHero({ categoryName, categoryDescription, categoryExcerpt, species, categorySlug }: CategoryHeroProps) {
+export default function CategoryHero({ categoryName, categoryDescription, categoryExcerpt, species, categorySlug, bannerImage }: CategoryHeroProps) {
   const t = useTranslations('categoryPage.hero');
   const params = useParams();
   const lang = params.lang as string;
@@ -40,6 +42,9 @@ export default function CategoryHero({ categoryName, categoryDescription, catego
   const stats = CATEGORY_STATS[categorySlug] ?? { formulas: '—', digestibility: '—', stages: '—' };
   const speciesBase = species === 'canino' ? 'nutricion-canina' : 'nutricion-felina';
   const speciesLabel = species === 'canino' ? t('switchCanina') : t('switchFelina');
+  const bgImage = bannerImage?.asset
+    ? urlFor(bannerImage).width(1920).url()
+    : '/assets/images/banner/canine-hero.jpg';
 
   return (
     <>
@@ -64,7 +69,7 @@ export default function CategoryHero({ categoryName, categoryDescription, catego
       <section className="banner-style-two canine-hero cat-hero p_relative">
         <div
           className="bg-layer"
-          style={{ backgroundImage: 'url(/assets/images/banner/canine-hero.jpg)' }}
+          style={{ backgroundImage: `url(${bgImage})` }}
         />
         <div
           className="canine-hero__overlay"
