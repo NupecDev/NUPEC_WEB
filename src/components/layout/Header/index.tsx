@@ -52,9 +52,19 @@ export default function Header({ scroll, handleMobileMenu }: HeaderProps) {
           ))}
         </ul>
       </li>
-      <li><Link href={`${base}/nosotros`}>{t('nosotros')}</Link></li>
-      <li><Link href={`${base}/conciencia`}>{t('conciencia')}</Link></li>
-      <li><Link href={`${base}/blog`}>{t('blog')}</Link></li>
+      <li className="dropdown">
+        <Link href={`${base}/nosotros`}>{t('nosotros')}</Link>
+        <ul>
+          <li><Link href={`${base}/nosotros`}>{t('nosotros')}</Link></li>
+          <li><Link href={`${base}/conciencia`}>{t('conciencia')}</Link></li>
+          <li><Link href={`${base}/blog`}>{t('blog')}</Link></li>
+          <li>
+            <a href="https://nupec.com/adoptaunmextizo/" target="_blank" rel="noopener noreferrer">
+              {t('adopciones')}
+            </a>
+          </li>
+        </ul>
+      </li>
       <li><Link href={`${base}/contacto`}>{t('contacto')}</Link></li>
     </ul>
   );

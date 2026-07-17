@@ -5,6 +5,7 @@
     "nosotros": "About Us",
     "conciencia": "Social Awareness",
     "blog": "Blog",
+    "adopciones": "Adoptions",
     "contacto": "Contact",
     "findFood": "Find your food",
     "sub": {
@@ -100,6 +101,102 @@
       "description": "We promote responsible nutrition: education for owners and NUPEC's commitment to animal welfare.",
       "button": "Send your message",
       "buttonTwo": "Contact us"
+    }
+  },
+  "nosotros": {
+    "hero": {
+      "eyebrow": "Who we are",
+      "title": "Over 30 years nourishing with science",
+      "description": "NUPEC was born from Grupo NUTEC, pioneers in animal nutrition in Mexico since 1993.",
+      "cta": "Discover our line"
+    },
+    "origin": {
+      "subtitle": "The meaning behind the name",
+      "title": "NUPEC comes from",
+      "nu": "NU",
+      "nuMeaning": "New",
+      "peek": "PEEK",
+      "peekMeaning": "Dog in Mayan",
+      "description": "A name that honors our Mexican roots and represents the new generation of pet nutrition."
+    },
+    "timeline": {
+      "subtitle": "Our history",
+      "title": "A journey of innovation and commitment",
+      "m01Year": "1993",
+      "m01Text": "Grupo NUTEC is founded.",
+      "m02Year": "1995",
+      "m02Text": "Grupo NUTEC began its industrial processes in Querétaro, founding a plant with 100% technology imported from Europe.",
+      "m03Year": "15 years",
+      "m03Text": "Winning 35% of the Mexican swine feed market led the Group to diversify into the pet market, always following its philosophy of high quality, technology, and innovation.",
+      "m04Year": "2000",
+      "m04Text": "We launched a new industrial unit as a result of a partnership with Grupo CCPA of France, creating our EURONUTEC feed plant.",
+      "m05Year": "2018",
+      "m05Text": "Brand positioning, scientific advances, innovative packaging, and commercial expansion."
+    },
+    "whatWeDo": {
+      "subtitle": "Our commitment",
+      "title": "What do we do at NUPEC?",
+      "description": "Four pillars that guide everything we do, every day.",
+      "cta": "Discover our story",
+      "unoTitle": "Technical reference",
+      "unoDesc": "We promote more and better food, being a technical reference in the field of scientific nutrition.",
+      "dosTitle": "Passion for pets",
+      "dosDesc": "We are passionate about pets and animal nutrition, and we have the best workplace.",
+      "tresTitle": "Talent and research",
+      "tresDesc": "We always seek and develop talent, research and implement solutions, and we watch over the environment.",
+      "cuatroTitle": "Relationships and community",
+      "cuatroDesc": "We seek to strengthen more and better relationships worldwide and we participate as actors in social programs."
+    },
+    "stats": {
+      "subtitle": "Our track record in numbers",
+      "title": "Science, technology, and innovation",
+      "description": "Over three decades building trust through nutrition.",
+      "yearsNum": "+30",
+      "yearsLabel": "Years of Experience",
+      "yearsDesc": "Developing animal nutrition in Mexico since 1993.",
+      "marketNum": "35%",
+      "marketLabel": "Of the Mexican Market",
+      "marketDesc": "Won in swine feed before diversifying into pets.",
+      "plantsNum": "2",
+      "plantsLabel": "Production Plants",
+      "plantsDesc": "Technology 100% imported from Europe, in partnership with Grupo CCPA of France."
+    },
+    "policy": {
+      "subtitle": "Our commitment",
+      "title": "Integral Policy",
+      "body": "At Grupo NUTEC, customer satisfaction is our top priority, which is why every team member is committed to meeting applicable product, legal, and regulatory requirements for quality, safety, security, health, and environmental standards during the manufacturing, storage, and distribution of premixes, livestock feed, and pet food.",
+      "bodyTwo": "Inspired by our dream, the Integral System guarantees continuous improvement, reinforcing our commitment to accident prevention, environmental protection, and the well-being of all our team members."
+    }
+  },
+  "conciencia": {
+    "hero": {
+      "eyebrow": "NUPEC Conscious",
+      "title": "We nourish with conscious love",
+      "description": "Four initiatives through which NUPEC gives back to the country, to communities, and to animals part of what they have given us."
+    },
+    "terapias": {
+      "subtitle": "We nourish hope for a better future",
+      "title": "Assisted therapies",
+      "description": "At NUPEC we collaborate with Fundación Movimiento INCASÁRA to help people who require animal-assisted intervention due to need, condition, or illness. Through complementary therapies, animal-assisted intervention specialists use trained dogs and horses to improve health, foster education, and achieve emotional balance in people.",
+      "descriptionTwo": "NUPEC works as a cause-driven product: a percentage of every purchase goes toward funding these animal-assisted therapies, improving the quality of life of those who receive them."
+    },
+    "loboMexicano": {
+      "subtitle": "We nourish with conscious love",
+      "title": "Mexican wolf conservation",
+      "description": "NUPEC is part of the efforts to preserve the Mexican wolf (Canis lupus baileyi), one of the most threatened species, nearly extinct in the wild due to decades of human persecution and hunting. We believe the key to the future is preserving our species, which is why we support foundations dedicated to its conservation.",
+      "descriptionTwo": "Since pre-Hispanic Mexico, the Mexican wolf has been considered a magical animal, associated with deities such as Xólotl and Chantico. Its ancestral value and its role in the balance of Mexican ecosystems are reason enough to save it from extinction."
+    },
+    "rescate": {
+      "subtitle": "We nourish extraordinary heroes",
+      "title": "We feed rescue dogs",
+      "description": "We are part of one of the noblest projects in the world: saving lives. That's why we sponsor rescue dogs with food and continuous training, supporting the heroes who respond during natural disasters, such as the K-SAR handler-and-dog teams, a specialized search-and-rescue group that played a key role after the September 19 earthquake in Mexico City.",
+      "descriptionTwo": "Their training — which takes one to two years and continues throughout their working life — teaches them to air-scent and discriminate human odors amid rubble, smoke, and noise. Breeds such as the German shepherd, Belgian malinois, and Labrador retriever stand out for their courage, agility, and independence in every rescue."
+    },
+    "comercioNacional": {
+      "subtitle": "We nourish lasting relationships",
+      "title": "We support national trade",
+      "description": "At NUPEC we recognize the commitment of our national suppliers, trained and dedicated to quality and innovation. We develop training plans in raw materials, quality process engineering, business planning, and coaching, strengthening commercial and strategic relationships with our partners in Mexico.",
+      "descriptionTwo": "Our special \"Con Amor de México\" edition pays tribute to our origins with Otomí art from Guanajuato, Michoacán, and Tlaxcala. As a leading Querétaro-based company in specialized canine nutrition, we have more than 600 Mexican professionals, including scientists, veterinarians, and animal nutrition specialists."
     }
   },
   "canine": {
@@ -250,7 +347,7 @@
   },
   "clinical": {
     "grid": {
-      "title": "CANINE CLINICAL LINE",
+      "title": "CLINICAL LINE",
       "subtitle": "Select a product to view its complete technical datasheet.",
       "rxLabel": "VET. PRESCRIPTION",
       "viewCard": "VIEW MORE",
@@ -308,7 +405,7 @@
     "vetResources": {
       "title": "RESOURCES FOR VETERINARIANS",
       "subtitle": "Downloadable technical material · free access for professionals",
-      "catalogTitle": "Canine clinical line catalog",
+      "catalogTitle": "Clinical line catalog",
       "catalogSub": "All 4 formulas · indications, analysis and presentations",
       "catalogSize": "4.2 MB",
       "managementTitle": "Nutritional management guide by pathology",
@@ -464,8 +561,8 @@
       "downloadSheet": "Download Monograph"
     },
     "kibble": {
-      "subtitle": "The kibble",
-      "title": "Get to know the kibble",
+      "subtitle": "The unit",
+      "title": "Get to know the product",
       "badge": "NUPEC"
     },
     "feedingGuide": {

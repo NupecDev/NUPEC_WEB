@@ -5,6 +5,7 @@
     "nosotros": "Nosotros",
     "conciencia": "Conciencia",
     "blog": "Blog",
+    "adopciones": "Adopciones",
     "contacto": "Contacto",
     "findFood": "Encuentra tu alimento",
     "sub": {
@@ -100,6 +101,102 @@
       "description": "Promovemos una nutrición responsable: educación a tutores y el compromiso NUPEC con el bienestar animal.",
       "button": "Envía tu mensaje",
       "buttonTwo": "Contáctanos"
+    }
+  },
+  "nosotros": {
+    "hero": {
+      "eyebrow": "Quiénes somos",
+      "title": "Más de 30 años nutriendo con ciencia",
+      "description": "NUPEC nace de Grupo NUTEC, pioneros en nutrición animal en México desde 1993.",
+      "cta": "Conoce nuestra línea"
+    },
+    "origin": {
+      "subtitle": "El significado detrás del nombre",
+      "title": "NUPEC proviene de",
+      "nu": "NU",
+      "nuMeaning": "Nuevo",
+      "peek": "PEEK",
+      "peekMeaning": "Perro en Maya",
+      "description": "Un nombre que honra nuestras raíces mexicanas y representa la nueva generación de nutrición para mascotas."
+    },
+    "timeline": {
+      "subtitle": "Nuestra historia",
+      "title": "Una trayectoria de innovación y compromiso",
+      "m01Year": "1993",
+      "m01Text": "Fundación de Grupo NUTEC.",
+      "m02Year": "1995",
+      "m02Text": "Grupo NUTEC inició sus procesos industriales en Querétaro fundando una planta 100% importada de Europa.",
+      "m03Year": "15 años",
+      "m03Text": "Conquistando un 35% del mercado mexicano de alimentos porcinos, el Grupo se diversificó hacia el mercado de mascotas siguiendo siempre su filosofía de alta calidad, tecnología e innovación.",
+      "m04Year": "2000",
+      "m04Text": "Iniciamos con una nueva unidad industrial resultado de una asociación con el Grupo CCPA de Francia, creando nuestra planta de alimento EURONUTEC.",
+      "m05Year": "2018",
+      "m05Text": "Posicionamiento de marca, avances científicos, empaques innovadores y expansión comercial."
+    },
+    "whatWeDo": {
+      "subtitle": "Nuestro compromiso",
+      "title": "¿Qué hacemos en NUPEC?",
+      "description": "Cuatro pilares que guían todo lo que hacemos, todos los días.",
+      "cta": "Conoce nuestra historia",
+      "unoTitle": "Referencia técnica",
+      "unoDesc": "Promovemos más y mejores alimentos, siendo una referencia técnica en el ramo de la nutrición científica.",
+      "dosTitle": "Pasión por las mascotas",
+      "dosDesc": "Nos apasionamos por las mascotas y la nutrición animal, y contamos con el mejor lugar de trabajo.",
+      "tresTitle": "Talento e investigación",
+      "tresDesc": "Siempre buscamos y desarrollamos talento, investigamos e implementamos soluciones y somos vigilantes del medio ambiente.",
+      "cuatroTitle": "Relaciones y comunidad",
+      "cuatroDesc": "Buscamos fortalecer más y mejores relaciones en todo el mundo y participamos como actores en programas sociales."
+    },
+    "stats": {
+      "subtitle": "Nuestra trayectoria en números",
+      "title": "Ciencia, tecnología e innovación",
+      "description": "Más de tres décadas construyendo confianza a través de la nutrición.",
+      "yearsNum": "+30",
+      "yearsLabel": "Años de Experiencia",
+      "yearsDesc": "Desde 1993 desarrollando nutrición animal en México.",
+      "marketNum": "35%",
+      "marketLabel": "Del Mercado Mexicano",
+      "marketDesc": "Conquistado en alimentos porcinos antes de diversificarnos a mascotas.",
+      "plantsNum": "2",
+      "plantsLabel": "Plantas de Producción",
+      "plantsDesc": "Tecnología 100% importada de Europa, en asociación con Grupo CCPA de Francia."
+    },
+    "policy": {
+      "subtitle": "Nuestro compromiso",
+      "title": "Política Integral",
+      "body": "En Grupo NUTEC la satisfacción del cliente es lo más importante, por lo cual todos los colaboradores nos comprometemos a cumplir con los requisitos del producto, legales y regulatorios aplicables en calidad, inocuidad, seguridad, salud y ambientales durante la elaboración, almacenamiento y distribución de premezclas, alimentos pecuarios y para mascotas.",
+      "bodyTwo": "Inspirados en nuestro sueño, el Sistema Integral garantiza la mejora continua, reforzando nuestro compromiso para la prevención de accidentes, protección del medio ambiente y el bienestar de todos nuestros colaboradores."
+    }
+  },
+  "conciencia": {
+    "hero": {
+      "eyebrow": "NUPEC Consciente",
+      "title": "Nutrimos con amor consciente",
+      "description": "Cuatro iniciativas con las que NUPEC devuelve al país, a las comunidades y a los animales parte de lo que nos han dado."
+    },
+    "terapias": {
+      "subtitle": "Nutrimos la esperanza de un mejor futuro",
+      "title": "Terapias asistidas",
+      "description": "En NUPEC colaboramos con la Fundación Movimiento INCASÁRA para brindar ayuda a personas que requieren intervención asistida con animales por necesidad, condición o enfermedad. A través de terapias complementarias, especialistas en intervención asistida utilizan perros y caballos entrenados para mejorar la salud, fomentar la educación y lograr equilibrio emocional en las personas.",
+      "descriptionTwo": "NUPEC funciona como un producto con causa: un porcentaje de cada compra se destina al financiamiento de estas terapias asistidas con animales, mejorando la calidad de vida de quienes las reciben."
+    },
+    "loboMexicano": {
+      "subtitle": "Nutrimos con amor consciente",
+      "title": "Conservación del lobo mexicano",
+      "description": "NUPEC forma parte de los esfuerzos para preservar al lobo mexicano (Canis lupus baileyi), una de las especies más amenazadas y casi extinta en estado salvaje debido a la persecución y caza humana durante décadas. Creemos que la clave del futuro es preservar nuestras especies, por lo que apoyamos fundaciones dedicadas a su conservación.",
+      "descriptionTwo": "Desde el México prehispánico, el lobo mexicano ha sido considerado un animal mágico, asociado con deidades como Xólotl y Chantico. Su valor ancestral y su papel en el equilibrio de los ecosistemas mexicanos son razones suficientes para salvarlo de la extinción."
+    },
+    "rescate": {
+      "subtitle": "Nutrimos héroes extraordinarios",
+      "title": "Nutrimos perros de rescate",
+      "description": "Somos parte de uno de los proyectos más nobles del mundo: salvar vidas. Por ello patrocinamos a caninos de rescate con alimento y entrenamiento continuo, apoyando a los héroes que intervienen durante desastres naturales, como los binomios de K-SAR, grupo especializado en búsqueda y rescate que participó de forma clave tras el sismo del 19 de septiembre en la Ciudad de México.",
+      "descriptionTwo": "Su entrenamiento —que toma de uno a dos años y continúa durante toda su vida laboral— les enseña a ventear y discriminar olores humanos entre escombros, humo y ruido. Razas como el pastor alemán, el pastor belga malinois y el labrador retriever destacan por su valentía, agilidad y autonomía en cada rescate."
+    },
+    "comercioNacional": {
+      "subtitle": "Nutrimos relaciones duraderas",
+      "title": "Apoyamos el comercio nacional",
+      "description": "En NUPEC reconocemos el compromiso de nuestros proveedores nacionales, capacitados y dedicados a la calidad e innovación. Desarrollamos planes de capacitación en materia prima, ingeniería de procesos de calidad, plan de negocio y coaching, fortaleciendo así las relaciones comerciales y estratégicas con nuestros socios en México.",
+      "descriptionTwo": "Nuestra edición especial \"Con Amor de México\" rinde tributo a nuestros orígenes con arte Otomí de Guanajuato, Michoacán y Tlaxcala. Como empresa queretana líder en nutrición canina especializada, contamos con más de 600 profesionales mexicanos entre científicos, veterinarios y especialistas en nutrición animal."
     }
   },
   "canine": {
@@ -250,7 +347,7 @@
   },
   "clinical": {
     "grid": {
-      "title": "LÍNEA CLÍNICA CANINA",
+      "title": "LÍNEA CLÍNICA",
       "subtitle": "Selecciona el producto para ver su ficha técnica completa.",
       "rxLabel": "PRESCRIPCIÓN VET.",
       "viewCard": "VER MÁS",
@@ -308,7 +405,7 @@
     "vetResources": {
       "title": "RECURSOS PARA EL VETERINARIO",
       "subtitle": "Material técnico descargable · acceso libre para profesionales",
-      "catalogTitle": "Catálogo línea clínica canina",
+      "catalogTitle": "Catálogo línea clínica",
       "catalogSub": "Las 4 fórmulas · indicaciones, análisis y presentaciones",
       "catalogSize": "4.2 MB",
       "managementTitle": "Guía de manejo nutricional por patología",
@@ -351,7 +448,7 @@
     },
     "about": {
       "subtitle": "Ciencia en cada fórmula",
-      "title": "¿Qué es la {category} NUPEC?",
+      "title": "¿Qué es la linea {category} NUPEC?",
       "bodyTwo": "Cada alimento cumple con los estándares AAFCO y es verificado por lote en nuestro laboratorio en Querétaro.",
       "fallbackDescription": "Línea de nutrición {category} formulada para las necesidades específicas de tu mascota.",
       "digestibilidadLabel": "Digestibilidad Comprobada",
@@ -363,7 +460,7 @@
     },
     "products": {
       "subtitle": "Catálogo de productos",
-      "title": "Encuentra tu alimento ideal",
+      "title": "Encuentra tu producto ideal",
       "verProducto": "Ver producto",
       "sinProductos": "Próximamente – esta categoría está en preparación.",
       "lifeStage": {
@@ -464,8 +561,8 @@
       "downloadSheet": "Descargar monografía"
     },
     "kibble": {
-      "subtitle": "La croqueta",
-      "title": "Conoce la croqueta",
+      "subtitle": "La unidad",
+      "title": "Conoce el producto",
       "badge": "NUPEC"
     },
     "feedingGuide": {

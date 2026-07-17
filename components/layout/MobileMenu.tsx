@@ -3,6 +3,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
+import { useParams } from "next/navigation";
 
 type MobileMenuProps = {
   isSidebar: boolean;
@@ -12,6 +14,19 @@ type MobileMenuProps = {
 
 export default function MobileMenu({ isSidebar, handleMobileMenu, handleSidebar }: MobileMenuProps) {
   const [activeDropdown, setActiveDropdown] = useState<number | null>(null);
+  const t = useTranslations('nav');
+  const params = useParams();
+  const lang = params.lang as string;
+  const base = `/${lang}`;
+
+  const categories = [
+    { key: 'daily', slug: 'nutricion-diaria' },
+    { key: 'specialized', slug: 'nutricion-especializada' },
+    { key: 'clinical', slug: 'nutricion-clinica' },
+    { key: 'treats', slug: 'premios-funcionales' },
+    { key: 'supplements', slug: 'suplementos' },
+    { key: 'wet', slug: 'alimentos-humedos' },
+  ] as const;
 
   const toggleDropdown = (key: number) => {
     if (activeDropdown === key) {
@@ -31,75 +46,57 @@ export default function MobileMenu({ isSidebar, handleMobileMenu, handleSidebar 
         </div>
         <nav className="menu-box">
           <div className="nav-logo">
-            <Link href="/"><Image src="/assets/images/logo-2.png" alt="Logo Image" width={203} height={40} priority /></Link>
+            <Link href={base}><Image src="/assets/images/logo-2.png" alt="Logo Image" width={203} height={40} priority /></Link>
           </div>
           <div className="menu-outer">
             <ul className="navigation clearfix">
 
-              {/* Home */}
+              {/* Nutrición Canina */}
               <li className={`dropdown ${activeDropdown === 1 ? "current" : ""}`}>
-                <Link href="/">Home</Link>
+                <Link href={`${base}/nutricion-canina`}>{t('canina')}</Link>
                 <ul style={{ display: activeDropdown === 1 ? "block" : "none" }}>
-                  <li><Link href="/">Home Page One</Link></li>
-                  <li><Link href="/index-2">Home Page Two</Link></li>
-                  <li><Link href="/index-3">Home Page Three</Link></li>
+                  {categories.map(({ key, slug }) => (
+                    <li key={slug}><Link href={`${base}/nutricion-canina/${slug}`}>{t(`sub.${key}`)}</Link></li>
+                  ))}
                 </ul>
                 <div className={`dropdown-btn ${activeDropdown === 1 ? "open" : ""}`} onClick={() => toggleDropdown(1)}>
                   <span className="fa fa-angle-right" />
                 </div>
               </li>
 
-              {/* About */}
-              <li><Link href="/about">About Us</Link></li>
-
-              {/* Services */}
+              {/* Nutrición Felina */}
               <li className={`dropdown ${activeDropdown === 2 ? "current" : ""}`}>
-                <Link href="/#">Departments</Link>
+                <Link href={`${base}/nutricion-felina`}>{t('felina')}</Link>
                 <ul style={{ display: activeDropdown === 2 ? "block" : "none" }}>
-                  <li><Link href="/departments">Our Departments</Link></li>
-                  <li><Link href="/department-details">Cardiology</Link></li>
-                  <li><Link href="/department-details-2">Dental</Link></li>
-                  <li><Link href="/department-details-3">Gastroenterology</Link></li>
-                  <li><Link href="/department-details-4">Neurology</Link></li>
-                  <li><Link href="/department-details-5">Orthopaedics</Link></li>
-                  <li><Link href="/department-details-6">Modern Laboratory</Link></li>
+                  {categories.map(({ key, slug }) => (
+                    <li key={slug}><Link href={`${base}/nutricion-felina/${slug}`}>{t(`sub.${key}`)}</Link></li>
+                  ))}
                 </ul>
                 <div className={`dropdown-btn ${activeDropdown === 2 ? "open" : ""}`} onClick={() => toggleDropdown(2)}>
                   <span className="fa fa-angle-right" />
                 </div>
               </li>
 
-              {/* Pages */}
+              {/* Nosotros */}
               <li className={`dropdown ${activeDropdown === 3 ? "current" : ""}`}>
-                <Link href="/#">Pages</Link>
+                <Link href={`${base}/nosotros`}>{t('nosotros')}</Link>
                 <ul style={{ display: activeDropdown === 3 ? "block" : "none" }}>
-                  <li><Link href="/doctors">Our Doctors</Link></li>
-                  <li><Link href="/doctor-details">Doctor Details</Link></li>
-                  <li><Link href="/portfolio">Portfolio One</Link></li>
-                  <li><Link href="/portfolio-2">Portfolio Two</Link></li>
-                  <li><Link href="/pricing">Pricing</Link></li>
-                  <li><Link href="/error">Page Not Found</Link></li>
+                  <li><Link href={`${base}/nosotros`}>{t('nosotros')}</Link></li>
+                  <li><Link href={`${base}/conciencia`}>{t('conciencia')}</Link></li>
+                  <li><Link href={`${base}/blog`}>{t('blog')}</Link></li>
+                  <li>
+                    <a href="https://nupec.com/adoptaunmextizo/" target="_blank" rel="noopener noreferrer">
+                      {t('adopciones')}
+                    </a>
+                  </li>
                 </ul>
                 <div className={`dropdown-btn ${activeDropdown === 3 ? "open" : ""}`} onClick={() => toggleDropdown(3)}>
                   <span className="fa fa-angle-right" />
                 </div>
               </li>
 
-              {/* Shop */}
-              <li className={`dropdown ${activeDropdown === 4 ? "current" : ""}`}>
-                <Link href="/#">Blog</Link>
-                <ul style={{ display: activeDropdown === 4 ? "block" : "none" }}>
-                  <li><Link href="/blog">Blog Grid</Link></li>
-                  <li><Link href="/blog-2">Blog Standard</Link></li>
-                  <li><Link href="/blog-details">Blog Details</Link></li>
-                </ul>
-                <div className={`dropdown-btn ${activeDropdown === 4 ? "open" : ""}`} onClick={() => toggleDropdown(4)}>
-                  <span className="fa fa-angle-right" />
-                </div>
-              </li>
-
-              {/* Contact */}
-              <li><Link href="/contact">Contact</Link></li>
+              {/* Contacto */}
+              <li><Link href={`${base}/contacto`}>{t('contacto')}</Link></li>
 
             </ul>
           </div>

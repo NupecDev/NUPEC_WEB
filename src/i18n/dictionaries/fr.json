@@ -5,6 +5,7 @@
     "nosotros": "À propos",
     "conciencia": "Conscience Sociale",
     "blog": "Blog",
+    "adopciones": "Adoptions",
     "contacto": "Contact",
     "findFood": "Trouvez votre aliment",
     "sub": {
@@ -100,6 +101,102 @@
       "description": "Nous promouvons une nutrition responsable : l'éducation des propriétaires et l'engagement de NUPEC pour le bien-être animal.",
       "button": "Envoyer votre message",
       "buttonTwo": "Nous contacter"
+    }
+  },
+  "nosotros": {
+    "hero": {
+      "eyebrow": "Qui sommes-nous",
+      "title": "Plus de 30 ans à nourrir avec la science",
+      "description": "NUPEC est né de Grupo NUTEC, pionnier de la nutrition animale au Mexique depuis 1993.",
+      "cta": "Découvrez notre gamme"
+    },
+    "origin": {
+      "subtitle": "La signification derrière le nom",
+      "title": "NUPEC vient de",
+      "nu": "NU",
+      "nuMeaning": "Nouveau",
+      "peek": "PEEK",
+      "peekMeaning": "Chien en maya",
+      "description": "Un nom qui honore nos racines mexicaines et représente la nouvelle génération de nutrition pour animaux de compagnie."
+    },
+    "timeline": {
+      "subtitle": "Notre histoire",
+      "title": "Un parcours d'innovation et d'engagement",
+      "m01Year": "1993",
+      "m01Text": "Fondation du Grupo NUTEC.",
+      "m02Year": "1995",
+      "m02Text": "Grupo NUTEC a démarré ses processus industriels à Querétaro en fondant une usine avec une technologie 100% importée d'Europe.",
+      "m03Year": "15 ans",
+      "m03Text": "En conquérant 35% du marché mexicain des aliments porcins, le Groupe s'est diversifié vers le marché des animaux de compagnie, en suivant toujours sa philosophie de haute qualité, technologie et innovation.",
+      "m04Year": "2000",
+      "m04Text": "Nous avons lancé une nouvelle unité industrielle issue d'un partenariat avec le Groupe CCPA de France, créant notre usine d'aliments EURONUTEC.",
+      "m05Year": "2018",
+      "m05Text": "Positionnement de la marque, avancées scientifiques, emballages innovants et expansion commerciale."
+    },
+    "whatWeDo": {
+      "subtitle": "Notre engagement",
+      "title": "Que faisons-nous chez NUPEC ?",
+      "description": "Quatre piliers qui guident tout ce que nous faisons, chaque jour.",
+      "cta": "Découvrez notre histoire",
+      "unoTitle": "Référence technique",
+      "unoDesc": "Nous promouvons une alimentation plus abondante et de meilleure qualité, en étant une référence technique dans le domaine de la nutrition scientifique.",
+      "dosTitle": "Passion pour les animaux",
+      "dosDesc": "Nous sommes passionnés par les animaux de compagnie et la nutrition animale, et nous offrons le meilleur environnement de travail.",
+      "tresTitle": "Talent et recherche",
+      "tresDesc": "Nous recherchons et développons toujours les talents, nous étudions et mettons en œuvre des solutions, et nous veillons sur l'environnement.",
+      "cuatroTitle": "Relations et communauté",
+      "cuatroDesc": "Nous cherchons à renforcer des relations plus nombreuses et meilleures dans le monde entier et nous participons en tant qu'acteurs à des programmes sociaux."
+    },
+    "stats": {
+      "subtitle": "Notre parcours en chiffres",
+      "title": "Science, technologie et innovation",
+      "description": "Plus de trois décennies à bâtir la confiance grâce à la nutrition.",
+      "yearsNum": "+30",
+      "yearsLabel": "Années d'Expérience",
+      "yearsDesc": "Développant la nutrition animale au Mexique depuis 1993.",
+      "marketNum": "35%",
+      "marketLabel": "Du Marché Mexicain",
+      "marketDesc": "Conquis dans les aliments porcins avant de se diversifier vers les animaux de compagnie.",
+      "plantsNum": "2",
+      "plantsLabel": "Usines de Production",
+      "plantsDesc": "Technologie 100% importée d'Europe, en partenariat avec le Groupe CCPA de France."
+    },
+    "policy": {
+      "subtitle": "Notre engagement",
+      "title": "Politique Intégrale",
+      "body": "Chez Grupo NUTEC, la satisfaction du client est notre priorité absolue, c'est pourquoi tous les collaborateurs s'engagent à respecter les exigences applicables en matière de produit, légales et réglementaires en matière de qualité, d'innocuité, de sécurité, de santé et d'environnement lors de la fabrication, du stockage et de la distribution de prémélanges, d'aliments pour bétail et pour animaux de compagnie.",
+      "bodyTwo": "Inspiré par notre rêve, le Système Intégral garantit l'amélioration continue, renforçant notre engagement envers la prévention des accidents, la protection de l'environnement et le bien-être de tous nos collaborateurs."
+    }
+  },
+  "conciencia": {
+    "hero": {
+      "eyebrow": "NUPEC Conscient",
+      "title": "Nous nourrissons avec un amour conscient",
+      "description": "Quatre initiatives à travers lesquelles NUPEC redonne au pays, aux communautés et aux animaux une partie de ce qu'ils nous ont offert."
+    },
+    "terapias": {
+      "subtitle": "Nous nourrissons l'espoir d'un avenir meilleur",
+      "title": "Thérapies assistées",
+      "description": "Chez NUPEC, nous collaborons avec la Fondation Movimiento INCASÁRA pour aider les personnes ayant besoin d'une intervention assistée par des animaux en raison d'un besoin, d'une condition ou d'une maladie. Grâce à des thérapies complémentaires, des spécialistes de l'intervention assistée utilisent des chiens et des chevaux entraînés pour améliorer la santé, favoriser l'éducation et atteindre l'équilibre émotionnel des personnes.",
+      "descriptionTwo": "NUPEC fonctionne comme un produit engagé : un pourcentage de chaque achat est destiné au financement de ces thérapies assistées par des animaux, améliorant la qualité de vie de celles et ceux qui en bénéficient."
+    },
+    "loboMexicano": {
+      "subtitle": "Nous nourrissons avec un amour conscient",
+      "title": "Conservation du loup du Mexique",
+      "description": "NUPEC participe aux efforts de préservation du loup du Mexique (Canis lupus baileyi), l'une des espèces les plus menacées, presque éteinte à l'état sauvage en raison de décennies de persécution et de chasse humaine. Nous croyons que la clé de l'avenir est de préserver nos espèces, c'est pourquoi nous soutenons les fondations dédiées à sa conservation.",
+      "descriptionTwo": "Depuis le Mexique préhispanique, le loup du Mexique est considéré comme un animal magique, associé à des divinités telles que Xólotl et Chantico. Sa valeur ancestrale et son rôle dans l'équilibre des écosystèmes mexicains justifient amplement de le sauver de l'extinction."
+    },
+    "rescate": {
+      "subtitle": "Nous nourrissons des héros extraordinaires",
+      "title": "Nous nourrissons des chiens de sauvetage",
+      "description": "Nous participons à l'un des projets les plus nobles au monde : sauver des vies. C'est pourquoi nous parrainons des chiens de sauvetage avec de la nourriture et un entraînement continu, en soutenant les héros qui interviennent lors de catastrophes naturelles, comme les binômes de K-SAR, un groupe spécialisé en recherche et sauvetage canin qui a joué un rôle clé après le séisme du 19 septembre à Mexico.",
+      "descriptionTwo": "Leur entraînement — qui dure de un à deux ans et se poursuit tout au long de leur vie active — leur apprend à flairer l'air et à distinguer les odeurs humaines parmi les décombres, la fumée et le bruit. Des races comme le berger allemand, le malinois et le labrador retriever se distinguent par leur courage, leur agilité et leur autonomie lors de chaque sauvetage."
+    },
+    "comercioNacional": {
+      "subtitle": "Nous nourrissons des relations durables",
+      "title": "Nous soutenons le commerce national",
+      "description": "Chez NUPEC, nous reconnaissons l'engagement de nos fournisseurs nationaux, formés et dédiés à la qualité et à l'innovation. Nous développons des plans de formation sur les matières premières, l'ingénierie des processus qualité, la planification d'entreprise et le coaching, renforçant ainsi les relations commerciales et stratégiques avec nos partenaires au Mexique.",
+      "descriptionTwo": "Notre édition spéciale « Con Amor de México » rend hommage à nos origines avec l'art Otomí de Guanajuato, du Michoacán et du Tlaxcala. En tant qu'entreprise queretana leader dans la nutrition canine spécialisée, nous comptons plus de 600 professionnels mexicains, dont des scientifiques, des vétérinaires et des spécialistes en nutrition animale."
     }
   },
   "canine": {
@@ -250,7 +347,7 @@
   },
   "clinical": {
     "grid": {
-      "title": "GAMME CLINIQUE CANINE",
+      "title": "GAMME CLINIQUE",
       "subtitle": "Sélectionnez un produit pour voir sa fiche technique complète.",
       "rxLabel": "PRESCRIPTION VÉT.",
       "viewCard": "EN SAVOIR PLUS",
@@ -308,7 +405,7 @@
     "vetResources": {
       "title": "RESSOURCES POUR LES VÉTÉRINAIRES",
       "subtitle": "Matériel technique téléchargeable · accès libre pour les professionnels",
-      "catalogTitle": "Catalogue gamme clinique canine",
+      "catalogTitle": "Catalogue gamme clinique",
       "catalogSub": "Les 4 formules · indications, analyses et présentations",
       "catalogSize": "4,2 Mo",
       "managementTitle": "Guide de gestion nutritionnelle par pathologie",
@@ -351,7 +448,7 @@
     },
     "about": {
       "subtitle": "La science dans chaque formule",
-      "title": "Qu'est-ce que la {category} NUPEC ?",
+      "title": "Qu'est-ce que la gamme {category} de NUPEC ?",
       "bodyTwo": "Chaque aliment répond aux normes AAFCO et est vérifié par lot dans notre laboratoire à Querétaro.",
       "fallbackDescription": "Ligne de nutrition {category} formulée pour les besoins spécifiques de votre animal.",
       "digestibilidadLabel": "Digestibilité Prouvée",
@@ -464,8 +561,8 @@
       "downloadSheet": "Télécharger la Monographie"
     },
     "kibble": {
-      "subtitle": "La croquette",
-      "title": "Découvrez la croquette",
+      "subtitle": "L'unité",
+      "title": "Découvrez le produit",
       "badge": "NUPEC"
     },
     "feedingGuide": {

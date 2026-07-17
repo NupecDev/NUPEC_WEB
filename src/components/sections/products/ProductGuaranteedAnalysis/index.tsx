@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import ProgressBar from '../../../../../components/elements/ProgressBar';
+import NutrientBadge from '../../../../../components/elements/NutrientBadge';
 
 type NutrientItem = {
   label: string;
@@ -13,11 +13,6 @@ type Props = {
   guaranteedAnalysis?: NutrientItem[];
   accentColor: string;
 };
-
-function parsePercent(value: string): number {
-  const match = value.match(/(\d+(?:\.\d+)?)/);
-  return match ? Math.min(parseFloat(match[1]), 100) : 0;
-}
 
 export default function ProductGuaranteedAnalysis({ guaranteedAnalysis, accentColor }: Props) {
   const t = useTranslations('productPage.analysis');
@@ -38,19 +33,16 @@ export default function ProductGuaranteedAnalysis({ guaranteedAnalysis, accentCo
           </div>
 
           <div className="col-lg-7 col-md-12 col-sm-12 wow fadeInRight">
-            <div className="sp-analysis__bars">
+            <div
+              className="sp-analysis__grid"
+              style={{ '--badge-color': accentColor } as React.CSSProperties}
+            >
               {guaranteedAnalysis.map((item) => (
-                <div
+                <NutrientBadge
                   key={item.label}
-                  className="sp-analysis__bar-row"
-                  style={{ '--bar-color': accentColor } as React.CSSProperties}
-                >
-                  <ProgressBar
-                    label={`${item.label}${item.min ? ' mín.' : ''}`}
-                    percent={parsePercent(item.value)}
-                    displayValue={item.value}
-                  />
-                </div>
+                  label={item.label}
+                  displayValue={item.value}
+                />
               ))}
             </div>
           </div>

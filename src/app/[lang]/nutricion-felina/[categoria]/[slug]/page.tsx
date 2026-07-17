@@ -231,6 +231,15 @@ export default async function ProductPage({
           accentColor={accentColor}
         />
 
+        {/* Unidad individual (ej. sachet dentro del pack): solo si hay datos en Sanity */}
+        <ProductKibble
+          name={product.name}
+          image={product.kibble?.image}
+          video={product.kibble?.video}
+          description={product.kibble?.description}
+          accentColor={accentColor}
+        />
+
         {product.highTech && product.highTech.length > 0 && (
           <ProductHighTech
             items={product.highTech}
@@ -287,16 +296,14 @@ export default async function ProductPage({
         accentColor={accentColor}
       />
 
-      {/* 2.5. Croqueta: imagen y descripción (solo nutrición diaria y especializada) */}
-      {(categoria === 'nutricion-diaria' || categoria === 'nutricion-especializada') && (
-        <ProductKibble
-          name={product.name}
-          image={product.kibble?.image}
-          video={product.kibble?.video}
-          description={product.kibble?.description}
-          accentColor={accentColor}
-        />
-      )}
+      {/* 2.5. Unidad individual (croqueta, sachet, etc.): solo si hay datos en Sanity */}
+      <ProductKibble
+        name={product.name}
+        image={product.kibble?.image}
+        video={product.kibble?.video}
+        description={product.kibble?.description}
+        accentColor={accentColor}
+      />
 
       {/* 3. HighTech: grid de características técnicas */}
       {product.highTech && product.highTech.length > 0 && (
