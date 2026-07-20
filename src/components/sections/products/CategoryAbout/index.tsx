@@ -4,40 +4,23 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { urlFor } from '@/lib/sanity/client';
 
+type CategoryStat = {
+  value: string;
+  label: string | null;
+  description: string | null;
+};
+
 type CategoryAboutProps = {
   categoryName: string;
   categoryDescription: string | null;
   categorySlug: string;
   familyImage?: { asset: { _ref: string }; alt?: string } | null;
+  stats?: CategoryStat[] | null;
 };
 
-const CATEGORY_STATS: Record<string, { num: string; label: string }[]> = {
-  'nutricion-diaria': [
-    { num: '92%', label: 'digestibilidadLabel' },
-    { num: '+15', label: 'estudiosLabel' },
-    { num: '100%', label: 'ingredientesLabel' },
-  ],
-  'nutricion-especializada': [
-    { num: '91%', label: 'digestibilidadLabel' },
-    { num: '+10', label: 'estudiosLabel' },
-    { num: '100%', label: 'ingredientesLabel' },
-  ],
-  'nutricion-clinica': [
-    { num: '93%', label: 'digestibilidadLabel' },
-    { num: '+20', label: 'estudiosLabel' },
-    { num: '100%', label: 'ingredientesLabel' },
-  ],
-};
-
-const DEFAULT_STATS = [
-  { num: '90%', label: 'digestibilidadLabel' },
-  { num: '+10', label: 'estudiosLabel' },
-  { num: '100%', label: 'ingredientesLabel' },
-];
-
-export default function CategoryAbout({ categoryName, categoryDescription, categorySlug, familyImage }: CategoryAboutProps) {
+export default function CategoryAbout({ categoryName, categoryDescription, familyImage, stats }: CategoryAboutProps) {
   const t = useTranslations('categoryPage.about');
-  const stats = CATEGORY_STATS[categorySlug] ?? DEFAULT_STATS;
+  const aboutStats = stats ?? [];
 
   return (
     <section className="about-section cat-about sec-pad p_relative">
@@ -74,17 +57,19 @@ export default function CategoryAbout({ categoryName, categoryDescription, categ
                 />
               </div>
             )}
-            <div className="cat-about__stats">
-              {stats.map(({ num, label }, i) => (
-                <div key={i} className="cat-about__stat-row">
-                  <span className="cat-about__stat-num">{num}</span>
-                  <div className="cat-about__stat-text">
-                    <strong>{t(label)}</strong>
-                    <span>{t(`${label}Desc`)}</span>
+            {aboutStats.length > 0 && (
+              <div className="cat-about__stats">
+                {aboutStats.map((stat, i) => (
+                  <div key={i} className="cat-about__stat-row">
+                    <span className="cat-about__stat-num">{stat.value}</span>
+                    <div className="cat-about__stat-text">
+                      <strong>{stat.label}</strong>
+                      {stat.description && <span>{stat.description}</span>}
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>

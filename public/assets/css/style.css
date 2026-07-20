@@ -2840,7 +2840,7 @@ button.ltr {
   position: absolute;
   top: 0;
   right: 0;
-  width: 60%;
+  width: 100%;
   height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -5161,7 +5161,7 @@ button.ltr {
 }
 
 .sp-hightech__badge-icon {
-  max-width: 200px;
+  max-width: 400px;
   height: auto;
   object-fit: contain;
 }
@@ -5196,7 +5196,7 @@ button.ltr {
 }
 
 .sp-hightech__item-title {
-  font-size: 17px;
+  font-size: 30px;
   font-weight: 800;
   line-height: 1.3;
   text-transform: uppercase;
@@ -5206,7 +5206,7 @@ button.ltr {
 }
 
 .sp-hightech__item-desc {
-  font-size: 15px;
+  font-size: 20px;
   line-height: 1.65;
   color: var(--text-color);
   margin: 0;
@@ -5472,35 +5472,50 @@ sup {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 16px;
 }
 
 .sp-description__claim-item {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 14px;
+  gap: 18px;
+  font-size: 15px;
   line-height: 1.5;
   color: var(--text-color);
 }
 
-.sp-description__claim-dot {
+.sp-description__claim-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
-  width: 8px;
-  height: 8px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
 }
 
+.sp-description__claim-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+}
+
 .sp-description__claim-icon {
-  font-size: 18px;
-  flex-shrink: 0;
+  font-size: 22px;
+  color: #fff;
 }
 
 .sp-description__claim-icon-img {
-  width: 20px;
-  height: 20px;
-  object-fit: contain;
-  flex-shrink: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
 }
 
 /* ── ClinicalDifferentiators ─────────────────────────────────── */
@@ -6100,4 +6115,44 @@ sup {
 .ing-showcase__swiper.swiper-fade .swiper-slide-active {
   opacity: 1 !important;
   pointer-events: auto;
+}
+
+/* — Formulario de Contacto (extiende default-form del template) ---------- */
+.contact-form__radio-label {
+  display: block;
+  font-weight: 700;
+  color: var(--title-color);
+  margin-bottom: 10px;
+}
+
+.contact-form__radio-group {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.contact-form__radio {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.contact-form__radio input[type="radio"] {
+  width: auto;
+  margin: 0;
+}
+
+.contact-form__status {
+  margin-top: 16px;
+  font-weight: 600;
+}
+
+.contact-form__status--ok {
+  color: #2e7d32;
+}
+
+.contact-form__status--error {
+  color: #c62828;
 }

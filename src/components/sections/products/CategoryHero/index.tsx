@@ -1,10 +1,16 @@
 'use client';
 
-import type { CSSProperties } from 'react';
+import { Fragment, type CSSProperties } from 'react';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
 import { urlFor } from '@/lib/sanity/client';
+
+type CategoryStat = {
+  value: string;
+  label: string | null;
+  description: string | null;
+};
 
 type CategoryHeroProps = {
   categoryName: string;
@@ -13,6 +19,7 @@ type CategoryHeroProps = {
   species: 'canino' | 'felino';
   categorySlug: string;
   bannerImage?: { asset: { _ref: string } } | null;
+  stats?: CategoryStat[] | null;
 };
 
 const CATEGORY_COLOR: Record<string, string> = {
@@ -24,22 +31,13 @@ const CATEGORY_COLOR: Record<string, string> = {
   'alimentos-humedos':       '#0085CA',
 };
 
-const CATEGORY_STATS: Record<string, { formulas: string; digestibility: string; stages: string }> = {
-  'nutricion-diaria':        { formulas: '09', digestibility: '92%', stages: '3' },
-  'nutricion-especializada': { formulas: '12', digestibility: '91%', stages: '3' },
-  'nutricion-clinica':       { formulas: '08', digestibility: '93%', stages: '2' },
-  'premios-funcionales':     { formulas: '06', digestibility: '90%', stages: '2' },
-  'suplementos':             { formulas: '05', digestibility: '95%', stages: '3' },
-  'alimentos-humedos':       { formulas: '10', digestibility: '90%', stages: '3' },
-};
-
-export default function CategoryHero({ categoryName, categoryDescription, categoryExcerpt, species, categorySlug, bannerImage }: CategoryHeroProps) {
+export default function CategoryHero({ categoryName, categoryDescription, categoryExcerpt, species, categorySlug, bannerImage, stats }: CategoryHeroProps) {
   const t = useTranslations('categoryPage.hero');
   const params = useParams();
   const lang = params.lang as string;
 
   const accentColor = CATEGORY_COLOR[categorySlug] ?? '#1B365D';
-  const stats = CATEGORY_STATS[categorySlug] ?? { formulas: '—', digestibility: '—', stages: '—' };
+  const heroStats = stats ?? [];
   const speciesBase = species === 'canino' ? 'nutricion-canina' : 'nutricion-felina';
   const speciesLabel = species === 'canino' ? t('switchCanina') : t('switchFelina');
   const bgImage = bannerImage?.asset
@@ -107,22 +105,19 @@ export default function CategoryHero({ categoryName, categoryDescription, catego
             </div>
 
             {/* Right: stats */}
-            <div className="cat-hero__stats">
-              <div className="cat-hero__stat">
-                <span className="cat-hero__stat-num" style={{ color: accentColor }}>{stats.formulas}</span>
-                <span className="cat-hero__stat-label">{t('statFormulas')}</span>
+            {heroStats.length > 0 && (
+              <div className="cat-hero__stats">
+                {heroStats.map((stat, i) => (
+                  <Fragment key={i}>
+                    {i > 0 && <div className="cat-hero__stat-divider" />}
+                    <div className="cat-hero__stat">
+                      <span className="cat-hero__stat-num" style={{ color: accentColor }}>{stat.value}</span>
+                      <span className="cat-hero__stat-label">{stat.label}</span>
+                    </div>
+                  </Fragment>
+                ))}
               </div>
-              <div className="cat-hero__stat-divider" />
-              <div className="cat-hero__stat">
-                <span className="cat-hero__stat-num" style={{ color: accentColor }}>{stats.digestibility}</span>
-                <span className="cat-hero__stat-label">{t('statDigestibility')}</span>
-              </div>
-              <div className="cat-hero__stat-divider" />
-              <div className="cat-hero__stat">
-                <span className="cat-hero__stat-num" style={{ color: accentColor }}>{stats.stages}</span>
-                <span className="cat-hero__stat-label">{t('statStages')}</span>
-              </div>
-            </div>
+            )}
           </div>
         </div>
       </section>

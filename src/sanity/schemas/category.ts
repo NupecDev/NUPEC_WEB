@@ -114,6 +114,56 @@ export default defineType({
       type: "number",
       description: "Número menor aparece primero",
     }),
+    defineField({
+      name: "stats",
+      title: "Datos destacados",
+      type: "array",
+      description:
+        "Cifras destacadas de esta categoría (ej. fórmulas, digestibilidad, estudios clínicos). Se usan en el banner y en la sección introductoria. Puedes agregar las que necesites.",
+      of: [
+        defineField({
+          name: "stat",
+          title: "Dato destacado",
+          type: "object",
+          fields: [
+            defineField({
+              name: "value",
+              title: "Valor",
+              type: "string",
+              description: "Ej. 12, 91%, +10",
+              validation: (r) => r.required(),
+            }),
+            defineField({
+              name: "label",
+              title: "Etiqueta",
+              type: "object",
+              fields: [
+                defineField({ name: "es", title: "Español", type: "string", validation: (r) => r.required() }),
+                defineField({ name: "en", title: "Inglés", type: "string" }),
+                defineField({ name: "fr", title: "Francés", type: "string" }),
+              ],
+            }),
+            defineField({
+              name: "description",
+              title: "Descripción",
+              type: "object",
+              description: "Texto breve opcional (usado en la sección introductoria)",
+              fields: [
+                defineField({ name: "es", title: "Español", type: "string" }),
+                defineField({ name: "en", title: "Inglés", type: "string" }),
+                defineField({ name: "fr", title: "Francés", type: "string" }),
+              ],
+            }),
+          ],
+          preview: {
+            select: { value: "value", label: "label.es" },
+            prepare({ value, label }) {
+              return { title: `${value} — ${label}` };
+            },
+          },
+        }),
+      ],
+    }),
   ],
   preview: {
     select: {

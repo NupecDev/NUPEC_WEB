@@ -103,6 +103,38 @@
       "buttonTwo": "Contact us"
     }
   },
+  "contacto": {
+    "hero": {
+      "eyebrow": "We're here to help",
+      "title": "Contact",
+      "description": "You can reach out to us through the form below with any questions or suggestions."
+    },
+    "info": {
+      "locationTitle": "Location",
+      "locationText": "Avenida de las Fuentes # 14, Fracc. Industrial Bernardo Quintana, El Marqués, Querétaro, Mexico, C.P. 76240",
+      "phoneTitle": "Phone",
+      "phoneText": "(800) 926 8732",
+      "phoneAlt": "(800) YA NUPEC",
+      "hoursTitle": "Business hours",
+      "hoursText": "Monday to Friday, 8:00 AM to 6:00 PM"
+    },
+    "form": {
+      "title": "Leave us a message",
+      "namePlaceholder": "Name",
+      "emailPlaceholder": "Email",
+      "phonePlaceholder": "Phone",
+      "statePlaceholder": "State",
+      "contactTypeLabel": "Contact type",
+      "contactTypeConsumer": "Consumer",
+      "contactTypeVet": "Veterinarian",
+      "subjectPlaceholder": "Subject",
+      "messagePlaceholder": "Type your message here...",
+      "submit": "Send",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Something went wrong, please try again."
+    }
+  },
   "nosotros": {
     "hero": {
       "eyebrow": "Who we are",
@@ -441,22 +473,13 @@
       "breadHome": "Home",
       "switchCanina": "Canine Nutrition",
       "switchFelina": "Feline Nutrition",
-      "cta": "View products",
-      "statFormulas": "Formulas",
-      "statDigestibility": "Avg. digestibility",
-      "statStages": "Life stages"
+      "cta": "View products"
     },
     "about": {
       "subtitle": "Science in every formula",
       "title": "What is NUPEC {category}?",
       "bodyTwo": "Every food meets AAFCO standards and is lot-verified in our Querétaro laboratory.",
-      "fallbackDescription": "{category} nutrition line formulated for your pet's specific needs.",
-      "digestibilidadLabel": "Proven Digestibility",
-      "digestibilidadLabelDesc": "In-vivo studies in canine panels under AAFCO protocols.",
-      "estudiosLabel": "Published Clinical Studies",
-      "estudiosLabelDesc": "In collaboration with Mexican veterinary universities.",
-      "ingredientesLabel": "Traceable Ingredients",
-      "ingredientesLabelDesc": "Selected raw materials with lot-by-lot analysis."
+      "fallbackDescription": "{category} nutrition line formulated for your pet's specific needs."
     },
     "products": {
       "subtitle": "Product catalog",
@@ -557,7 +580,7 @@
       "presentationsTitle": "Available presentations",
       "ingredientsTitle": "Ingredients",
       "warningsTitle": "Warnings",
-      "claimsTitle": "Key Benefits",
+      "claimsTitle": "",
       "downloadSheet": "Download Monograph"
     },
     "kibble": {

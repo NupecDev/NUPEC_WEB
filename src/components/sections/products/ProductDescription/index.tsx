@@ -159,18 +159,35 @@ export default function ProductDescription({
                       {t('claimsTitle')}
                     </h4>
                     <ul className="sp-description__claims">
-                      {claims.map((claim, i) => (
-                        <li key={i} className="sp-description__claim-item">
-                          {claim.icon ? (
-                            claim.icon.startsWith('http') || claim.icon.startsWith('/')
-                              ? <img src={claim.icon} alt="" className="sp-description__claim-icon-img" />
-                              : <i className={`sp-description__claim-icon ${claim.icon}`} style={{ color: accentColor }} />
-                          ) : (
-                            <span className="sp-description__claim-dot" style={{ background: accentColor }} />
-                          )}
-                          <span>{claim.text}</span>
-                        </li>
-                      ))}
+                      {claims.map((claim, i) => {
+                        const isImage = !!claim.icon && (claim.icon.startsWith('http') || claim.icon.startsWith('/'));
+                        return (
+                          <li key={i} className="sp-description__claim-item">
+                            <span
+                              className="sp-description__claim-circle"
+                              style={isImage ? undefined : { background: accentColor }}
+                            >
+                              {claim.icon ? (
+                                isImage
+                                  ? (
+                                    <span
+                                      className="sp-description__claim-icon-img"
+                                      style={{
+                                        background: accentColor,
+                                        WebkitMaskImage: `url(${claim.icon})`,
+                                        maskImage: `url(${claim.icon})`,
+                                      }}
+                                    />
+                                  )
+                                  : <i className={`sp-description__claim-icon ${claim.icon}`} />
+                              ) : (
+                                <span className="sp-description__claim-dot" />
+                              )}
+                            </span>
+                            <span>{claim.text}</span>
+                          </li>
+                        );
+                      })}
                     </ul>
                   </div>
                 )}

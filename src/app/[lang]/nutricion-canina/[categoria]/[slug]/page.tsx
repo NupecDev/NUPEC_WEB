@@ -290,6 +290,7 @@ export default async function ProductPage({
         description={product.description}
         ingredients={product.ingredients}
         warnings={product.warnings}
+        claims={product.claims}
         presentations={product.presentations}
         technicalSheet={product.technicalSheet}
         image={product.image}

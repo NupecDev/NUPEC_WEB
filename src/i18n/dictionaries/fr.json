@@ -103,6 +103,38 @@
       "buttonTwo": "Nous contacter"
     }
   },
+  "contacto": {
+    "hero": {
+      "eyebrow": "Nous sommes là pour vous aider",
+      "title": "Contact",
+      "description": "Vous pouvez nous contacter via le formulaire ci-dessous pour toute question ou suggestion."
+    },
+    "info": {
+      "locationTitle": "Emplacement",
+      "locationText": "Avenida de las Fuentes # 14, Fracc. Industrial Bernardo Quintana, El Marqués, Querétaro, Mexique, C.P. 76240",
+      "phoneTitle": "Téléphone",
+      "phoneText": "(800) 926 8732",
+      "phoneAlt": "(800) YA NUPEC",
+      "hoursTitle": "Horaires d'ouverture",
+      "hoursText": "Du lundi au vendredi de 8h00 à 18h00"
+    },
+    "form": {
+      "title": "Laissez-nous un message",
+      "namePlaceholder": "Nom",
+      "emailPlaceholder": "E-mail",
+      "phonePlaceholder": "Téléphone",
+      "statePlaceholder": "État",
+      "contactTypeLabel": "Type de contact",
+      "contactTypeConsumer": "Consommateur",
+      "contactTypeVet": "Vétérinaire",
+      "subjectPlaceholder": "Sujet",
+      "messagePlaceholder": "Écrivez votre message ici...",
+      "submit": "Envoyer",
+      "sending": "Envoi en cours...",
+      "success": "Message envoyé avec succès !",
+      "error": "Une erreur est survenue, veuillez réessayer."
+    }
+  },
   "nosotros": {
     "hero": {
       "eyebrow": "Qui sommes-nous",
@@ -441,22 +473,13 @@
       "breadHome": "Accueil",
       "switchCanina": "Nutrition Canine",
       "switchFelina": "Nutrition Féline",
-      "cta": "Voir les produits",
-      "statFormulas": "Formules",
-      "statDigestibility": "Digestibilité moy.",
-      "statStages": "Étapes de vie"
+      "cta": "Voir les produits"
     },
     "about": {
       "subtitle": "La science dans chaque formule",
       "title": "Qu'est-ce que la gamme {category} de NUPEC ?",
       "bodyTwo": "Chaque aliment répond aux normes AAFCO et est vérifié par lot dans notre laboratoire à Querétaro.",
-      "fallbackDescription": "Ligne de nutrition {category} formulée pour les besoins spécifiques de votre animal.",
-      "digestibilidadLabel": "Digestibilité Prouvée",
-      "digestibilidadLabelDesc": "Études in vivo en panel canin sous protocoles AAFCO.",
-      "estudiosLabel": "Études Cliniques Publiées",
-      "estudiosLabelDesc": "En collaboration avec des universités vétérinaires mexicaines.",
-      "ingredientesLabel": "Ingrédients Traçables",
-      "ingredientesLabelDesc": "Matières premières sélectionnées avec analyse par lot."
+      "fallbackDescription": "Ligne de nutrition {category} formulée pour les besoins spécifiques de votre animal."
     },
     "products": {
       "subtitle": "Catalogue de produits",
@@ -557,7 +580,7 @@
       "presentationsTitle": "Présentations disponibles",
       "ingredientsTitle": "Ingrédients",
       "warningsTitle": "Avertissements",
-      "claimsTitle": "Principaux avantages",
+      "claimsTitle": "",
       "downloadSheet": "Télécharger la Monographie"
     },
     "kibble": {

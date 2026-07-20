@@ -229,7 +229,12 @@ export const categoryBySlugQuery = groq`
     "description": description[$lang],
     "excerpt": excerpt[$lang],
     familyImage,
-    bannerImage
+    bannerImage,
+    "stats": stats[] {
+      value,
+      "label": label[$lang],
+      "description": description[$lang]
+    }
   }
 `;
 

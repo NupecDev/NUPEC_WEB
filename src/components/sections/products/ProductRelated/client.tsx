@@ -21,6 +21,13 @@ const LIFE_STAGE_COLOR: Record<string, string> = {
   senior:   '#54301A',
 };
 
+function getPrimary(product: CategoryProductCard, categorySlug: string): string {
+  if (product.color) return product.color;
+  const stage = product.lifeStage?.[0];
+  if (stage && LIFE_STAGE_COLOR[stage]) return LIFE_STAGE_COLOR[stage];
+  return CATEGORY_COLOR[categorySlug] ?? '#78BE20';
+}
+
 type Props = {
   lang: string;
   products: CategoryProductCard[];
@@ -48,10 +55,7 @@ export default function ProductRelatedClient({ lang, products, categorySlug, spe
 
         <div className="row clearfix">
           {products.map((product) => {
-            const primary =
-              (product.lifeStage?.[0] && LIFE_STAGE_COLOR[product.lifeStage[0]]) ??
-              CATEGORY_COLOR[categorySlug] ??
-              '#78BE20';
+            const primary = getPrimary(product, categorySlug);
 
             return (
               <div key={product._id} className="col-lg-4 col-md-6 col-sm-12 canine-product-col wow fadeInUp">

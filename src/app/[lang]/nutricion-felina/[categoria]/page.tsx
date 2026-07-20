@@ -26,6 +26,12 @@ const VALID_SLUGS = [
   'alimentos-humedos',
 ];
 
+type CategoryStat = {
+  value: string;
+  label: string | null;
+  description: string | null;
+};
+
 type CategoryData = {
   _id: string;
   name: string;
@@ -35,6 +41,7 @@ type CategoryData = {
   excerpt: string | null;
   familyImage: { asset: { _ref: string }; alt?: string } | null;
   bannerImage: { asset: { _ref: string } } | null;
+  stats: CategoryStat[] | null;
 };
 
 export default async function CategoryPage({
@@ -66,6 +73,7 @@ export default async function CategoryPage({
         species="felino"
         categorySlug={categoria}
         bannerImage={category.bannerImage}
+        stats={category.stats}
       />
 
       {isClinical ? (
@@ -75,6 +83,7 @@ export default async function CategoryPage({
             categoryDescription={category.description}
             categorySlug={categoria}
             familyImage={category.familyImage}
+            stats={category.stats}
           />
           <ClinicalProductGrid lang={lang} categorySlug={categoria} species="felino" />
           <SanurenStudies />
@@ -91,6 +100,7 @@ export default async function CategoryPage({
             categoryDescription={category.description}
             categorySlug={categoria}
             familyImage={category.familyImage}
+            stats={category.stats}
           />
           <CategoryProductGrid lang={lang} species="felino" categorySlug={categoria} />
           <OtherCategories currentCategorySlug={categoria} species="felino" />
@@ -102,6 +112,7 @@ export default async function CategoryPage({
             categoryDescription={category.description}
             categorySlug={categoria}
             familyImage={category.familyImage}
+            stats={category.stats}
           />
           <CategoryProductGrid lang={lang} species="felino" categorySlug={categoria} />
           <CategoryFeatures categorySlug={categoria} />

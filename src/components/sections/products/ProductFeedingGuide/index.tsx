@@ -166,8 +166,6 @@ function GroupedFeedingTable({
 export default function ProductFeedingGuide({ feedingGuide, accentColor }: Props) {
   const t = useTranslations('productPage.feedingGuide');
 
-  if (!feedingGuide || !feedingGuide.rows || feedingGuide.rows.length === 0) return null;
-
   const {
     rows,
     notes,
@@ -176,8 +174,11 @@ export default function ProductFeedingGuide({ feedingGuide, accentColor }: Props
     secondaryColumnGroups,
     secondaryTableRows,
     secondaryNotes,
-  } = feedingGuide;
+  } = feedingGuide ?? {};
+  const hasPrimaryTable = !!rows?.length;
   const hasSecondaryTable = !!secondaryColumnGroups?.length && !!secondaryTableRows?.length;
+
+  if (!hasPrimaryTable && !hasSecondaryTable) return null;
 
   return (
     <section className="sp-feeding-guide p_relative pt_80 pb_80">
@@ -191,17 +192,19 @@ export default function ProductFeedingGuide({ feedingGuide, accentColor }: Props
           <h2>{t('title')}</h2>
         </div>
 
-        <FeedingTable
-          rows={rows}
-          notes={notes}
-          accentColor={accentColor}
-          colLabel={t('colLabel')}
-          colWeight={t('colWeight')}
-          colGrams={t('colGrams')}
-        />
+        {hasPrimaryTable && (
+          <FeedingTable
+            rows={rows!}
+            notes={notes}
+            accentColor={accentColor}
+            colLabel={t('colLabel')}
+            colWeight={t('colWeight')}
+            colGrams={t('colGrams')}
+          />
+        )}
 
         {hasSecondaryTable && (
-          <div className="sp-feeding-guide__secondary mt_50">
+          <div className={`sp-feeding-guide__secondary${hasPrimaryTable ? ' mt_50' : ''}`}>
             <h3 className="sp-feeding-guide__secondary-title mb_20">
               {secondaryTitle ?? t('secondaryTitleDefault')}
             </h3>
