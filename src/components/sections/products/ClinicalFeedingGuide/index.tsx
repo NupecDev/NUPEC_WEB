@@ -63,7 +63,7 @@ export default function ClinicalFeedingGuide({ rows, notes, accentColor = CLINIC
         )}
 
         <div className="clin-feeding-guide__rx-note mt_20" style={{ borderColor: accentColor, color: accentColor }}>
-          <span className="clin-indications__rx-symbol">Rx</span>
+          {/* <span className="clin-indications__rx-symbol">Rx</span> */}
           <span className="clin-indications__rx-text">{t('rxNote')}</span>
         </div>
       </div>

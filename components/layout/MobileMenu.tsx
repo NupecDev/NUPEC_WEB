@@ -46,7 +46,7 @@ export default function MobileMenu({ isSidebar, handleMobileMenu, handleSidebar 
         </div>
         <nav className="menu-box">
           <div className="nav-logo">
-            <Link href={base}><Image src="/assets/images/logo-2.png" alt="Logo Image" width={203} height={40} priority /></Link>
+            <Link href={base}><Image src="/assets/images/logos/logo-white.jpg" alt="Logo Image" width={203} height={40} priority /></Link>
           </div>
           <div className="menu-outer">
             <ul className="navigation clearfix">

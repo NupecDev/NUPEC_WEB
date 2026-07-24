@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 
 type KeyBenefitItem = {
   icon: string;
+  invertColors?: boolean;
   description: string;
 };
 
@@ -85,7 +86,7 @@ function SanityBenefitCard({
               alt=""
               fill
               sizes="72px"
-              style={{ objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+              style={{ objectFit: 'contain', filter: benefit.invertColors ? 'brightness(0) invert(1)' : undefined }}
             />
           ) : (
             <i className={benefit.icon} style={{ fontSize: 64, color: '#fff' }} />

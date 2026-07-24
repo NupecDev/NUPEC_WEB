@@ -131,6 +131,7 @@ export const productBySlugQuery = groq`
     },
     "claims": claims[]{
       icon,
+      invertColors,
       "text": text[$lang]
     },
     "highTech": highTech[]{
@@ -141,6 +142,7 @@ export const productBySlugQuery = groq`
     "highTechTitleOverride": highTechTitleOverride[$lang],
     "keyBenefits": keyBenefits[]{
       icon,
+      invertColors,
       "description": description[$lang]
     },
     "kibble": {

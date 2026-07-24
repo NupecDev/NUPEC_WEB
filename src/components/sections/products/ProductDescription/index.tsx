@@ -42,6 +42,7 @@ const portableTextComponents = {
 
 type ClaimItem = {
   icon?: string;
+  invertColors?: boolean;
   text: string;
 };
 
@@ -170,13 +171,13 @@ export default function ProductDescription({
                               {claim.icon ? (
                                 isImage
                                   ? (
-                                    <span
+                                    <Image
+                                      src={claim.icon}
+                                      alt=""
+                                      width={80}
+                                      height={80}
                                       className="sp-description__claim-icon-img"
-                                      style={{
-                                        background: accentColor,
-                                        WebkitMaskImage: `url(${claim.icon})`,
-                                        maskImage: `url(${claim.icon})`,
-                                      }}
+                                      style={{ filter: claim.invertColors ? 'invert(1)' : undefined }}
                                     />
                                   )
                                   : <i className={`sp-description__claim-icon ${claim.icon}`} />

@@ -79,7 +79,7 @@ type ProductData = ProductHeroData & {
     secondaryNotes?: string;
   } | null;
   guaranteedAnalysis?: GuaranteedAnalysisItem[];
-  claims?: { icon?: string; text: string }[];
+  claims?: { icon?: string; invertColors?: boolean; text: string }[];
   highTech?: HighTechItem[];
   highTechTitleOverride?: string;
   keyBenefits?: KeyBenefitItem[];

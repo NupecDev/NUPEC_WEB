@@ -5492,6 +5492,7 @@ sup {
   width: 80px;
   height: 80px;
   border-radius: 50%;
+  overflow: hidden;
 }
 
 .sp-description__claim-dot {
@@ -5510,12 +5511,8 @@ sup {
   display: block;
   width: 100%;
   height: 100%;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
-  -webkit-mask-size: contain;
-  mask-size: contain;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 /* ── ClinicalDifferentiators ─────────────────────────────────── */

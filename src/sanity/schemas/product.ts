@@ -238,6 +238,13 @@ export default defineType({
               description: "Clase del template o URL de imagen",
             }),
             defineField({
+              name: "invertColors",
+              title: "Invertir colores",
+              type: "boolean",
+              description: "Invierte los colores del icono de imagen",
+              initialValue: false,
+            }),
+            defineField({
               name: "text",
               title: "Texto",
               type: "object",
@@ -332,6 +339,13 @@ export default defineType({
               type: "string",
               description: "Nombre del icono (Lucide) o URL de SVG",
               validation: (r) => r.required(),
+            }),
+            defineField({
+              name: "invertColors",
+              title: "Invertir colores",
+              type: "boolean",
+              description: "Invierte los colores del icono de imagen (usar solo para iconos monocromáticos, ej. de línea)",
+              initialValue: false,
             }),
             defineField({
               name: "description",
@@ -488,6 +502,8 @@ export default defineType({
           { title: "Cuidado renal", value: "renal" },
           { title: "Manejo urinario", value: "urinario" },
           { title: "Piel sensible", value: "piel" },
+          { title: "Gatos de interior (Indoor)", value: "indoor" },
+          { title: "Control de bolas de pelo (Hairball)", value: "hairball" },
         ],
         layout: "grid",
       },
