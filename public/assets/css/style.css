@@ -3356,6 +3356,39 @@ button.ltr {
   color: var(--theme-color);
 }
 
+/* — Promo banner del home (imagen full-width de fondo) --------- */
+.promo-banner-section {
+  width: 100%;
+  aspect-ratio: 2760 / 1429;
+  overflow: hidden;
+}
+
+.promo-banner-section__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: scale(1);
+  transition: transform 500ms ease;
+}
+
+.promo-banner-section:hover .promo-banner-section__bg {
+  transform: scale(1.02);
+}
+
+.promo-banner-section__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+
 /* — Banner héroes (extiende banner-section) ------------------ */
 .canine-banner {
   padding: 160px 0;

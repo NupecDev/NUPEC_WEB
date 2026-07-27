@@ -48,7 +48,7 @@ export default function AboutOrigin() {
                 </div>
                 <figure className="image">
                   <Image
-                    src="/assets/images/resource/about-2.jpg"
+                    src="/assets/images/resource/image.png"
                     alt="NUPEC"
                     width={523}
                     height={399}
