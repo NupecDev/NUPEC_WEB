@@ -10,8 +10,8 @@ export default function ConcienciaPage() {
     <PageLayout>
       <ConcienciaHero />
       <ConcienciaTerapias />
-      <ConcienciaLoboMexicano />
-      <ConcienciaRescate />
+      {/* <ConcienciaLoboMexicano />
+      <ConcienciaRescate /> */}
       <ConcienciaComercioNacional />
     </PageLayout>
   );

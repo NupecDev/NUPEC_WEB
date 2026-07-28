@@ -197,9 +197,10 @@
   position: absolute;
   left: 104px;
   top: 62px;
-  width: 117px;
-  height: 117px;
+  width: 50px;
+  height: 50px;
   background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .banner-section .shape-layer .shape-2{
@@ -224,6 +225,7 @@
   right: 272px;
   width: 106px;
   height: 122px;
+  width: auto;
   line-height: 122px;
   background: rgba(255, 255, 255, 0.3);
   text-align: center;
@@ -232,6 +234,7 @@
   clip-path: polygon(50% 0%, 100% 25%, 99% 75%, 50% 100%, 50% 100%, 0 75%, 0 25%);
   -webkit-animation: zoom-fade 8s infinite linear;
   animation: zoom-fade 8s infinite linear;
+  background-size: contain;
 }
 
 .banner-section .shape-layer .shape-4{
@@ -248,6 +251,7 @@
   clip-path: polygon(50% 0%, 100% 25%, 99% 75%, 50% 100%, 50% 100%, 0 75%, 0 25%);
   -webkit-animation: zoom-fade 9s infinite linear;
   animation: zoom-fade 9s infinite linear;
+  background-size: contain;
 }
 
 .banner-section .image-box{

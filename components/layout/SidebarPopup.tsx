@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { useParams } from "next/navigation";
 
 type SidebarPopupProps = {
   isOpen: boolean;
@@ -8,6 +10,12 @@ type SidebarPopupProps = {
 };
 
 const SidebarPopup: React.FC<SidebarPopupProps> = ({ isOpen, onClose }) => {
+  const t = useTranslations("footer");
+  const tContact = useTranslations("contacto.info");
+  const params = useParams();
+  const lang = params.lang as string;
+  const base = `/${lang}`;
+
   return (
     <div className={`xs-sidebar-group info-group ${isOpen ? "active" : ""}`}>
       {/* Overlay */}
@@ -36,26 +44,23 @@ const SidebarPopup: React.FC<SidebarPopupProps> = ({ isOpen, onClose }) => {
 
                 {/* About Section */}
                 <div className="content-box">
-                  <h4>About Us</h4>
-                  <p>
-                    Sed ut perspiciatis unde omnis iste natus error sit
-                    voluptatem accusantium doloremque laudantium.
-                  </p>
-                  <Link href="/about" className="theme-btn btn-one">
-                    <span>About Us</span>
+                  <h4>{t("aboutTitle")}</h4>
+                  <p>{t("aboutDesc")}</p>
+                  <Link href={`${base}/nosotros`} className="theme-btn btn-one">
+                    <span>{t("nosotros")}</span>
                   </Link>
                 </div>
 
                 {/* Contact Info */}
                 <div className="contact-info">
-                  <h4>Contact Info</h4>
+                  <h4>{t("contactTitle")}</h4>
                   <ul>
-                    <li>Chicago 12, Melborne City, USA</li>
+                    <li>{tContact("locationText")}</li>
                     <li>
-                      <Link href="tel:+8801682648101">+88 01682648101</Link>
+                      <Link href={`tel:${t("phone")}`}>{t("phone")}</Link>
                     </li>
                     <li>
-                      <Link href="mailto:info@example.com">info@example.com</Link>
+                      <Link href={`mailto:${t("email")}`}>{t("email")}</Link>
                     </li>
                   </ul>
                 </div>
@@ -63,23 +68,13 @@ const SidebarPopup: React.FC<SidebarPopupProps> = ({ isOpen, onClose }) => {
                 {/* Social Links */}
                 <ul className="social-box flex gap-4">
                   <li>
-                    <Link href="#">
-                      <i className="icon-4"></i>
+                    <Link href="https://www.facebook.com/NUPEC.PREMIUM/">
+                      <i className="fab fa-facebook-f"></i>
                     </Link>
                   </li>
                   <li>
-                    <Link href="#">
-                      <i className="icon-5"></i>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="#">
-                      <i className="icon-6"></i>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="#">
-                      <i className="icon-7"></i>
+                    <Link href="https://www.instagram.com/nupec_oficial/">
+                      <i className="fab fa-instagram"></i>
                     </Link>
                   </li>
                 </ul>

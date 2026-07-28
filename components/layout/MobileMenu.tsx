@@ -15,6 +15,8 @@ type MobileMenuProps = {
 export default function MobileMenu({ isSidebar, handleMobileMenu, handleSidebar }: MobileMenuProps) {
   const [activeDropdown, setActiveDropdown] = useState<number | null>(null);
   const t = useTranslations('nav');
+  const tFooter = useTranslations('footer');
+  const tContact = useTranslations('contacto.info');
   const params = useParams();
   const lang = params.lang as string;
   const base = `/${lang}`;
@@ -102,22 +104,19 @@ export default function MobileMenu({ isSidebar, handleMobileMenu, handleSidebar 
           </div>
 
           <div className="contact-info">
-              <h4>Contact Info</h4>
+              <h4>{tFooter('contactTitle')}</h4>
               <ul>
-                  <li>Chicago 12, Melborne City, USA</li>
-                  <li><Link href="tel:+8801682648101">+88 01682648101</Link></li>
-                  <li><Link href="mailto:info@example.com">info@example.com</Link></li>
+                  <li>{tContact('locationText')}</li>
+                  <li><Link href={`tel:${tFooter('phone')}`}>{tFooter('phone')}</Link></li>
+                  <li><Link href={`mailto:${tFooter('email')}`}>{tFooter('email')}</Link></li>
               </ul>
           </div>
 
           {/* Social Links */}
           <div className="social-links">
             <ul className="clearfix">
-              <li><Link href="/#"><span className="fab fa-twitter" /></Link></li>
               <li><Link href="https://www.facebook.com/NUPEC.PREMIUM/"><span className="fab fa-facebook-square" /></Link></li>
-              <li><Link href="/#"><span className="fab fa-pinterest-p" /></Link></li>
-              <li><Link href="/#"><span className="fab fa-instagram" /></Link></li>
-              <li><Link href="/#"><span className="fab fa-youtube" /></Link></li>
+              <li><Link href="https://www.instagram.com/nupec_oficial/"><span className="fab fa-instagram" /></Link></li>
             </ul>
           </div>
 
