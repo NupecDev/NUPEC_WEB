@@ -3683,42 +3683,33 @@ button.ltr {
   background: rgba(102,111,119,0.07);
 }
 
-.canine-science__inner {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 30px rgba(205,192,192,0.2);
-  padding: 50px 40px;
+.canine-science__col {
+  margin-bottom: 30px;
 }
 
-.canine-science__block .inner-box {
-  padding-left: 90px;
-  padding-bottom: 10px;
+.canine-science__card {
+  background: var(--theme-color);
+  border-radius: 8px;
+  height: 100%;
+  padding: 40px 25px;
+  text-align: center;
 }
 
-/* icon-box: reutiliza .funfact-block-two .inner-box .icon-box sin cambios */
-
-.canine-science__block .count-outer {
-  font-size: 60px;
-  line-height: 1;
-  font-weight: 700;
-  font-family: var(--title-font);
-  color: var(--theme-color);
-  display: block;
-  margin-bottom: 8px;
+.canine-science__card-icon {
+  margin-bottom: 20px;
 }
 
-.canine-science__block p {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--title-color);
-  margin-bottom: 6px;
+.canine-science__card-icon img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
 }
 
-.canine-science__sub {
-  font-size: 13px;
-  line-height: 1.5;
-  /* color: var(--text-color); */
+.canine-science__card-desc {
+  font-size: 14px;
+  line-height: 1.6;
   color: #fff;
+  margin: 0;
 }
 
 /* RESPONSIVE ------------------------------------------------- */
@@ -3744,7 +3735,7 @@ button.ltr {
   .canine-banner { padding: 80px 0; }
   .canine-banner__title { font-size: 28px; }
 
-  .canine-science__inner { padding: 30px 20px; }
+  .canine-science__card { padding: 30px 20px; }
 }
 
 /* ═══════════════════════════════════════════════════════════════

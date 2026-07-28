@@ -306,18 +306,13 @@
       "cta": "View adult line"
     },
     "science": {
-      "subtitle": "Canine scientific backing",
-      "title": "Data Behind Every Bag",
-      "description": "Metrics verified in every batch by our laboratory in Querétaro.",
-      "digestibilidadNum": "92%",
-      "digestibilidadLabel": "Proven Digestibility",
-      "digestibilidadDesc": "In-vivo studies in canine panels under AAFCO protocols.",
-      "estudiosNum": "+15",
-      "estudiosLabel": "Published Clinical Studies",
-      "estudiosDesc": "In collaboration with Mexican veterinary universities.",
-      "ingredientesNum": "100%",
-      "ingredientesLabel": "Traceable Ingredients",
-      "ingredientesDesc": "Selected raw materials with lot-by-lot analysis."
+      "subtitle": "Scientific backing",
+      "title": "Scientific Backing",
+      "description": "We nourish with the value of science in mind",
+      "avaladosDesc": "Endorsed by the International Institute of Animal Research",
+      "pruebasDesc": "Non-invasive digestibility and palatability testing of our products",
+      "laboratorioDesc": "In-house laboratory with nutritional analysis of ingredients to optimize food formulation.",
+      "certificadoDesc": "Modern laboratory certified by SAGARPA, FSSC 22,000 and accredited by EMA, backed by audits that guarantee the results of its food analyses."
     },
     "formula": {
       "titleHighlight": "High Tech",
@@ -385,18 +380,13 @@
       "cta": "View adult line"
     },
     "science": {
-      "subtitle": "Feline scientific backing",
-      "title": "Data Behind Every Bag",
-      "description": "Metrics verified in every batch by our laboratory in Querétaro.",
-      "digestibilidadNum": "92%",
-      "digestibilidadLabel": "Proven Digestibility",
-      "digestibilidadDesc": "In-vivo studies in feline panels under AAFCO protocols.",
-      "estudiosNum": "+15",
-      "estudiosLabel": "Published Clinical Studies",
-      "estudiosDesc": "In collaboration with Mexican veterinary universities.",
-      "ingredientesNum": "100%",
-      "ingredientesLabel": "Traceable Ingredients",
-      "ingredientesDesc": "Selected raw materials with lot-by-lot analysis."
+      "subtitle": "Scientific backing",
+      "title": "Scientific Backing",
+      "description": "We nourish with the value of science in mind",
+      "avaladosDesc": "Endorsed by the International Institute of Animal Research",
+      "pruebasDesc": "Non-invasive digestibility and palatability testing of our products",
+      "laboratorioDesc": "In-house laboratory with nutritional analysis of ingredients to optimize food formulation.",
+      "certificadoDesc": "Modern laboratory certified by SAGARPA, FSSC 22,000 and accredited by EMA, backed by audits that guarantee the results of its food analyses."
     },
     "formula": {
       "titleHighlight": "High Tech",

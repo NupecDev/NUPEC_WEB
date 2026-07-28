@@ -306,18 +306,13 @@
       "cta": "Voir la gamme adulte"
     },
     "science": {
-      "subtitle": "Soutien scientifique canin",
-      "title": "Des Données qui Soutiennent Chaque Sac",
-      "description": "Métriques vérifiées dans chaque lot par notre laboratoire à Querétaro.",
-      "digestibilidadNum": "92%",
-      "digestibilidadLabel": "Digestibilité Prouvée",
-      "digestibilidadDesc": "Études in vivo en panel canin sous protocoles AAFCO.",
-      "estudiosNum": "+15",
-      "estudiosLabel": "Études Cliniques Publiées",
-      "estudiosDesc": "En collaboration avec des universités vétérinaires mexicaines.",
-      "ingredientesNum": "100%",
-      "ingredientesLabel": "Ingrédients Traçables",
-      "ingredientesDesc": "Matières premières sélectionnées avec analyse par lot."
+      "subtitle": "Soutien scientifique",
+      "title": "Soutien Scientifique",
+      "description": "Nous nourrissons conscients de la valeur de la science",
+      "avaladosDesc": "Approuvé par l'Institut International de Recherche Animale",
+      "pruebasDesc": "Tests non invasifs de digestibilité et de palatabilité de nos produits",
+      "laboratorioDesc": "Laboratoire interne avec analyse nutritionnelle des ingrédients pour optimiser la formulation des aliments.",
+      "certificadoDesc": "Laboratoire moderne certifié par SAGARPA, FSSC 22 000 et accrédité par EMA, appuyé par des audits qui garantissent les résultats de ses analyses alimentaires."
     },
     "formula": {
       "titleHighlight": "Formule",
@@ -385,18 +380,13 @@
       "cta": "Voir la gamme adulte"
     },
     "science": {
-      "subtitle": "Soutien scientifique félin",
-      "title": "Des Données qui Soutiennent Chaque Sac",
-      "description": "Métriques vérifiées dans chaque lot par notre laboratoire à Querétaro.",
-      "digestibilidadNum": "92%",
-      "digestibilidadLabel": "Digestibilité Prouvée",
-      "digestibilidadDesc": "Études in vivo en panel félin sous protocoles AAFCO.",
-      "estudiosNum": "+15",
-      "estudiosLabel": "Études Cliniques Publiées",
-      "estudiosDesc": "En collaboration avec des universités vétérinaires mexicaines.",
-      "ingredientesNum": "100%",
-      "ingredientesLabel": "Ingrédients Traçables",
-      "ingredientesDesc": "Matières premières sélectionnées avec analyse par lot."
+      "subtitle": "Soutien scientifique",
+      "title": "Soutien Scientifique",
+      "description": "Nous nourrissons conscients de la valeur de la science",
+      "avaladosDesc": "Approuvé par l'Institut International de Recherche Animale",
+      "pruebasDesc": "Tests non invasifs de digestibilité et de palatabilité de nos produits",
+      "laboratorioDesc": "Laboratoire interne avec analyse nutritionnelle des ingrédients pour optimiser la formulation des aliments.",
+      "certificadoDesc": "Laboratoire moderne certifié par SAGARPA, FSSC 22 000 et accrédité par EMA, appuyé par des audits qui garantissent les résultats de ses analyses alimentaires."
     },
     "formula": {
       "titleHighlight": "Formule",

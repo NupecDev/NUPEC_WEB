@@ -306,18 +306,13 @@
       "cta": "Ver línea adulto"
     },
     "science": {
-      "subtitle": "Respaldo científico canino",
-      "title": "Datos que Sostienen Cada Bolsa",
-      "description": "Métricas verificadas en cada lote por nuestro laboratorio en Querétaro.",
-      "digestibilidadNum": "92%",
-      "digestibilidadLabel": "Digestibilidad Comprobada",
-      "digestibilidadDesc": "Estudios in vivo en panel canino bajo protocolos AAFCO.",
-      "estudiosNum": "+15",
-      "estudiosLabel": "Estudios Clínicos Publicados",
-      "estudiosDesc": "En colaboración con universidades veterinarias mexicanas.",
-      "ingredientesNum": "100%",
-      "ingredientesLabel": "Ingredientes Trazables",
-      "ingredientesDesc": "Materias primas seleccionadas con análisis por lote."
+      "subtitle": "Respaldo científico",
+      "title": "Respaldo Científico",
+      "description": "Nutrimos conscientes del valor de la ciencia",
+      "avaladosDesc": "Avalados por el Instituto Internacional de Investigación Animal",
+      "pruebasDesc": "Pruebas no invasivas de digestibilidad y palatibilidad de nuestros productos",
+      "laboratorioDesc": "Laboratorio interno con análisis nutricional de ingredientes para optimizar la formulación de alimentos.",
+      "certificadoDesc": "Moderno laboratorio certificado por SAGARPA, FSSC 22,000 y acreditado por EMA, respaldado por auditorías que garantizan los resultados de sus análisis alimenticios."
     },
     "formula": {
       "titleHighlight": "Fórmula",
@@ -385,18 +380,13 @@
       "cta": "Ver línea adulto"
     },
     "science": {
-      "subtitle": "Respaldo científico felino",
-      "title": "Datos que Sostienen Cada Bolsa",
-      "description": "Métricas verificadas en cada lote por nuestro laboratorio en Querétaro.",
-      "digestibilidadNum": "92%",
-      "digestibilidadLabel": "Digestibilidad Comprobada",
-      "digestibilidadDesc": "Estudios in vivo en panel felino bajo protocolos AAFCO.",
-      "estudiosNum": "+15",
-      "estudiosLabel": "Estudios Clínicos Publicados",
-      "estudiosDesc": "En colaboración con universidades veterinarias mexicanas.",
-      "ingredientesNum": "100%",
-      "ingredientesLabel": "Ingredientes Trazables",
-      "ingredientesDesc": "Materias primas seleccionadas con análisis por lote."
+      "subtitle": "Respaldo científico",
+      "title": "Respaldo Científico",
+      "description": "Nutrimos conscientes del valor de la ciencia",
+      "avaladosDesc": "Avalados por el Instituto Internacional de Investigación Animal",
+      "pruebasDesc": "Pruebas no invasivas de digestibilidad y palatibilidad de nuestros productos",
+      "laboratorioDesc": "Laboratorio interno con análisis nutricional de ingredientes para optimizar la formulación de alimentos.",
+      "certificadoDesc": "Moderno laboratorio certificado por SAGARPA, FSSC 22,000 y acreditado por EMA, respaldado por auditorías que garantizan los resultados de sus análisis alimenticios."
     },
     "formula": {
       "titleHighlight": "Fórmula",
