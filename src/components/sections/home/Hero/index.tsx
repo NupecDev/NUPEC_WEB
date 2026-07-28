@@ -2,18 +2,28 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
+import { useParams } from "next/navigation";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+type HeroSlide = {
+  subtitle: string;
+  title: string;
+  description: string;
+  cta: string;
+  ctaHref: string;
+};
+
 const swiperOptions = {
   modules: [Autoplay, Pagination, Navigation],
   slidesPerView: 1,
   spaceBetween: 30,
   autoplay: {
-    delay: 5000,
+    delay: 9000,
     disableOnInteraction: false,
   },
   loop: true,
@@ -32,6 +42,11 @@ const swiperOptions = {
 };
 
 export default function Banner() {
+  const t = useTranslations('home.hero');
+  const params = useParams();
+  const lang = params.lang as string;
+  const slides = t.raw('slides') as HeroSlide[];
+
   return (
     <section className="banner-section p_relative">
       <div
@@ -40,8 +55,8 @@ export default function Banner() {
       ></div>
 
       <Swiper {...swiperOptions} className="swiper-container banner-carousel">
-        {[1, 2, 3].map((slide) => (
-          <SwiperSlide key={slide}>
+        {slides.map((slide) => (
+          <SwiperSlide key={slide.title}>
             <div className="slide-item p_relative">
 
               {/* Pattern Layer */}
@@ -79,15 +94,15 @@ export default function Banner() {
               {/* Content Box */}
               <div className="auto-container">
                 <div className="content-box p_relative d_block z_5">
-                  <span className="title-text p_relative d_block">Your Health is our Priority</span>
+                  <span className="title-text p_relative d_block">{slide.subtitle}</span>
                   <h2 className="p_relative d_block">
-                    Compassionate Care, Innovative <span>Treatments</span>
+                    {slide.title}
                   </h2>
                   <p>
-                    In addition to treating illnesses and injuries, medical care also emphasizes the importance of preventive care, such as regular check-ups, vaccinations, and lifestyle modifications.
+                    {slide.description}
                   </p>
                   <div className="btn-box">
-                    <Link href="/" className="theme-btn btn-two"><span>Read More</span></Link>
+                    <Link href={`/${lang}${slide.ctaHref}`} className="theme-btn btn-two"><span>{slide.cta}</span></Link>
                   </div>
                 </div>
               </div>
@@ -97,29 +112,11 @@ export default function Banner() {
                 <figure className="image">
                   <Image
                     src="/assets/images/banner/banner-img-1.png"
-                    alt="Banner"
+                    alt={slide.title}
                     width={711}
                     height={700}
                   />
                 </figure>
-
-                {/* Doctors List */}
-                <div className="doctors-list">
-                  <ul className="thumb-box flex gap-2">
-                    {[1, 2, 3, 4].map((i) => (
-                      <li key={i}>
-                        <Image
-                          src={`/assets/images/banner/thumb-${i}.jpg`}
-                          alt={`Thumb ${i}`}
-                          width={45}
-                          height={45}
-                        />
-                      </li>
-                    ))}
-                  </ul>
-                  <h3>100K</h3>
-                  <span>Professional Doctors</span>
-                </div>
               </div>
 
             </div>

@@ -1,13 +1,45 @@
-<svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-<mask id="mask0_0_1148" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="21">
-<path d="M0 0.500002H20V20.5H0V0.500002Z" fill="white"/>
-</mask>
-<g mask="url(#mask0_0_1148)">
-<path d="M11.384 0.894766C15.9195 0.894766 19.6094 4.58461 19.6094 9.12012" stroke="#F3A952" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M11.384 3.24473C14.6235 3.24473 17.2594 5.88066 17.2594 9.12012" stroke="#F3A952" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M11.384 5.59516C13.3278 5.59516 14.909 7.17637 14.909 9.12012" stroke="#F3A952" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M11.384 7.94561C12.0328 7.94561 12.559 8.47182 12.559 9.12061" stroke="#F3A952" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M7.32101 13.1875C7.32101 13.4032 7.14613 13.5781 6.93039 13.5781C6.71469 13.5781 6.53976 13.4032 6.53976 13.1875C6.53976 12.9718 6.71469 12.7969 6.93039 12.7969C7.14613 12.7969 7.32101 12.9718 7.32101 13.1875Z" fill="#F3A952"/>
-<path d="M5.78896 11.8519C5.54114 11.5264 5.3063 11.1903 5.08513 10.8442C4.79454 10.3891 4.88243 9.78641 5.26403 9.40477L6.59024 8.07856C6.87575 7.79344 6.87575 7.33055 6.59024 7.04536L3.46911 3.9243C3.18396 3.63872 2.7211 3.63872 2.43595 3.9243L1.64606 4.71411C0.364073 5.99579 0.0175879 7.952 0.822275 9.57622C2.25392 12.4665 5.20001 16.8969 10.8758 19.6801C12.5051 20.4786 14.4703 20.1399 15.7531 18.8571L16.5609 18.0493C16.8465 17.7641 16.8465 17.3013 16.5609 17.0157L13.4398 13.895C13.1547 13.6094 12.6918 13.6094 12.4067 13.895L11.0805 15.2212C10.6988 15.6028 10.0961 15.6907 9.64099 15.4001C9.14868 15.0854 8.67622 14.743 8.22583 14.3747" stroke="#F3A952" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-</g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 20 21">
+  <!-- Generator: Adobe Illustrator 30.0.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 123)  -->
+  <defs>
+    <style>
+      .st0 {
+        mask: url(#mask);
+      }
+
+      .st1 {
+        fill: #fff;
+      }
+
+      .st2 {
+        fill: #f3a952;
+        stroke-miterlimit: 10;
+      }
+
+      .st2, .st3 {
+        stroke: #fff;
+      }
+
+      .st3 {
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+    </style>
+    <mask id="mask" x="-.11" y=".39" width="20.22" height="20.21" maskUnits="userSpaceOnUse">
+      <g id="mask0_0_1148">
+        <path class="st1" d="M0,.5h20v20H0V.5Z"/>
+      </g>
+    </mask>
+  </defs>
+  <g class="st0">
+    <g>
+      <path class="st3" d="M11.38.89c4.54,0,8.23,3.69,8.23,8.23"/>
+      <path class="st3" d="M11.38,3.24c3.24,0,5.88,2.64,5.88,5.88"/>
+      <path class="st3" d="M11.38,5.6c1.94,0,3.53,1.58,3.53,3.52"/>
+      <path class="st3" d="M11.38,7.95c.65,0,1.18.53,1.18,1.18"/>
+      <path class="st2" d="M7.32,13.19c0,.22-.17.39-.39.39s-.39-.17-.39-.39.17-.39.39-.39.39.17.39.39Z"/>
+      <path class="st3" d="M5.79,11.85c-.25-.33-.48-.66-.7-1.01-.29-.46-.2-1.06.18-1.44l1.33-1.33c.29-.29.29-.75,0-1.03l-3.12-3.12c-.29-.29-.75-.29-1.03,0l-.79.79C.36,6,.02,7.95.82,9.58c1.43,2.89,4.38,7.32,10.05,10.1,1.63.8,3.59.46,4.88-.82l.81-.81c.29-.29.29-.75,0-1.03l-3.12-3.12c-.29-.29-.75-.29-1.03,0l-1.33,1.33c-.38.38-.98.47-1.44.18-.49-.31-.96-.66-1.42-1.03"/>
+    </g>
+  </g>
 </svg>

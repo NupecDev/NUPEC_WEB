@@ -2997,6 +2997,32 @@ button.ltr {
   width: 100%;
 }
 
+/* — Fórmula High Tech (npc-home-formula, nupec.com) ---------- */
+.formula-hightech {
+  background: linear-gradient(180deg, #ffffff 0%, #f4f7f9 100%);
+}
+
+.formula-hightech__highlight {
+  color: var(--theme-color);
+}
+
+.formula-hightech__desc {
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.formula-hightech__image-holder {
+  display: flex;
+  justify-content: center;
+}
+
+.formula-hightech__image {
+  width: 100%;
+  height: auto;
+  max-width: 994px;
+}
+
 /* — Grid de productos (extiende service-block-two) ----------- */
 .canine-products {
   background: rgba(102,111,119,0.07);

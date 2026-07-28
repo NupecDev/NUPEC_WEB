@@ -6,12 +6,12 @@ import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
 
 const CATEGORIES = [
-  { key: 'daily', slug: 'nutricion-diaria', icon: 'icon-18', img: '/assets/images/service/service-1.jpg' },
-  { key: 'specialized', slug: 'nutricion-especializada', icon: 'icon-19', img: '/assets/images/service/service-2.jpg' },
-  { key: 'clinical', slug: 'nutricion-clinica', icon: 'icon-20', img: '/assets/images/service/service-3.jpg' },
-  { key: 'treats', slug: 'premios-funcionales', icon: 'icon-18', img: '/assets/images/service/service-1.jpg' },
-  { key: 'supplements', slug: 'suplementos', icon: 'icon-19', img: '/assets/images/service/service-2.jpg' },
-  { key: 'wet', slug: 'alimentos-humedos', icon: 'icon-20', img: '/assets/images/service/service-3.jpg' },
+  { key: 'daily', slug: 'nutricion-diaria', icon: '/assets/images/service/npc-home-packages-1.png', img: '/assets/images/service/service-1.jpg' },
+  { key: 'specialized', slug: 'nutricion-especializada', icon: '/assets/images/service/service-2.png', img: '/assets/images/service/service-2.jpg' },
+  { key: 'clinical', slug: 'nutricion-clinica', icon: '/assets/images/service/service-3.png', img: '/assets/images/service/service-3.jpg' },
+  { key: 'treats', slug: 'premios-funcionales', icon: '/assets/images/service/service-4.png', img: '/assets/images/service/service-1.jpg' },
+  { key: 'supplements', slug: 'suplementos', icon: '/assets/images/service/service-5.png', img: '/assets/images/service/service-2.jpg' },
+  { key: 'wet', slug: 'alimentos-humedos', icon: '/assets/images/service/service-6.png', img: '/assets/images/service/service-3.jpg' },
 ] as const;
 
 export default function CategoriesGrid() {
@@ -43,7 +43,7 @@ export default function CategoriesGrid() {
                   <div className="lower-content">
                     <div className="inner">
                       <div className="icon-box">
-                        <i className={icon} />
+                        <Image src={icon} alt="" width={90} height={90} />
                       </div>
                       <h3>
                         <Link href={`/${lang}/nutricion-canina/${slug}`}>{t(key)}</Link>

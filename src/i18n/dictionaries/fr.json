@@ -19,10 +19,29 @@
   },
   "home": {
     "hero": {
-      "subtitle": "Nutrition de qualité certifiée",
-      "title": "La nutrition que votre animal mérite",
-      "description": "Formules développées par des vétérinaires et des nutritionnistes spécialisés pour chaque étape et besoin de vie.",
-      "cta": "Trouvez votre aliment"
+      "slides": [
+        {
+          "subtitle": "Soutenu par des vétérinaires",
+          "title": "Nutrition Clinique NUPEC",
+          "description": "Régimes thérapeutiques formulés avec des vétérinaires spécialistes pour la prise en charge nutritionnelle de conditions spécifiques chez les chiens et les chats.",
+          "cta": "Découvrir la ligne clinique",
+          "ctaHref": "/nutricion-canina/nutricion-clinica"
+        },
+        {
+          "subtitle": "Nouvelle ligne de friandises",
+          "title": "Creamy Treats",
+          "description": "Des friandises onctueuses et irrésistibles, conçues pour gâter votre animal sans négliger sa nutrition.",
+          "cta": "Découvrir Creamy Treats",
+          "ctaHref": "/nutricion-canina/premios-funcionales"
+        },
+        {
+          "subtitle": "Nutrition complémentaire",
+          "title": "Suppléments NUPEC",
+          "description": "Des compléments pensés pour renforcer la nutrition quotidienne de votre animal et soutenir son bien-être général.",
+          "cta": "Voir les suppléments",
+          "ctaHref": "/nutricion-canina/suplementos"
+        }
+      ]
     },
     "categories": {
       "subtitle": "Notre catalogue",
@@ -302,6 +321,12 @@
       "ingredientesNum": "100%",
       "ingredientesLabel": "Ingrédients Traçables",
       "ingredientesDesc": "Matières premières sélectionnées avec analyse par lot."
+    },
+    "formula": {
+      "titleHighlight": "Formule",
+      "titleRest": "High Tech",
+      "description": "En collaboration avec des médecins vétérinaires, des ingénieurs en alimentation et d'autres experts en nutrition, nous avons élaboré notre formule <strong>HIGH TECH</strong> qui favorise 90% d'utilisation des nutriments.",
+      "imageAlt": "Formule High Tech NUPEC"
     }
   },
   "feline": {
@@ -375,6 +400,12 @@
       "ingredientesNum": "100%",
       "ingredientesLabel": "Ingrédients Traçables",
       "ingredientesDesc": "Matières premières sélectionnées avec analyse par lot."
+    },
+    "formula": {
+      "titleHighlight": "Formule",
+      "titleRest": "High Tech",
+      "description": "En collaboration avec des médecins vétérinaires, des ingénieurs en alimentation et d'autres experts en nutrition, nous avons élaboré notre formule <strong>HIGH TECH</strong> qui favorise 90% d'utilisation des nutriments.",
+      "imageAlt": "Formule High Tech NUPEC"
     }
   },
   "clinical": {
