@@ -1,20 +1,16 @@
 'use client';
 
-import Link from 'next/link';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
-import { useParams } from 'next/navigation';
 
 const ITEMS = [
-  { numKey: 'r01', titleKey: 't01', descKey: 'd01', linkKey: 'l01', href: '/nosotros' },
-  { numKey: 'r02', titleKey: 't02', descKey: 'd02', linkKey: 'l02', href: '/nosotros' },
-  { numKey: 'r03', titleKey: 't03', descKey: 'd03', linkKey: 'l03', href: '/nosotros' },
+  { numKey: 'r01', titleKey: 't01', descKey: 'd01' },
+  { numKey: 'r02', titleKey: 't02', descKey: 'd02' },
+  { numKey: 'r03', titleKey: 't03', descKey: 'd03' },
 ] as const;
 
 export default function AboutBrand() {
   const t = useTranslations('home.science');
-  const params = useParams();
-  const lang = params.lang as string;
 
   return (
     <section className="about-section sec-pad p_relative">
@@ -34,18 +30,15 @@ export default function AboutBrand() {
                   <p>{t('description')}</p>
                 </div>
 
-                {ITEMS.map(({ numKey, titleKey, descKey, linkKey, href }) => (
+                {ITEMS.map(({ numKey, titleKey, descKey }) => (
                   <div key={numKey} className="working-block-one mb_25">
                     <div className="inner-box" style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
                       <div style={{ minWidth: '48px' }}>
-                        <span style={{ fontSize: '32px', fontWeight: 700, color: '#1a5fa8', lineHeight: 1 }}>{t(numKey)}</span>
+                        <span style={{ fontSize: '32px', fontWeight: 700, color: '#0e3967', lineHeight: 1 }}>{t(numKey)}</span>
                       </div>
                       <div>
                         <h4 style={{ marginBottom: '8px' }}>{t(titleKey)}</h4>
                         <p style={{ marginBottom: '8px' }}>{t(descKey)}</p>
-                        <Link href={`/${lang}${href}`} style={{ color: '#1a5fa8', fontWeight: 600, textDecoration: 'none' }}>
-                          {t(linkKey)} <i className="icon-22" />
-                        </Link>
                       </div>
                     </div>
                   </div>

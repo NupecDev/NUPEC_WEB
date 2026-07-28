@@ -1,0 +1,12 @@
+/* Ajustes locales del proyecto NUPEC. No editar los CSS del template directamente. */
+
+/*
+  .image-block-one .image-box .shape .shape-1 (module-css/about.css) se posiciona
+  con offsets negativos (top/right) como efecto decorativo, pero al no tener un
+  contenedor que recorte el overflow, empuja el ancho de la página y genera
+  scroll horizontal en todo el sitio. .text-box (badge inferior) sí depende de
+  desbordar verticalmente (bottom: -40px), así que solo se recorta el eje X.
+*/
+.image-block-one .image-box {
+  overflow-x: clip;
+}

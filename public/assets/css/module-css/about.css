@@ -131,6 +131,7 @@
   -webkit-animation: zoom-fade 7s infinite linear;
   animation: zoom-fade 7s infinite linear;
   z-index: 1;
+  background-size: contain;
 }
 
 .about-section .wave-layer .wave-1{
