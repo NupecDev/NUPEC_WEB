@@ -20,7 +20,7 @@ export default async function NutricionFelinaPage({ params }: { params: Promise<
         <FormulaHighTech species="felino" />
       </CaninaTabProvider>
       <ExpertsCanina species="felino" />
-      <BannerHeroes species="felino" />
+      <BannerHeroes lang={lang} species="felino" />
       <ScienceStats species="felino" />
     </PageLayout>
   );

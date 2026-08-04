@@ -3382,6 +3382,28 @@ button.ltr {
   color: var(--theme-color);
 }
 
+/* Cards de misma altura, tomando como mínimo la que tenga más texto */
+.canine-experts .content-column .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.canine-experts .chooseus-block {
+  display: flex;
+}
+
+.canine-experts .chooseus-block-one {
+  display: flex;
+  width: 100%;
+}
+
+.canine-experts .chooseus-block-one .inner-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
 /* — Promo banner del home (imagen full-width de fondo) --------- */
 .promo-banner-section {
   width: 100%;
@@ -3478,6 +3500,34 @@ button.ltr {
   color: rgba(255,255,255,0.9);
   max-width: 480px;
   margin: 0;
+}
+
+/* — Producto destacado aleatorio (imagen de empaque flotante) — */
+.canine-banner__layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.canine-banner__text-col {
+  flex: 1 1 55%;
+}
+
+.canine-banner__img-wrap {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 320px;
+  height: 320px;
+}
+
+.canine-banner__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.35));
 }
 
 /* — Hero de Nosotros (extiende banner-section, mismo patrón que canine-banner) — */
@@ -3724,6 +3774,7 @@ button.ltr {
 
   .canine-banner { padding: 100px 0; }
   .canine-banner__title { font-size: 36px; }
+  .canine-banner__img-wrap { width: 220px; height: 220px; }
 }
 
 @media (max-width: 767px) {
@@ -3734,6 +3785,9 @@ button.ltr {
 
   .canine-banner { padding: 80px 0; }
   .canine-banner__title { font-size: 28px; }
+  .canine-banner__layout { flex-direction: column; text-align: center; }
+  .canine-banner__img-wrap { width: 180px; height: 180px; order: -1; }
+  .canine-banner__desc { max-width: none; }
 
   .canine-science__card { padding: 30px 20px; }
 }
@@ -6202,4 +6256,55 @@ sup {
 
 .contact-form__status--error {
   color: #c62828;
+}
+
+/* Digestibilidad: diagrama con stats superpuestas (ExpertsCanina) */
+.canine-digestibility__diagram {
+  position: relative;
+}
+
+.canine-digestibility__stat {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.canine-digestibility__value {
+  font-family: var(--title-font);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--theme-color);
+}
+
+.canine-digestibility__label {
+  font-family: var(--title-font);
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--title-color);
+  text-transform: uppercase;
+}
+
+.canine-digestibility__stat--ingested {
+  left: 5%;
+  bottom: 5%;
+}
+
+.canine-digestibility__stat--utilized {
+  right: 10%;
+  top: 5%;
+}
+
+.canine-digestibility__stat--excreted {
+  right: 5%;
+  bottom: 5%;
+}
+
+@media only screen and (max-width: 767px) {
+  .canine-digestibility__stat {
+    position: static;
+    margin-top: 10px;
+  }
 }

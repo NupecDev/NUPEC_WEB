@@ -38,11 +38,6 @@ const LIFE_STAGE_COLOR: Record<string, string> = {
   senior:   '#54301A',
 };
 
-const BREED_SIZE_COLOR: Record<string, string> = {
-  mini:    '#ECB3CB',
-  pequena: '#0085CA',
-};
-
 const LIFE_STAGE_ORDER = ['cachorro', 'adulto', 'senior'];
 
 function getPrimary(product: CategoryProductCard, categorySlug: string): string {
@@ -52,60 +47,40 @@ function getPrimary(product: CategoryProductCard, categorySlug: string): string 
   return CATEGORY_COLOR[categorySlug] ?? '#78BE20';
 }
 
-function getSecondary(product: CategoryProductCard): string | undefined {
-  const breed = product.breedSize?.[0];
-  if (!breed) return undefined;
-  return BREED_SIZE_COLOR[breed];
-}
-
 type Group = {
   lifeStage: string | null;
-  breedSizeLabel: string | null;
   products: CategoryProductCard[];
 };
 
+// breedSize se omite en este nivel de clasificación (queda disponible en Sanity para el wizard).
 function groupProducts(products: CategoryProductCard[]): Group[] {
   const hasLifeStage = products.some((p) => p.lifeStage && p.lifeStage.length > 0);
-  const hasBreedSize = products.some((p) => p.breedSize?.some((b) => b !== 'todas'));
 
-  if (!hasLifeStage && !hasBreedSize) {
-    return [{ lifeStage: null, breedSizeLabel: null, products }];
+  if (!hasLifeStage) {
+    return [{ lifeStage: null, products }];
   }
 
   const map = new Map<string, CategoryProductCard[]>();
 
   for (const product of products) {
     const stages = product.lifeStage && product.lifeStage.length > 0 ? product.lifeStage : ['general'];
-    const breeds = product.breedSize && product.breedSize.filter((b) => b !== 'todas').length > 0
-      ? product.breedSize.filter((b) => b !== 'todas')
-      : ['todas'];
 
-    // Product appears once per (lifeStage x breedSize) combination it belongs to
+    // Product appears once per lifeStage it belongs to
     for (const ls of stages) {
-      for (const bs of breeds) {
-        const key = `${ls}::${bs}`;
-        if (!map.has(key)) map.set(key, []);
-        map.get(key)!.push(product);
-      }
+      if (!map.has(ls)) map.set(ls, []);
+      map.get(ls)!.push(product);
     }
   }
 
   const groups: Group[] = [];
 
-  // Sort by lifeStage order then breedSize
-  const sortedKeys = Array.from(map.keys()).sort((a, b) => {
-    const [lsA, bsA] = a.split('::');
-    const [lsB, bsB] = b.split('::');
-    const lsOrder = LIFE_STAGE_ORDER.indexOf(lsA) - LIFE_STAGE_ORDER.indexOf(lsB);
-    if (lsOrder !== 0) return lsOrder;
-    return bsA.localeCompare(bsB);
-  });
+  const sortedKeys = Array.from(map.keys()).sort(
+    (a, b) => LIFE_STAGE_ORDER.indexOf(a) - LIFE_STAGE_ORDER.indexOf(b)
+  );
 
   for (const key of sortedKeys) {
-    const [ls, bs] = key.split('::');
     groups.push({
-      lifeStage: ls === 'general' ? null : ls,
-      breedSizeLabel: bs === 'todas' ? null : bs,
+      lifeStage: key === 'general' ? null : key,
       products: map.get(key)!,
     });
   }
@@ -113,14 +88,11 @@ function groupProducts(products: CategoryProductCard[]): Group[] {
   return groups;
 }
 
-function GroupLabel({ lifeStage, breedSizeLabel, t }: { lifeStage: string | null; breedSizeLabel: string | null; t: ReturnType<typeof useTranslations> }) {
-  if (!lifeStage && !breedSizeLabel) return null;
+function GroupLabel({ lifeStage, t }: { lifeStage: string | null; t: ReturnType<typeof useTranslations> }) {
+  if (!lifeStage) return null;
 
-  const ls = lifeStage ? t(`lifeStage.${lifeStage}`) : null;
-  const bs = breedSizeLabel ? t(`breedSize.${breedSizeLabel}`) : null;
-
-  const label = [ls, bs].filter(Boolean).join(' · ');
-  const color = lifeStage ? (LIFE_STAGE_COLOR[lifeStage] ?? '#0085CA') : '#0085CA';
+  const label = t(`lifeStage.${lifeStage}`);
+  const color = LIFE_STAGE_COLOR[lifeStage] ?? '#0085CA';
 
   return (
     <div className="cat-products__group-label" style={{ borderColor: color }}>
@@ -155,22 +127,17 @@ export default function CategoryProductGridClient({ lang, products, categorySlug
           <>
             {groups.map((group, gi) => (
               <div key={gi} className="cat-products__group">
-                <GroupLabel lifeStage={group.lifeStage} breedSizeLabel={group.breedSizeLabel} t={t} />
+                <GroupLabel lifeStage={group.lifeStage} t={t} />
                 <div className="row clearfix">
                   {group.products.map((product) => {
                     const primary = getPrimary(product, categorySlug);
-                    const secondary = getSecondary(product);
                     return (
                       <div key={product._id} className="col-lg-4 col-md-6 col-sm-12 canine-product-col">
                         <div className="service-block-two canine-product-block">
                           <div className="inner-box">
                             <div
                               className="canine-product-block__stripe"
-                              style={{
-                                background: secondary
-                                  ? `linear-gradient(90deg, ${primary} 50%, ${secondary} 50%)`
-                                  : primary,
-                              }}
+                              style={{ background: primary }}
                             />
 
                             <div className="canine-product-block__img-wrap">

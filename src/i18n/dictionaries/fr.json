@@ -288,22 +288,46 @@
     "experts": {
       "subtitle": "La science dans chaque formule",
       "title": "Produits Conçus par des Experts",
-      "description": "Chaque formule NUPEC naît dans notre laboratoire à Querétaro, formulée par des médecins vétérinaires zootechniciens avec des maîtrises en nutrition animale.",
-      "cta": "Rencontrez l'équipe scientifique",
+      "description": "Nutrition scientifique développée par des experts en nutrition animale.",
+      "cta": "En savoir plus",
       "digestibilidadTitle": "Digestibilité",
       "digestibilidadDesc": "92% de digestibilité moyenne prouvée par des études in vivo.",
-      "palatabilidadTitle": "Palatabilité",
-      "palatabilidadDesc": "Acceptation >95% dans les panels de test canin.",
-      "investigacionTitle": "Recherche",
-      "investigacionDesc": "Collaborations avec des universités vétérinaires mexicaines.",
+      "digestibilidadHref": "https://nupec.com/respaldo-cientifico/digestibilidad/",
+      "ingredientesTitle": "Ingrédients",
+      "ingredientesDesc": "Ingrédients 100% frais de qualité alimentaire humaine.",
+      "ingredientesHref": "https://nupec.com/respaldo-cientifico/ingredientes/",
+      "investigacionTitle": "Laboratoire",
+      "investigacionDesc": "Laboratoire Euro NUTEC accrédité par EMA, SAGARPA et Cofepris.",
+      "investigacionHref": "https://nupec.com/respaldo-cientifico/laboratorio/",
       "calidadTitle": "Qualité Premium",
-      "calidadDesc": "Traçabilité par lot et matières premières sélectionnées."
+      "calidadDesc": "Plus de 75 contrôles qualité avec certification FSSC 22000.",
+      "calidadHref": "https://nupec.com/respaldo-cientifico/calidad-y-tecnologia-de-punta/",
+      "digestibility": {
+        "eyebrow": "Le saviez-vous ?",
+        "title": "Digestibilité",
+        "description": "La digestibilité est un critère qui détermine le niveau d'utilisation d'un aliment. Les aliments Super Premium ont un taux de digestibilité supérieur à 90%.",
+        "ingestedLabel": "Ingéré",
+        "ingestedValue": "100%",
+        "utilizedLabel": "Utilisé",
+        "utilizedValue": "90%",
+        "excretedLabel": "Excrété",
+        "excretedValue": "10%",
+        "cta": "En savoir plus sur la digestibilité",
+        "href": "https://nupec.com/respaldo-cientifico/digestibilidad/"
+      },
+      "valve": {
+        "subtitle": "Technologie de pointe",
+        "title": "Valve Unique",
+        "description": "Maintient l'apparence originale du produit à différentes pressions atmosphériques, préservant l'innocuité et la fraîcheur de l'aliment.",
+        "cta": "Découvrez notre technologie",
+        "href": "https://nupec.com/respaldo-cientifico/calidad-y-tecnologia-de-punta/"
+      }
     },
     "banner": {
       "eyebrow": "NUPEC Adulte",
       "title": "Nous Nourrissons des Héros Extraordinaires",
       "description": "Énergie soutenue pour les chiens actifs et de travail.",
-      "cta": "Voir la gamme adulte"
+      "cta": "Voir le produit"
     },
     "science": {
       "subtitle": "Soutien scientifique",
@@ -362,22 +386,46 @@
     "experts": {
       "subtitle": "La science dans chaque formule",
       "title": "Produits Conçus par des Experts",
-      "description": "Chaque formule NUPEC naît dans notre laboratoire à Querétaro, formulée par des médecins vétérinaires zootechniciens avec des maîtrises en nutrition animale.",
-      "cta": "Rencontrez l'équipe scientifique",
+      "description": "Nutrition scientifique développée par des experts en nutrition animale.",
+      "cta": "En savoir plus",
       "digestibilidadTitle": "Digestibilité",
       "digestibilidadDesc": "92% de digestibilité moyenne prouvée par des études in vivo.",
-      "palatabilidadTitle": "Palatabilité",
-      "palatabilidadDesc": "Acceptation >95% dans les panels de test félin.",
-      "investigacionTitle": "Recherche",
-      "investigacionDesc": "Collaborations avec des universités vétérinaires mexicaines.",
+      "digestibilidadHref": "https://nupec.com/respaldo-cientifico/digestibilidad/",
+      "ingredientesTitle": "Ingrédients",
+      "ingredientesDesc": "Ingrédients 100% frais de qualité alimentaire humaine.",
+      "ingredientesHref": "https://nupec.com/respaldo-cientifico/ingredientes/",
+      "investigacionTitle": "Laboratoire",
+      "investigacionDesc": "Laboratoire Euro NUTEC accrédité par EMA, SAGARPA et Cofepris.",
+      "investigacionHref": "https://nupec.com/respaldo-cientifico/laboratorio/",
       "calidadTitle": "Qualité Premium",
-      "calidadDesc": "Traçabilité par lot et matières premières sélectionnées."
+      "calidadDesc": "Plus de 75 contrôles qualité avec certification FSSC 22000.",
+      "calidadHref": "https://nupec.com/respaldo-cientifico/calidad-y-tecnologia-de-punta/",
+      "digestibility": {
+        "eyebrow": "Le saviez-vous ?",
+        "title": "Digestibilité",
+        "description": "La digestibilité est un critère qui détermine le niveau d'utilisation d'un aliment. Les aliments Super Premium ont un taux de digestibilité supérieur à 90%.",
+        "ingestedLabel": "Ingéré",
+        "ingestedValue": "100%",
+        "utilizedLabel": "Utilisé",
+        "utilizedValue": "90%",
+        "excretedLabel": "Excrété",
+        "excretedValue": "10%",
+        "cta": "En savoir plus sur la digestibilité",
+        "href": "https://nupec.com/respaldo-cientifico/digestibilidad/"
+      },
+      "valve": {
+        "subtitle": "Technologie de pointe",
+        "title": "Valve Unique",
+        "description": "Maintient l'apparence originale du produit à différentes pressions atmosphériques, préservant l'innocuité et la fraîcheur de l'aliment.",
+        "cta": "Découvrez notre technologie",
+        "href": "https://nupec.com/respaldo-cientifico/calidad-y-tecnologia-de-punta/"
+      }
     },
     "banner": {
       "eyebrow": "NUPEC Adulte",
       "title": "Nous Nourrissons des Héros Extraordinaires",
       "description": "Énergie et bien-être pour chats à chaque étape de vie.",
-      "cta": "Voir la gamme adulte"
+      "cta": "Voir le produit"
     },
     "science": {
       "subtitle": "Soutien scientifique",

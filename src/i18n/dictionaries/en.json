@@ -288,22 +288,46 @@
     "experts": {
       "subtitle": "Science in every formula",
       "title": "Expert-Designed Products",
-      "description": "Every NUPEC formula is born in our laboratory in Querétaro, formulated by zootechnical veterinary doctors with master's degrees in animal nutrition.",
-      "cta": "Meet the scientific team",
+      "description": "Scientific nutrition developed by animal nutrition experts.",
+      "cta": "Read more",
       "digestibilidadTitle": "Digestibility",
       "digestibilidadDesc": "92% average digestibility proven in in-vivo studies.",
-      "palatabilidadTitle": "Palatability",
-      "palatabilidadDesc": "Over 95% acceptance in canine test panels.",
-      "investigacionTitle": "Research",
-      "investigacionDesc": "Collaborations with Mexican veterinary universities.",
+      "digestibilidadHref": "https://nupec.com/respaldo-cientifico/digestibilidad/",
+      "ingredientesTitle": "Ingredients",
+      "ingredientesDesc": "100% fresh, human-grade ingredients.",
+      "ingredientesHref": "https://nupec.com/respaldo-cientifico/ingredientes/",
+      "investigacionTitle": "Laboratory",
+      "investigacionDesc": "Euro NUTEC laboratory accredited by EMA, SAGARPA and Cofepris.",
+      "investigacionHref": "https://nupec.com/respaldo-cientifico/laboratorio/",
       "calidadTitle": "Premium Quality",
-      "calidadDesc": "Lot-level traceability and selected raw materials."
+      "calidadDesc": "Over 75 quality controls with FSSC 22000 certification.",
+      "calidadHref": "https://nupec.com/respaldo-cientifico/calidad-y-tecnologia-de-punta/",
+      "digestibility": {
+        "eyebrow": "Did you know?",
+        "title": "Digestibility",
+        "description": "Digestibility is a criterion that determines how well a food is utilized. Super Premium foods have a digestibility rate greater than 90%.",
+        "ingestedLabel": "Ingested",
+        "ingestedValue": "100%",
+        "utilizedLabel": "Utilized",
+        "utilizedValue": "90%",
+        "excretedLabel": "Excreted",
+        "excretedValue": "10%",
+        "cta": "Learn more about digestibility",
+        "href": "https://nupec.com/respaldo-cientifico/digestibilidad/"
+      },
+      "valve": {
+        "subtitle": "Cutting-edge technology",
+        "title": "Unique Valve",
+        "description": "Keeps the product's original appearance under different atmospheric pressures, preserving the food's safety and freshness.",
+        "cta": "Discover our technology",
+        "href": "https://nupec.com/respaldo-cientifico/calidad-y-tecnologia-de-punta/"
+      }
     },
     "banner": {
       "eyebrow": "NUPEC Adult",
       "title": "We Nourish Extraordinary Heroes",
       "description": "Sustained energy for active and working dogs.",
-      "cta": "View adult line"
+      "cta": "View product"
     },
     "science": {
       "subtitle": "Scientific backing",
@@ -362,22 +386,46 @@
     "experts": {
       "subtitle": "Science in every formula",
       "title": "Expert-Designed Products",
-      "description": "Every NUPEC formula is born in our laboratory in Querétaro, formulated by zootechnical veterinary doctors with master's degrees in animal nutrition.",
-      "cta": "Meet the scientific team",
+      "description": "Scientific nutrition developed by animal nutrition experts.",
+      "cta": "Read more",
       "digestibilidadTitle": "Digestibility",
       "digestibilidadDesc": "92% average digestibility proven in in-vivo studies.",
-      "palatabilidadTitle": "Palatability",
-      "palatabilidadDesc": "Over 95% acceptance in feline test panels.",
-      "investigacionTitle": "Research",
-      "investigacionDesc": "Collaborations with Mexican veterinary universities.",
+      "digestibilidadHref": "https://nupec.com/respaldo-cientifico/digestibilidad/",
+      "ingredientesTitle": "Ingredients",
+      "ingredientesDesc": "100% fresh, human-grade ingredients.",
+      "ingredientesHref": "https://nupec.com/respaldo-cientifico/ingredientes/",
+      "investigacionTitle": "Laboratory",
+      "investigacionDesc": "Euro NUTEC laboratory accredited by EMA, SAGARPA and Cofepris.",
+      "investigacionHref": "https://nupec.com/respaldo-cientifico/laboratorio/",
       "calidadTitle": "Premium Quality",
-      "calidadDesc": "Lot-level traceability and selected raw materials."
+      "calidadDesc": "Over 75 quality controls with FSSC 22000 certification.",
+      "calidadHref": "https://nupec.com/respaldo-cientifico/calidad-y-tecnologia-de-punta/",
+      "digestibility": {
+        "eyebrow": "Did you know?",
+        "title": "Digestibility",
+        "description": "Digestibility is a criterion that determines how well a food is utilized. Super Premium foods have a digestibility rate greater than 90%.",
+        "ingestedLabel": "Ingested",
+        "ingestedValue": "100%",
+        "utilizedLabel": "Utilized",
+        "utilizedValue": "90%",
+        "excretedLabel": "Excreted",
+        "excretedValue": "10%",
+        "cta": "Learn more about digestibility",
+        "href": "https://nupec.com/respaldo-cientifico/digestibilidad/"
+      },
+      "valve": {
+        "subtitle": "Cutting-edge technology",
+        "title": "Unique Valve",
+        "description": "Keeps the product's original appearance under different atmospheric pressures, preserving the food's safety and freshness.",
+        "cta": "Discover our technology",
+        "href": "https://nupec.com/respaldo-cientifico/calidad-y-tecnologia-de-punta/"
+      }
     },
     "banner": {
       "eyebrow": "NUPEC Adult",
       "title": "We Nourish Extraordinary Heroes",
       "description": "Energy and wellbeing for cats at every life stage.",
-      "cta": "View adult line"
+      "cta": "View product"
     },
     "science": {
       "subtitle": "Scientific backing",

@@ -26,13 +26,13 @@
 .content-block-one .content-box .text-box{
   position: relative;
   display: block;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.10); */
 }
 
 .content-block-one .content-box .text-box:before{
   position: absolute;
   content: '';
-  background: rgba(0, 0, 0, 0.10);
+  /* background: rgba(0, 0, 0, 0.10); */
   width: 100%;
   height: 1px;
   left: 0px;

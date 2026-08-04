@@ -52,6 +52,29 @@ export const productsByCategoryQuery = groq`
   }
 `;
 
+export const randomBannerProductsQuery = groq`
+  *[
+    _type == "product" &&
+    species == $species &&
+    isActive == true
+  ] {
+    _id,
+    "name": name[$lang],
+    "slug": select(
+      slug.current match (category->slug.current + "/*") => string::split(slug.current, "/")[1],
+      slug.current
+    ),
+    "tagline": tagline[$lang],
+    color,
+    image,
+    bannerImage,
+    "category": {
+      "name": category->name[$lang],
+      "slug": category->slug.current
+    }
+  }
+`;
+
 export const clinicalProductsByCategoryQuery = groq`
   *[
     _type == "product" &&
