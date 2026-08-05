@@ -2832,7 +2832,7 @@ button.ltr {
 /* — Hero canino (extiende banner-style-two) ------------------ */
 .canine-hero {
   padding: 160px 0 100px;
-  background: var(--title-color);
+  background: linear-gradient(135deg, #0085CA 0%, #005a87 100%);
   overflow: hidden;
 }
 
@@ -3468,9 +3468,9 @@ button.ltr {
   width: 100%;
   height: 100%;
   background: linear-gradient(90deg,
-    rgba(0,0,0,0.65) 0%,
-    rgba(0,0,0,0.25) 55%,
-    rgba(0,0,0,0) 100%);
+    rgba(27, 55, 93, 0.853) 0%,
+    #000000c9 55%,
+    color-mix(in srgb, var(--product-accent, #000000) 30.8%, transparent) 100%);
   pointer-events: none;
 }
 

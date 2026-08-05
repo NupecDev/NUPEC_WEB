@@ -75,11 +75,11 @@ export default function ProductHero({ product }: { product: ProductHeroData }) {
 
       {/* Hero */}
       <section className="banner-style-two canine-hero sp-hero p_relative">
-        <div
+        {/* <div
           className="bg-layer"
-          style={{ backgroundImage: 'url(/assets/images/banner/nodes.png)' }}
+          style={{ backgroundImage: 'url(/assets/images/banner/nodes_2.png)' }}
           
-        />
+        /> */}
         <div
           className="canine-hero__overlay"
           style={{

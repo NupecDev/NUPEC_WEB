@@ -267,6 +267,7 @@ export default async function ProductPage({
           categorySlug={categoria}
           species="canino"
           bannerImage={product.benefitsBannerImage}
+          accentColor={accentColor}
         />
 
         <ProductRelated

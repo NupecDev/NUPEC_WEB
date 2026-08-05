@@ -1,5 +1,6 @@
 'use client';
 
+import type { CSSProperties } from 'react';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
@@ -11,6 +12,7 @@ type Props = {
   categorySlug: string;
   species: 'canino' | 'felino';
   bannerImage?: { asset: { _ref: string } };
+  accentColor?: string;
 };
 
 const LIFE_STAGE_I18N_KEY: Record<string, string> = {
@@ -19,7 +21,7 @@ const LIFE_STAGE_I18N_KEY: Record<string, string> = {
   senior:   'senior',
 };
 
-export default function ProductBenefitsBanner({ productName, lifeStage, categorySlug, species, bannerImage }: Props) {
+export default function ProductBenefitsBanner({ productName, lifeStage, categorySlug, species, bannerImage, accentColor }: Props) {
   const t = useTranslations('productPage.benefitsBanner');
   const params = useParams();
   const lang = params.lang as string;
@@ -31,7 +33,10 @@ export default function ProductBenefitsBanner({ productName, lifeStage, category
     : '/assets/images/banner/canine-heroes.jpg';
 
   return (
-    <section className="banner-section canine-banner sp-benefits-banner p_relative">
+    <section
+      className="banner-section canine-banner sp-benefits-banner p_relative"
+      style={accentColor ? ({ '--product-accent': accentColor } as CSSProperties) : undefined}
+    >
       <div
         className="bg-layer"
         style={{ backgroundImage: `url(${bgImage})` }}

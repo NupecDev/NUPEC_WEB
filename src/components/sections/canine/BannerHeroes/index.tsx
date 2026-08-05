@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
@@ -9,10 +10,13 @@ type BannerProduct = {
   name: string;
   slug: string;
   tagline?: string;
+  color?: string;
   image?: { asset: { _ref: string }; alt?: string };
   bannerImage?: { asset: { _ref: string } };
   category: { name: string; slug: string };
 };
+
+const NUPEC_BLUE = '#0085CA';
 
 type Props = {
   lang: string;
@@ -42,18 +46,22 @@ export default async function BannerHeroes({ lang, species = 'canino' }: Props) 
   const href = product
     ? `/${lang}/${speciesBase}/${product.category.slug}/${product.slug}`
     : `/${lang}/${speciesBase}`;
+  const accentColor = product?.color ?? NUPEC_BLUE;
 
   return (
     /*
       Reutiliza banner-section p_relative con .bg-layer (igual que Hero del home)
       El bg-layer tiene transition scale 8000ms en CSS del template (Ken Burns)
     */
-    <section className="banner-section canine-banner p_relative">
+    <section
+      className="banner-section canine-banner p_relative"
+      style={{ '--product-accent': accentColor } as CSSProperties}
+    >
       <div
         className="bg-layer"
         style={{ backgroundImage: `url(${bannerImage})` }}
       />
-      {/* Overlay oscuro izquierda */}
+      {/* Overlay gradiente: azul NUPEC → color destacado del producto */}
       <div className="canine-banner__overlay" />
 
       <div className="auto-container">

@@ -42,7 +42,7 @@ export default function CategoryHero({ categoryName, categoryDescription, catego
   const speciesLabel = species === 'canino' ? t('switchCanina') : t('switchFelina');
   const bgImage = bannerImage?.asset
     ? urlFor(bannerImage).width(1920).url()
-    : '/assets/images/banner/canine-hero.jpg';
+    : '/assets/images/banner/canine-hero.png';
 
   return (
     <>

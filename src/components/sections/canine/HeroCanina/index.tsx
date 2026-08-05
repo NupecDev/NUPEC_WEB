@@ -15,8 +15,8 @@ export default function HeroCanina({ species = 'canino' }: Props) {
   const speciesBase = species === 'felino' ? 'nutricion-felina' : 'nutricion-canina';
   const heroImage =
     species === 'felino'
-      ? '/assets/images/banner/feline-hero.jpg'
-      : '/assets/images/banner/canine-hero.jpg';
+      ? '/assets/images/banner/feline-hero.png'
+      : '/assets/images/banner/canine-hero.png';
 
   return (
     <>
