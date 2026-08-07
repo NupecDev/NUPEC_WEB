@@ -60,7 +60,7 @@ export default function Service() {
               <div className="inner-box">
                 <figure className="image-box">
                   <Image
-                    src="/assets/images/service/service-1.jpg"
+                    src="/assets/images/resource/Nutricion_Diaria.png"
                     alt="Cardiology"
                     width={416}
                     height={358}

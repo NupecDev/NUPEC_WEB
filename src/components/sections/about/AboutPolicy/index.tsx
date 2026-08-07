@@ -18,7 +18,7 @@ export default function AboutPolicy() {
         </div>
         <div className="about-policy__text">
           <p>{t('body')}</p>
-          <p className="mt_15">{t('bodyTwo')}</p>
+          {/* <p className="mt_15">{t('bodyTwo')}</p> */}
         </div>
       </div>
     </section>

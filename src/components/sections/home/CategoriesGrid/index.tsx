@@ -6,12 +6,12 @@ import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
 
 const CATEGORIES = [
-  { key: 'daily', slug: 'nutricion-diaria', icon: '/assets/images/service/npc-home-packages-1.png', img: '/assets/images/service/service-1.jpg' },
-  { key: 'specialized', slug: 'nutricion-especializada', icon: '/assets/images/service/service-2.png', img: '/assets/images/service/service-2.jpg' },
-  { key: 'clinical', slug: 'nutricion-clinica', icon: '/assets/images/service/service-3.png', img: '/assets/images/service/service-3.jpg' },
-  { key: 'treats', slug: 'premios-funcionales', icon: '/assets/images/service/service-4.png', img: '/assets/images/service/service-1.jpg' },
+  { key: 'daily', slug: 'nutricion-diaria', icon: '/assets/images/service/npc-home-packages-1.png', img: '/assets/images/resource/Nutricion_Diaria.png'},
+  { key: 'specialized', slug: 'nutricion-especializada', icon: '/assets/images/service/service-2.png', img: '/assets/images/resource/Nutricion_Especializada.png' },
+  { key: 'clinical', slug: 'nutricion-clinica', icon:'', img: '/assets/images/resource/Nutricion_clinica.png' },
+  { key: 'treats', slug: 'premios-funcionales', icon:'', img: '/assets/images/resource/Premios_Funcionales.png' },
   { key: 'supplements', slug: 'suplementos', icon: '/assets/images/service/service-5.png', img: '/assets/images/service/service-2.jpg' },
-  { key: 'wet', slug: 'alimentos-humedos', icon: '/assets/images/service/service-6.png', img: '/assets/images/service/service-3.jpg' },
+  { key: 'wet', slug: 'alimentos-humedos', icon: '/assets/images/service/service-6.png', img: '/assets/images/resource/Humedos.png' },
 ] as const;
 
 export default function CategoriesGrid() {

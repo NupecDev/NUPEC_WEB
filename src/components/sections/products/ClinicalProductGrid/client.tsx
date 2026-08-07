@@ -64,7 +64,7 @@ export default function ClinicalProductGridClient({ lang, products, categorySlug
                   {product.image?.asset ? (
                     <div className="clin-grid__bag clin-grid__bag--img">
                       <Image
-                        src={urlFor(product.image).width(200).height(200).url()}
+                        src={urlFor(product.image).width(320).height(400).fit('max').url()}
                         alt={product.image.alt}
                         width={160}
                         height={200}

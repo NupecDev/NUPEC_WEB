@@ -38,7 +38,7 @@ export default function CategoryAbout({ categoryName, categoryDescription, famil
                   <p>
                     {categoryDescription ?? t('fallbackDescription', { category: categoryName })}
                   </p>
-                  <p className="mt_15">{t('bodyTwo')}</p>
+                  {/* <p className="mt_15">{t('bodyTwo')}</p> */}
                 </div>
               </div>
             </div>

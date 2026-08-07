@@ -57,7 +57,7 @@ export default function AboutBrand() {
                 </div>
                 <figure className="image">
                   <Image
-                    src="/assets/images/resource/about-1.jpg"
+                    src="/assets/images/resource/SANUREN.png"
                     alt="Equipo científico NUPEC"
                     width={523}
                     height={399}

@@ -17,7 +17,7 @@ export default function ConcienciaCTA() {
           className="col-lg-6 col-md-12"
           style={{
             minHeight: '360px',
-            background: `url(/assets/images/resource/about-1.jpg) center/cover no-repeat`,
+            background: `url(/assets/images/resource/Conciencia.png) center/cover no-repeat`,
             position: 'relative',
             padding: 0,
           }}

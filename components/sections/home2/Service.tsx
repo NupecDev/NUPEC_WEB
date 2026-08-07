@@ -14,7 +14,7 @@ export default function Service() {
                     <div className="col-lg-4 col-md-6 col-sm-12 service-block">
                         <div className="service-block-one">
                             <div className="inner-box">
-                                <figure className="image-box"><Image src="/assets/images/service/service-1.jpg" alt="Image" width={416} height={358} priority /></figure>
+                                <figure className="image-box"><Image src="/assets/images/resource/Nutricion_Diaria.png" alt="Image" width={416} height={358} priority /></figure>
                                 <div className="lower-content">
                                     <div className="inner">
                                         <div className="icon-box"><i className="icon-18"></i></div>
