@@ -56,6 +56,7 @@ type ProductData = ProductHeroData & {
   _id: string;
   slug: string;
   color?: string;
+  imageBack?: { asset: { _ref: string }; alt?: string };
   bannerImage?: { asset: { _ref: string } };
   benefitsBannerImage?: { asset: { _ref: string } };
   description?: string;
@@ -143,7 +144,8 @@ export default async function ProductPage({
           presentations={product.presentations}
           technicalSheet={product.technicalSheet}
           image={product.image}
-          accentColor={accentColor}
+          imageBack={product.imageBack}
+accentColor={accentColor}
         />
         {/* 2. Indicaciones clínicas — strip debajo del hero */}
         {product.clinicalIndications && product.clinicalIndications.length > 0 && (
@@ -228,7 +230,8 @@ export default async function ProductPage({
           presentations={product.presentations}
           technicalSheet={product.technicalSheet}
           image={product.image}
-          accentColor={accentColor}
+          imageBack={product.imageBack}
+accentColor={accentColor}
         />
 
         {/* Unidad individual (ej. sachet dentro del pack): solo si hay datos en Sanity */}
@@ -295,7 +298,8 @@ export default async function ProductPage({
         presentations={product.presentations}
         technicalSheet={product.technicalSheet}
         image={product.image}
-        accentColor={accentColor}
+        imageBack={product.imageBack}
+accentColor={accentColor}
       />
 
       {/* 2.5. Unidad individual (croqueta, sachet, etc.): solo si hay datos en Sanity */}

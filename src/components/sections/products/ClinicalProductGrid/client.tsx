@@ -1,5 +1,6 @@
 'use client';
 
+import type { CSSProperties } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
@@ -50,11 +51,9 @@ export default function ClinicalProductGridClient({ lang, products, categorySlug
             {products.map((product) => {
               const color = product.color || DEFAULT_COLOR;
               return (
-                <article
-                  key={product._id}
-                  className="clin-grid__card"
-                  style={{ background: color }}
-                >
+                <article key={product._id} className="clin-grid__card">
+                  <div className="canine-product-block__stripe" style={{ background: color }} />
+
                   {/* Rx badge */}
                   <div className="clin-grid__rx-badge" style={{ color }}>
                     {t('rxLabel')}
@@ -72,9 +71,9 @@ export default function ClinicalProductGridClient({ lang, products, categorySlug
                       />
                     </div>
                   ) : (
-                    <div className="clin-grid__bag" style={{ borderColor: 'rgba(255,255,255,0.5)', color: '#fff' }}>
+                    <div className="clin-grid__bag" style={{ borderColor: color, color }}>
                       <div className="clin-grid__bag-brand">NUPEC</div>
-                      <div className="clin-grid__bag-circle" style={{ background: 'rgba(255,255,255,0.2)', border: '2px solid rgba(255,255,255,0.7)' }}>
+                      <div className="clin-grid__bag-circle" style={{ background: 'rgba(0,0,0,0.04)', border: `2px solid ${color}` }}>
                         <span>{product.name}</span>
                       </div>
                     </div>
@@ -82,15 +81,13 @@ export default function ClinicalProductGridClient({ lang, products, categorySlug
 
                   {/* Name + pathology */}
                   <div className="clin-grid__meta">
-                    <h3 className="clin-grid__name">{product.name}</h3>
+                    <h3 className="clin-grid__name" style={{ color }}>{product.name}</h3>
                     {product.tagline && <p className="clin-grid__patho">{product.tagline}</p>}
                   </div>
 
-                  <div className="clin-grid__divider" />
-
                   {/* Bullets */}
                   {product.indications && product.indications.length > 0 && (
-                    <ul className="clin-grid__bullets">
+                    <ul className="clin-grid__bullets" style={{ '--clin-accent': color } as CSSProperties}>
                       {product.indications.slice(0, 3).map((label, i) => (
                         <li key={i}>{label}</li>
                       ))}
@@ -101,8 +98,9 @@ export default function ClinicalProductGridClient({ lang, products, categorySlug
                   <Link
                     href={`/${lang}/${speciesBase}/${categorySlug}/${product.slug}`}
                     className="clin-grid__cta"
+                    style={{ color }}
                   >
-                    {t('viewCard')} →
+                    {t('viewCard')} <i className="icon-22" />
                   </Link>
                 </article>
               );

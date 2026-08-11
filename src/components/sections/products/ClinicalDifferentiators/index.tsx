@@ -23,6 +23,17 @@ type Props = {
 
 const CLINICAL_RED = '#C4262E';
 
+function hexToRgba(hex: string, alpha: number) {
+  const normalized = hex.replace('#', '');
+  const full = normalized.length === 3
+    ? normalized.split('').map((c) => c + c).join('')
+    : normalized;
+  const r = parseInt(full.substring(0, 2), 16);
+  const g = parseInt(full.substring(2, 4), 16);
+  const b = parseInt(full.substring(4, 6), 16);
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
+
 export default function ClinicalDifferentiators({
   items,
   accentColor = CLINICAL_RED,
@@ -33,7 +44,10 @@ export default function ClinicalDifferentiators({
   if (!items || items.length === 0) return null;
 
   return (
-    <section className={`clin-diff ${darkBg ? 'clin-diff--dark' : 'clin-diff--light'} p_relative pt_60 pb_60`}>
+    <section
+      className={`clin-diff ${darkBg ? 'clin-diff--dark' : 'clin-diff--light'} p_relative pt_60 pb_60`}
+      style={!darkBg ? { background: hexToRgba(accentColor, 0.13) } : undefined}
+    >
       <div className="auto-container">
 
         {/* Header */}

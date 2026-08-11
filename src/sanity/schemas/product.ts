@@ -118,6 +118,22 @@ export default defineType({
     }),
 
     defineField({
+      name: "imageBack",
+      title: "Imagen principal (reverso)",
+      type: "image",
+      group: "contenido",
+      description: "Opcional. Si se sube, aparece debajo de la imagen principal en la sección de descripción.",
+      options: { hotspot: true },
+      fields: [
+        defineField({
+          name: "alt",
+          title: "Texto alternativo",
+          type: "string",
+        }),
+      ],
+    }),
+
+    defineField({
       name: "bannerImage",
       title: "Imagen de fondo del hero",
       type: "image",
@@ -234,8 +250,17 @@ export default defineType({
             defineField({
               name: "icon",
               title: "Icono",
-              type: "string",
-              description: "Clase del template o URL de imagen",
+              type: "object",
+              description: "Sube una imagen o, si no, indica una URL/clase del template",
+              fields: [
+                defineField({ name: "image", title: "Imagen", type: "image" }),
+                defineField({
+                  name: "url",
+                  title: "URL o clase del template",
+                  type: "string",
+                  description: "Usar solo si no subiste una imagen arriba. Ej: /assets/icon.svg o flaticon-liver",
+                }),
+              ],
             }),
             defineField({
               name: "invertColors",
@@ -255,7 +280,12 @@ export default defineType({
               ],
             }),
           ],
-          preview: { select: { title: "text.es", subtitle: "icon" } },
+          preview: {
+            select: { title: "text.es", media: "icon.image", url: "icon.url" },
+            prepare({ title, media, url }) {
+              return { title, subtitle: url, media };
+            },
+          },
         },
       ],
     }),
@@ -604,9 +634,27 @@ export default defineType({
             defineField({
               name: "icon",
               title: "Icono",
-              type: "string",
-              description: "URL de imagen (/assets/…) o clase del template (flaticon-liver)",
-              validation: (r) => r.required(),
+              type: "object",
+              description: "Sube una imagen o, si no, indica una URL/clase del template (flaticon-liver)",
+              fields: [
+                defineField({ name: "image", title: "Imagen", type: "image" }),
+                defineField({
+                  name: "url",
+                  title: "URL o clase del template",
+                  type: "string",
+                  description: "Usar solo si no subiste una imagen arriba. Ej: /assets/icon.svg o flaticon-liver",
+                }),
+              ],
+              validation: (r) =>
+                r.custom((value: { image?: unknown; url?: string } | undefined) =>
+                  value?.image || value?.url ? true : "Sube una imagen o indica una URL/clase"
+                ),
+              preview: {
+                select: { media: "image", url: "url" },
+                prepare({ media, url }) {
+                  return { title: url || "Imagen subida", media };
+                },
+              },
             }),
             defineField({
               name: "title",
@@ -666,7 +714,12 @@ export default defineType({
               ],
             }),
           ],
-          preview: { select: { title: "title.es", subtitle: "icon" } },
+          preview: {
+            select: { title: "title.es", media: "icon.image", url: "icon.url" },
+            prepare({ title, media, url }) {
+              return { title, subtitle: url, media };
+            },
+          },
         },
       ],
     }),

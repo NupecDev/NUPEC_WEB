@@ -55,6 +55,7 @@ type Props = {
   presentations?: string[];
   technicalSheet?: { asset: { _ref: string } };
   image?: { asset: { _ref: string }; alt: string };
+  imageBack?: { asset: { _ref: string }; alt?: string };
   accentColor: string;
 };
 
@@ -67,6 +68,7 @@ export default function ProductDescription({
   presentations,
   technicalSheet,
   image,
+  imageBack,
   accentColor,
 }: Props) {
   const t = useTranslations('productPage.description');
@@ -78,25 +80,30 @@ export default function ProductDescription({
           {/* Left: image */}
           <div className="col-lg-5 col-md-12 col-sm-12 image-column">
             <div className="sp-description__img-wrap wow fadeInLeft">
-              <div className="sp-description__img-inner" style={{ borderColor: accentColor }}>
-                {image?.asset ? (
-                  <Image
-                    src={urlFor(image).url()}
-                    alt={image.alt ?? name}
-                    width={480}
-                    height={480}
-                    className="sp-description__img"
-                  />
-                ) : (
-                  <div className="sp-description__img-ph" style={{ borderColor: accentColor, color: accentColor }}>
-                    <span className="sp-description__img-ph-brand">NUPEC<sup>MR</sup></span>
-                    <span className="sp-description__img-ph-name">{name}</span>
-                  </div>
-                )}
-              </div>
-              <div className="sp-description__img-badge" style={{ background: accentColor }}>
-                <span>{t('badge')}</span>
-              </div>
+              {image?.asset ? (
+                <Image
+                  src={urlFor(image).url()}
+                  alt={image.alt ?? name}
+                  width={480}
+                  height={480}
+                  className="sp-description__img"
+                />
+              ) : (
+                <div className="sp-description__img-ph" style={{ borderColor: accentColor, color: accentColor }}>
+                  <span className="sp-description__img-ph-brand">NUPEC<sup>MR</sup></span>
+                  <span className="sp-description__img-ph-name">{name}</span>
+                </div>
+              )}
+
+              {imageBack?.asset && (
+                <Image
+                  src={urlFor(imageBack).url()}
+                  alt={imageBack.alt ?? name}
+                  width={480}
+                  height={480}
+                  className="sp-description__img sp-description__img--back"
+                />
+              )}
             </div>
           </div>
 

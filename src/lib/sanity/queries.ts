@@ -117,6 +117,7 @@ export const productBySlugQuery = groq`
     "ingredients": ingredients[$lang],
     "warnings": warnings[$lang],
     image,
+    imageBack,
     bannerImage,
     benefitsBannerImage,
     technicalSheet,
@@ -153,7 +154,7 @@ export const productBySlugQuery = groq`
       min
     },
     "claims": claims[]{
-      icon,
+      "icon": coalesce(icon.image.asset->url, icon.url),
       invertColors,
       "text": text[$lang]
     },
@@ -211,7 +212,7 @@ export const productBySlugQuery = groq`
       "fileUrl": file.asset->url
     },
     "differentiators": differentiators[]{
-      icon,
+      "icon": coalesce(icon.image.asset->url, icon.url),
       "title": title[$lang],
       "subtitle": subtitle[$lang],
       "bullets": bullets[]{
