@@ -4435,22 +4435,11 @@ button.ltr {
   text-transform: uppercase;
 }
 
-.clin-transition__bar {
-  display: flex;
-  height: 12px;
-  border-radius: 6px;
-  overflow: hidden;
-  background: rgba(255,255,255,0.12);
-}
-
-.clin-transition__bar-prev {
-  background: rgba(255,255,255,0.55);
-  transition: width 0.4s ease;
-}
-
-.clin-transition__bar-clin {
-  background: #0085CA;
-  transition: width 0.4s ease;
+.clin-transition__pie {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  align-self: center;
 }
 
 .clin-transition__legend {
@@ -5184,9 +5173,9 @@ button.ltr {
 
 .nutrient-badge__value {
   font-family: var(--title-font);
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 600;
-  color: #fff;
+  color: #ffffff;
   line-height: 1.2;
 }
 
@@ -5582,18 +5571,6 @@ sup {
   height: 80px;
   border-radius: 50%;
   overflow: hidden;
-}
-
-.sp-description__claim-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #fff;
-}
-
-.sp-description__claim-icon {
-  font-size: 22px;
-  color: #fff;
 }
 
 .sp-description__claim-icon-img {

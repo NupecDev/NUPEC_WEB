@@ -57,7 +57,7 @@ export default function ProductKibble({ name, video, image, description, accentC
                 )}
               </div>
               <div className="sp-description__img-badge" style={{ background: accentColor }}>
-                <span>{t('badge')}</span>
+                {/* <span>{t('badge')}</span> */}
               </div>
             </div>
           </div>
@@ -67,13 +67,13 @@ export default function ProductKibble({ name, video, image, description, accentC
             <div className="content-block-one wow fadeInLeft">
               <div className="content-box">
                 <div className="sec-title mb_25">
-                  <span className="sub-title mb_5">{t('subtitle')}</span>
+                  {/* <span className="sub-title mb_5">{t('subtitle')}</span> */}
                   <h2>{t('title')}</h2>
                 </div>
 
                 {description && (
                   <div className="text-box mb_25">
-                    <p>{description}</p>
+                    <h3>{description}</h3>
                   </div>
                 )}
               </div>

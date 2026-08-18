@@ -19,7 +19,7 @@ import ProductHighTech, { type HighTechItem } from '@/components/sections/produc
 import ClinicalFeedingGuide from '@/components/sections/products/ClinicalFeedingGuide';
 import ClinicalIndications, { type ClinicalIndicationItem } from '@/components/sections/products/ClinicalIndications';
 import MechanismOfAction, { type MechanismStep } from '@/components/sections/products/MechanismOfAction';
-import ClinicalTransitionGuide from '@/components/sections/products/ClinicalTransitionGuide';
+import ClinicalTransitionGuide, { type TransitionGuideData } from '@/components/sections/products/ClinicalTransitionGuide';
 import ClinicalCases, { type ClinicalCaseData } from '@/components/sections/products/ClinicalCases';
 import VetResources, { type TechnicalResource } from '@/components/sections/products/VetResources';
 import ClinicalProductGrid from '@/components/sections/products/ClinicalProductGrid';
@@ -96,6 +96,7 @@ type ProductData = ProductHeroData & {
   technicalResources?: TechnicalResource[];
   differentiators?: { icon: string; title: string; subtitle?: string; bullets?: { title: string; description: string }[] }[];
   ingredientHighlights?: IngredientItem[];
+  transitionGuide?: TransitionGuideData | null;
 };
 
 export default async function ProductPage({
@@ -187,7 +188,7 @@ accentColor={accentColor}
         )}
 
         {/* 7. Protocolo de transición recomendado */}
-        <ClinicalTransitionGuide accentColor={accentColor} />
+        <ClinicalTransitionGuide data={product.transitionGuide} accentColor={accentColor} />
 
         {/* 7. Casos clínicos */}
         {product.clinicalCases && product.clinicalCases.length > 0 && (

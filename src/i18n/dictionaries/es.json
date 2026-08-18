@@ -647,7 +647,7 @@
       "ingredientsTitle": "Ingredientes",
       "warningsTitle": "Advertencias",
       "claimsTitle": "",
-      "downloadSheet": "Descargar monografía"
+      "downloadSheet": "Descargar ficha"
     },
     "kibble": {
       "subtitle": "La unidad",
@@ -675,10 +675,10 @@
       "disclaimer": "Valores orientativos. Ajusta según la condición corporal, actividad física y recomendación veterinaria."
     },
     "analysis": {
-      "subtitle": "Análisis garantizado",
+      "subtitle": "Perfil nutricional",
       "title": "Análisis Garantizado",
-      "description": "Valores mínimos y máximos certificados por lote en nuestro laboratorio en Querétaro.",
-      "disclaimer": "Valores en base seca. Consulta la ficha técnica completa para el análisis detallado.",
+      "description": "Tabla de análisis garantizado con valores nutricionales mínimos y máximos certificados por lote en base seca.",
+      "disclaimer": "Consulta la ficha técnica completa para el análisis detallado.",
       "protein": "Proteína Cruda",
       "fat": "Grasa Cruda",
       "fiber": "Fibra Cruda",

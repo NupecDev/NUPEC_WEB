@@ -14,6 +14,9 @@ const TABS = [
   { key: 'wet',         slug: 'alimentos-humedos' },
 ] as const;
 
+// Suplementos omitido para felino: aún no hay productos en esta categoría
+const FELINE_TABS = TABS.filter(({ slug }) => slug !== 'suplementos');
+
 type Props = {
   species?: 'canino' | 'felino';
 };
@@ -26,12 +29,13 @@ export default function TabsCanina({ species = 'canino' }: Props) {
   const speciesBase = species === 'felino' ? 'nutricion-felina' : 'nutricion-canina';
 
   const { activeCategory, setActiveCategory, hasProvider } = useCaninaTab();
+  const tabs = species === 'felino' ? FELINE_TABS : TABS;
 
   return (
     <section className="canine-tabs p_relative">
       <div className="auto-container">
         <div className="canine-tabs__strip">
-          {TABS.map(({ key, slug }) => {
+          {tabs.map(({ key, slug }) => {
             const isActive = hasProvider
               ? activeCategory === slug
               : pathname.includes(slug);

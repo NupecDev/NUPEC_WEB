@@ -21,12 +21,21 @@ export default function MobileMenu({ isSidebar, handleMobileMenu, handleSidebar 
   const lang = params.lang as string;
   const base = `/${lang}`;
 
-  const categories = [
+  const caninaCategories = [
     { key: 'daily', slug: 'nutricion-diaria' },
     { key: 'specialized', slug: 'nutricion-especializada' },
     { key: 'clinical', slug: 'nutricion-clinica' },
     { key: 'treats', slug: 'premios-funcionales' },
     { key: 'supplements', slug: 'suplementos' },
+    { key: 'wet', slug: 'alimentos-humedos' },
+  ] as const;
+
+  // Suplementos omitido: aún no hay productos felinos en esta categoría
+  const felinaCategories = [
+    { key: 'daily', slug: 'nutricion-diaria' },
+    { key: 'specialized', slug: 'nutricion-especializada' },
+    { key: 'clinical', slug: 'nutricion-clinica' },
+    { key: 'treats', slug: 'premios-funcionales' },
     { key: 'wet', slug: 'alimentos-humedos' },
   ] as const;
 
@@ -57,7 +66,7 @@ export default function MobileMenu({ isSidebar, handleMobileMenu, handleSidebar 
               <li className={`dropdown ${activeDropdown === 1 ? "current" : ""}`}>
                 <Link href={`${base}/nutricion-canina`}>{t('canina')}</Link>
                 <ul style={{ display: activeDropdown === 1 ? "block" : "none" }}>
-                  {categories.map(({ key, slug }) => (
+                  {caninaCategories.map(({ key, slug }) => (
                     <li key={slug}><Link href={`${base}/nutricion-canina/${slug}`}>{t(`sub.${key}`)}</Link></li>
                   ))}
                 </ul>
@@ -70,7 +79,7 @@ export default function MobileMenu({ isSidebar, handleMobileMenu, handleSidebar 
               <li className={`dropdown ${activeDropdown === 2 ? "current" : ""}`}>
                 <Link href={`${base}/nutricion-felina`}>{t('felina')}</Link>
                 <ul style={{ display: activeDropdown === 2 ? "block" : "none" }}>
-                  {categories.map(({ key, slug }) => (
+                  {felinaCategories.map(({ key, slug }) => (
                     <li key={slug}><Link href={`${base}/nutricion-felina/${slug}`}>{t(`sub.${key}`)}</Link></li>
                   ))}
                 </ul>

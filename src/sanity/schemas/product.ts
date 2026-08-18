@@ -575,6 +575,100 @@ export default defineType({
     }),
 
     defineField({
+      name: "transitionGuide",
+      title: "Guía de transición dietética",
+      type: "object",
+      group: "clinica",
+      description: "Opcional. Si se deja vacío (sin pasos), la sección no se muestra.",
+      fields: [
+        defineField({
+          name: "title",
+          title: "Título",
+          type: "object",
+          fields: [
+            defineField({ name: "es", title: "Español", type: "string" }),
+            defineField({ name: "en", title: "Inglés", type: "string" }),
+            defineField({ name: "fr", title: "Francés", type: "string" }),
+          ],
+        }),
+        defineField({
+          name: "subtitle",
+          title: "Subtítulo",
+          type: "object",
+          fields: [
+            defineField({ name: "es", title: "Español", type: "string" }),
+            defineField({ name: "en", title: "Inglés", type: "string" }),
+            defineField({ name: "fr", title: "Francés", type: "string" }),
+          ],
+        }),
+        defineField({
+          name: "steps",
+          title: "Pasos de transición",
+          type: "array",
+          description: "Cada paso se muestra como una gráfica de pastel (% alimento anterior vs. % NUPEC clínico)",
+          of: [
+            {
+              type: "object",
+              name: "transitionStep",
+              title: "Paso",
+              fields: [
+                defineField({
+                  name: "label",
+                  title: "Etiqueta (ej. 'Día 1–3')",
+                  type: "object",
+                  fields: [
+                    defineField({ name: "es", title: "Español", type: "string", validation: (r) => r.required() }),
+                    defineField({ name: "en", title: "Inglés", type: "string" }),
+                    defineField({ name: "fr", title: "Francés", type: "string" }),
+                  ],
+                }),
+                defineField({
+                  name: "newPercent",
+                  title: "% NUPEC clínico",
+                  type: "number",
+                  validation: (r) => r.required().min(0).max(100),
+                }),
+              ],
+              preview: {
+                select: { title: "label.es", newPercent: "newPercent" },
+                prepare({ title, newPercent }) {
+                  return { title, subtitle: `${newPercent}% NUPEC clínico` };
+                },
+              },
+            },
+          ],
+          validation: (r) => r.max(6),
+        }),
+        defineField({
+          name: "noteBold",
+          title: "Nota clínica (texto en negrita)",
+          type: "object",
+          fields: [
+            defineField({ name: "es", title: "Español", type: "string" }),
+            defineField({ name: "en", title: "Inglés", type: "string" }),
+            defineField({ name: "fr", title: "Francés", type: "string" }),
+          ],
+        }),
+        defineField({
+          name: "noteText",
+          title: "Nota clínica (texto)",
+          type: "object",
+          fields: [
+            defineField({ name: "es", title: "Español", type: "text", rows: 3 }),
+            defineField({ name: "en", title: "Inglés", type: "text", rows: 3 }),
+            defineField({ name: "fr", title: "Francés", type: "text", rows: 3 }),
+          ],
+        }),
+      ],
+      preview: {
+        select: { title: "title.es", steps: "steps" },
+        prepare({ title, steps }) {
+          return { title: title || "Guía de transición", subtitle: steps ? `${steps.length} pasos` : "Sin pasos" };
+        },
+      },
+    }),
+
+    defineField({
       name: "mechanismOfAction",
       title: "Mecanismo de acción",
       type: "array",

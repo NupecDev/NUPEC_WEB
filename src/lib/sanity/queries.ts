@@ -154,9 +154,19 @@ export const productBySlugQuery = groq`
       min
     },
     "claims": claims[]{
-      "icon": coalesce(icon.image.asset->url, icon.url),
+      "icon": icon.image.asset->url,
       invertColors,
       "text": text[$lang]
+    },
+    "transitionGuide": transitionGuide{
+      "title": title[$lang],
+      "subtitle": subtitle[$lang],
+      "steps": steps[]{
+        "label": label[$lang],
+        newPercent
+      },
+      "noteBold": noteBold[$lang],
+      "noteText": noteText[$lang]
     },
     "highTech": highTech[]{
       icon,

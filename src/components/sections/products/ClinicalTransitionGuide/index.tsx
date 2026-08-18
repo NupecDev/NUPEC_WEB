@@ -2,16 +2,31 @@
 
 import { useTranslations } from 'next-intl';
 
-const STEPS = [
-  { key: 'day13', prev: 75, clin: 25 },
-  { key: 'day46', prev: 50, clin: 50 },
-  { key: 'day79', prev: 25, clin: 75 },
-  { key: 'day10', prev: 10, clin: 90 },
-  { key: 'day11',  prev: 0,  clin: 100 },
-];
+type TransitionStep = {
+  label: string;
+  newPercent: number;
+};
 
-export default function ClinicalTransitionGuide({ accentColor = '#C4262E' }: { accentColor?: string }) {
+export type TransitionGuideData = {
+  title?: string;
+  subtitle?: string;
+  steps?: TransitionStep[];
+  noteBold?: string;
+  noteText?: string;
+};
+
+export default function ClinicalTransitionGuide({
+  data,
+  accentColor = '#C4262E',
+}: {
+  data?: TransitionGuideData | null;
+  accentColor?: string;
+}) {
   const t = useTranslations('clinical.transition');
+
+  if (!data?.steps || data.steps.length === 0) return null;
+
+  const { title, subtitle, steps, noteBold, noteText } = data;
 
   return (
     <section className="clin-transition p_relative pt_80 pb_80">
@@ -21,55 +36,58 @@ export default function ClinicalTransitionGuide({ accentColor = '#C4262E' }: { a
           <div className="clin-title-row">
             <div className="canine-hero__accent-bar" style={{ background: '#fff' }} />
             <div>
-              <span className="clin-transition__eyebrow">{t('title')}</span>
-              <p className="clin-transition__sub">{t('subtitle')}</p>
+              <span className="clin-transition__eyebrow">{title || t('title')}</span>
+              <p className="clin-transition__sub">{subtitle || t('subtitle')}</p>
             </div>
           </div>
         </div>
 
         {/* Step cards */}
         <div className="clin-transition__steps">
-          {STEPS.map(({ key, prev, clin }, i) => (
-            <div
-              key={key}
-              className={`clin-transition__step${i === STEPS.length - 1 ? ' clin-transition__step--final' : ''}`}
-              style={i === STEPS.length - 1 ? { borderColor: accentColor } : undefined}
-            >
-              <div className="clin-transition__step-label">{t(key)}</div>
+          {steps.map(({ label, newPercent }, i) => {
+            const prevPercent = 100 - newPercent;
+            return (
+              <div
+                key={`${label}-${i}`}
+                className={`clin-transition__step${i === steps.length - 1 ? ' clin-transition__step--final' : ''}`}
+                style={i === steps.length - 1 ? { borderColor: accentColor } : undefined}
+              >
+                <div className="clin-transition__step-label">{label}</div>
 
-              {/* Progress bar */}
-              <div className="clin-transition__bar">
-                {prev > 0 && (
-                  <div className="clin-transition__bar-prev" style={{ width: `${prev}%` }} />
-                )}
-                {clin > 0 && (
-                  <div className="clin-transition__bar-clin" style={{ width: `${clin}%`, background: accentColor }} />
-                )}
-              </div>
+                {/* Pie chart */}
+                <div
+                  className="clin-transition__pie"
+                  style={{
+                    background: `conic-gradient(${accentColor} 0% ${newPercent}%, rgba(255,255,255,0.3) ${newPercent}% 100%)`,
+                  }}
+                />
 
-              {/* Legend */}
-              <div className="clin-transition__legend">
-                <span className="clin-transition__legend-item">
-                  <span className="clin-transition__dot clin-transition__dot--prev" />
-                  {prev}% {t('labelPrev')}
-                </span>
-                <span className="clin-transition__legend-item clin-transition__legend-item--clin">
-                  <span className="clin-transition__dot clin-transition__dot--clin" style={{ background: accentColor }} />
-                  {clin}% {t('labelClin')}
-                </span>
+                {/* Legend */}
+                <div className="clin-transition__legend">
+                  <span className="clin-transition__legend-item">
+                    <span className="clin-transition__dot clin-transition__dot--prev" />
+                    {prevPercent}% {t('labelPrev')}
+                  </span>
+                  <span className="clin-transition__legend-item clin-transition__legend-item--clin">
+                    <span className="clin-transition__dot clin-transition__dot--clin" style={{ background: accentColor }} />
+                    {newPercent}% {t('labelClin')}
+                  </span>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Clinical note */}
-        <div className="clin-transition__note" style={{ borderLeftColor: accentColor }}>
-          <div className="clin-transition__note-icon" style={{ background: accentColor }}>i</div>
-          <div className="clin-transition__note-text">
-            <strong>{t('noteBold')} </strong>
-            {t('noteText')}
+        {(noteBold || noteText || t('noteText')) && (
+          <div className="clin-transition__note" style={{ borderLeftColor: accentColor }}>
+            <div className="clin-transition__note-icon" style={{ background: accentColor }}>i</div>
+            <div className="clin-transition__note-text">
+              <strong>{noteBold || t('noteBold')} </strong>
+              {noteText || t('noteText')}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );

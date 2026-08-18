@@ -18,12 +18,21 @@ export default function Header({ scroll, handleMobileMenu }: HeaderProps) {
   const lang = params.lang as string;
   const base = `/${lang}`;
 
-  const categories = [
+  const caninaCategories = [
     { key: 'daily', slug: 'nutricion-diaria' },
     { key: 'specialized', slug: 'nutricion-especializada' },
     { key: 'clinical', slug: 'nutricion-clinica' },
     { key: 'treats', slug: 'premios-funcionales' },
     { key: 'supplements', slug: 'suplementos' },
+    { key: 'wet', slug: 'alimentos-humedos' },
+  ] as const;
+
+  // Suplementos omitido: aún no hay productos felinos en esta categoría
+  const felinaCategories = [
+    { key: 'daily', slug: 'nutricion-diaria' },
+    { key: 'specialized', slug: 'nutricion-especializada' },
+    { key: 'clinical', slug: 'nutricion-clinica' },
+    { key: 'treats', slug: 'premios-funcionales' },
     { key: 'wet', slug: 'alimentos-humedos' },
   ] as const;
 
@@ -35,7 +44,7 @@ export default function Header({ scroll, handleMobileMenu }: HeaderProps) {
       <li className="dropdown">
         <Link href={`${base}/nutricion-canina`}>{t('canina')}</Link>
         <ul>
-          {categories.map(({ key, slug }) => (
+          {caninaCategories.map(({ key, slug }) => (
             <li key={slug}>
               <Link href={`${base}/nutricion-canina/${slug}`}>{t(`sub.${key}`)}</Link>
             </li>
@@ -45,7 +54,7 @@ export default function Header({ scroll, handleMobileMenu }: HeaderProps) {
       <li className="dropdown">
         <Link href={`${base}/nutricion-felina`}>{t('felina')}</Link>
         <ul>
-          {categories.map(({ key, slug }) => (
+          {felinaCategories.map(({ key, slug }) => (
             <li key={slug}>
               <Link href={`${base}/nutricion-felina/${slug}`}>{t(`sub.${key}`)}</Link>
             </li>

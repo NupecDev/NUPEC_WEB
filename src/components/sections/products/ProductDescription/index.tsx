@@ -167,35 +167,23 @@ export default function ProductDescription({
                       {t('claimsTitle')}
                     </h4>
                     <ul className="sp-description__claims">
-                      {claims.map((claim, i) => {
-                        const isImage = !!claim.icon && (claim.icon.startsWith('http') || claim.icon.startsWith('/'));
-                        return (
-                          <li key={i} className="sp-description__claim-item">
-                            <span
-                              className="sp-description__claim-circle"
-                              style={isImage ? undefined : { background: accentColor }}
-                            >
-                              {claim.icon ? (
-                                isImage
-                                  ? (
-                                    <Image
-                                      src={claim.icon}
-                                      alt=""
-                                      width={80}
-                                      height={80}
-                                      className="sp-description__claim-icon-img"
-                                      style={{ filter: claim.invertColors ? 'invert(1)' : undefined }}
-                                    />
-                                  )
-                                  : <i className={`sp-description__claim-icon ${claim.icon}`} />
-                              ) : (
-                                <span className="sp-description__claim-dot" />
-                              )}
+                      {claims.map((claim, i) => (
+                        <li key={i} className="sp-description__claim-item">
+                          {claim.icon && (
+                            <span className="sp-description__claim-circle">
+                              <Image
+                                src={claim.icon}
+                                alt=""
+                                width={80}
+                                height={80}
+                                className="sp-description__claim-icon-img"
+                                style={{ filter: claim.invertColors ? 'invert(1)' : undefined }}
+                              />
                             </span>
-                            <span>{claim.text}</span>
-                          </li>
-                        );
-                      })}
+                          )}
+                          <span>{claim.text}</span>
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 )}
