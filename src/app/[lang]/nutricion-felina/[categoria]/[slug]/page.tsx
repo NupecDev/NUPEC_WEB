@@ -266,9 +266,7 @@ accentColor={accentColor}
         />
 
         <ProductBenefitsBanner
-          productName={product.name}
-          lifeStage={product.lifeStage}
-          categorySlug={categoria}
+          category={product.category}
           species="felino"
           bannerImage={product.benefitsBannerImage}
           accentColor={accentColor}
@@ -341,9 +339,7 @@ accentColor={accentColor}
 
       {/* 7. Banner de beneficios con imagen hero */}
       <ProductBenefitsBanner
-        productName={product.name}
-        lifeStage={product.lifeStage}
-        categorySlug={categoria}
+        category={product.category}
         species="felino"
         bannerImage={product.benefitsBannerImage}
       />

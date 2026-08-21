@@ -16,7 +16,7 @@ export type ProductHeroData = {
   presentations?: string[];
   image?: { asset: { _ref: string }; alt: string };
   bannerImage?: { asset: { _ref: string } };
-  category: { name: string; slug: string };
+  category: { name: string; slug: string; excerpt?: string; complementaryText?: string };
   species: 'canino' | 'felino';
 };
 

@@ -129,7 +129,9 @@ export const productBySlugQuery = groq`
     specialNeeds,
     "category": {
       "name": category->name[$lang],
-      "slug": category->slug.current
+      "slug": category->slug.current,
+      "excerpt": category->excerpt[$lang],
+      "complementaryText": category->complementaryText[$lang]
     },
     "feedingGuide": feedingGuide->{
       rows,

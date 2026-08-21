@@ -7,27 +7,17 @@ import { useParams } from 'next/navigation';
 import { urlFor } from '@/lib/sanity/client';
 
 type Props = {
-  productName: string;
-  lifeStage?: string[];
-  categorySlug: string;
+  category: { name: string; slug: string; excerpt?: string; complementaryText?: string };
   species: 'canino' | 'felino';
   bannerImage?: { asset: { _ref: string } };
   accentColor?: string;
 };
 
-const LIFE_STAGE_I18N_KEY: Record<string, string> = {
-  cachorro: 'puppy',
-  adulto:   'adult',
-  senior:   'senior',
-};
-
-export default function ProductBenefitsBanner({ productName, lifeStage, categorySlug, species, bannerImage, accentColor }: Props) {
+export default function ProductBenefitsBanner({ category, species, bannerImage, accentColor }: Props) {
   const t = useTranslations('productPage.benefitsBanner');
   const params = useParams();
   const lang = params.lang as string;
   const speciesBase = species === 'canino' ? 'nutricion-canina' : 'nutricion-felina';
-  const primaryLifeStage = lifeStage?.[0];
-  const stageKey = primaryLifeStage ? LIFE_STAGE_I18N_KEY[primaryLifeStage] ?? 'generic' : 'generic';
   const bgImage = bannerImage?.asset
     ? urlFor(bannerImage).width(1920).url()
     : '/assets/images/banner/canine-heroes.jpg';
@@ -45,12 +35,12 @@ export default function ProductBenefitsBanner({ productName, lifeStage, category
 
       <div className="auto-container">
         <div className="content-box p_relative z_5">
-          <span className="canine-banner__eyebrow">{productName}</span>
-          <h2 className="canine-banner__title">{t(`${stageKey}Title`)}</h2>
-          <p className="canine-banner__desc">{t(`${stageKey}Desc`)}</p>
+          <span className="canine-banner__eyebrow">{category.name}</span>
+          <h2 className="canine-banner__title">{category.excerpt || t('genericTitle')}</h2>
+          <p className="canine-banner__desc">{category.complementaryText || t('genericDesc')}</p>
           <div className="btn-box mt_30">
             <Link
-              href={`/${lang}/${speciesBase}/${categorySlug}`}
+              href={`/${lang}/${speciesBase}/${category.slug}`}
               className="theme-btn btn-two"
             >
               <span>{t('cta')}</span>
