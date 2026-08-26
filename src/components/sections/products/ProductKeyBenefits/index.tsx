@@ -15,52 +15,6 @@ type Props = {
   keyBenefits?: KeyBenefitItem[];
 };
 
-const CATEGORY_BENEFITS: Record<string, { icon: string; key: string }[]> = {
-  'nutricion-diaria': [
-    { icon: 'icon-37', key: 'digestibility' },
-    { icon: 'icon-38', key: 'palatability' },
-    { icon: 'icon-39', key: 'protein' },
-    { icon: 'icon-40', key: 'omega' },
-  ],
-  'nutricion-especializada': [
-    { icon: 'icon-28', key: 'breedSpecific' },
-    { icon: 'icon-29', key: 'jointSupport' },
-    { icon: 'icon-37', key: 'digestibility' },
-    { icon: 'icon-40', key: 'omega' },
-  ],
-  'nutricion-clinica': [
-    { icon: 'icon-28', key: 'therapeutic' },
-    { icon: 'icon-15', key: 'vetApproved' },
-    { icon: 'icon-37', key: 'digestibility' },
-    { icon: 'icon-39', key: 'protein' },
-  ],
-  'premios-funcionales': [
-    { icon: 'icon-38', key: 'palatability' },
-    { icon: 'icon-28', key: 'functional' },
-    { icon: 'icon-39', key: 'protein' },
-    { icon: 'icon-40', key: 'omega' },
-  ],
-  'suplementos': [
-    { icon: 'icon-28', key: 'supplement' },
-    { icon: 'icon-37', key: 'digestibility' },
-    { icon: 'icon-39', key: 'protein' },
-    { icon: 'icon-15', key: 'vetApproved' },
-  ],
-  'alimentos-humedos': [
-    { icon: 'icon-37', key: 'hydration' },
-    { icon: 'icon-38', key: 'palatability' },
-    { icon: 'icon-39', key: 'protein' },
-    { icon: 'icon-40', key: 'omega' },
-  ],
-};
-
-const DEFAULT_BENEFITS = [
-  { icon: 'icon-37', key: 'digestibility' },
-  { icon: 'icon-38', key: 'palatability' },
-  { icon: 'icon-39', key: 'protein' },
-  { icon: 'icon-40', key: 'omega' },
-];
-
 function SanityBenefitCard({
   benefit,
   accentColor,
@@ -100,29 +54,12 @@ function SanityBenefitCard({
   );
 }
 
-export default function ProductKeyBenefits({ categorySlug, accentColor, keyBenefits }: Props) {
+export default function ProductKeyBenefits({ accentColor, keyBenefits }: Props) {
   const t = useTranslations('productPage.keyBenefits');
 
-  if (keyBenefits && keyBenefits.length > 0) {
-    return (
-      <section className="funfact-section sp-key-benefits p_relative">
-        <div className="auto-container">
-          <div className="sec-title centred mb_50 pt-5">
-            <h2>{t('title')}</h2>
-          </div>
-          <div className="row clearfix justify-content-center">
-            {keyBenefits.map((b, i) => (
-              <div key={i} className="col-lg-3 col-md-6 col-sm-12 funfact-block-two">
-                <SanityBenefitCard benefit={b} accentColor={accentColor} delay={i * 100} />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    );
+  if (!keyBenefits || keyBenefits.length === 0) {
+    return null;
   }
-
-  const fallbackBenefits = CATEGORY_BENEFITS[categorySlug] ?? DEFAULT_BENEFITS;
 
   return (
     <section className="funfact-section sp-key-benefits p_relative">
@@ -131,17 +68,9 @@ export default function ProductKeyBenefits({ categorySlug, accentColor, keyBenef
           <h2>{t('title')}</h2>
         </div>
         <div className="row clearfix justify-content-center">
-          {fallbackBenefits.map((b, i) => (
+          {keyBenefits.map((b, i) => (
             <div key={i} className="col-lg-3 col-md-6 col-sm-12 funfact-block-two">
-              <div className="funfact-block-two sp-benefit-block wow fadeInUp" data-wow-delay={`${i * 100}ms`}>
-                <div className="inner-box">
-                  <div className="icon-box" style={{ color: accentColor }}>
-                    <i className={b.icon} />
-                  </div>
-                  <h3 className="sp-benefit-block__title">{t(`${b.key}Title`)}</h3>
-                  <p className="sp-benefit-block__desc">{t(`${b.key}Desc`)}</p>
-                </div>
-              </div>
+              <SanityBenefitCard benefit={b} accentColor={accentColor} delay={i * 100} />
             </div>
           ))}
         </div>
