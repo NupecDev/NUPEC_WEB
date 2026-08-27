@@ -13,7 +13,7 @@ export default function ContactHero() {
     <section className="banner-section about-hero p_relative">
       <div
         className="bg-layer"
-        style={{ backgroundImage: 'url(/assets/images/resource/about-4.jpg)' }}
+        style={{ backgroundImage: 'url(/assets/images/resource/BannerContacto.png)' }}
       />
       <div className="about-hero__overlay" />
 

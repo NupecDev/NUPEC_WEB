@@ -14,6 +14,7 @@ type HeroSlide = {
   subtitle: string;
   title: string;
   description: string;
+  image: string;
   cta: string;
   ctaHref: string;
 };
@@ -111,7 +112,7 @@ export default function Banner() {
               <div className="image-box">
                 <figure className="image">
                   <Image
-                    src="/assets/images/banner/banner-img-1.png"
+                    src={slide.image}
                     alt={slide.title}
                     width={711}
                     height={700}

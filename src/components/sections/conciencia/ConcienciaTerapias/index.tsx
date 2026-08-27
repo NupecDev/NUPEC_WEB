@@ -30,11 +30,10 @@ export default function ConcienciaTerapias() {
               <div className="image-box p_relative">
                 <div className="shape">
                   <div className="shape-1" style={{ backgroundImage: 'url(/assets/images/shape/shape-9.png)' }} />
-                  <div className="shape-2" style={{ backgroundImage: 'url(/assets/images/shape/shape-10.png)' }} />
                 </div>
                 <figure className="image">
                   <Image
-                    src="/assets/images/resource/about-1.jpg"
+                    src="/assets/images/resource/TERAPIA.png"
                     alt="NUPEC - Terapias asistidas"
                     width={523}
                     height={399}

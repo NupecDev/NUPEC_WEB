@@ -25,6 +25,7 @@
           "title": "NUPEC Clinical Nutrition",
           "description": "Therapeutic diets formulated with specialist veterinarians for the nutritional management of specific conditions in dogs and cats.",
           "cta": "Discover the clinical line",
+          "image":"/assets/images/resource/ClinicFamily.png",
           "ctaHref": "/nutricion-canina/nutricion-clinica"
         },
         {
@@ -32,6 +33,7 @@
           "title": "Creamy Treats",
           "description": "Creamy, irresistible treats designed to pamper your pet without compromising their nutrition.",
           "cta": "Discover Creamy Treats",
+          "image":"/assets/images/resource/ClinicFamily.png",
           "ctaHref": "/nutricion-canina/premios-funcionales"
         },
         {
@@ -39,6 +41,7 @@
           "title": "NUPEC Supplements",
           "description": "Supplements designed to reinforce your pet's daily nutrition and support their overall well-being.",
           "cta": "View supplements",
+          "image":"/assets/images/resource/ClinicFamily.png",
           "ctaHref": "/nutricion-canina/suplementos"
         }
       ]

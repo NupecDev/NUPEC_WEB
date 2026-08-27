@@ -25,6 +25,7 @@
           "title": "Nutrition Clinique NUPEC",
           "description": "Régimes thérapeutiques formulés avec des vétérinaires spécialistes pour la prise en charge nutritionnelle de conditions spécifiques chez les chiens et les chats.",
           "cta": "Découvrir la ligne clinique",
+          "image":"/assets/images/resource/ClinicFamily.png",
           "ctaHref": "/nutricion-canina/nutricion-clinica"
         },
         {
@@ -32,6 +33,7 @@
           "title": "Creamy Treats",
           "description": "Des friandises onctueuses et irrésistibles, conçues pour gâter votre animal sans négliger sa nutrition.",
           "cta": "Découvrir Creamy Treats",
+          "image":"/assets/images/resource/ClinicFamily.png",
           "ctaHref": "/nutricion-canina/premios-funcionales"
         },
         {
@@ -39,6 +41,7 @@
           "title": "Suppléments NUPEC",
           "description": "Des compléments pensés pour renforcer la nutrition quotidienne de votre animal et soutenir son bien-être général.",
           "cta": "Voir les suppléments",
+          "image":"/assets/images/resource/ClinicFamily.png",
           "ctaHref": "/nutricion-canina/suplementos"
         }
       ]

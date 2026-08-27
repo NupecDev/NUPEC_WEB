@@ -17,7 +17,7 @@ export default function AboutHero() {
     <section className="banner-section about-hero p_relative">
       <div
         className="bg-layer"
-        style={{ backgroundImage: 'url(/assets/images/resource/about-3.jpg)' }}
+        style={{ backgroundImage: 'url(/assets/images/resource/BannerNosotros.png)' }}
       />
       <div className="about-hero__overlay" />
 

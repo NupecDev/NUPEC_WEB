@@ -30,11 +30,10 @@ export default function ConcienciaComercioNacional() {
               <div className="image-box p_relative">
                 <div className="shape">
                   <div className="shape-1" style={{ backgroundImage: 'url(/assets/images/shape/shape-9.png)' }} />
-                  <div className="shape-2" style={{ backgroundImage: 'url(/assets/images/shape/shape-10.png)' }} />
                 </div>
                 <figure className="image">
                   <Image
-                    src="/assets/images/resource/about-1.png"
+                    src="/assets/images/resource/NACIONAL.png"
                     alt="NUPEC - Apoyamos el comercio nacional"
                     width={523}
                     height={399}
