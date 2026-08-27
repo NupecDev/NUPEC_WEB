@@ -36,7 +36,7 @@ export default function OptionCard({
         border: selected ? `2.5px solid ${accent}` : '2.5px solid transparent',
         boxShadow: selected ? `0 10px 26px ${accent}22` : 'none',
         position: 'relative',
-        minHeight: 200,
+        minHeight: 50,
         width: '100%',
         boxSizing: 'border-box',
       }}

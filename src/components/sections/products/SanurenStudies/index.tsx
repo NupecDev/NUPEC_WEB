@@ -58,7 +58,7 @@ export default function SanurenStudies() {
               <div className="image-box">
                 <figure className="image">
                   <Image
-                    src="/assets/images/resource/Sanuren.png"
+                    src="/assets/images/resource/SANUREN.png"
                     alt={t('imageAlt')}
                     width={540}
                     height={620}
