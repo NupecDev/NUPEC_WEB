@@ -48,7 +48,7 @@ export default function Footer() {
                     <li><Link href={`${base}/nosotros`}>{t('nosotros')}</Link></li>
                     <li><Link href={`${base}/conciencia`}>{t('conciencia')}</Link></li>
                     <li><Link href={`${base}/contacto`}>{t('contacto')}</Link></li>
-                    <li><Link href={`${base}/donde-comprar`}>{t('donde')}</Link></li>
+                    {/* <li><Link href={`${base}/donde-comprar`}>{t('donde')}</Link></li> */}
                   </ul>
                 </div>
               </div>

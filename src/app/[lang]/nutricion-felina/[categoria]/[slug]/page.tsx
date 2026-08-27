@@ -65,7 +65,15 @@ type ProductData = ProductHeroData & {
   specialNeeds?: string[];
   technicalSheet?: { asset: { _ref: string } };
   feedingGuide?: {
-    rows: { label?: string; weightRange: string; dailyAmount: string }[];
+    rows: {
+      label?: string;
+      weightRange: string;
+      dailyAmount: string;
+      weightMin?: number;
+      weightMax?: number;
+      amountMin?: number;
+      amountMax?: number;
+    }[];
     notes?: string;
     secondaryTitle?: string;
     secondaryWeightColumnLabel?: string;
@@ -78,6 +86,18 @@ type ProductData = ProductHeroData & {
       values?: { grams?: string; cups?: string }[];
     }[];
     secondaryNotes?: string;
+    variants?: {
+      label: string;
+      rows: {
+        label?: string;
+        weightRange: string;
+        dailyAmount: string;
+        weightMin?: number;
+        weightMax?: number;
+        amountMin?: number;
+        amountMax?: number;
+      }[];
+    }[];
   } | null;
   guaranteedAnalysis?: GuaranteedAnalysisItem[];
   claims?: { icon?: string; invertColors?: boolean; text: string }[];

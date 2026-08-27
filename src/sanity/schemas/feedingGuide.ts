@@ -19,35 +19,50 @@ export default defineType({
       type: "array",
       description:
         "Cada fila representa un rango de peso corporal con la cantidad diaria recomendada",
+      of: [{ type: "feedingRow" }],
+    }),
+
+    defineField({
+      name: "variants",
+      title: "Variantes de dosificación (opcional)",
+      type: "array",
+      description:
+        'Para casos con recomendación distinta a la tabla principal, ej. "Gestación", "Lactancia" o "Condición corporal: sobrepeso". Cada variante define su propia tabla peso→ración. Si se deja vacío, la calculadora solo usa la tabla principal.',
       of: [
         {
           type: "object",
-          name: "row",
-          title: "Fila",
+          name: "variant",
+          title: "Variante",
           fields: [
             defineField({
               name: "label",
-              title: "Etiqueta (opcional)",
-              type: "string",
-              description: 'Ej. "Cachorros 2–4 meses", "Gestación / Lactancia"',
-            }),
-            defineField({
-              name: "weightRange",
-              title: "Rango de peso",
-              type: "string",
-              description: 'Ej. "2–5 kg", "Hasta 2 kg", "Más de 40 kg"',
+              title: "Nombre de la variante",
+              type: "object",
+              description: 'Ej. "Gestación", "Lactancia", "Sobrepeso"',
+              fields: [
+                defineField({ name: "es", title: "Español", type: "string" }),
+                defineField({ name: "en", title: "Inglés", type: "string" }),
+                defineField({ name: "fr", title: "Francés", type: "string" }),
+              ],
               validation: (r) => r.required(),
             }),
             defineField({
-              name: "dailyAmount",
-              title: "Cantidad diaria",
-              type: "string",
-              description: 'Ej. "45–90 g", "1/4–1/2 taza"',
-              validation: (r) => r.required(),
+              name: "rows",
+              title: "Tabla de alimentación de la variante",
+              type: "array",
+              validation: (r) => r.required().min(1),
+              of: [{ type: "feedingRow" }],
             }),
           ],
           preview: {
-            select: { title: "weightRange", subtitle: "dailyAmount" },
+            select: { title: "label.es", rows: "rows" },
+            prepare({ title, rows }) {
+              const count = Array.isArray(rows) ? rows.length : 0;
+              return {
+                title: (title as string) ?? "Variante sin nombre",
+                subtitle: `${count} fila(s)`,
+              };
+            },
           },
         },
       ],

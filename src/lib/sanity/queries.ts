@@ -148,7 +148,11 @@ export const productBySlugQuery = groq`
         weightLabel,
         values
       },
-      "secondaryNotes": secondaryNotes[$lang]
+      "secondaryNotes": secondaryNotes[$lang],
+      "variants": variants[]{
+        "label": label[$lang],
+        rows
+      }
     },
     "guaranteedAnalysis": guaranteedAnalysis[]{
       label,

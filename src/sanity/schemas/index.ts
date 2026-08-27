@@ -1,5 +1,6 @@
 import category from "./category";
 import feedingGuide from "./feedingGuide";
+import feedingRow from "./feedingRow";
 import product from "./product";
 import clinicalCase from "./clinicalCase";
 import ingredient from "./ingredient";
@@ -11,4 +12,4 @@ import ingredient from "./ingredient";
 // import technicalSheet from "./technicalSheet"
 // import wizard from "./wizard"
 
-export const schemaTypes = [category, product, feedingGuide, clinicalCase, ingredient];
+export const schemaTypes = [category, product, feedingGuide, feedingRow, clinicalCase, ingredient];

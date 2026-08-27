@@ -676,7 +676,9 @@
       "weight": "Peso",
       "perDay": "gramos por día",
       "reference": "Referencia",
-      "disclaimer": "Valores orientativos. Ajusta según la condición corporal, actividad física y recomendación veterinaria."
+      "disclaimer": "Valores orientativos. Ajusta según la condición corporal, actividad física y recomendación veterinaria.",
+      "variantLabel": "Condición",
+      "variantDefault": "Estándar"
     },
     "analysis": {
       "subtitle": "Perfil nutricional",

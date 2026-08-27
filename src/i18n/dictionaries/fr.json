@@ -676,7 +676,9 @@
       "weight": "Poids",
       "perDay": "grammes par jour",
       "reference": "Référence",
-      "disclaimer": "Valeurs indicatives. Ajustez selon la condition corporelle, l'activité physique et la recommandation vétérinaire."
+      "disclaimer": "Valeurs indicatives. Ajustez selon la condition corporelle, l'activité physique et la recommandation vétérinaire.",
+      "variantLabel": "Condition",
+      "variantDefault": "Standard"
     },
     "analysis": {
       "subtitle": "Analyse garantie",

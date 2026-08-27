@@ -676,7 +676,9 @@
       "weight": "Weight",
       "perDay": "grams per day",
       "reference": "Reference",
-      "disclaimer": "Guideline values. Adjust according to body condition, physical activity, and veterinary recommendation."
+      "disclaimer": "Guideline values. Adjust according to body condition, physical activity, and veterinary recommendation.",
+      "variantLabel": "Condition",
+      "variantDefault": "Standard"
     },
     "analysis": {
       "subtitle": "Guaranteed analysis",
