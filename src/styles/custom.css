@@ -69,3 +69,47 @@
     margin-right: 15px;
   }
 }
+
+/*
+  .banner-carousel .slide-item .bg-layer (module-css/banner.css) es la foto de
+  fondo agregada por slide. Con fotografías de alto contraste el texto del
+  .content-box (blanco/oscuro según el tema) pierde legibilidad en algunos
+  puntos de la imagen. Se agrega un degradado con el azul de marca NUPEC
+  (--theme-color) sobre la mitad izquierda, donde vive el texto, difuminando
+  hacia transparente a la derecha para no tapar la fotografía completa.
+*/
+.banner-carousel .slide-item .bg-layer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(27, 54, 93, 0.88) 0%,
+    rgba(27, 54, 93, 0.65) 35%,
+    rgba(27, 54, 93, 0.15) 65%,
+    rgba(27, 54, 93, 0) 100%
+  );
+  pointer-events: none;
+}
+
+/*
+  Con el degradado azul de fondo, los colores heredados del template para
+  .content-box (texto oscuro y el span de h2 en --theme-color, el mismo azul
+  del degradado) quedan ilegibles. Se fuerza texto blanco sobre el banner.
+*/
+.banner-carousel .content-box .title-text,
+.banner-carousel .content-box h2,
+.banner-carousel .content-box h2 span,
+.banner-carousel .content-box p {
+  color: #fff;
+}
+
+/*
+  Logo NUPEC agregado sobre el content-box del banner (no existía en el
+  template). Se le da separación respecto al subtítulo que le sigue.
+*/
+.banner-carousel .content-box .banner-logo {
+  display: block;
+  height: auto;
+  margin-bottom: 20px;
+}

@@ -21,7 +21,7 @@
   line-height: 26px;
   font-family: var(--secondary-font);
   margin-bottom: 10px;
-  color: var(--secondary-color);
+  color: #FFFF;
   opacity: 0;
   -webkit-transform: translateY(-50px);
   -moz-transform: translateY(-50px);

@@ -42,6 +42,12 @@ const swiperOptions = {
   },
 };
 
+const slideBackgrounds = [
+  "/assets/images/background/MainBG1.jpeg",
+  "/assets/images/background/MainBG2.jpeg",
+  "/assets/images/background/MainBG3.jpeg",
+];
+
 export default function Banner() {
   const t = useTranslations('home.hero');
   const params = useParams();
@@ -56,9 +62,15 @@ export default function Banner() {
       ></div>
 
       <Swiper {...swiperOptions} className="swiper-container banner-carousel">
-        {slides.map((slide) => (
+        {slides.map((slide, index) => (
           <SwiperSlide key={slide.title}>
             <div className="slide-item p_relative">
+
+              {/* Background Layer */}
+              <div
+                className="bg-layer"
+                style={{ backgroundImage: `url(${slideBackgrounds[index % slideBackgrounds.length]})` }}
+              />
 
               {/* Pattern Layer */}
               <div className="pattern-layer">
@@ -95,6 +107,13 @@ export default function Banner() {
               {/* Content Box */}
               <div className="auto-container">
                 <div className="content-box p_relative d_block z_5">
+                  <Image
+                    className="banner-logo"
+                    src="/assets/images/logos/logo-white.jpg"
+                    alt="NUPEC"
+                    width={260}
+                    height={160}
+                  />
                   <span className="title-text p_relative d_block">{slide.subtitle}</span>
                   <h2 className="p_relative d_block">
                     {slide.title}
