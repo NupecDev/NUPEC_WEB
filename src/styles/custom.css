@@ -10,3 +10,62 @@
 .image-block-one .image-box {
   overflow-x: clip;
 }
+
+/*
+  .service-block-one .inner-box .lower-content (module-css/service.css) usa
+  height fija (316px) + border-radius 50% para dibujar un círculo. Como el
+  texto de cada categoría varía en longitud entre idiomas (ES/EN/FR), el
+  contenido más largo se desborda del círculo mientras las tarjetas cortas
+  quedan con espacio vacío. Se sustituye el círculo por una forma que crece
+  con el contenido y se estira a la altura de la tarjeta más alta de cada
+  fila (Bootstrap .row ya usa align-items: stretch por defecto), tomando como
+  referencia el texto más largo en vez de un alto fijo.
+
+  Además, las imágenes fuente no comparten relación de aspecto (la de
+  Suplementos es retrato 1080x1350 mientras el resto son 1248x1074 paisaje),
+  y con "width:100%; height:auto" del template cada .image-box terminaba con
+  una altura distinta, desalineando verticalmente las tarjetas de una misma
+  fila aunque .lower-content tuviera la misma altura. Se fija una relación de
+  aspecto común y se usa object-fit: cover para que todas las imágenes
+  ocupen el mismo espacio sin deformarse, conservando el radio original del
+  template (20px 20px 0 0 arriba) en vez del pill/rounded que se había
+  aplicado por error.
+*/
+.service-section .service-block-one .inner-box {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-section .service-block-one .inner-box .image-box {
+  flex-shrink: 0;
+  aspect-ratio: 416 / 358;
+}
+
+.service-section .service-block-one .inner-box .image-box img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.service-section .service-block-one .inner-box .lower-content {
+  position: relative;
+  left: auto;
+  bottom: auto;
+  margin: -60px 30px 0px 30px;
+  width: auto;
+  height: auto;
+  min-height: 260px;
+  flex: 1 1 auto;
+  border-radius: 20px;
+}
+
+.service-section .service-block-one .inner-box .lower-content:before {
+  border-radius: 20px;
+}
+
+@media only screen and (max-width: 599px) {
+  .service-section .service-block-one .inner-box .lower-content {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
