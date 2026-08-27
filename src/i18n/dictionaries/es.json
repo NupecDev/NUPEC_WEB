@@ -25,7 +25,7 @@
           "title": "Nutrición Clínica NUPEC",
           "description": "Dietas terapéuticas formuladas junto a veterinarios especialistas para el manejo nutricional de condiciones específicas en perros y gatos.",
           "cta": "Conoce la línea clínica",
-          "image":"/assets/images/resource/ClinicFamily.png",
+          "image": "/assets/images/resource/ClinicalNutritionHero.png",
           "ctaHref": "/nutricion-canina/nutricion-clinica"
         },
         {
@@ -33,7 +33,7 @@
           "title": "Creamy Treats",
           "description": "Premios cremosos e irresistibles, diseñados para consentir a tu mascota sin descuidar su nutrición.",
           "cta": "Descubre Creamy Treats",
-          "image":"/assets/images/resource/CreamyHero.png",
+          "image": "/assets/images/resource/CreamyHero.png",
           "ctaHref": "/nutricion-canina/premios-funcionales"
         },
         {
@@ -41,7 +41,7 @@
           "title": "Suplementos NUPEC",
           "description": "Complementos pensados para reforzar la nutrición diaria de tu mascota y apoyar su bienestar general.",
           "cta": "Ver suplementos",
-          "image":"/assets/images/resource/ClinicFamily.png",
+          "image": "/assets/images/resource/SuplementsHero.png",
           "ctaHref": "/nutricion-canina/suplementos"
         }
       ]
@@ -780,6 +780,90 @@
         "meta": "Meta-análisis",
         "review": "Revisión científica"
       }
+    }
+  },
+  "foodFinder": {
+    "hero": {
+      "eyebrow": "NUTRICIÓN CIENTÍFICA CONSCIENTE",
+      "title": "Encuentra el alimento ideal para tu mascota",
+      "description": "Responde unas preguntas y te recomendamos el producto NUPEC perfecto según especie, etapa, talla y necesidades."
+    },
+    "steps": {
+      "species": "Especie",
+      "lifeStage": "Etapa de vida",
+      "breedSize": "Talla",
+      "specialNeed": "Necesidad especial"
+    },
+    "stepOf": "PASO {current} DE {total}",
+    "percentComplete": "{percent}% completado",
+    "back": "Volver",
+    "continue": "Continuar",
+    "seeResults": "Ver resultados",
+    "readyToContinue": "Lista para continuar",
+    "selectToContinue": "Selecciona una opción para continuar",
+    "species": {
+      "title": "¿Para quién buscas alimento?",
+      "description": "Selecciona la especie para empezar. Podrás afinar la búsqueda en los siguientes pasos.",
+      "dog": "Perro",
+      "dogSub": "Línea canina NUPEC · 6 categorías",
+      "dogBlurb": "Nutrición diaria, clínica, premios funcionales y necesidades especiales.",
+      "cat": "Gato",
+      "catSub": "Línea felina NUPEC · 6 categorías",
+      "catBlurb": "Fórmulas específicas para metabolismo felino, urinario y palatabilidad."
+    },
+    "lifeStage": {
+      "title": "¿En qué etapa de vida está tu mascota?",
+      "description": "La etapa de vida ajusta el perfil nutricional recomendado.",
+      "cachorro": "Cachorro",
+      "adulto": "Adulto",
+      "senior": "Senior"
+    },
+    "breedSize": {
+      "title": "¿De qué talla es tu perro?",
+      "description": "Solo aplica para caninos. Selecciona el tamaño de raza adulta.",
+      "mini": "Mini",
+      "miniSub": "Hasta 4 kg",
+      "pequena": "Pequeña",
+      "pequenaSub": "4–10 kg",
+      "mediana": "Mediana",
+      "medianaSub": "10–25 kg",
+      "grande": "Grande",
+      "grandeSub": "Más de 25 kg",
+      "todas": "Todas las tallas",
+      "todasSub": "No estoy seguro / aplica a cualquier talla"
+    },
+    "specialNeed": {
+      "title": "¿Tiene alguna necesidad especial?",
+      "description": "Selecciona la que mejor describa a tu mascota, o continúa sin ninguna para ver la línea de mantenimiento diario.",
+      "none": "Sin necesidad especial",
+      "noneSub": "Mantenimiento diario",
+      "options": {
+        "peso": "Control de peso",
+        "digestion": "Salud digestiva",
+        "renal": "Cuidado renal",
+        "urinario": "Manejo urinario",
+        "piel": "Piel sensible",
+        "indoor": "Gatos de interior (Indoor)",
+        "hairball": "Control de bolas de pelo (Hairball)",
+        "articular": "Salud articular",
+        "cardiaco": "Cuidado cardiaco",
+        "hepatico": "Cuidado hepático",
+        "alergias": "Manejo de alergias alimentarias",
+        "dental": "Salud dental",
+        "ansiedad": "Manejo de ansiedad y estrés",
+        "cognitivo": "Función cognitiva",
+        "vitalidad": "Vitalidad y energía"
+      }
+    },
+    "result": {
+      "title": "Así se ve tu recomendación",
+      "subtitle": "Una mejor coincidencia + alternativas",
+      "bestMatch": "Mejor coincidencia",
+      "alternative": "Alternativa",
+      "noResults": "No encontramos un producto exacto con estos criterios. Prueba ajustando la necesidad especial o la talla.",
+      "viewProduct": "Ver ficha del producto",
+      "newSearch": "Nueva búsqueda",
+      "complementaryTitle": "Productos complementarios sugeridos"
     }
   }
 }

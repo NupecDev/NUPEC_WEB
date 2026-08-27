@@ -29,7 +29,7 @@ export default function CategoryWizardCTA() {
             </div>
           </div>
           <div className="col-lg-4 col-md-12 col-sm-12 text-lg-end mt_sm_30">
-            <Link href={`/${lang}/nutricion-canina`} className="theme-btn btn-two">
+            <Link href={`/${lang}/encuentra-tu-alimento`} className="theme-btn btn-two">
               <span>{t('cta')}</span>
             </Link>
           </div>

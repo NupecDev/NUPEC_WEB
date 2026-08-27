@@ -25,7 +25,7 @@
           "title": "NUPEC Clinical Nutrition",
           "description": "Therapeutic diets formulated with specialist veterinarians for the nutritional management of specific conditions in dogs and cats.",
           "cta": "Discover the clinical line",
-          "image":"/assets/images/resource/ClinicFamily.png",
+          "image": "/assets/images/resource/ClinicalNutritionHero.png",
           "ctaHref": "/nutricion-canina/nutricion-clinica"
         },
         {
@@ -33,7 +33,7 @@
           "title": "Creamy Treats",
           "description": "Creamy, irresistible treats designed to pamper your pet without compromising their nutrition.",
           "cta": "Discover Creamy Treats",
-          "image":"/assets/images/resource/ClinicFamily.png",
+          "image": "/assets/images/resource/CreamyHero.png",
           "ctaHref": "/nutricion-canina/premios-funcionales"
         },
         {
@@ -41,7 +41,7 @@
           "title": "NUPEC Supplements",
           "description": "Supplements designed to reinforce your pet's daily nutrition and support their overall well-being.",
           "cta": "View supplements",
-          "image":"/assets/images/resource/ClinicFamily.png",
+          "image": "/assets/images/resource/SuplementsHero.png",
           "ctaHref": "/nutricion-canina/suplementos"
         }
       ]
@@ -780,6 +780,90 @@
         "meta": "Meta-analysis",
         "review": "Scientific review"
       }
+    }
+  },
+  "foodFinder": {
+    "hero": {
+      "eyebrow": "CONSCIOUS SCIENTIFIC NUTRITION",
+      "title": "Find the ideal food for your pet",
+      "description": "Answer a few questions and we'll recommend the perfect NUPEC product based on species, life stage, size and needs."
+    },
+    "steps": {
+      "species": "Species",
+      "lifeStage": "Life stage",
+      "breedSize": "Size",
+      "specialNeed": "Special need"
+    },
+    "stepOf": "STEP {current} OF {total}",
+    "percentComplete": "{percent}% complete",
+    "back": "Back",
+    "continue": "Continue",
+    "seeResults": "See results",
+    "readyToContinue": "Ready to continue",
+    "selectToContinue": "Select an option to continue",
+    "species": {
+      "title": "Who are you looking for food for?",
+      "description": "Select the species to start. You'll be able to refine your search in the following steps.",
+      "dog": "Dog",
+      "dogSub": "NUPEC canine line · 6 categories",
+      "dogBlurb": "Daily nutrition, clinical, functional treats and special needs.",
+      "cat": "Cat",
+      "catSub": "NUPEC feline line · 6 categories",
+      "catBlurb": "Specific formulas for feline metabolism, urinary health and palatability."
+    },
+    "lifeStage": {
+      "title": "What life stage is your pet in?",
+      "description": "Life stage adjusts the recommended nutritional profile.",
+      "cachorro": "Puppy",
+      "adulto": "Adult",
+      "senior": "Senior"
+    },
+    "breedSize": {
+      "title": "What size is your dog?",
+      "description": "Only applies to dogs. Select the adult breed size.",
+      "mini": "Mini",
+      "miniSub": "Up to 4 kg",
+      "pequena": "Small",
+      "pequenaSub": "4–10 kg",
+      "mediana": "Medium",
+      "medianaSub": "10–25 kg",
+      "grande": "Large",
+      "grandeSub": "Over 25 kg",
+      "todas": "All sizes",
+      "todasSub": "Not sure / applies to any size"
+    },
+    "specialNeed": {
+      "title": "Does your pet have any special needs?",
+      "description": "Select the one that best describes your pet, or continue without one to see the daily maintenance line.",
+      "none": "No special need",
+      "noneSub": "Daily maintenance",
+      "options": {
+        "peso": "Weight control",
+        "digestion": "Digestive health",
+        "renal": "Kidney care",
+        "urinario": "Urinary management",
+        "piel": "Sensitive skin",
+        "indoor": "Indoor cats",
+        "hairball": "Hairball control",
+        "articular": "Joint health",
+        "cardiaco": "Heart care",
+        "hepatico": "Liver care",
+        "alergias": "Food allergy management",
+        "dental": "Dental health",
+        "ansiedad": "Anxiety and stress management",
+        "cognitivo": "Cognitive function",
+        "vitalidad": "Vitality and energy"
+      }
+    },
+    "result": {
+      "title": "Here's your recommendation",
+      "subtitle": "A best match + alternatives",
+      "bestMatch": "Best match",
+      "alternative": "Alternative",
+      "noResults": "We couldn't find an exact product for these criteria. Try adjusting the special need or size.",
+      "viewProduct": "View product sheet",
+      "newSearch": "New search",
+      "complementaryTitle": "Suggested complementary products"
     }
   }
 }

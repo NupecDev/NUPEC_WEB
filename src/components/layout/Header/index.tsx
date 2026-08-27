@@ -113,7 +113,7 @@ export default function Header({ scroll, handleMobileMenu }: HeaderProps) {
               <div className="menu-right-content">
                 <LanguageSwitcher />
                 <div className="btn-box">
-                  <Link href={`${base}/nutricion-canina`} className="theme-btn btn-one">
+                  <Link href={`${base}/encuentra-tu-alimento`} className="theme-btn btn-one">
                     <span>{t('findFood')}</span>
                   </Link>
                 </div>
@@ -153,7 +153,7 @@ export default function Header({ scroll, handleMobileMenu }: HeaderProps) {
               <div className="menu-right-content">
                 <LanguageSwitcher />
                 <div className="btn-box">
-                  <Link href={`${base}/nutricion-canina`} className="theme-btn btn-one">
+                  <Link href={`${base}/encuentra-tu-alimento`} className="theme-btn btn-one">
                     <span>{t('findFood')}</span>
                   </Link>
                 </div>

@@ -14,8 +14,6 @@ export default function Wizard() {
 
   const [selected, setSelected] = useState<Species>('dog');
 
-  const speciesRoute = selected === 'dog' ? 'nutricion-canina' : 'nutricion-felina';
-
   return (
     <section className="about-section sec-pad p_relative" style={{ background: '#fff' }}>
       <div className="auto-container">
@@ -31,10 +29,13 @@ export default function Wizard() {
                   <p>{t('description')}</p>
                 </div>
                 <div className="btn-box" style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-                  <Link href={`/${lang}/${speciesRoute}`} className="theme-btn btn-one">
+                  <Link href={`/${lang}/encuentra-tu-alimento`} className="theme-btn btn-one">
                     <span>{t('ctaPrimary')}</span>
                   </Link>
-                  <Link href={`/${lang}/${speciesRoute}`} className="theme-btn btn-two">
+                  <Link
+                    href={`/${lang}/${selected === 'dog' ? 'nutricion-canina' : 'nutricion-felina'}`}
+                    className="theme-btn btn-two"
+                  >
                     <span>{t('ctaSecondary')}</span>
                   </Link>
                 </div>

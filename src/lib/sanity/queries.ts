@@ -278,21 +278,67 @@ export const categoryBySlugQuery = groq`
 
 // ── Wizard ─────────────────────────────────────────────────────────────────────
 
-export const wizardProductsQuery = groq`
+const wizardProductProjection = groq`
+  {
+    _id,
+    "name": name[$lang],
+    "slug": select(
+      slug.current match (category->slug.current + "/*") => string::split(slug.current, "/")[1],
+      slug.current
+    ),
+    "tagline": tagline[$lang],
+    color,
+    image,
+    species,
+    specialNeeds,
+    "categoria": category->slug.current,
+    "presentations": presentations[]{
+      "value": select(_type == "presentation" => weight, @)
+    }.value
+  }
+`;
+
+// Coincidencia exacta: cumple especie + etapa + talla + la necesidad especial elegida.
+// Si NO se eligió ninguna necesidad, se entiende como "mantenimiento diario" y solo
+// trae productos SIN ninguna necesidad especial (no "cualquier producto que también
+// aplique", que traería de rebote dietas clínicas y líneas especializadas).
+export const wizardExactMatchQuery = groq`
   *[
     _type == "product" &&
     species == $species &&
     isActive == true &&
     ($lifeStage == null || $lifeStage in lifeStage) &&
     ($breedSize == null || $breedSize in breedSize || "todas" in breedSize) &&
-    ($specialNeed == null || $specialNeed in specialNeeds)
-  ] | order(name.es asc) {
-    _id,
-    "name": name[$lang],
-    "slug": slug.current,
-    "tagline": tagline[$lang],
-    image,
-    species,
-    "categoria": category->slug.current
-  }
+    (
+      ($specialNeed == null && !defined(specialNeeds[0])) ||
+      ($specialNeed != null && $specialNeed in specialNeeds)
+    )
+  ] | order(name.es asc) ${wizardProductProjection}
+`;
+
+// Categorías de "extras" genéricos: compatibles con cualquier producto base sano,
+// nunca dietas terapéuticas ni líneas especializadas de una sola condición.
+export const COMPLEMENTARY_CATEGORIES = ["premios-funcionales", "suplementos"];
+
+// Complementarios: premios funcionales y suplementos de la misma especie + etapa + talla
+// que la coincidencia exacta (add-ons genéricos, no otra dieta especializada/clínica).
+// Solo tiene sentido cuando el usuario sí eligió una necesidad especial.
+export const wizardComplementaryQuery = groq`
+  *[
+    _type == "product" &&
+    species == $species &&
+    isActive == true &&
+    category->slug.current in $complementaryCategories &&
+    ($lifeStage == null || $lifeStage in lifeStage) &&
+    ($breedSize == null || $breedSize in breedSize || "todas" in breedSize) &&
+    !($specialNeed in specialNeeds)
+  ] | order(name.es asc) ${wizardProductProjection}
+`;
+
+// Necesidades especiales que existen realmente entre productos activos de una especie
+// (evita ofrecer, ej. "Hairball" al elegir perro, o "Ansiedad" al elegir gato).
+export const wizardAvailableSpecialNeedsQuery = groq`
+  array::unique(
+    *[_type == "product" && species == $species && isActive == true].specialNeeds[]
+  )
 `;
