@@ -47,7 +47,6 @@ export default function Footer() {
                   <ul className="links-list clearfix">
                     <li><Link href={`${base}/nosotros`}>{t('nosotros')}</Link></li>
                     <li><Link href={`${base}/conciencia`}>{t('conciencia')}</Link></li>
-                    <li><Link href={`${base}/blog`}>{t('blog')}</Link></li>
                     <li><Link href={`${base}/contacto`}>{t('contacto')}</Link></li>
                     <li><Link href={`${base}/donde-comprar`}>{t('donde')}</Link></li>
                   </ul>
@@ -102,7 +101,6 @@ export default function Footer() {
               <li><Link href={`${base}/nutricion-canina`}>{t('canina')}</Link></li>
               <li><Link href={`${base}/nutricion-felina`}>{t('felina')}</Link></li>
               <li><Link href={`${base}/nosotros`}>{t('nosotros')}</Link></li>
-              <li><Link href={`${base}/blog`}>{t('blog')}</Link></li>
               <li><Link href={`${base}/contacto`}>{t('contacto')}</Link></li>
             </ul>
           </div>
