@@ -673,6 +673,7 @@
       "colCupsPerDay": "Tazas/día",
       "calcTitle": "Calculadora de ración",
       "calcDesc": "Mueve el control para ver la ración aproximada para el peso de tu perro.",
+      "calcDescFeline": "Mueve el control para ver la ración aproximada para el peso de tu gato.",
       "weight": "Peso",
       "perDay": "gramos por día",
       "reference": "Referencia",
@@ -767,7 +768,15 @@
       "colLabel": "Descripción",
       "colWeight": "Peso corporal",
       "colAmount": "Cantidad diaria",
-      "rxNote": "La cantidad debe ajustarse según el estado clínico del paciente. Consulte con el médico veterinario tratante."
+      "rxNote": "La cantidad debe ajustarse según el estado clínico del paciente. Consulte con el médico veterinario tratante.",
+      "calcTitle": "Calculadora de ración",
+      "calcDesc": "Mueve el control para ver la ración aproximada para el peso del paciente.",
+      "weight": "Peso",
+      "perDay": "gramos por día",
+      "reference": "Referencia",
+      "disclaimer": "Valores orientativos. Ajusta según el estado clínico del paciente y la recomendación veterinaria.",
+      "variantLabel": "Condición",
+      "variantDefault": "Estándar"
     },
     "ingredientShowcase": {
       "sectionLabel": "INGREDIENTES FUNCIONALES",

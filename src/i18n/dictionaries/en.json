@@ -673,6 +673,7 @@
       "colCupsPerDay": "Cups/day",
       "calcTitle": "Ration calculator",
       "calcDesc": "Move the slider to see the approximate ration for your dog's weight.",
+      "calcDescFeline": "Move the slider to see the approximate ration for your cat's weight.",
       "weight": "Weight",
       "perDay": "grams per day",
       "reference": "Reference",
@@ -767,7 +768,15 @@
       "colLabel": "Description",
       "colWeight": "Body weight",
       "colAmount": "Daily amount",
-      "rxNote": "Amount should be adjusted based on the patient's clinical condition. Consult with the attending veterinarian."
+      "rxNote": "Amount should be adjusted based on the patient's clinical condition. Consult with the attending veterinarian.",
+      "calcTitle": "Ration calculator",
+      "calcDesc": "Move the slider to see the approximate ration for the patient's weight.",
+      "weight": "Weight",
+      "perDay": "grams per day",
+      "reference": "Reference",
+      "disclaimer": "Guideline values. Adjust according to the patient's clinical condition and veterinary recommendation.",
+      "variantLabel": "Condition",
+      "variantDefault": "Standard"
     },
     "ingredientShowcase": {
       "sectionLabel": "FUNCTIONAL INGREDIENTS",

@@ -1,25 +1,29 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import DosageCalculator, {
+  hasCalculatorData,
+  type FeedingRow,
+  type FeedingVariant,
+} from '../ProductFeedingGuide/DosageCalculator';
 
-export type ClinicalFeedingRow = {
-  label?: string;
-  weightRange: string;
-  dailyAmount: string;
-};
+export type ClinicalFeedingRow = FeedingRow;
 
 type Props = {
   rows: ClinicalFeedingRow[];
   notes?: string;
   accentColor?: string;
+  variants?: FeedingVariant[];
 };
 
 const CLINICAL_RED = '#C4262E';
 
-export default function ClinicalFeedingGuide({ rows, notes, accentColor = CLINICAL_RED }: Props) {
+export default function ClinicalFeedingGuide({ rows, notes, accentColor = CLINICAL_RED, variants }: Props) {
   const t = useTranslations('clinicalProduct.feedingGuide');
 
   if (!rows || rows.length === 0) return null;
+
+  const hasCalculator = hasCalculatorData(rows);
 
   return (
     <section className="clin-feeding-guide p_relative pb_60 pt_60">
@@ -60,6 +64,15 @@ export default function ClinicalFeedingGuide({ rows, notes, accentColor = CLINIC
 
         {notes && (
           <p className="sp-feeding-guide__notes mt_20">{notes}</p>
+        )}
+
+        {hasCalculator && (
+          <DosageCalculator
+            rows={rows}
+            variants={variants}
+            accentColor={accentColor}
+            translationNamespace="clinicalProduct.feedingGuide"
+          />
         )}
 
         <div className="clin-feeding-guide__rx-note mt_20" style={{ borderColor: accentColor, color: accentColor }}>

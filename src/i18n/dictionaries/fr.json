@@ -673,6 +673,7 @@
       "colCupsPerDay": "Tasses/jour",
       "calcTitle": "Calculateur de ration",
       "calcDesc": "Déplacez le curseur pour voir la ration approximative selon le poids de votre chien.",
+      "calcDescFeline": "Déplacez le curseur pour voir la ration approximative selon le poids de votre chat.",
       "weight": "Poids",
       "perDay": "grammes par jour",
       "reference": "Référence",
@@ -767,7 +768,15 @@
       "colLabel": "Description",
       "colWeight": "Poids corporel",
       "colAmount": "Quantité journalière",
-      "rxNote": "La quantité doit être ajustée selon l'état clinique du patient. Consultez le médecin vétérinaire traitant."
+      "rxNote": "La quantité doit être ajustée selon l'état clinique du patient. Consultez le médecin vétérinaire traitant.",
+      "calcTitle": "Calculateur de ration",
+      "calcDesc": "Déplacez le curseur pour voir la ration approximative selon le poids du patient.",
+      "weight": "Poids",
+      "perDay": "grammes par jour",
+      "reference": "Référence",
+      "disclaimer": "Valeurs indicatives. Ajustez selon l'état clinique du patient et la recommandation vétérinaire.",
+      "variantLabel": "Condition",
+      "variantDefault": "Standard"
     },
     "ingredientShowcase": {
       "sectionLabel": "INGRÉDIENTS FONCTIONNELS",

@@ -204,6 +204,7 @@ accentColor={accentColor}
             rows={product.feedingGuide.rows}
             notes={product.feedingGuide.notes ?? undefined}
             accentColor={accentColor}
+            variants={product.feedingGuide.variants ?? undefined}
           />
         )}
 
@@ -349,7 +350,7 @@ accentColor={accentColor}
       />
 
       {/* 5. Guía de Alimentación: tabla + calculadora interactiva */}
-      <ProductFeedingGuide feedingGuide={product.feedingGuide} accentColor={accentColor} />
+      <ProductFeedingGuide feedingGuide={product.feedingGuide} accentColor={accentColor} species="canino" />
 
       {/* 6. Análisis Garantizado: barras de progreso animadas */}
       <ProductGuaranteedAnalysis
