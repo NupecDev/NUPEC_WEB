@@ -57,7 +57,7 @@ export default function Header2({ scroll, handleMobileMenu }: Header1Props) {
               <div className="logo-box">
                 <figure className="logo">
                   <Link href="/">
-                    <Image src="/assets/images/logo.png" alt="Logo Image" width={203} height={40} priority />
+                    <Image src="/assets/images/logo.svg" alt="Logo Image" width={203} height={40} priority />
                   </Link>
                 </figure>
               </div>
@@ -194,7 +194,7 @@ export default function Header2({ scroll, handleMobileMenu }: Header1Props) {
               <div className="logo-box">
                 <figure className="logo">
                   <Link href="/">
-                    <Image src="/assets/images/logo.png" alt="Logo Image" width={203} height={40} priority />
+                    <Image src="/assets/images/logo.svg" alt="Logo Image" width={203} height={40} priority />
                   </Link>
                 </figure>
               </div>

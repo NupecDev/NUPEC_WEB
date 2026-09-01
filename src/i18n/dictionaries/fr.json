@@ -224,7 +224,7 @@
     "hero": {
       "eyebrow": "NUPEC Conscient",
       "title": "Nous nourrissons avec un amour conscient",
-      "description": "Quatre initiatives à travers lesquelles NUPEC redonne au pays, aux communautés et aux animaux une partie de ce qu'ils nous ont offert."
+      "description": "Initiatives à travers lesquelles NUPEC redonne au pays, aux communautés et aux animaux une partie de ce qu'ils nous ont offert."
     },
     "terapias": {
       "subtitle": "Nous nourrissons l'espoir d'un avenir meilleur",
@@ -762,6 +762,11 @@
     },
     "differentiators": {
       "title": "DIFFÉRENCIATEURS CLINIQUES"
+    },
+    "problemSolution": {
+      "title": "DÉFIS CLINIQUES ET STRATÉGIE NUTRITIONNELLE",
+      "problemLabel": "Problème",
+      "solutionLabel": "Solution"
     },
     "feedingGuide": {
       "title": "TABLEAU DE DOSAGE",

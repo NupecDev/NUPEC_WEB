@@ -94,7 +94,7 @@ export default function Footer() {
           <div className="footer-menu mt_60">
             <figure className="logo-box">
               <Link href={base}>
-                <Image src="/assets/images/logo.png" alt="NUPEC" width={203} height={40} priority />
+                <Image src="/assets/images/logo.svg" alt="NUPEC" width={203} height={40} priority />
               </Link>
             </figure>
             <ul className="menu-list clearfix">

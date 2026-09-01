@@ -81,7 +81,7 @@ export const clinicalProductsByCategoryQuery = groq`
     species == $species &&
     category->slug.current == $categoria &&
     isActive == true
-  ] | order(name.es asc) {
+  ] | order(sortOrder asc, name.es asc) {
     _id,
     "name": name[$lang],
     "slug": select(
@@ -235,6 +235,10 @@ export const productBySlugQuery = groq`
         "title": title[$lang],
         "description": description[$lang]
       }
+    },
+    "problemSolution": problemSolution[]{
+      "problem": problem[$lang],
+      "solution": solution[$lang]
     },
     "ingredientHighlights": ingredientHighlights[]->{
       _id,

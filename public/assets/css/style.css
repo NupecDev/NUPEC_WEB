@@ -2844,7 +2844,7 @@ button.ltr {
   height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: top;
   z-index: 1;
 }
 
@@ -6304,5 +6304,118 @@ sup {
   .canine-digestibility__stat {
     position: static;
     margin-top: 10px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CLINICAL PROBLEM / SOLUTION — dos columnas con checkmarks
+   ═══════════════════════════════════════════════════════════════ */
+
+.clin-ps__eyebrow {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.clin-ps__cols-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 18px;
+}
+
+.clin-ps__col-header {
+  padding: 16px 28px;
+  border-radius: 40px;
+  font-size: 18px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #fff;
+  text-align: center;
+}
+
+.clin-ps__col-header--problem {
+  background: #8c8c8c;
+}
+
+.clin-ps__rows {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.clin-ps__row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.clin-ps__cell {
+  border-radius: 18px;
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+}
+
+.clin-ps__cell p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.clin-ps__cell--problem {
+  background: rgba(140, 140, 140, 0.1);
+}
+
+.clin-ps__cell--problem p {
+  color: #555;
+}
+
+.clin-ps__cell--solution {
+  background: rgba(196, 38, 46, 0.08);
+}
+
+.clin-ps__cell--solution p {
+  color: #1a1a1a;
+  font-weight: 700;
+}
+
+.clin-ps__check {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 800;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+@media (max-width: 767px) {
+  .clin-ps__cols-header,
+  .clin-ps__row {
+    grid-template-columns: 1fr;
+  }
+
+  .clin-ps__check {
+    position: static;
+    transform: none;
+    margin: -10px auto;
+  }
+
+  .clin-ps__cell {
+    padding: 20px 22px;
   }
 }

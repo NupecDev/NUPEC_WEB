@@ -24,6 +24,7 @@ import ClinicalCases, { type ClinicalCaseData } from '@/components/sections/prod
 import VetResources, { type TechnicalResource } from '@/components/sections/products/VetResources';
 import ClinicalProductGrid from '@/components/sections/products/ClinicalProductGrid';
 import ClinicalDifferentiators from '@/components/sections/products/ClinicalDifferentiators';
+import ClinicalProblemSolution, { type ProblemSolutionItem } from '@/components/sections/products/ClinicalProblemSolution';
 import IngredientShowcase, { type IngredientItem } from '@/components/sections/products/IngredientShowcase';
 
 const CATEGORY_COLOR: Record<string, string> = {
@@ -115,6 +116,7 @@ type ProductData = ProductHeroData & {
   clinicalCases?: ClinicalCaseData[];
   technicalResources?: TechnicalResource[];
   differentiators?: { icon: string; title: string; subtitle?: string; bullets?: { title: string; description: string }[] }[];
+  problemSolution?: ProblemSolutionItem[];
   ingredientHighlights?: IngredientItem[];
   transitionGuide?: TransitionGuideData | null;
 };
@@ -178,6 +180,13 @@ accentColor={accentColor}
         {product.differentiators && product.differentiators.length > 0 && (
           <ClinicalDifferentiators
             items={product.differentiators}
+            accentColor={accentColor}
+          />
+        )}
+        {/* 2.5. Problema y solución */}
+        {product.problemSolution && product.problemSolution.length > 0 && (
+          <ClinicalProblemSolution
+            items={product.problemSolution}
             accentColor={accentColor}
           />
         )}

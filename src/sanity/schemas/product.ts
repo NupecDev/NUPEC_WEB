@@ -62,6 +62,14 @@ export default defineType({
       validation: (r) => r.required(),
     }),
 
+    defineField({
+      name: "sortOrder",
+      title: "Orden de despliegue",
+      type: "number",
+      group: "contenido",
+      description: "Controla el orden en que aparece este producto dentro de su categoría (menor = primero). Si se deja vacío, se ordena alfabéticamente por nombre.",
+    }),
+
     // ── Contenido ─────────────────────────────────────────────────
     defineField({
       name: "tagline",
@@ -822,6 +830,44 @@ export default defineType({
               return { title, subtitle: url, media };
             },
           },
+        },
+      ],
+    }),
+
+    defineField({
+      name: "problemSolution",
+      title: "Problema y solución",
+      type: "array",
+      group: "clinica",
+      description: "Tabla de dos columnas: el problema clínico a la izquierda y la solución nutricional NUPEC a la derecha.",
+      of: [
+        {
+          type: "object",
+          name: "problemSolutionItem",
+          title: "Fila",
+          fields: [
+            defineField({
+              name: "problem",
+              title: "Problema",
+              type: "object",
+              fields: [
+                defineField({ name: "es", title: "Español", type: "text", rows: 3, validation: (r) => r.required() }),
+                defineField({ name: "en", title: "Inglés", type: "text", rows: 3 }),
+                defineField({ name: "fr", title: "Francés", type: "text", rows: 3 }),
+              ],
+            }),
+            defineField({
+              name: "solution",
+              title: "Solución",
+              type: "object",
+              fields: [
+                defineField({ name: "es", title: "Español", type: "text", rows: 3, validation: (r) => r.required() }),
+                defineField({ name: "en", title: "Inglés", type: "text", rows: 3 }),
+                defineField({ name: "fr", title: "Francés", type: "text", rows: 3 }),
+              ],
+            }),
+          ],
+          preview: { select: { title: "problem.es", subtitle: "solution.es" } },
         },
       ],
     }),

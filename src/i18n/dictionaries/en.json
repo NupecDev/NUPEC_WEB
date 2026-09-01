@@ -224,7 +224,7 @@
     "hero": {
       "eyebrow": "NUPEC Conscious",
       "title": "We nourish with conscious love",
-      "description": "Four initiatives through which NUPEC gives back to the country, to communities, and to animals part of what they have given us."
+      "description": "Initiatives through which NUPEC gives back to the country, to communities, and to animals part of what they have given us."
     },
     "terapias": {
       "subtitle": "We nourish hope for a better future",
@@ -762,6 +762,11 @@
     },
     "differentiators": {
       "title": "CLINICAL DIFFERENTIATORS"
+    },
+    "problemSolution": {
+      "title": "CLINICAL CHALLENGES AND NUTRITIONAL STRATEGY",
+      "problemLabel": "Problem",
+      "solutionLabel": "Solution"
     },
     "feedingGuide": {
       "title": "DOSING TABLE",

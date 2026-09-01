@@ -79,7 +79,7 @@ export default function Footer1() {
                             </div>
                         </div>
                         <div className="footer-menu mt_60">
-                            <figure className="logo-box"><Link href="/"><Image src="/assets/images/logo.png" alt="Footer Logo" width={203} height={40} priority /></Link></figure>
+                            <figure className="logo-box"><Link href="/"><Image src="/assets/images/logo.svg" alt="Footer Logo" width={203} height={40} priority /></Link></figure>
                             <ul className="menu-list clearfix">
                                 <li><Link href="/">Home</Link></li>
                                 <li><Link href="/about">About Us</Link></li>

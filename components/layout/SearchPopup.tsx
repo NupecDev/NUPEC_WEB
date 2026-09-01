@@ -14,7 +14,7 @@ const SearchPopup: React.FC<SearchPopupProps> = ({ isPopup, handlePopup }) => {
         <div className="upper-box clearfix">
           <figure className="logo-box pull-left">
             <Link href="/">
-              <img src="/assets/images/logo.png" alt="Logo" />
+              <img src="/assets/images/logo.svg" alt="Logo" />
             </Link>
           </figure>
           <div className="close-search pull-right" onClick={handlePopup}>

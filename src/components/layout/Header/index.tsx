@@ -5,7 +5,8 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
 import MobileMenu from '../../../../components/layout/MobileMenu';
-import LanguageSwitcher from '../LanguageSwitcher';
+// Selector de idioma oculto temporalmente
+// import LanguageSwitcher from '../LanguageSwitcher';
 
 type HeaderProps = {
   scroll: boolean;
@@ -87,7 +88,7 @@ export default function Header({ scroll, handleMobileMenu }: HeaderProps) {
                 <figure className="logo">
                   <Link href={base}>
                     <Image
-                      src="/assets/images/logo.png"
+                      src="/assets/images/logo.svg"
                       alt="NUPEC"
                       width={203}
                       height={40}
@@ -111,7 +112,8 @@ export default function Header({ scroll, handleMobileMenu }: HeaderProps) {
               </div>
 
               <div className="menu-right-content">
-                <LanguageSwitcher />
+                {/* Selector de idioma oculto temporalmente */}
+                {/* <LanguageSwitcher /> */}
                 <div className="btn-box">
                   <Link href={`${base}/encuentra-tu-alimento`} className="theme-btn btn-one">
                     <span>{t('findFood')}</span>
@@ -129,7 +131,7 @@ export default function Header({ scroll, handleMobileMenu }: HeaderProps) {
                 <figure className="logo">
                   <Link href={base}>
                     <Image
-                      src="/assets/images/logo.png"
+                      src="/assets/images/logo.svg"
                       alt="NUPEC"
                       width={203}
                       height={40}
@@ -151,7 +153,8 @@ export default function Header({ scroll, handleMobileMenu }: HeaderProps) {
                 </nav>
               </div>
               <div className="menu-right-content">
-                <LanguageSwitcher />
+                {/* Selector de idioma oculto temporalmente */}
+                {/* <LanguageSwitcher /> */}
                 <div className="btn-box">
                   <Link href={`${base}/encuentra-tu-alimento`} className="theme-btn btn-one">
                     <span>{t('findFood')}</span>

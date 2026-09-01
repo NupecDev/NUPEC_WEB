@@ -224,7 +224,7 @@
     "hero": {
       "eyebrow": "NUPEC Consciente",
       "title": "Nutrimos con amor consciente",
-      "description": "Cuatro iniciativas con las que NUPEC devuelve al país, a las comunidades y a los animales parte de lo que nos han dado."
+      "description": "Iniciativas con las que NUPEC devuelve al país, a las comunidades y a los animales parte de lo que nos han dado."
     },
     "terapias": {
       "subtitle": "Nutrimos la esperanza de un mejor futuro",
@@ -762,6 +762,11 @@
     },
     "differentiators": {
       "title": "DIFERENCIADORES CLÍNICOS"
+    },
+    "problemSolution": {
+      "title": "DESAFÍOS CLÍNICOS Y ESTRATEGIA NUTRICIONAL",
+      "problemLabel": "Problema",
+      "solutionLabel": "Solución"
     },
     "feedingGuide": {
       "title": "TABLA DE DOSIFICACIÓN",
