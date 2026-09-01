@@ -4,7 +4,6 @@ import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import ToggleBodyClass from "../../../components/elements/Togglebtn";
-import SwitcherMenu from "../../../components/elements/ColorStyle";
 
 import "../../../public/assets/css/bootstrap.css";
 import "../../../public/assets/css/rtl.css";
@@ -48,7 +47,6 @@ export default async function LangLayout({
       <div className={`${roboto.variable} ${caveat.variable}`}>
         {children}
         <ToggleBodyClass />
-        <SwitcherMenu />
       </div>
     </NextIntlClientProvider>
   );
