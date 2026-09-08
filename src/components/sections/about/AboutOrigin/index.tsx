@@ -43,8 +43,8 @@ export default function AboutOrigin() {
             <div className="image-block-one">
               <div className="image-box p_relative">
                 <div className="shape">
-                  <div className="shape-1" style={{ backgroundImage: 'url(/assets/images/shape/shape-9.png)' }} />
-                  <div className="shape-2" style={{ backgroundImage: 'url(/assets/images/shape/shape-10.png)' }} />
+                  {/* <div className="shape-1" style={{ backgroundImage: 'url(/assets/images/shape/shape-9.png)' }} />
+                  <div className="shape-2" style={{ backgroundImage: 'url(/assets/images/shape/shape-10.png)' }} /> */}
                 </div>
                 <figure className="image">
                   <Image

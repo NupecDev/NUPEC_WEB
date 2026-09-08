@@ -86,14 +86,14 @@ export default function Banner() {
 
               {/* Shape Layer */}
               <div className="shape-layer">
-                <div
+                {/* <div
                   className="shape-1 float-bob-y"
                   style={{ backgroundImage: "url(/assets/images/shape/shape-3.png)" }}
-                />
-                <div
+                /> */}
+                {/* <div
                   className="shape-2"
                   style={{ backgroundImage: "url(/assets/images/shape/shape-4.png)" }}
-                />
+                /> */}
                 <div
                   className="shape-3"
                   style={{ backgroundImage: "url(/assets/images/shape/shape-5.png)" }}

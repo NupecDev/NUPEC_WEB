@@ -16,8 +16,8 @@ export default function ConcienciaCTA() {
         <div
           className="col-lg-6 col-md-12"
           style={{
-            minHeight: '360px',
-            background: `url(/assets/images/resource/Conciencia.png) center/cover no-repeat`,
+            minHeight: '500px',
+            background: `url(/assets/images/resource/Conciencia.png) top/cover no-repeat`,
             position: 'relative',
             padding: 0,
           }}
