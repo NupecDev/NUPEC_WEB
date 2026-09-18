@@ -116,6 +116,16 @@ export const productBySlugQuery = groq`
     "description": description[$lang],
     "ingredients": ingredients[$lang],
     "warnings": warnings[$lang],
+    "seo": {
+      "metaTitle": seo.metaTitle[$lang],
+      "metaDescription": seo.metaDescription[$lang],
+      "canonicalOverride": seo.canonicalOverride,
+      "noIndex": seo.noIndex
+    },
+    "faq": faq[]{
+      "question": question[$lang],
+      "answer": answer[$lang]
+    },
     image,
     imageBack,
     bannerImage,
@@ -266,6 +276,24 @@ export const productBySlugQuery = groq`
   }
 `;
 
+export const allActiveProductSlugsQuery = groq`
+  *[_type == "product" && isActive == true] {
+    species,
+    "categoria": category->slug.current,
+    "slug": select(
+      slug.current match (category->slug.current + "/*") => string::split(slug.current, "/")[1],
+      slug.current
+    )
+  }
+`;
+
+export const allCategorySlugsQuery = groq`
+  *[_type == "category"] {
+    species,
+    "slug": slug.current
+  }
+`;
+
 export const categoryBySlugQuery = groq`
   *[_type == "category" && slug.current == $slug && species == $species][0] {
     _id,
@@ -274,12 +302,39 @@ export const categoryBySlugQuery = groq`
     species,
     "description": description[$lang],
     "excerpt": excerpt[$lang],
+    "seo": {
+      "metaTitle": seo.metaTitle[$lang],
+      "metaDescription": seo.metaDescription[$lang],
+      "canonicalOverride": seo.canonicalOverride,
+      "noIndex": seo.noIndex
+    },
+    "faq": faq[]{
+      "question": question[$lang],
+      "answer": answer[$lang]
+    },
     familyImage,
     bannerImage,
     "stats": stats[] {
       value,
       "label": label[$lang],
       "description": description[$lang]
+    }
+  }
+`;
+
+// ── Páginas institucionales (solo SEO) ──────────────────────────────────────────
+
+export const pageSeoByIdQuery = groq`
+  *[_type == "page" && pageId == $pageId][0] {
+    "seo": {
+      "metaTitle": seo.metaTitle[$lang],
+      "metaDescription": seo.metaDescription[$lang],
+      "canonicalOverride": seo.canonicalOverride,
+      "noIndex": seo.noIndex
+    },
+    "faq": faq[]{
+      "question": question[$lang],
+      "answer": answer[$lang]
     }
   }
 `;

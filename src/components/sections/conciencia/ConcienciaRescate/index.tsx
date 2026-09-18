@@ -35,7 +35,7 @@ export default function ConcienciaRescate() {
                 <figure className="image">
                   <Image
                     src="/assets/images/resource/about-3.jpg"
-                    alt="NUPEC - Nutrimos perros de rescate"
+                    alt={t('imageAlt')}
                     width={523}
                     height={399}
                   />

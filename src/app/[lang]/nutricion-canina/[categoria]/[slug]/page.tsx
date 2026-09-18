@@ -1,6 +1,9 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { client } from '@/lib/sanity/client';
+import { client, urlFor } from '@/lib/sanity/client';
 import { productBySlugQuery } from '@/lib/sanity/queries';
+import { buildMetadata, productJsonLd, breadcrumbJsonLd, faqJsonLd, localizedUrl } from '@/lib/seo';
+import type { Locale } from '@/i18n/routing';
 import PageLayout from '@/components/layout/PageLayout';
 
 // Standard product components
@@ -64,6 +67,8 @@ type ProductData = ProductHeroData & {
   ingredients?: string;
   warnings?: string;
   specialNeeds?: string[];
+  seo?: { metaTitle?: string; metaDescription?: string; canonicalOverride?: string | null; noIndex?: boolean | null };
+  faq?: { question: string; answer: string }[];
   technicalSheet?: { asset: { _ref: string } };
   feedingGuide?: {
     rows: {
@@ -121,6 +126,34 @@ type ProductData = ProductHeroData & {
   transitionGuide?: TransitionGuideData | null;
 };
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string; categoria: string; slug: string }>;
+}): Promise<Metadata> {
+  const { lang, categoria, slug } = await params;
+
+  const product = await client.fetch<ProductData | null>(productBySlugQuery, {
+    species: 'canino',
+    categoria,
+    slug,
+    lang,
+  });
+
+  if (!product) return {};
+
+  const image = product.image ? urlFor(product.image).width(1200).height(630).url() : undefined;
+
+  return buildMetadata({
+    locale: lang as Locale,
+    pathWithoutLocale: `/nutricion-canina/${categoria}/${slug}`,
+    seo: product.seo,
+    fallbackTitle: `${product.name} — ${product.category.name}`,
+    fallbackDescription: product.tagline,
+    image: image ? { url: image, alt: product.image?.alt || product.name } : undefined,
+  });
+}
+
 export default async function ProductPage({
   params,
 }: {
@@ -137,6 +170,27 @@ export default async function ProductPage({
 
   if (!product) notFound();
 
+  const productUrl = localizedUrl(`/nutricion-canina/${categoria}/${slug}`, lang as Locale);
+  const jsonLd = [
+    productJsonLd({
+      name: product.name,
+      description: product.tagline,
+      image: product.image ? urlFor(product.image).width(1200).url() : undefined,
+      url: productUrl,
+    }),
+    breadcrumbJsonLd([
+      { name: 'NUPEC', url: localizedUrl('/', lang as Locale) },
+      { name: 'Nutrición canina', url: localizedUrl('/nutricion-canina', lang as Locale) },
+      { name: product.category.name, url: localizedUrl(`/nutricion-canina/${categoria}`, lang as Locale) },
+      { name: product.name, url: productUrl },
+    ]),
+    faqJsonLd(
+      (product.faq ?? [])
+        .filter((item) => item.question && item.answer)
+        .map((item) => ({ question: item.question, answer: item.answer }))
+    ),
+  ].filter(Boolean);
+
   const accentColor =
     product.color ??
     (product.lifeStage?.[0] && LIFE_STAGE_COLOR[product.lifeStage[0]]) ??
@@ -146,9 +200,17 @@ export default async function ProductPage({
   const isClinical = categoria === 'nutricion-clinica';
   const isPremios = categoria === 'premios-funcionales';
 
+  const jsonLdScript = (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
+
   if (isClinical) {
     return (
       <PageLayout accentColor={accentColor}>
+        {jsonLdScript}
         {/* 1. Hero */}
         <ProductHero product={{ ...product, species: 'canino' }} />
 
@@ -250,6 +312,7 @@ accentColor={accentColor}
   if (isPremios) {
     return (
       <PageLayout accentColor={accentColor}>
+        {jsonLdScript}
         <ProductHero product={{ ...product, species: 'canino' }} />
 
         <ProductDescription
@@ -314,6 +377,7 @@ accentColor={accentColor}
 
   return (
     <PageLayout accentColor={accentColor}>
+      {jsonLdScript}
       {/* 1. Hero: imagen, nombre, tagline, presentaciones, breadcrumb */}
       <ProductHero product={{ ...product, species: 'canino' }} />
 

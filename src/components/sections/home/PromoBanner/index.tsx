@@ -2,8 +2,10 @@
 
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 
 export default function PromoBanner() {
+  const t = useTranslations('home.promoBanner');
   const params = useParams();
   const lang = params.lang as string;
 
@@ -16,7 +18,7 @@ export default function PromoBanner() {
       <Link
         href={`/${lang}/nutricion-canina/nutricion-especializada`}
         className="promo-banner-section__link d_block"
-        aria-label="NUPEC 1st Care Immunity Plus"
+        aria-label={t('ariaLabel')}
       />
     </section>
   );

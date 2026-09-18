@@ -84,6 +84,9 @@
       "cat": "Chat",
       "selectSpecies": "Sélectionnez l'espèce de votre animal"
     },
+    "promoBanner": {
+      "ariaLabel": "NUPEC 1st Care Immunity Plus"
+    },
     "science": {
       "subtitle": "Réseau de Recherche en Nutrition Animale Spécialisée",
       "title": "Soutien Scientifique SANUREN",
@@ -98,7 +101,8 @@
       "t03": "Tests de Digestibilité",
       "d03": "Une évaluation non invasive qui analyse l'absorption des nutriments par l'étude d'échantillons fécaux.",
       "years": "+20",
-      "yearsLabel": "Ans d'expérience dans l'industrie"
+      "yearsLabel": "Ans d'expérience dans l'industrie",
+      "imageAlt": "Équipe scientifique NUPEC"
     },
     "blog": {
       "subtitle": "Blog NUPEC",
@@ -136,7 +140,10 @@
       "phoneText": "(800) 926 8732",
       "phoneAlt": "(800) YA NUPEC",
       "hoursTitle": "Horaires d'ouverture",
-      "hoursText": "Du lundi au vendredi de 8h00 à 18h00"
+      "hoursText": "Du lundi au vendredi de 8h00 à 18h00",
+      "locationIconAlt": "Emplacement",
+      "phoneIconAlt": "Téléphone",
+      "hoursIconAlt": "Horaires"
     },
     "form": {
       "title": "Laissez-nous un message",
@@ -230,25 +237,29 @@
       "subtitle": "Nous nourrissons l'espoir d'un avenir meilleur",
       "title": "Thérapies assistées",
       "description": "Chez NUPEC, nous collaborons avec la Fondation Movimiento INCASÁRA pour aider les personnes ayant besoin d'une intervention assistée par des animaux en raison d'un besoin, d'une condition ou d'une maladie. Grâce à des thérapies complémentaires, des spécialistes de l'intervention assistée utilisent des chiens et des chevaux entraînés pour améliorer la santé, favoriser l'éducation et atteindre l'équilibre émotionnel des personnes.",
-      "descriptionTwo": "NUPEC fonctionne comme un produit engagé : un pourcentage de chaque achat est destiné au financement de ces thérapies assistées par des animaux, améliorant la qualité de vie de celles et ceux qui en bénéficient."
+      "descriptionTwo": "NUPEC fonctionne comme un produit engagé : un pourcentage de chaque achat est destiné au financement de ces thérapies assistées par des animaux, améliorant la qualité de vie de celles et ceux qui en bénéficient.",
+      "imageAlt": "NUPEC - Thérapies assistées"
     },
     "loboMexicano": {
       "subtitle": "Nous nourrissons avec un amour conscient",
       "title": "Conservation du loup du Mexique",
       "description": "NUPEC participe aux efforts de préservation du loup du Mexique (Canis lupus baileyi), l'une des espèces les plus menacées, presque éteinte à l'état sauvage en raison de décennies de persécution et de chasse humaine. Nous croyons que la clé de l'avenir est de préserver nos espèces, c'est pourquoi nous soutenons les fondations dédiées à sa conservation.",
-      "descriptionTwo": "Depuis le Mexique préhispanique, le loup du Mexique est considéré comme un animal magique, associé à des divinités telles que Xólotl et Chantico. Sa valeur ancestrale et son rôle dans l'équilibre des écosystèmes mexicains justifient amplement de le sauver de l'extinction."
+      "descriptionTwo": "Depuis le Mexique préhispanique, le loup du Mexique est considéré comme un animal magique, associé à des divinités telles que Xólotl et Chantico. Sa valeur ancestrale et son rôle dans l'équilibre des écosystèmes mexicains justifient amplement de le sauver de l'extinction.",
+      "imageAlt": "NUPEC - Conservation du loup du Mexique"
     },
     "rescate": {
       "subtitle": "Nous nourrissons des héros extraordinaires",
       "title": "Nous nourrissons des chiens de sauvetage",
       "description": "Nous participons à l'un des projets les plus nobles au monde : sauver des vies. C'est pourquoi nous parrainons des chiens de sauvetage avec de la nourriture et un entraînement continu, en soutenant les héros qui interviennent lors de catastrophes naturelles, comme les binômes de K-SAR, un groupe spécialisé en recherche et sauvetage canin qui a joué un rôle clé après le séisme du 19 septembre à Mexico.",
-      "descriptionTwo": "Leur entraînement — qui dure de un à deux ans et se poursuit tout au long de leur vie active — leur apprend à flairer l'air et à distinguer les odeurs humaines parmi les décombres, la fumée et le bruit. Des races comme le berger allemand, le malinois et le labrador retriever se distinguent par leur courage, leur agilité et leur autonomie lors de chaque sauvetage."
+      "descriptionTwo": "Leur entraînement — qui dure de un à deux ans et se poursuit tout au long de leur vie active — leur apprend à flairer l'air et à distinguer les odeurs humaines parmi les décombres, la fumée et le bruit. Des races comme le berger allemand, le malinois et le labrador retriever se distinguent par leur courage, leur agilité et leur autonomie lors de chaque sauvetage.",
+      "imageAlt": "NUPEC - Nous nourrissons des chiens de sauvetage"
     },
     "comercioNacional": {
       "subtitle": "Nous nourrissons des relations durables",
       "title": "Nous soutenons le commerce national",
       "description": "Chez NUPEC, nous reconnaissons l'engagement de nos fournisseurs nationaux, formés et dédiés à la qualité et à l'innovation. Nous développons des plans de formation sur les matières premières, l'ingénierie des processus qualité, la planification d'entreprise et le coaching, renforçant ainsi les relations commerciales et stratégiques avec nos partenaires au Mexique.",
-      "descriptionTwo": "Notre édition spéciale « Con Amor de México » rend hommage à nos origines avec l'art Otomí de Guanajuato, du Michoacán et du Tlaxcala. En tant qu'entreprise queretana leader dans la nutrition canine spécialisée, nous comptons plus de 600 professionnels mexicains, dont des scientifiques, des vétérinaires et des spécialistes en nutrition animale."
+      "descriptionTwo": "Notre édition spéciale « Con Amor de México » rend hommage à nos origines avec l'art Otomí de Guanajuato, du Michoacán et du Tlaxcala. En tant qu'entreprise queretana leader dans la nutrition canine spécialisée, nous comptons plus de 600 professionnels mexicains, dont des scientifiques, des vétérinaires et des spécialistes en nutrition animale.",
+      "imageAlt": "NUPEC - Nous soutenons le commerce national"
     }
   },
   "canine": {
@@ -675,6 +686,8 @@
       "calcDesc": "Déplacez le curseur pour voir la ration approximative selon le poids de votre chien.",
       "calcDescFeline": "Déplacez le curseur pour voir la ration approximative selon le poids de votre chat.",
       "weight": "Poids",
+      "weightUnit": "kg",
+      "amountUnit": "g",
       "perDay": "grammes par jour",
       "reference": "Référence",
       "disclaimer": "Valeurs indicatives. Ajustez selon la condition corporelle, l'activité physique et la recommandation vétérinaire.",
@@ -734,6 +747,8 @@
     "contactTitle": "Contact",
     "email": "bonjour@nupec.mx",
     "phone": "(800) 926 8732",
+    "emailIconAlt": "E-mail",
+    "phoneIconAlt": "Téléphone",
     "copyright": "NUPEC. Tous droits réservés."
   },
   "clinicalProduct": {
@@ -777,6 +792,8 @@
       "calcTitle": "Calculateur de ration",
       "calcDesc": "Déplacez le curseur pour voir la ration approximative selon le poids du patient.",
       "weight": "Poids",
+      "weightUnit": "kg",
+      "amountUnit": "g",
       "perDay": "grammes par jour",
       "reference": "Référence",
       "disclaimer": "Valeurs indicatives. Ajustez selon l'état clinique du patient et la recommandation vétérinaire.",

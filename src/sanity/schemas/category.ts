@@ -115,6 +115,82 @@ export default defineType({
       description: "Número menor aparece primero",
     }),
     defineField({
+      name: "seo",
+      title: "SEO",
+      type: "object",
+      fields: [
+        defineField({
+          name: "metaTitle",
+          title: "Meta título",
+          type: "object",
+          fields: [
+            defineField({ name: "es", title: "Español", type: "string", validation: (r) => r.max(60) }),
+            defineField({ name: "en", title: "Inglés", type: "string", validation: (r) => r.max(60) }),
+            defineField({ name: "fr", title: "Francés", type: "string", validation: (r) => r.max(60) }),
+          ],
+        }),
+        defineField({
+          name: "metaDescription",
+          title: "Meta descripción",
+          type: "object",
+          fields: [
+            defineField({ name: "es", title: "Español", type: "text", rows: 2, validation: (r) => r.max(155) }),
+            defineField({ name: "en", title: "Inglés", type: "text", rows: 2, validation: (r) => r.max(155) }),
+            defineField({ name: "fr", title: "Francés", type: "text", rows: 2, validation: (r) => r.max(155) }),
+          ],
+        }),
+        defineField({
+          name: "canonicalOverride",
+          title: "Canonical URL (override)",
+          type: "url",
+          description: "Opcional. Solo si esta página debe apuntar su canonical a otra URL distinta de la suya propia.",
+        }),
+        defineField({
+          name: "noIndex",
+          title: "Ocultar de buscadores (noindex)",
+          type: "boolean",
+          description: "Actívalo para que esta página no se indexe en buscadores.",
+          initialValue: false,
+        }),
+      ],
+    }),
+    defineField({
+      name: "faq",
+      title: "Preguntas frecuentes (FAQ)",
+      type: "array",
+      description: "Preguntas y respuestas que se muestran en la página y se exponen como datos estructurados FAQPage (mejora respuestas en ChatGPT, Perplexity, AI Overviews).",
+      of: [
+        {
+          type: "object",
+          name: "faqItem",
+          title: "Pregunta",
+          fields: [
+            defineField({
+              name: "question",
+              title: "Pregunta",
+              type: "object",
+              fields: [
+                defineField({ name: "es", title: "Español", type: "string", validation: (r) => r.required() }),
+                defineField({ name: "en", title: "Inglés", type: "string" }),
+                defineField({ name: "fr", title: "Francés", type: "string" }),
+              ],
+            }),
+            defineField({
+              name: "answer",
+              title: "Respuesta",
+              type: "object",
+              fields: [
+                defineField({ name: "es", title: "Español", type: "text", rows: 3, validation: (r) => r.required() }),
+                defineField({ name: "en", title: "Inglés", type: "text", rows: 3 }),
+                defineField({ name: "fr", title: "Francés", type: "text", rows: 3 }),
+              ],
+            }),
+          ],
+          preview: { select: { title: "question.es" } },
+        },
+      ],
+    }),
+    defineField({
       name: "stats",
       title: "Datos destacados",
       type: "array",

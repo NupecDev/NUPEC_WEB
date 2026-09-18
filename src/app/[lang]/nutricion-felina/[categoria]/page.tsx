@@ -1,6 +1,9 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { client } from '@/lib/sanity/client';
+import { client, urlFor } from '@/lib/sanity/client';
 import { categoryBySlugQuery } from '@/lib/sanity/queries';
+import { buildMetadata, breadcrumbJsonLd, faqJsonLd, localizedUrl } from '@/lib/seo';
+import type { Locale } from '@/i18n/routing';
 import PageLayout from '@/components/layout/PageLayout';
 import CategoryHero from '@/components/sections/products/CategoryHero';
 import CategoryAbout from '@/components/sections/products/CategoryAbout';
@@ -36,13 +39,46 @@ type CategoryData = {
   _id: string;
   name: string;
   slug: string;
-  species: 'canino' | 'felino';
+  species: 'felino' | 'felino';
   description: string | null;
   excerpt: string | null;
   familyImage: { asset: { _ref: string }; alt?: string } | null;
   bannerImage: { asset: { _ref: string } } | null;
   stats: CategoryStat[] | null;
+  seo?: { metaTitle?: string; metaDescription?: string; canonicalOverride?: string | null; noIndex?: boolean | null };
+  faq?: { question: string; answer: string }[] | null;
 };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string; categoria: string }>;
+}): Promise<Metadata> {
+  const { lang, categoria } = await params;
+
+  if (!VALID_SLUGS.includes(categoria)) return {};
+
+  const category = await client.fetch<CategoryData | null>(categoryBySlugQuery, {
+    slug: categoria,
+    species: 'felino',
+    lang,
+  });
+
+  if (!category) return {};
+
+  const image = category.bannerImage
+    ? urlFor(category.bannerImage).width(1200).height(630).url()
+    : undefined;
+
+  return buildMetadata({
+    locale: lang as Locale,
+    pathWithoutLocale: `/nutricion-felina/${categoria}`,
+    seo: category.seo,
+    fallbackTitle: `${category.name} para gatos`,
+    fallbackDescription: category.excerpt ?? category.description ?? undefined,
+    image: image ? { url: image, alt: category.name } : undefined,
+  });
+}
 
 export default async function CategoryPage({
   params,
@@ -64,8 +100,25 @@ export default async function CategoryPage({
   const isClinical = categoria === 'nutricion-clinica';
   const isSimple = categoria === 'premios-funcionales';
 
+  const jsonLd = [
+    breadcrumbJsonLd([
+      { name: 'NUPEC', url: localizedUrl('/', lang as Locale) },
+      { name: 'Nutrición felina', url: localizedUrl('/nutricion-felina', lang as Locale) },
+      { name: category.name, url: localizedUrl(`/nutricion-felina/${categoria}`, lang as Locale) },
+    ]),
+    faqJsonLd(
+      (category.faq ?? [])
+        .filter((item) => item.question && item.answer)
+        .map((item) => ({ question: item.question, answer: item.answer }))
+    ),
+  ].filter(Boolean);
+
   return (
     <PageLayout>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <CategoryHero
         categoryName={category.name}
         categoryDescription={category.description}

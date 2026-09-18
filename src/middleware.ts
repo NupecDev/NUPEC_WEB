@@ -10,8 +10,9 @@ export const config = {
      * - _next (internos de Next.js)
      * - api  (rutas de API)
      * - studio (Sanity Studio)
+     * - adoptaunmextizo (proxy a sitio externo, ver deploy/nginx-nupec.com.conf)
      * - archivos estáticos con extensión (js, css, png, etc.)
      */
-    "/((?!_next|api|studio|.*\\..*).*)",
+    "/((?!_next|api|studio|adoptaunmextizo|.*\\..*).*)",
   ],
 };

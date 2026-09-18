@@ -33,7 +33,7 @@ export default function ContactInfo() {
               >
                 <div className="inner-box">
                   <div className="icon-box">
-                    <Image src={`/assets/images/icons/${icon}`} alt="Icon" width={50} height={50} priority />
+                    <Image src={`/assets/images/icons/${icon}`} alt={t(`${key}IconAlt`)} width={50} height={50} priority />
                   </div>
                   <h3>{t(`${key}Title`)}</h3>
                   <p>{t(`${key}Text`)}</p>

@@ -34,7 +34,7 @@ export default function ConcienciaTerapias() {
                 <figure className="image">
                   <Image
                     src="/assets/images/resource/TERAPIA.png"
-                    alt="NUPEC - Terapias asistidas"
+                    alt={t('imageAlt')}
                     width={523}
                     height={399}
                   />

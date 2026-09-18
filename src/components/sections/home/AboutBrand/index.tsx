@@ -58,7 +58,7 @@ export default function AboutBrand() {
                 <figure className="image">
                   <Image
                     src="/assets/images/resource/SANUREN.png"
-                    alt="Equipo científico NUPEC"
+                    alt={t('imageAlt')}
                     width={523}
                     height={399}
                     priority

@@ -84,6 +84,9 @@
       "cat": "Gato",
       "selectSpecies": "Selecciona la especie de tu mascota"
     },
+    "promoBanner": {
+      "ariaLabel": "NUPEC 1st Care Immunity Plus"
+    },
     "science": {
       "subtitle": "Red de Investigación en Nutrición Especializada",
       "title": "Respaldo Científico SANUREN",
@@ -98,7 +101,8 @@
       "t03": "Pruebas de Digestibilidad",
       "d03": "Evaluación no invasiva que analiza la absorción de nutrientes mediante el estudio de muestras fecales.",
       "years": "+20",
-      "yearsLabel": "Años de experiencia en la industria"
+      "yearsLabel": "Años de experiencia en la industria",
+      "imageAlt": "Equipo científico NUPEC"
     },
     "blog": {
       "subtitle": "Blog NUPEC",
@@ -136,7 +140,10 @@
       "phoneText": "(800) 926 8732",
       "phoneAlt": "(800) YA NUPEC",
       "hoursTitle": "Horario de atención",
-      "hoursText": "Lunes a viernes de 08:00 a 18:00 horas"
+      "hoursText": "Lunes a viernes de 08:00 a 18:00 horas",
+      "locationIconAlt": "Ubicación",
+      "phoneIconAlt": "Teléfono",
+      "hoursIconAlt": "Horario"
     },
     "form": {
       "title": "Déjanos tu mensaje",
@@ -230,25 +237,29 @@
       "subtitle": "Nutrimos la esperanza de un mejor futuro",
       "title": "Terapias asistidas",
       "description": "En NUPEC colaboramos con la Fundación Movimiento INCASÁRA para brindar ayuda a personas que requieren intervención asistida con animales por necesidad, condición o enfermedad. A través de terapias complementarias, especialistas en intervención asistida utilizan perros y caballos entrenados para mejorar la salud, fomentar la educación y lograr equilibrio emocional en las personas.",
-      "descriptionTwo": "NUPEC funciona como un producto con causa: un porcentaje de cada compra se destina al financiamiento de estas terapias asistidas con animales, mejorando la calidad de vida de quienes las reciben."
+      "descriptionTwo": "NUPEC funciona como un producto con causa: un porcentaje de cada compra se destina al financiamiento de estas terapias asistidas con animales, mejorando la calidad de vida de quienes las reciben.",
+      "imageAlt": "NUPEC - Terapias asistidas"
     },
     "loboMexicano": {
       "subtitle": "Nutrimos con amor consciente",
       "title": "Conservación del lobo mexicano",
       "description": "NUPEC forma parte de los esfuerzos para preservar al lobo mexicano (Canis lupus baileyi), una de las especies más amenazadas y casi extinta en estado salvaje debido a la persecución y caza humana durante décadas. Creemos que la clave del futuro es preservar nuestras especies, por lo que apoyamos fundaciones dedicadas a su conservación.",
-      "descriptionTwo": "Desde el México prehispánico, el lobo mexicano ha sido considerado un animal mágico, asociado con deidades como Xólotl y Chantico. Su valor ancestral y su papel en el equilibrio de los ecosistemas mexicanos son razones suficientes para salvarlo de la extinción."
+      "descriptionTwo": "Desde el México prehispánico, el lobo mexicano ha sido considerado un animal mágico, asociado con deidades como Xólotl y Chantico. Su valor ancestral y su papel en el equilibrio de los ecosistemas mexicanos son razones suficientes para salvarlo de la extinción.",
+      "imageAlt": "NUPEC - Conservación del lobo mexicano"
     },
     "rescate": {
       "subtitle": "Nutrimos héroes extraordinarios",
       "title": "Nutrimos perros de rescate",
       "description": "Somos parte de uno de los proyectos más nobles del mundo: salvar vidas. Por ello patrocinamos a caninos de rescate con alimento y entrenamiento continuo, apoyando a los héroes que intervienen durante desastres naturales, como los binomios de K-SAR, grupo especializado en búsqueda y rescate que participó de forma clave tras el sismo del 19 de septiembre en la Ciudad de México.",
-      "descriptionTwo": "Su entrenamiento —que toma de uno a dos años y continúa durante toda su vida laboral— les enseña a ventear y discriminar olores humanos entre escombros, humo y ruido. Razas como el pastor alemán, el pastor belga malinois y el labrador retriever destacan por su valentía, agilidad y autonomía en cada rescate."
+      "descriptionTwo": "Su entrenamiento —que toma de uno a dos años y continúa durante toda su vida laboral— les enseña a ventear y discriminar olores humanos entre escombros, humo y ruido. Razas como el pastor alemán, el pastor belga malinois y el labrador retriever destacan por su valentía, agilidad y autonomía en cada rescate.",
+      "imageAlt": "NUPEC - Nutrimos perros de rescate"
     },
     "comercioNacional": {
       "subtitle": "Nutrimos relaciones duraderas",
       "title": "Apoyamos el comercio nacional",
       "description": "En NUPEC reconocemos el compromiso de nuestros proveedores nacionales, capacitados y dedicados a la calidad e innovación. Desarrollamos planes de capacitación en materia prima, ingeniería de procesos de calidad, plan de negocio y coaching, fortaleciendo así las relaciones comerciales y estratégicas con nuestros socios en México.",
-      "descriptionTwo": "Nuestra edición especial \"Con Amor de México\" rinde tributo a nuestros orígenes con arte Otomí de Guanajuato, Michoacán y Tlaxcala. Como empresa queretana líder en nutrición canina especializada, contamos con más de 600 profesionales mexicanos entre científicos, veterinarios y especialistas en nutrición animal."
+      "descriptionTwo": "Nuestra edición especial \"Con Amor de México\" rinde tributo a nuestros orígenes con arte Otomí de Guanajuato, Michoacán y Tlaxcala. Como empresa queretana líder en nutrición canina especializada, contamos con más de 600 profesionales mexicanos entre científicos, veterinarios y especialistas en nutrición animal.",
+      "imageAlt": "NUPEC - Apoyamos el comercio nacional"
     }
   },
   "canine": {
@@ -675,6 +686,8 @@
       "calcDesc": "Mueve el control para ver la ración aproximada para el peso de tu perro.",
       "calcDescFeline": "Mueve el control para ver la ración aproximada para el peso de tu gato.",
       "weight": "Peso",
+      "weightUnit": "kg",
+      "amountUnit": "g",
       "perDay": "gramos por día",
       "reference": "Referencia",
       "disclaimer": "Valores orientativos. Ajusta según la condición corporal, actividad física y recomendación veterinaria.",
@@ -734,6 +747,8 @@
     "contactTitle": "Contacto",
     "email": "nupec@gponutec.com",
     "phone": "(800) 926 8732",
+    "emailIconAlt": "Correo electrónico",
+    "phoneIconAlt": "Teléfono",
     "copyright": "NUPEC. Todos los derechos reservados."
   },
   "clinicalProduct": {
@@ -777,6 +792,8 @@
       "calcTitle": "Calculadora de ración",
       "calcDesc": "Mueve el control para ver la ración aproximada para el peso del paciente.",
       "weight": "Peso",
+      "weightUnit": "kg",
+      "amountUnit": "g",
       "perDay": "gramos por día",
       "reference": "Referencia",
       "disclaimer": "Valores orientativos. Ajusta según el estado clínico del paciente y la recomendación veterinaria.",

@@ -114,7 +114,7 @@ export default function DosageCalculator({
       )}
 
       <label className="sp-feeding-guide__calc-label" htmlFor="dosage-weight">
-        {t('weight')}: {clampedWeight} kg
+        {t('weight')}: {clampedWeight} {t('weightUnit')}
       </label>
       <input
         id="dosage-weight"
@@ -132,7 +132,7 @@ export default function DosageCalculator({
         <span className="sp-feeding-guide__calc-num" style={{ color: accentColor }}>
           {amount ?? '—'}
         </span>
-        <span className="sp-feeding-guide__calc-unit">g</span>
+        <span className="sp-feeding-guide__calc-unit">{t('amountUnit')}</span>
         <p className="sp-feeding-guide__calc-per">{t('perDay')}</p>
         <p className="sp-feeding-guide__calc-ref">{t('reference')}</p>
       </div>

@@ -34,7 +34,7 @@ export default function ConcienciaComercioNacional() {
                 <figure className="image">
                   <Image
                     src="/assets/images/resource/NACIONAL.png"
-                    alt="NUPEC - Apoyamos el comercio nacional"
+                    alt={t('imageAlt')}
                     width={523}
                     height={399}
                   />

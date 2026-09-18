@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import Script from "next/script";
 import GoogleAnalyticsPageView from "@/components/elements/GoogleAnalyticsPageView";
+import { SITE_URL, organizationJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "NUPEC — Nutrición premium para perros y gatos",
   description: "Alimento premium para perros y gatos fabricado en México",
 };
@@ -16,6 +18,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html suppressHydrationWarning>
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd()) }}
+        />
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

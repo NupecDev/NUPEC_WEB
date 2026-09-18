@@ -77,11 +77,11 @@ export default function Footer() {
                 <div className="widget-content">
                   <ul className="info-list clearfix">
                     <li>
-                      <Image src="/assets/images/icons/icon-5.svg" alt="Email" width={20} height={15} priority />
+                      <Image src="/assets/images/icons/icon-5.svg" alt={t('emailIconAlt')} width={20} height={15} priority />
                       <Link href={`mailto:${t('email')}`}>{t('email')}</Link>
                     </li>
                     <li>
-                      <Image src="/assets/images/icons/icon-6.svg" alt="Phone" width={20} height={21} priority />
+                      <Image src="/assets/images/icons/icon-6.svg" alt={t('phoneIconAlt')} width={20} height={21} priority />
                       <Link href={`tel:${t('phone')}`}>{t('phone')}</Link>
                     </li>
                   </ul>

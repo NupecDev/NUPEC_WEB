@@ -84,6 +84,9 @@
       "cat": "Cat",
       "selectSpecies": "Select your pet's species"
     },
+    "promoBanner": {
+      "ariaLabel": "NUPEC 1st Care Immunity Plus"
+    },
     "science": {
       "subtitle": "Specialized Animal Nutrition Research Network",
       "title": "SANUREN Scientific Support",
@@ -98,7 +101,8 @@
       "t03": "Digestibility Tests",
       "d03": "A non-invasive evaluation that analyzes nutrient absorption through the study of fecal samples.",
       "years": "+20",
-      "yearsLabel": "Years of experience in the industry"
+      "yearsLabel": "Years of experience in the industry",
+      "imageAlt": "NUPEC scientific team"
     },
     "blog": {
       "subtitle": "NUPEC Blog",
@@ -136,7 +140,10 @@
       "phoneText": "(800) 926 8732",
       "phoneAlt": "(800) YA NUPEC",
       "hoursTitle": "Business hours",
-      "hoursText": "Monday to Friday, 8:00 AM to 6:00 PM"
+      "hoursText": "Monday to Friday, 8:00 AM to 6:00 PM",
+      "locationIconAlt": "Location",
+      "phoneIconAlt": "Phone",
+      "hoursIconAlt": "Hours"
     },
     "form": {
       "title": "Leave us a message",
@@ -230,25 +237,29 @@
       "subtitle": "We nourish hope for a better future",
       "title": "Assisted therapies",
       "description": "At NUPEC we collaborate with Fundación Movimiento INCASÁRA to help people who require animal-assisted intervention due to need, condition, or illness. Through complementary therapies, animal-assisted intervention specialists use trained dogs and horses to improve health, foster education, and achieve emotional balance in people.",
-      "descriptionTwo": "NUPEC works as a cause-driven product: a percentage of every purchase goes toward funding these animal-assisted therapies, improving the quality of life of those who receive them."
+      "descriptionTwo": "NUPEC works as a cause-driven product: a percentage of every purchase goes toward funding these animal-assisted therapies, improving the quality of life of those who receive them.",
+      "imageAlt": "NUPEC - Assisted therapies"
     },
     "loboMexicano": {
       "subtitle": "We nourish with conscious love",
       "title": "Mexican wolf conservation",
       "description": "NUPEC is part of the efforts to preserve the Mexican wolf (Canis lupus baileyi), one of the most threatened species, nearly extinct in the wild due to decades of human persecution and hunting. We believe the key to the future is preserving our species, which is why we support foundations dedicated to its conservation.",
-      "descriptionTwo": "Since pre-Hispanic Mexico, the Mexican wolf has been considered a magical animal, associated with deities such as Xólotl and Chantico. Its ancestral value and its role in the balance of Mexican ecosystems are reason enough to save it from extinction."
+      "descriptionTwo": "Since pre-Hispanic Mexico, the Mexican wolf has been considered a magical animal, associated with deities such as Xólotl and Chantico. Its ancestral value and its role in the balance of Mexican ecosystems are reason enough to save it from extinction.",
+      "imageAlt": "NUPEC - Mexican wolf conservation"
     },
     "rescate": {
       "subtitle": "We nourish extraordinary heroes",
       "title": "We feed rescue dogs",
       "description": "We are part of one of the noblest projects in the world: saving lives. That's why we sponsor rescue dogs with food and continuous training, supporting the heroes who respond during natural disasters, such as the K-SAR handler-and-dog teams, a specialized search-and-rescue group that played a key role after the September 19 earthquake in Mexico City.",
-      "descriptionTwo": "Their training — which takes one to two years and continues throughout their working life — teaches them to air-scent and discriminate human odors amid rubble, smoke, and noise. Breeds such as the German shepherd, Belgian malinois, and Labrador retriever stand out for their courage, agility, and independence in every rescue."
+      "descriptionTwo": "Their training — which takes one to two years and continues throughout their working life — teaches them to air-scent and discriminate human odors amid rubble, smoke, and noise. Breeds such as the German shepherd, Belgian malinois, and Labrador retriever stand out for their courage, agility, and independence in every rescue.",
+      "imageAlt": "NUPEC - We feed rescue dogs"
     },
     "comercioNacional": {
       "subtitle": "We nourish lasting relationships",
       "title": "We support national trade",
       "description": "At NUPEC we recognize the commitment of our national suppliers, trained and dedicated to quality and innovation. We develop training plans in raw materials, quality process engineering, business planning, and coaching, strengthening commercial and strategic relationships with our partners in Mexico.",
-      "descriptionTwo": "Our special \"Con Amor de México\" edition pays tribute to our origins with Otomí art from Guanajuato, Michoacán, and Tlaxcala. As a leading Querétaro-based company in specialized canine nutrition, we have more than 600 Mexican professionals, including scientists, veterinarians, and animal nutrition specialists."
+      "descriptionTwo": "Our special \"Con Amor de México\" edition pays tribute to our origins with Otomí art from Guanajuato, Michoacán, and Tlaxcala. As a leading Querétaro-based company in specialized canine nutrition, we have more than 600 Mexican professionals, including scientists, veterinarians, and animal nutrition specialists.",
+      "imageAlt": "NUPEC - We support national trade"
     }
   },
   "canine": {
@@ -675,6 +686,8 @@
       "calcDesc": "Move the slider to see the approximate ration for your dog's weight.",
       "calcDescFeline": "Move the slider to see the approximate ration for your cat's weight.",
       "weight": "Weight",
+      "weightUnit": "kg",
+      "amountUnit": "g",
       "perDay": "grams per day",
       "reference": "Reference",
       "disclaimer": "Guideline values. Adjust according to body condition, physical activity, and veterinary recommendation.",
@@ -734,6 +747,8 @@
     "contactTitle": "Contact",
     "email": "hello@nupec.mx",
     "phone": "(800) 926 8732",
+    "emailIconAlt": "Email",
+    "phoneIconAlt": "Phone",
     "copyright": "NUPEC. All rights reserved."
   },
   "clinicalProduct": {
@@ -777,6 +792,8 @@
       "calcTitle": "Ration calculator",
       "calcDesc": "Move the slider to see the approximate ration for the patient's weight.",
       "weight": "Weight",
+      "weightUnit": "kg",
+      "amountUnit": "g",
       "perDay": "grams per day",
       "reference": "Reference",
       "disclaimer": "Guideline values. Adjust according to the patient's clinical condition and veterinary recommendation.",

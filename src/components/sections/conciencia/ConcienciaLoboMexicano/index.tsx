@@ -35,7 +35,7 @@ export default function ConcienciaLoboMexicano() {
                 <figure className="image">
                   <Image
                     src="/assets/images/resource/about-2.jpg"
-                    alt="NUPEC - Conservación del lobo mexicano"
+                    alt={t('imageAlt')}
                     width={523}
                     height={399}
                   />
