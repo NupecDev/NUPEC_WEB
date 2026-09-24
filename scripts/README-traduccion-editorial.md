@@ -239,70 +239,23 @@ distintas; el real, consultado directamente en Sanity, es 4+3=7).
   Hypoallergenic ambas especies) — no se agregó donde no existía en ES,
   según la regla de no inventar contenido.
 
-## Lote 5 — `product.ts`, especializada + suplementos + húmedos — 2026-09-23 ✅
-
-Ámbito: los 27 productos publicados restantes de product.ts (14
-nutricion-especializada: 9 canino + 5 felino; 4 suplementos, solo canino;
-9 alimentos-humedos: 5 canino + 4 felino). Con este lote, **product.ts
-queda 100% traducido** (56 productos publicados en total, sumando los 21
-del lote 2 + 7 del lote 4 + 27 de este lote).
-
-- Contenido: `scripts/editorial-en-fr-product-remaining-content.ts`
-- Aplicación: `scripts/patch-editorial-en-fr-product-remaining.ts`
-  (`highTech`/`keyBenefits`/`claims` fusionados por `_key`; `name`,
-  `tagline`, `description`, `ingredients`, `kibble.description` con `.set()`
-  directo)
-- Campos cubiertos: `name` (2 productos húmedos caninos que aún no lo
-  tenían), `tagline`, `description` (rich text), `ingredients`, `claims`,
-  `highTech`, `keyBenefits`, `kibble.description`. **`warnings` no se
-  incluyó**: a diferencia de otros lotes, el schema de estos 27 productos
-  solo tiene `warnings.es`, sin campos `en`/`fr` — nada que traducir ahí.
-- Dry-run confirmado antes de ejecutar: 27/27 documentos existen, 0 `_key`
-  faltantes. Verificado post-carga: los 27 productos tienen en/fr
-  completos en cada campo tocado.
-
-### Correcciones de ES aplicadas antes de traducir (en vivo, con el usuario)
-
-1. **`fec6eebd-bcfa-45fb-a817-67ca4fb3a527`** (Vitality Water Sabor
-   Frutal): `description.es` decía "Sabor carne altamente palatable"
-   (copy-paste literal de "Vitality Water Sabor Carne", mismo `_key` de
-   block/span). Se corrigió a "Sabor frutal altamente palatable". El
-   `keyBenefits` de este producto no mencionaba el sabor, no requirió
-   ajuste.
-2. **`product-felino-felino-humedo-indoor`**: `warnings.es` tenía el texto
-   completo duplicado dos veces consecutivas (concatenado sin salto de
-   línea). Se corrigió a una sola copia. No afecta la traducción de este
-   lote (warnings no tiene en/fr aquí).
-3. **`21d2abd4-ec74-4c79-8a7b-03a771da3d72`** (Felino Hairball): era el
-   único de los 27 productos sin `warnings.es` (campo vacío/null). El
-   usuario lo completó manualmente en Sanity.
-4. **`product-canino-renal-care`.keyBenefits[_key="888db60121d7"]**: tenía
-   un carácter de control invisible (`\u0003`) incrustado en
-   `description.es` ("Disminución del\u0003 trabajo renal."). Se limpió a
-   "Disminución del trabajo renal." antes de traducir.
-
-### Nota sobre el proceso de este lote
-
-El mapeo de los 27 productos se redactó en 4 bloques por un subagente (9
-canino especializada, 5 felino especializada, 4 suplementos, 9 húmedos).
-Dos de esos bloques (felino especializada + suplementos) no llegaron en la
-primera entrega por un problema de transporte entre mensajes del
-subagente — se detectó por conteo (solo 18 de 27 productos recibidos) y se
-resolvió pidiendo el reenvío explícito antes de continuar, sin perder
-ningún contenido ya generado.
-
 ## Pendiente (siguientes lotes)
 
-- `product.ts`: **completo** (lotes 2, 4 y 5 — los 56 productos publicados
-  tienen su contenido editorial en es/en/fr). Si se publica
-  `drafts.product-felino-creamy-treats-skin-coat` más adelante, revisar que
-  su versión publicada conserve la traducción ya cargada.
+- `product.ts`: quedan ~28 productos (56 publicados totales − 21 del lote 2
+  − 7 del lote 4, aprox., sujeto a inventario fino):
+  - **nutrición especializada + suplementos + alimentos húmedos** (el
+    resto, ambas especies): mismos campos base que el lote 2 (`tagline`,
+    `description`, `ingredients`, `warnings`, `claims[].text`,
+    `highTech[].title/description`, `keyBenefits[].description`,
+    `kibble.description`), sin los campos exclusivos de clínica.
+  - Más los 2 productos con `name` aún sin EN/FR (fuera del alcance
+    original del lote 2 — confirmar cuáles siguen pendientes con un
+    inventario fino antes de ese lote).
 - `clinicalCase.ts`: sin pendientes por ahora — ver hallazgo del lote 3
   (contenido demo, despublicado, no se traduce hasta tener casos reales).
 - `feedingGuide.ts`: 43 documentos — `notes`, `secondaryTitle`,
   `secondaryWeightColumnLabel`, `secondaryNotes`,
   `secondaryColumnGroups[].label`/`subColumns[].label`, `variants[].label`.
-  **Único schema con contenido editorial pendiente.**
 - `ingredient.ts`: completo (lote 3). Si se publica `drafts.dd2f4b1b-...`
   (Taurina) más adelante, faltará traducirlo.
 

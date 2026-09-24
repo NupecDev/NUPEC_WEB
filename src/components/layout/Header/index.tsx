@@ -5,8 +5,7 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
 import MobileMenu from '../../../../components/layout/MobileMenu';
-// Selector de idioma oculto temporalmente
-// import LanguageSwitcher from '../LanguageSwitcher';
+import LanguageSwitcher from '../LanguageSwitcher';
 
 type HeaderProps = {
   scroll: boolean;
@@ -112,8 +111,7 @@ export default function Header({ scroll, handleMobileMenu }: HeaderProps) {
               </div>
 
               <div className="menu-right-content">
-                {/* Selector de idioma oculto temporalmente */}
-                {/* <LanguageSwitcher /> */}
+                <LanguageSwitcher />
                 <div className="btn-box">
                   <Link href={`${base}/encuentra-tu-alimento`} className="theme-btn btn-one">
                     <span>{t('findFood')}</span>
@@ -153,8 +151,7 @@ export default function Header({ scroll, handleMobileMenu }: HeaderProps) {
                 </nav>
               </div>
               <div className="menu-right-content">
-                {/* Selector de idioma oculto temporalmente */}
-                {/* <LanguageSwitcher /> */}
+                <LanguageSwitcher />
                 <div className="btn-box">
                   <Link href={`${base}/encuentra-tu-alimento`} className="theme-btn btn-one">
                     <span>{t('findFood')}</span>
