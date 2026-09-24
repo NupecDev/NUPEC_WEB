@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import { client, urlFor } from '@/lib/sanity/client';
 import { randomBannerProductsQuery } from '@/lib/sanity/queries';
+import { withBrandMark } from '@/components/ui/BrandText';
 
 type BannerProduct = {
   _id: string;
@@ -68,11 +69,11 @@ export default async function BannerHeroes({ lang, species = 'canino' }: Props) 
         <div className="canine-banner__layout p_relative z_5">
           <div className="canine-banner__text-col">
             <span className="canine-banner__eyebrow">
-              {product ? product.category.name : t('eyebrow')}
+              {withBrandMark(product ? product.category.name : t('eyebrow'))}
             </span>
-            <h2 className="canine-banner__title">{product ? product.name : t('title')}</h2>
+            <h2 className="canine-banner__title">{withBrandMark(product ? product.name : t('title'))}</h2>
             <p className="canine-banner__desc">
-              {product ? (product.tagline ?? '') : t('description')}
+              {withBrandMark(product ? (product.tagline ?? '') : t('description'))}
             </p>
             <div className="btn-box mt_30">
               <Link href={href} className="theme-btn btn-two">

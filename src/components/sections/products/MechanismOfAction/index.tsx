@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import { withBrandMark } from '@/components/ui/BrandText';
 
 export type MechanismStep = {
   step: number;
@@ -39,7 +40,7 @@ export default function MechanismOfAction({ steps, productName, accentColor = PA
         {/* Header */}
         <div className="sec-title mb_70 text-center">
           <span className="moa__eyebrow" style={{ color: accentColor }}>{t('title')}</span>
-          <h2 className="moa__heading">{t('subtitle', { name: productName })}</h2>
+          <h2 className="moa__heading">{withBrandMark(t('subtitle', { name: productName }))}</h2>
         </div>
 
         {/* Parabola container */}

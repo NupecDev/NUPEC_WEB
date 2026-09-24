@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
+import { withBrandMark } from '@/components/ui/BrandText';
 
 const POSTS = [
   {
@@ -38,7 +39,7 @@ export default function BlogPreview() {
     <section className="news-section sec-pad">
       <div className="auto-container">
         <div className="sec-title centred mb_60">
-          <span className="sub-title mb_5">{t('subtitle')}</span>
+          <span className="sub-title mb_5">{withBrandMark(t('subtitle'))}</span>
           <h2>{t('title')}</h2>
         </div>
 
@@ -59,7 +60,7 @@ export default function BlogPreview() {
                     </h3>
                     <ul className="post-info clearfix">
                       <li><i className="icon-59" />{date}</li>
-                      <li><i className="icon-60" />{t('author')}</li>
+                      <li><i className="icon-60" />{withBrandMark(t('author'))}</li>
                     </ul>
                     <p>{t(descKey)}</p>
                     <div className="link">

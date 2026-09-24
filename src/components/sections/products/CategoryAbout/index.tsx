@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { urlFor } from '@/lib/sanity/client';
+import { withBrandMark } from '@/components/ui/BrandText';
 
 type CategoryStat = {
   value: string;
@@ -32,7 +33,7 @@ export default function CategoryAbout({ categoryName, categoryDescription, famil
               <div className="content-box">
                 <div className="sec-title mb_25">
                   <span className="sub-title mb_5">{t('subtitle')}</span>
-                  <h2>{t('title', { category: categoryName })}</h2>
+                  <h2>{withBrandMark(t('title', { category: categoryName }))}</h2>
                 </div>
                 <div className="text-box">
                   <p>

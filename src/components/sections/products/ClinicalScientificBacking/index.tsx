@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
+import { withBrandMark } from '@/components/ui/BrandText';
 
 const ICONS = ['icon-37', 'icon-38', 'icon-39'] as const;
 const PILLARS = ['formula', 'digestibility', 'quality'] as const;
@@ -20,7 +21,7 @@ export default function ClinicalScientificBacking() {
           <div className="clin-title-row">
             <div className="canine-hero__accent-bar" style={{ background: '#0085CA' }} />
             <div>
-              <span className="section-eyebrow">{t('title')}</span>
+              <span className="section-eyebrow">{withBrandMark(t('title'))}</span>
               <p className="section-sub mt_10">{t('subtitle')}</p>
             </div>
           </div>

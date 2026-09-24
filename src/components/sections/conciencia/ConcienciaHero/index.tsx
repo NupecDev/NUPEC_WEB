@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { withBrandMark } from '@/components/ui/BrandText';
 
 export default function ConcienciaHero() {
   const t = useTranslations('conciencia.hero');
@@ -19,9 +20,9 @@ export default function ConcienciaHero() {
 
       <div className="auto-container">
         <div className="content-box p_relative z_5">
-          <span className="title-text p_relative d_block">{t('eyebrow')}</span>
+          <span className="title-text p_relative d_block">{withBrandMark(t('eyebrow'))}</span>
           <h2 className="p_relative d_block">{t('title')}</h2>
-          <p>{t('description')}</p>
+          <p>{withBrandMark(t('description'))}</p>
         </div>
       </div>
     </section>

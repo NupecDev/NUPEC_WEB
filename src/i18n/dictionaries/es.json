@@ -82,7 +82,8 @@
       "ctaSecondary": "Ver catálogo",
       "dog": "Perro",
       "cat": "Gato",
-      "selectSpecies": "Selecciona la especie de tu mascota"
+      "selectSpecies": "Selecciona la especie de tu mascota",
+      "imageAlt": "Perros y gatos de distintas razas"
     },
     "promoBanner": {
       "ariaLabel": "NUPEC 1st Care Immunity Plus"

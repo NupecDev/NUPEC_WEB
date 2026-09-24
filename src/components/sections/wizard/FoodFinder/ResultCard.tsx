@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { urlFor } from '@/lib/sanity/client';
 import type { WizardProductResult } from './types';
+import { BrandMark } from '@/components/ui/BrandText';
 
 type Props = {
   lang: string;
@@ -73,7 +74,7 @@ export default function ResultCard({ lang, product, best }: Props) {
             style={{ objectFit: 'contain', width: '100%', height: '100%' }}
           />
         ) : (
-          <span style={{ color: accent, fontWeight: 900, fontSize: 11 }}>NUPEC</span>
+          <span style={{ color: accent, fontWeight: 900, fontSize: 11 }}>NUPEC<BrandMark /></span>
         )}
       </div>
 

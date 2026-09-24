@@ -9,6 +9,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { withBrandMark } from '@/components/ui/BrandText';
 
 type HeroSlide = {
   subtitle: string;
@@ -116,7 +117,7 @@ export default function Banner() {
                   />
                   <span className="title-text p_relative d_block">{slide.subtitle}</span>
                   <h2 className="p_relative d_block">
-                    {slide.title}
+                    {withBrandMark(slide.title)}
                   </h2>
                   <p>
                     {slide.description}

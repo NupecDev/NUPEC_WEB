@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
 import { urlFor } from '@/lib/sanity/client';
+import { BrandMark } from '@/components/ui/BrandText';
 
 export type ProductHeroData = {
   name: string;
@@ -182,7 +183,7 @@ export default function ProductHero({ product }: { product: ProductHeroData }) {
                   className="sp-hero__img-ph"
                   style={{ borderColor: accentColor, color: accentColor }}
                 >
-                  <span className="sp-hero__img-ph-brand">NUPEC</span>
+                  <span className="sp-hero__img-ph-brand">NUPEC<BrandMark /></span>
                   <span className="sp-hero__img-ph-name">{product.name}</span>
                 </div>
               )}

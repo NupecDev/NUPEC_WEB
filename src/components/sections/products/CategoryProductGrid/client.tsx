@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { urlFor } from '@/lib/sanity/client';
+import { BrandMark } from '@/components/ui/BrandText';
 
 export type CategoryProductCard = {
   _id: string;
@@ -154,7 +155,7 @@ export default function CategoryProductGridClient({ lang, products, categorySlug
                                   className="canine-product-block__bag-ph"
                                   style={{ borderColor: primary, color: primary }}
                                 >
-                                  <span className="canine-product-block__bag-brand">NUPEC</span>
+                                  <span className="canine-product-block__bag-brand">NUPEC<BrandMark /></span>
                                   <span className="canine-product-block__bag-name">{product.name}</span>
                                 </div>
                               )}

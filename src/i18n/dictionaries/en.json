@@ -82,7 +82,8 @@
       "ctaSecondary": "View catalog",
       "dog": "Dog",
       "cat": "Cat",
-      "selectSpecies": "Select your pet's species"
+      "selectSpecies": "Select your pet's species",
+      "imageAlt": "Dogs and cats of different breeds"
     },
     "promoBanner": {
       "ariaLabel": "NUPEC 1st Care Immunity Plus"
@@ -182,7 +183,7 @@
       "subtitle": "Our history",
       "title": "A journey of innovation and commitment",
       "m01Year": "1993",
-      "m01Text": "Grupo NUTEC is founded.",
+      "m01Text": "Grupo NUTEC was founded.",
       "m02Year": "1995",
       "m02Text": "Grupo NUTEC began its industrial processes in Querétaro, founding a plant with 100% technology imported from Europe.",
       "m03Year": "15 years",
@@ -745,7 +746,7 @@
     "specialized": "Specialized Nutrition",
     "clinical": "Clinical Nutrition",
     "contactTitle": "Contact",
-    "email": "hello@nupec.mx",
+    "email": "nupec@gponutec.com",
     "phone": "(800) 926 8732",
     "emailIconAlt": "Email",
     "phoneIconAlt": "Phone",

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { withBrandMark } from '@/components/ui/BrandText';
 
 const VIDEOS = [
   { key: 'featured', id: 'cNdljAs3lMA', tag: 'NUPEC' },
@@ -26,7 +27,7 @@ export default function VideoSection() {
           <div className="col-lg-8 col-md-12">
             <div className="sec-title">
               <span className="sub-title mb_5">{t('subtitle')}</span>
-              <h2>{t('title')}</h2>
+              <h2>{withBrandMark(t('title'))}</h2>
             </div>
           </div>
           <div className="col-lg-4 col-md-12 text-right">
@@ -59,7 +60,7 @@ export default function VideoSection() {
               </div>
               <div className="mt_15">
                 <span className="sub-title" style={{ fontSize: '12px' }}>{t('featuredLabel')}</span>
-                <h4 style={{ marginTop: '4px' }}>{t(active.key)}</h4>
+                <h4 style={{ marginTop: '4px' }}>{withBrandMark(t(active.key))}</h4>
               </div>
             </div>
           </div>
@@ -114,7 +115,7 @@ export default function VideoSection() {
                     </div>
                     <div>
                       <span className="sub-title" style={{ fontSize: '11px', textTransform: 'uppercase', background: '#1a5fa8', color: '#fff', padding: '2px 8px', borderRadius: '3px', display: 'inline-block', marginBottom: '6px' }}>{video.tag}</span>
-                      <h3 style={{ fontSize: '17px', lineHeight: '1.4', margin: 0 }}>{t(video.key)}</h3>
+                      <h3 style={{ fontSize: '17px', lineHeight: '1.4', margin: 0 }}>{withBrandMark(t(video.key))}</h3>
                     </div>
                   </button>
                 );

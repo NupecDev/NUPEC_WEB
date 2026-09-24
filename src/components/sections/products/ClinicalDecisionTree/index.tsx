@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { withBrandMark } from '@/components/ui/BrandText';
 
 const ACCENT = {
   hepatic:  '#5C3317',
@@ -122,7 +123,7 @@ export default function ClinicalDecisionTree() {
           {/* Disclaimer */}
           <div className="clin-tree__disclaimer" style={{ borderLeftColor: ACCENT.blue, background: '#E6F1FB' }}>
             <strong style={{ color: ACCENT.navy }}>{t('disclaimerBold')} </strong>
-            <span style={{ color: ACCENT.navy }}>{t('disclaimerText')}</span>
+            <span style={{ color: ACCENT.navy }}>{withBrandMark(t('disclaimerText'))}</span>
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import type { WizardStep } from './types';
+import { withBrandMark } from '@/components/ui/BrandText';
 
 type Props = {
   steps: WizardStep[];
@@ -21,7 +22,7 @@ export default function ProgressHero({ steps, currentIndex }: Props) {
           </span>
           <h1 style={{ color: '#fff' }}>{t('hero.title')}</h1>
           <p style={{ color: 'rgba(255,255,255,0.92)', maxWidth: 720, margin: '16px auto 0' }}>
-            {t('hero.description')}
+            {withBrandMark(t('hero.description'))}
           </p>
         </div>
       </div>

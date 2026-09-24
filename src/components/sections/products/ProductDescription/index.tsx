@@ -8,6 +8,7 @@ import {
   type PortableTextBlock,
   type PortableTextComponentProps,
 } from 'next-sanity';
+import { BrandMark } from '@/components/ui/BrandText';
 
 const HTML_TAG_RE = /<[a-z][\s\S]*?>/i;
 
@@ -90,7 +91,7 @@ export default function ProductDescription({
                 />
               ) : (
                 <div className="sp-description__img-ph" style={{ borderColor: accentColor, color: accentColor }}>
-                  <span className="sp-description__img-ph-brand">NUPEC<sup>MR</sup></span>
+                  <span className="sp-description__img-ph-brand">NUPEC<BrandMark /></span>
                   <span className="sp-description__img-ph-name">{name}</span>
                 </div>
               )}
@@ -113,7 +114,7 @@ export default function ProductDescription({
               <div className="content-box">
                 <div className="sec-title mb_25">
                   {/* <span className="sub-title mb_5">{t('subtitle')}</span> */}
-                  <h2>NUPEC<sup>MR</sup> {t('title', { name })}</h2>
+                  <h2>NUPEC<BrandMark /> {t('title', { name })}</h2>
                 </div>
 
                 {description && (

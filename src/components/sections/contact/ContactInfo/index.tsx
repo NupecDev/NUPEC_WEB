@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import { withBrandMark } from '@/components/ui/BrandText';
 
 const BLOCKS = [
   { key: 'location', icon: 'icon-23.svg', delay: '00ms' },
@@ -37,7 +38,7 @@ export default function ContactInfo() {
                   </div>
                   <h3>{t(`${key}Title`)}</h3>
                   <p>{t(`${key}Text`)}</p>
-                  {key === 'phone' && <p>{t('phoneAlt')}</p>}
+                  {key === 'phone' && <p>{withBrandMark(t('phoneAlt'))}</p>}
                 </div>
               </div>
             </div>

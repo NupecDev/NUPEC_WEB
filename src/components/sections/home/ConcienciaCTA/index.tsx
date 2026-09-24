@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
+import { withBrandMark } from '@/components/ui/BrandText';
 
 export default function ConcienciaCTA() {
   const t = useTranslations('home.cta');
@@ -49,10 +50,10 @@ export default function ConcienciaCTA() {
             {t('subtitle')}
           </span>
           <h2 style={{ color: '#fff', marginBottom: '20px' }}>{t('title')}</h2>
-          <p style={{ color: 'rgba(255,255,255,0.85)', marginBottom: '32px' }}>{t('description')}</p>
+          <p style={{ color: 'rgba(255,255,255,0.85)', marginBottom: '32px' }}>{withBrandMark(t('description'))}</p>
           <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
             <Link href={`/${lang}/conciencia`} className="theme-btn btn-two" style={{ borderColor: '#fff', color: '#fff' }}>
-              <span>{t('button')}</span>
+              <span>{withBrandMark(t('button'))}</span>
             </Link>
             <Link href={`/${lang}/contacto`} className="theme-btn btn-two" style={{ borderColor: '#fff', color: '#fff' }}>
               <span>{t('buttonTwo')}</span>

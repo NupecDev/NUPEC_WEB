@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
 import { urlFor } from '@/lib/sanity/client';
+import { withBrandMark } from '@/components/ui/BrandText';
 
 type Props = {
   category: { name: string; slug: string; excerpt?: string; complementaryText?: string };
@@ -37,7 +38,7 @@ export default function ProductBenefitsBanner({ category, species, bannerImage, 
         <div className="content-box p_relative z_5">
           <span className="canine-banner__eyebrow">{category.name}</span>
           <h2 className="canine-banner__title">{category.excerpt || t('genericTitle')}</h2>
-          <p className="canine-banner__desc">{category.complementaryText || t('genericDesc')}</p>
+          <p className="canine-banner__desc">{withBrandMark(category.complementaryText || t('genericDesc'))}</p>
           <div className="btn-box mt_30">
             <Link
               href={`/${lang}/${speciesBase}/${category.slug}`}

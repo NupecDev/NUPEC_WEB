@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import { withBrandMark } from '@/components/ui/BrandText';
 
 export default function AboutOrigin() {
   const t = useTranslations('nosotros.origin');
@@ -19,7 +20,7 @@ export default function AboutOrigin() {
               <div className="content-box">
                 <div className="sec-title mb_25">
                   <span className="sub-title mb_5">{t('subtitle')}</span>
-                  <h2>{t('title')}</h2>
+                  <h2>{withBrandMark(t('title'))}</h2>
                 </div>
                 <div className="text-box">
                   <div className="about-origin__breakdown mb_20">

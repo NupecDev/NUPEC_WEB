@@ -1,5 +1,7 @@
 'use client';
 
+import { withBrandMark } from '@/components/ui/BrandText';
+
 type Props = {
   label: string;
   sub?: string;
@@ -93,7 +95,7 @@ export default function OptionCard({
           {label}
         </div>
         {sub && (
-          <div style={{ fontWeight: 600, fontSize: 12, color: '#8a909a', marginTop: 6 }}>{sub}</div>
+          <div style={{ fontWeight: 600, fontSize: 12, color: '#8a909a', marginTop: 6 }}>{withBrandMark(sub)}</div>
         )}
       </div>
 

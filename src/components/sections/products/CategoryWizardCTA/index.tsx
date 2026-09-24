@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
+import { withBrandMark } from '@/components/ui/BrandText';
 
 export default function CategoryWizardCTA() {
   const t = useTranslations('categoryPage.wizardCta');
@@ -23,7 +24,7 @@ export default function CategoryWizardCTA() {
         <div className="row clearfix align-items-center">
           <div className="col-lg-8 col-md-12 col-sm-12">
             <div className="sec-title light mb_0">
-              <span className="sub-title mb_5">{t('subtitle')}</span>
+              <span className="sub-title mb_5">{withBrandMark(t('subtitle'))}</span>
               <h2>{t('title')}</h2>
               <p>{t('description')}</p>
             </div>

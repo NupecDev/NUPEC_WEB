@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { withBrandMark } from '@/components/ui/BrandText';
 
 type TransitionStep = {
   label: string;
@@ -37,7 +38,7 @@ export default function ClinicalTransitionGuide({
             <div className="canine-hero__accent-bar" style={{ background: '#fff' }} />
             <div>
               <span className="clin-transition__eyebrow">{title || t('title')}</span>
-              <p className="clin-transition__sub">{subtitle || t('subtitle')}</p>
+              <p className="clin-transition__sub">{withBrandMark(subtitle || t('subtitle'))}</p>
             </div>
           </div>
         </div>
@@ -70,7 +71,7 @@ export default function ClinicalTransitionGuide({
                   </span>
                   <span className="clin-transition__legend-item clin-transition__legend-item--clin">
                     <span className="clin-transition__dot clin-transition__dot--clin" style={{ background: accentColor }} />
-                    {newPercent}% {t('labelClin')}
+                    {newPercent}% {withBrandMark(t('labelClin'))}
                   </span>
                 </div>
               </div>

@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { urlFor } from '@/lib/sanity/client';
 import { useCaninaTab } from '../CaninaTabContext';
+import { BrandMark } from '@/components/ui/BrandText';
 
 export type CategoryIntro = {
   _id: string;
@@ -104,7 +105,7 @@ export default function CategoryIntroClient({ lang, species = 'canino', categori
                   className="canine-intro__img-placeholder"
                   style={{ borderColor: accentColor, color: accentColor }}
                 >
-                  <span className="canine-intro__ph-brand">NUPEC</span>
+                  <span className="canine-intro__ph-brand">NUPEC<BrandMark /></span>
                   <span className="canine-intro__ph-line">{category.name}</span>
                 </div>
               )}

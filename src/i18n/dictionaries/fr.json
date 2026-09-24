@@ -82,7 +82,8 @@
       "ctaSecondary": "Voir le catalogue",
       "dog": "Chien",
       "cat": "Chat",
-      "selectSpecies": "Sélectionnez l'espèce de votre animal"
+      "selectSpecies": "Sélectionnez l'espèce de votre animal",
+      "imageAlt": "Chiens et chats de différentes races"
     },
     "promoBanner": {
       "ariaLabel": "NUPEC 1st Care Immunity Plus"
@@ -745,7 +746,7 @@
     "specialized": "Nutrition Spécialisée",
     "clinical": "Nutrition Clinique",
     "contactTitle": "Contact",
-    "email": "bonjour@nupec.mx",
+    "email": "nupec@gponutec.com",
     "phone": "(800) 926 8732",
     "emailIconAlt": "E-mail",
     "phoneIconAlt": "Téléphone",

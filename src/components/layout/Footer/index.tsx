@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
+import { withBrandMark } from '@/components/ui/BrandText';
 
 export default function Footer() {
   const t = useTranslations('footer');
@@ -110,7 +111,7 @@ export default function Footer() {
       <div className="footer-bottom centred">
         <div className="auto-container">
           <div className="copyright">
-            <p>&copy; {new Date().getFullYear()} {t('copyright')}</p>
+            <p>&copy; {new Date().getFullYear()} {withBrandMark(t('copyright'))}</p>
           </div>
         </div>
       </div>

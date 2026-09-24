@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
+import { withBrandMark } from '@/components/ui/BrandText';
 
 const ICONS = ['icon-28', 'icon-29', 'icon-15', 'icon-30'] as const;
 const ITEMS = ['uno', 'dos', 'tres', 'cuatro'] as const;
@@ -23,7 +24,7 @@ export default function AboutWhatWeDo() {
           <div className="col-lg-5 col-md-12 col-sm-12 title-column">
             <div className="sec-title mb_40">
               <span className="sub-title mb_5">{t('subtitle')}</span>
-              <h2>{t('title')}</h2>
+              <h2>{withBrandMark(t('title'))}</h2>
               <p>{t('description')}</p>
             </div>
             <Link href={`/${lang}/nosotros`} className="theme-btn btn-two">

@@ -1,18 +1,15 @@
 'use client';
 
-import { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
-
-type Species = 'dog' | 'cat';
+import { withBrandMark } from '@/components/ui/BrandText';
 
 export default function Wizard() {
   const t = useTranslations('home.wizard');
   const params = useParams();
   const lang = params.lang as string;
-
-  const [selected, setSelected] = useState<Species>('dog');
 
   return (
     <section className="about-section sec-pad p_relative" style={{ background: '#fff' }}>
@@ -26,16 +23,13 @@ export default function Wizard() {
                   <h2>{t('title')}</h2>
                 </div>
                 <div className="text-box mb_30 pb_30">
-                  <p>{t('description')}</p>
+                  <p>{withBrandMark(t('description'))}</p>
                 </div>
                 <div className="btn-box" style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
                   <Link href={`/${lang}/encuentra-tu-alimento`} className="theme-btn btn-one">
                     <span>{t('ctaPrimary')}</span>
                   </Link>
-                  <Link
-                    href={`/${lang}/${selected === 'dog' ? 'nutricion-canina' : 'nutricion-felina'}`}
-                    className="theme-btn btn-two"
-                  >
+                  <Link href={`/${lang}/nutricion-canina`} className="theme-btn btn-two">
                     <span>{t('ctaSecondary')}</span>
                   </Link>
                 </div>
@@ -43,32 +37,18 @@ export default function Wizard() {
             </div>
           </div>
 
-          {/* Right: species toggle */}
-          <div className="col-lg-6 col-md-12 col-sm-12">
-            <div style={{ textAlign: 'center', padding: '40px 20px', background: '#f5f9ff', borderRadius: '12px' }}>
-              <p className="sub-title mb_20" style={{ marginBottom: '24px' }}>{t('selectSpecies')}</p>
-              <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
-                <button
-                  type="button"
-                  onClick={() => setSelected('dog')}
-                  className={selected === 'dog' ? 'theme-btn btn-one' : 'theme-btn btn-two'}
-                  style={{ minWidth: '120px' }}
-                >
-                  <span>{t('dog')}</span>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setSelected('cat')}
-                  className={selected === 'cat' ? 'theme-btn btn-one' : 'theme-btn btn-two'}
-                  style={{ minWidth: '120px' }}
-                >
-                  <span>{t('cat')}</span>
-                </button>
-              </div>
-              <div style={{ marginTop: '32px', fontSize: '48px' }}>
-                {selected === 'dog' ? '🐕' : '🐈'}
-              </div>
-            </div>
+          {/* Right: breeds image */}
+          <div className="col-lg-6 col-md-12 col-sm-12 image-column">
+            <figure className="image">
+              <Image
+                src="/assets/images/resource/WizzardBreeds.png"
+                alt={t('imageAlt')}
+                width={1408}
+                height={768}
+                sizes="(max-width: 991px) 100vw, 50vw"
+                style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
+              />
+            </figure>
           </div>
         </div>
       </div>

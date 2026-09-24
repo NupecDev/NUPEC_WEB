@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
+import { withBrandMark } from '@/components/ui/BrandText';
 
 export default function AboutHero() {
   const t = useTranslations('nosotros.hero');
@@ -25,7 +26,7 @@ export default function AboutHero() {
         <div className="content-box p_relative z_5">
           <span className="title-text p_relative d_block">{t('eyebrow')}</span>
           <h2 className="p_relative d_block">{t('title')}</h2>
-          <p>{t('description')}</p>
+          <p>{withBrandMark(t('description'))}</p>
           <div className="btn-box mt_30">
             <Link href={`/${lang}/nutricion-canina`} className="theme-btn btn-two">
               <span>{t('cta')}</span>

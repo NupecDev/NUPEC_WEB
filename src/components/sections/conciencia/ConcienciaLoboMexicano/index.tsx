@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import { withBrandMark } from '@/components/ui/BrandText';
 
 export default function ConcienciaLoboMexicano() {
   const t = useTranslations('conciencia.loboMexicano');
@@ -19,7 +20,7 @@ export default function ConcienciaLoboMexicano() {
                   <h2>{t('title')}</h2>
                 </div>
                 <div className="text-box">
-                  <p>{t('description')}</p>
+                  <p>{withBrandMark(t('description'))}</p>
                   <p>{t('descriptionTwo')}</p>
                 </div>
               </div>
