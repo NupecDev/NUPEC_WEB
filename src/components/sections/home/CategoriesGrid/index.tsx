@@ -43,7 +43,7 @@ export default function CategoriesGrid() {
                   <div className="lower-content">
                     <div className="inner">
                       <div className="icon-box">
-                        <Image src={icon} alt="" width={90} height={90} />
+                        <Image src={icon} alt="" width={200} height={100} />
                       </div>
                       <h3>
                         <Link href={`/${lang}/nutricion-canina/${slug}`}>{t(key)}</Link>
