@@ -115,15 +115,15 @@ export default function Banner() {
                     width={260}
                     height={160}
                   />
-                  <span className="title-text p_relative d_block">{slide.subtitle}</span>
+                  <span className="title-text p_relative d_block">{withBrandMark(slide.subtitle)}</span>
                   <h2 className="p_relative d_block">
                     {withBrandMark(slide.title)}
                   </h2>
                   <p>
-                    {slide.description}
+                    {withBrandMark(slide.description)}
                   </p>
                   <div className="btn-box">
-                    <Link href={`/${lang}${slide.ctaHref}`} className="theme-btn btn-two"><span>{slide.cta}</span></Link>
+                    <Link href={`/${lang}${slide.ctaHref}`} className="theme-btn btn-two"><span>{withBrandMark(slide.cta)}</span></Link>
                   </div>
                 </div>
               </div>

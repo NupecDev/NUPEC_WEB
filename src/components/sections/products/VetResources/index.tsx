@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { withBrandMark } from '@/components/ui/BrandText';
 
 export type TechnicalResource = {
   title: string;
@@ -41,8 +42,8 @@ export default function VetResources({ resources, productName, accentColor = '#0
                 <span>PDF</span>
               </div>
 
-              <h3 className="vet-resources__title">{doc.title}</h3>
-              {doc.subtitle && <p className="vet-resources__sub">{doc.subtitle}</p>}
+              <h3 className="vet-resources__title">{withBrandMark(doc.title)}</h3>
+              {doc.subtitle && <p className="vet-resources__sub">{withBrandMark(doc.subtitle)}</p>}
 
               {doc.fileUrl ? (
                 <a

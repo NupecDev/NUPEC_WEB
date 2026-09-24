@@ -7,6 +7,7 @@ import DosageCalculator, {
   type FeedingRow,
   type FeedingVariant,
 } from './DosageCalculator';
+import { withBrandMark } from '@/components/ui/BrandText';
 
 export type { FeedingRow, FeedingVariant };
 
@@ -88,7 +89,7 @@ function FeedingTable({
         </tbody>
       </table>
 
-      {notes && <p className="sp-feeding-guide__notes mt_20">{notes}</p>}
+      {notes && <p className="sp-feeding-guide__notes mt_20">{withBrandMark(notes)}</p>}
     </div>
   );
 }
@@ -161,7 +162,7 @@ function GroupedFeedingTable({
         </tbody>
       </table>
 
-      {notes && <p className="sp-feeding-guide__notes mt_20">{notes}</p>}
+      {notes && <p className="sp-feeding-guide__notes mt_20">{withBrandMark(notes)}</p>}
     </div>
   );
 }
@@ -215,7 +216,7 @@ export default function ProductFeedingGuide({ feedingGuide, accentColor, species
         {hasSecondaryTable && (
           <div className={`sp-feeding-guide__secondary${hasPrimaryTable ? ' mt_50' : ''}`}>
             <h3 className="sp-feeding-guide__secondary-title mb_20">
-              {secondaryTitle ?? t('secondaryTitleDefault')}
+              {withBrandMark(secondaryTitle ?? t('secondaryTitleDefault'))}
             </h3>
             <GroupedFeedingTable
               weightColumnLabel={secondaryWeightColumnLabel ?? t('secondaryWeightColumnDefault')}

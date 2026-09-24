@@ -1,14 +1,14 @@
 'use client';
 
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { urlFor } from '@/lib/sanity/client';
 import {
   PortableText,
   type PortableTextBlock,
   type PortableTextComponentProps,
 } from 'next-sanity';
-import { BrandMark } from '@/components/ui/BrandText';
+import { BrandMark, brandMarkHtml, withBrandMark } from '@/components/ui/BrandText';
 
 const HTML_TAG_RE = /<[a-z][\s\S]*?>/i;
 
@@ -17,13 +17,14 @@ const HTML_TAG_RE = /<[a-z][\s\S]*?>/i;
 function RichBlock({ value, children: _ }: PortableTextComponentProps<PortableTextBlock>) {
   const Tag = (value.style === 'h3' ? 'h3' : value.style === 'h4' ? 'h4' : 'p') as React.ElementType;
   const spans = (value.children ?? []) as Array<{ _key: string; text: string; marks?: string[] }>;
+  const locale = useLocale();
 
   return (
     <Tag>
       {spans.map((span) => {
         const inner = HTML_TAG_RE.test(span.text)
-          ? <span key={span._key} dangerouslySetInnerHTML={{ __html: span.text }} />
-          : <span key={span._key}>{span.text}</span>;
+          ? <span key={span._key} dangerouslySetInnerHTML={{ __html: brandMarkHtml(span.text, locale) }} />
+          : <span key={span._key}>{withBrandMark(span.text)}</span>;
 
         if (span.marks?.includes('strong')) return <strong key={span._key}>{inner}</strong>;
         if (span.marks?.includes('em'))     return <em key={span._key}>{inner}</em>;
@@ -92,7 +93,7 @@ export default function ProductDescription({
               ) : (
                 <div className="sp-description__img-ph" style={{ borderColor: accentColor, color: accentColor }}>
                   <span className="sp-description__img-ph-brand">NUPEC<BrandMark /></span>
-                  <span className="sp-description__img-ph-name">{name}</span>
+                  <span className="sp-description__img-ph-name">{withBrandMark(name)}</span>
                 </div>
               )}
 
@@ -121,7 +122,7 @@ export default function ProductDescription({
                   <div className="text-box mb_25">
                     {Array.isArray(description)
                       ? <PortableText value={description} components={portableTextComponents} />
-                      : <p>{description}</p>}
+                      : <p>{withBrandMark(description)}</p>}
                   </div>
                 )}
 
@@ -147,7 +148,7 @@ export default function ProductDescription({
                     <h4 className="sp-description__block-title" style={{ color: accentColor }}>
                       {t('ingredientsTitle')}
                     </h4>
-                    <p className="sp-description__ingredients">{ingredients}</p>
+                    <p className="sp-description__ingredients">{withBrandMark(ingredients)}</p>
                   </div>
                 )}
 
@@ -157,7 +158,7 @@ export default function ProductDescription({
                     <h4 className="sp-description__block-title" style={{ color: accentColor }}>
                       {t('warningsTitle')}
                     </h4>
-                    <p className="sp-description__ingredients">{warnings}</p>
+                    <p className="sp-description__ingredients">{withBrandMark(warnings)}</p>
                   </div>
                 )}
 
@@ -182,7 +183,7 @@ export default function ProductDescription({
                               />
                             </span>
                           )}
-                          <span>{claim.text}</span>
+                          <span>{withBrandMark(claim.text)}</span>
                         </li>
                       ))}
                     </ul>

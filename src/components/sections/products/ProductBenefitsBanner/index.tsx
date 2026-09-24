@@ -36,8 +36,8 @@ export default function ProductBenefitsBanner({ category, species, bannerImage, 
 
       <div className="auto-container">
         <div className="content-box p_relative z_5">
-          <span className="canine-banner__eyebrow">{category.name}</span>
-          <h2 className="canine-banner__title">{category.excerpt || t('genericTitle')}</h2>
+          <span className="canine-banner__eyebrow">{withBrandMark(category.name)}</span>
+          <h2 className="canine-banner__title">{withBrandMark(category.excerpt || t('genericTitle'))}</h2>
           <p className="canine-banner__desc">{withBrandMark(category.complementaryText || t('genericDesc'))}</p>
           <div className="btn-box mt_30">
             <Link

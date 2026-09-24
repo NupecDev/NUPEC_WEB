@@ -698,7 +698,7 @@
     "analysis": {
       "subtitle": "Analyse garantie",
       "title": "Analyse Garantie",
-      "description": "Valeurs minimales et maximales certifiées par lot dans notre laboratoire à Querétaro.",
+      "description": "Tableau d'analyse garantie indiquant les valeurs nutritionnelles minimales et maximales certifiées par lot, sur une base sèche.",
       "disclaimer": "Valeurs sur matière sèche. Consultez la fiche technique complète pour l'analyse détaillée.",
       "protein": "Protéine Brute",
       "fat": "Matière Grasse Brute",

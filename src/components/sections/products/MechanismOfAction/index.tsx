@@ -73,9 +73,9 @@ export default function MechanismOfAction({ steps, productName, accentColor = PA
 
                 {/* Text below icon */}
                 <div className="moa__step-text">
-                  <h3 className="moa__step-title" style={{ color: accentColor }}>{step.title}</h3>
+                  <h3 className="moa__step-title" style={{ color: accentColor }}>{withBrandMark(step.title)}</h3>
                   {step.description && (
-                    <p className="moa__step-desc">{step.description}</p>
+                    <p className="moa__step-desc">{withBrandMark(step.description)}</p>
                   )}
                 </div>
               </div>

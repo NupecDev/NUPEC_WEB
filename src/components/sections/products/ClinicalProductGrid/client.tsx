@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { urlFor } from '@/lib/sanity/client';
-import { BrandMark } from '@/components/ui/BrandText';
+import { BrandMark, withBrandMark } from '@/components/ui/BrandText';
 
 export type ClinicalProductCard = {
   _id: string;
@@ -75,15 +75,15 @@ export default function ClinicalProductGridClient({ lang, products, categorySlug
                     <div className="clin-grid__bag" style={{ borderColor: color, color }}>
                       <div className="clin-grid__bag-brand">NUPEC<BrandMark /></div>
                       <div className="clin-grid__bag-circle" style={{ background: 'rgba(0,0,0,0.04)', border: `2px solid ${color}` }}>
-                        <span>{product.name}</span>
+                        <span>{withBrandMark(product.name)}</span>
                       </div>
                     </div>
                   )}
 
                   {/* Name + pathology */}
                   <div className="clin-grid__meta">
-                    <h3 className="clin-grid__name" style={{ color }}>{product.name}</h3>
-                    {product.tagline && <p className="clin-grid__patho">{product.tagline}</p>}
+                    <h3 className="clin-grid__name" style={{ color }}>{withBrandMark(product.name)}</h3>
+                    {product.tagline && <p className="clin-grid__patho">{withBrandMark(product.tagline)}</p>}
                   </div>
 
                   {/* Bullets */}

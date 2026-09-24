@@ -37,7 +37,7 @@ export default function ClinicalTransitionGuide({
           <div className="clin-title-row">
             <div className="canine-hero__accent-bar" style={{ background: '#fff' }} />
             <div>
-              <span className="clin-transition__eyebrow">{title || t('title')}</span>
+              <span className="clin-transition__eyebrow">{withBrandMark(title || t('title'))}</span>
               <p className="clin-transition__sub">{withBrandMark(subtitle || t('subtitle'))}</p>
             </div>
           </div>
@@ -84,8 +84,8 @@ export default function ClinicalTransitionGuide({
           <div className="clin-transition__note" style={{ borderLeftColor: accentColor }}>
             <div className="clin-transition__note-icon" style={{ background: accentColor }}>i</div>
             <div className="clin-transition__note-text">
-              <strong>{noteBold || t('noteBold')} </strong>
-              {noteText || t('noteText')}
+              <strong>{withBrandMark(noteBold || t('noteBold'))} </strong>
+              {withBrandMark(noteText || t('noteText'))}
             </div>
           </div>
         )}

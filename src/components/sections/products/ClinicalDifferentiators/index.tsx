@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import { withBrandMark } from '@/components/ui/BrandText';
 
 export type BulletItem = {
   title: string;
@@ -83,9 +84,9 @@ export default function ClinicalDifferentiators({
                 </div>
 
                 {/* Header del diferenciador */}
-                <h2 className="clin-diff__title">{item.title}</h2>
+                <h2 className="clin-diff__title">{withBrandMark(item.title)}</h2>
                 {item.subtitle && (
-                  <p className="clin-diff__subtitle" style={{ color: accentColor }}>{item.subtitle}</p>
+                  <p className="clin-diff__subtitle" style={{ color: accentColor }}>{withBrandMark(item.subtitle)}</p>
                 )}
 
                 {/* Puntos clave */}
@@ -93,8 +94,8 @@ export default function ClinicalDifferentiators({
                   <ul className="clin-diff__bullets">
                     {item.bullets.map((bullet, j) => (
                       <li key={j} className="clin-diff__bullet">
-                        <strong className="clin-diff__bullet-title">{bullet.title}</strong>
-                        <span className="clin-diff__bullet-desc">{bullet.description}</span>
+                        <strong className="clin-diff__bullet-title">{withBrandMark(bullet.title)}</strong>
+                        <span className="clin-diff__bullet-desc">{withBrandMark(bullet.description)}</span>
                       </li>
                     ))}
                   </ul>

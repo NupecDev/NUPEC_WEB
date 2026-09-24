@@ -64,8 +64,8 @@ export default function CategoryAbout({ categoryName, categoryDescription, famil
                   <div key={i} className="cat-about__stat-row">
                     <span className="cat-about__stat-num">{stat.value}</span>
                     <div className="cat-about__stat-text">
-                      <strong>{stat.label}</strong>
-                      {stat.description && <span>{stat.description}</span>}
+                      <strong>{withBrandMark(stat.label)}</strong>
+                      {stat.description && <span>{withBrandMark(stat.description)}</span>}
                     </div>
                   </div>
                 ))}

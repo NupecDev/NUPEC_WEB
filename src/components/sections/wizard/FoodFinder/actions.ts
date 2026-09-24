@@ -7,7 +7,7 @@ import {
   wizardComplementaryQuery,
   wizardExactMatchQuery,
 } from '@/lib/sanity/queries';
-import type { Species, SpecialNeed, WizardAnswers, WizardProductResult } from './types';
+import type { SpecialNeed, WizardAnswers, WizardProductResult } from './types';
 
 export type WizardResults = {
   exactMatches: WizardProductResult[];
@@ -40,9 +40,25 @@ export async function fetchWizardResults(
   };
 }
 
-export async function fetchAvailableSpecialNeeds(species: Species): Promise<SpecialNeed[]> {
-  const result = await client.fetch<(SpecialNeed | null)[]>(wizardAvailableSpecialNeedsQuery, {
-    species,
-  });
-  return result.filter((need): need is SpecialNeed => need !== null);
+export type AvailableSpecialNeeds = {
+  needs: SpecialNeed[];
+  hasNoneResults: boolean;
+};
+
+export async function fetchAvailableSpecialNeeds(
+  answers: Pick<WizardAnswers, 'species' | 'lifeStage' | 'breedSize'>
+): Promise<AvailableSpecialNeeds> {
+  const result = await client.fetch<{ needs: (SpecialNeed | null)[] | null; hasNoneResults: boolean }>(
+    wizardAvailableSpecialNeedsQuery,
+    {
+      species: answers.species,
+      lifeStage: answers.lifeStage,
+      breedSize: answers.breedSize,
+      complementaryCategories: COMPLEMENTARY_CATEGORIES,
+    }
+  );
+  return {
+    needs: (result.needs ?? []).filter((need): need is SpecialNeed => need !== null),
+    hasNoneResults: result.hasNoneResults,
+  };
 }

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { urlFor } from '@/lib/sanity/client';
 import type { WizardProductResult } from './types';
-import { BrandMark } from '@/components/ui/BrandText';
+import { BrandMark, withBrandMark } from '@/components/ui/BrandText';
 
 type Props = {
   lang: string;
@@ -79,10 +79,10 @@ export default function ResultCard({ lang, product, best }: Props) {
       </div>
 
       <div style={{ flex: '1 1 220px', display: 'flex', flexDirection: 'column', gap: 8 }}>
-        <div style={{ fontWeight: 900, fontSize: 18, color: '#1B365D' }}>{product.name}</div>
+        <div style={{ fontWeight: 900, fontSize: 18, color: '#1B365D' }}>{withBrandMark(product.name)}</div>
         {product.tagline && (
           <div style={{ fontSize: 13, lineHeight: 1.5, color: '#8a909a', flex: 1 }}>
-            {product.tagline}
+            {withBrandMark(product.tagline)}
           </div>
         )}
         {product.presentations && product.presentations.length > 0 && (

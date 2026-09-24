@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { urlFor } from '@/lib/sanity/client';
 import { useCaninaTab } from '../CaninaTabContext';
-import { BrandMark } from '@/components/ui/BrandText';
+import { BrandMark, withBrandMark } from '@/components/ui/BrandText';
 
 export type CategoryIntro = {
   _id: string;
@@ -106,7 +106,7 @@ export default function CategoryIntroClient({ lang, species = 'canino', categori
                   style={{ borderColor: accentColor, color: accentColor }}
                 >
                   <span className="canine-intro__ph-brand">NUPEC<BrandMark /></span>
-                  <span className="canine-intro__ph-line">{category.name}</span>
+                  <span className="canine-intro__ph-line">{withBrandMark(category.name)}</span>
                 </div>
               )}
 
@@ -115,7 +115,7 @@ export default function CategoryIntroClient({ lang, species = 'canino', categori
                 className="canine-intro__badge"
                 style={{ background: accentColor }}
               >
-                <span>{category.name}</span>
+                <span>{withBrandMark(category.name)}</span>
               </div>
             </div>
           </div>
@@ -132,18 +132,18 @@ export default function CategoryIntroClient({ lang, species = 'canino', categori
                 className="canine-intro__category-name"
                 style={{ color: accentColor }}
               >
-                {category.name}
+                {withBrandMark(category.name)}
               </h3>
 
               {(category.description || category.excerpt) && (
                 <p className="canine-intro__description">
-                  {category.description ?? category.excerpt}
+                  {withBrandMark(category.description ?? category.excerpt)}
                 </p>
               )}
 
               {category.complementaryText && (
                 <p className="canine-intro__complementary">
-                  {category.complementaryText}
+                  {withBrandMark(category.complementaryText)}
                 </p>
               )}
 

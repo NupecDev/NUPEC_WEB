@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
 import { urlFor } from '@/lib/sanity/client';
-import { BrandMark } from '@/components/ui/BrandText';
+import { BrandMark, withBrandMark } from '@/components/ui/BrandText';
 
 export type ProductHeroData = {
   name: string;
@@ -103,10 +103,10 @@ export default function ProductHero({ product }: { product: ProductHeroData }) {
                 </Link>
                 <span> · </span>
                 <Link href={`/${lang}/${speciesBase}/${product.category.slug}`}>
-                  {product.category.name}
+                  {withBrandMark(product.category.name)}
                 </Link>
                 <span> · </span>
-                <strong>{product.name}</strong>
+                <strong>{withBrandMark(product.name)}</strong>
               </div>
 
               <div className="canine-hero__title-row mt_20">
@@ -125,9 +125,9 @@ export default function ProductHero({ product }: { product: ProductHeroData }) {
                       </span>
                     );
                   })()}
-                  <h1 className="canine-hero__h1">{product.name}</h1>
+                  <h1 className="canine-hero__h1">{withBrandMark(product.name)}</h1>
                   {product.tagline && (
-                    <p className="canine-hero__desc">{product.tagline}</p>
+                    <p className="canine-hero__desc">{withBrandMark(product.tagline)}</p>
                   )}
                 </div>
               </div>
@@ -184,7 +184,7 @@ export default function ProductHero({ product }: { product: ProductHeroData }) {
                   style={{ borderColor: accentColor, color: accentColor }}
                 >
                   <span className="sp-hero__img-ph-brand">NUPEC<BrandMark /></span>
-                  <span className="sp-hero__img-ph-name">{product.name}</span>
+                  <span className="sp-hero__img-ph-name">{withBrandMark(product.name)}</span>
                 </div>
               )}
             </div>

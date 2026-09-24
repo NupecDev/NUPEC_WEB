@@ -7,7 +7,7 @@ import { withBrandMark } from '@/components/ui/BrandText';
 const BLOCKS = [
   { key: 'location', icon: 'icon-23.svg', delay: '00ms' },
   { key: 'phone', icon: 'icon-25.svg', delay: '300ms' },
-  { key: 'hours', icon: 'icon-24.svg', delay: '600ms' },
+  { key: 'hours', icon: 'icon-8.svg', delay: '600ms' },
 ] as const;
 
 export default function ContactInfo() {
@@ -38,7 +38,7 @@ export default function ContactInfo() {
                   </div>
                   <h3>{t(`${key}Title`)}</h3>
                   <p>{t(`${key}Text`)}</p>
-                  {key === 'phone' && <p>{withBrandMark(t('phoneAlt'))}</p>}
+                 
                 </div>
               </div>
             </div>

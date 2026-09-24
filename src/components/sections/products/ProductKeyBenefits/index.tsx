@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import { withBrandMark } from '@/components/ui/BrandText';
 
 type KeyBenefitItem = {
   icon: string;
@@ -47,7 +48,7 @@ function SanityBenefitCard({
           )}
         </div>
         <p className="sp-benefit-block__desc" style={{ color: '#fff', margin: 0 }}>
-          {benefit.description}
+          {withBrandMark(benefit.description)}
         </p>
       </div>
     </div>

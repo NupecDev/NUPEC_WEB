@@ -53,26 +53,42 @@ export default function FoodFinder() {
   const [results, setResults] = useState<WizardResults | null>(null);
   const [loading, setLoading] = useState(false);
   const [availableNeeds, setAvailableNeeds] = useState<SpecialNeed[]>(SPECIAL_NEEDS);
+  const [hasNoneResults, setHasNoneResults] = useState(true);
+  const [needsLoading, setNeedsLoading] = useState(false);
 
+  // Se omite el paso de necesidades especiales si ningún producto de la
+  // especie + etapa + talla elegidas tiene alguna necesidad especial.
   const steps = useMemo<WizardStep[]>(() => {
-    if (answers.species === 'felino') {
-      return ['species', 'lifeStage', 'specialNeed', 'result'];
-    }
-    return ALL_STEPS;
-  }, [answers.species]);
+    const base = answers.species === 'felino' ? ['species', 'lifeStage', 'specialNeed', 'result'] : ALL_STEPS;
+    return (base as WizardStep[]).filter((step) => step !== 'specialNeed' || availableNeeds.length > 0);
+  }, [answers.species, availableNeeds.length]);
 
   const currentStep = steps[stepIndex];
 
   useEffect(() => {
     if (!answers.species) return;
     let cancelled = false;
-    fetchAvailableSpecialNeeds(answers.species).then((needs) => {
-      if (!cancelled) setAvailableNeeds(needs);
-    });
+    setNeedsLoading(true);
+    fetchAvailableSpecialNeeds(answers)
+      .then(({ needs, hasNoneResults: noneHasResults }) => {
+        if (cancelled) return;
+        setAvailableNeeds(needs);
+        setHasNoneResults(noneHasResults);
+        // Si "Ninguna" no trae productos, se preselecciona la primera necesidad disponible.
+        setAnswers((a) => {
+          const stillValid = a.specialNeed !== null && needs.includes(a.specialNeed);
+          const specialNeed = stillValid ? a.specialNeed : noneHasResults ? null : (needs[0] ?? null);
+          return specialNeed === a.specialNeed ? a : { ...a, specialNeed };
+        });
+      })
+      .finally(() => {
+        if (!cancelled) setNeedsLoading(false);
+      });
     return () => {
       cancelled = true;
     };
-  }, [answers.species]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [answers.species, answers.lifeStage, answers.breedSize]);
 
   async function fetchResults(finalAnswers: WizardAnswers) {
     setLoading(true);
@@ -103,13 +119,17 @@ export default function FoodFinder() {
     setStepIndex(0);
     setResults(null);
     setAvailableNeeds(SPECIAL_NEEDS);
+    setHasNoneResults(true);
   }
 
+  // Mientras se consultan las necesidades disponibles no se sabe si el paso siguiente
+  // existe, así que se bloquea el avance para no saltar a un paso incorrecto.
   const canContinue =
-    (currentStep === 'species' && answers.species !== null) ||
-    (currentStep === 'lifeStage' && answers.lifeStage !== null) ||
-    (currentStep === 'breedSize' && answers.breedSize !== null) ||
-    currentStep === 'specialNeed';
+    !needsLoading &&
+    ((currentStep === 'species' && answers.species !== null) ||
+      (currentStep === 'lifeStage' && answers.lifeStage !== null) ||
+      (currentStep === 'breedSize' && answers.breedSize !== null) ||
+      currentStep === 'specialNeed');
 
   return (
     <>
@@ -198,14 +218,16 @@ export default function FoodFinder() {
               {currentStep === 'specialNeed' && (
                 <StepQuestion title={t('specialNeed.title')} description={t('specialNeed.description')}>
                   <div className="row clearfix">
-                    <div className="col-lg-4 col-md-6 col-sm-12" style={{ marginBottom: 20 }}>
-                      <OptionCard
-                        label={t('specialNeed.none')}
-                        sub={t('specialNeed.noneSub')}
-                        selected={answers.specialNeed === null}
-                        onSelect={() => setAnswers((a) => ({ ...a, specialNeed: null }))}
-                      />
-                    </div>
+                    {hasNoneResults && (
+                      <div className="col-lg-4 col-md-6 col-sm-12" style={{ marginBottom: 20 }}>
+                        <OptionCard
+                          label={t('specialNeed.none')}
+                          sub={t('specialNeed.noneSub')}
+                          selected={answers.specialNeed === null}
+                          onSelect={() => setAnswers((a) => ({ ...a, specialNeed: null }))}
+                        />
+                      </div>
+                    )}
                     {availableNeeds.map((need) => (
                       <div key={need} className="col-lg-4 col-md-6 col-sm-12" style={{ marginBottom: 20 }}>
                         <OptionCard

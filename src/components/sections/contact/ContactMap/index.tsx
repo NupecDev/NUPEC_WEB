@@ -34,7 +34,7 @@ export default function ContactMap() {
             <ul className="info-list clearfix">
               <li>
                 <i className="icon-46" />
-                {tFooter('email')}: <Link href={`mailto:${tFooter('email')}`}>{tFooter('email')}</Link>
+                {'Email'}: <Link href={`mailto:${tFooter('email')}`}>{tFooter('email')}</Link>
               </li>
               <li>
                 <i className="icon-35" />

@@ -129,3 +129,9 @@
   margin-left: 0.05em;
   letter-spacing: 0;
 }
+
+/* En EN/FR la marca es "®": el glifo ya es pequeño, se usa un tamaño mayor que "MR". */
+.brand-mr--symbol {
+  font-size: 0.6em;
+  top: -0.05em;
+}

@@ -6,6 +6,7 @@ import {
   PortableText,
   type PortableTextBlock,
 } from 'next-sanity';
+import { brandPortableComponents, withBrandMark } from '@/components/ui/BrandText';
 
 export type ClinicalMetric = {
   label: string;
@@ -73,9 +74,9 @@ function CaseArticle({ caseData, index, accentColor, t }: {
         </span>
         <div className="clin-case__header-content">
           <span className="clin-case__diagnosis" style={{ color: accentColor }}>
-            {caseData.diagnosis}
+            {withBrandMark(caseData.diagnosis)}
           </span>
-          <h3 className="clin-case__title">{caseData.title}</h3>
+          <h3 className="clin-case__title">{withBrandMark(caseData.title)}</h3>
 
           {caseData.patient && (
             <div className="clin-case__patient-badges">
@@ -110,7 +111,7 @@ function CaseArticle({ caseData, index, accentColor, t }: {
                   {t('historyTitle')}
                 </h4>
                 <div className="clin-case__rich">
-                  <PortableText value={caseData.history} />
+                  <PortableText value={caseData.history} components={brandPortableComponents} />
                 </div>
               </div>
             )}
@@ -126,7 +127,7 @@ function CaseArticle({ caseData, index, accentColor, t }: {
                   </p>
                 )}
                 <div className="clin-case__rich">
-                  <PortableText value={caseData.intervention} />
+                  <PortableText value={caseData.intervention} components={brandPortableComponents} />
                 </div>
               </div>
             )}
@@ -137,7 +138,7 @@ function CaseArticle({ caseData, index, accentColor, t }: {
                   {t('outcomeTitle')}
                 </h4>
                 <div className="clin-case__rich">
-                  <PortableText value={caseData.outcome} />
+                  <PortableText value={caseData.outcome} components={brandPortableComponents} />
                 </div>
               </div>
             )}

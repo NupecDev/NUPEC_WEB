@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { withBrandMark } from '@/components/ui/BrandText';
 
 export type ClinicalIndicationItem = {
   label: string;
@@ -36,7 +37,7 @@ export default function ClinicalIndications({ indications, accentColor = CLINICA
             {indications.map((item, i) => (
               <li key={i} className="clin-indications__item">
                 <span className="clin-indications__check" style={{ color: accentColor }}>✓</span>
-                <span className="clin-indications__label">{item.label}</span>
+                <span className="clin-indications__label">{withBrandMark(item.label)}</span>
               </li>
             ))}
           </ul>

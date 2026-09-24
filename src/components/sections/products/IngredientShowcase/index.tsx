@@ -9,6 +9,7 @@ import type { Swiper as SwiperType } from 'swiper';
 import { urlFor } from '@/lib/sanity/client';
 
 import 'swiper/swiper-bundle.css';
+import { withBrandMark } from '@/components/ui/BrandText';
 
 export type IngredientStudy = {
   type: 'clinical' | 'lab' | 'field' | 'meta' | 'review';
@@ -103,12 +104,12 @@ export default function IngredientShowcase({ ingredients, accentColor = '#C4262E
 
                   {ingredient.eyebrow && (
                     <span className="ing-showcase__eyebrow" style={{ color: accentColor }}>
-                      {ingredient.eyebrow}
+                      {withBrandMark(ingredient.eyebrow)}
                     </span>
                   )}
 
-                  <h2 className="ing-showcase__name">{ingredient.name}</h2>
-                  <p className="ing-showcase__summary">{ingredient.summary}</p>
+                  <h2 className="ing-showcase__name">{withBrandMark(ingredient.name)}</h2>
+                  <p className="ing-showcase__summary">{withBrandMark(ingredient.summary)}</p>
 
                   {/* Key points */}
                   {ingredient.keyPoints && ingredient.keyPoints.length > 0 && (
@@ -131,7 +132,7 @@ export default function IngredientShowcase({ ingredients, accentColor = '#C4262E
                               </svg>
                             )}
                           </span>
-                          <span className="ing-showcase__point-text">{point.text}</span>
+                          <span className="ing-showcase__point-text">{withBrandMark(point.text)}</span>
                         </li>
                       ))}
                     </ul>

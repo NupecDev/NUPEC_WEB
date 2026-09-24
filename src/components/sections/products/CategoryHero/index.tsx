@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
 import { urlFor } from '@/lib/sanity/client';
+import { withBrandMark } from '@/components/ui/BrandText';
 
 type CategoryStat = {
   value: string;
@@ -84,15 +85,15 @@ export default function CategoryHero({ categoryName, categoryDescription, catego
                 <span> · </span>
                 <Link href={`/${lang}/${speciesBase}`}>{speciesLabel}</Link>
                 <span> · </span>
-                <strong>{categoryName}</strong>
+                <strong>{withBrandMark(categoryName)}</strong>
               </div>
 
               <div className="canine-hero__title-row mt_20">
                 <div className="canine-hero__accent-bar" style={{ background: accentColor }} />
                 <div>
-                  <h1 className="canine-hero__h1">{categoryName}</h1>
+                  <h1 className="canine-hero__h1">{withBrandMark(categoryName)}</h1>
                   {categoryExcerpt && (
-                    <h5 className="text-white">{categoryExcerpt}</h5>
+                    <h5 className="text-white">{withBrandMark(categoryExcerpt)}</h5>
                   )}
                 </div>
               </div>
@@ -112,7 +113,7 @@ export default function CategoryHero({ categoryName, categoryDescription, catego
                     {i > 0 && <div className="cat-hero__stat-divider" />}
                     <div className="cat-hero__stat">
                       <span className="cat-hero__stat-num" style={{ color: accentColor }}>{stat.value}</span>
-                      <span className="cat-hero__stat-label">{stat.label}</span>
+                      <span className="cat-hero__stat-label">{withBrandMark(stat.label)}</span>
                     </div>
                   </Fragment>
                 ))}

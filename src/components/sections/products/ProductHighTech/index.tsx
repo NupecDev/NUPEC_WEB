@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import { withBrandMark } from '@/components/ui/BrandText';
 
 export type HighTechItem = {
   icon: string;
@@ -37,7 +38,7 @@ export default function ProductHighTech({ items, categoryName, accentColor, spec
         <div className="sp-hightech__header mb_30">
           <h2 className="sp-hightech__cat-title" style={{ color: accentColor }}>
             {/* {categoryName.toUpperCase()} */}
-            {title}
+            {withBrandMark(title)}
           </h2>
           <div className="sp-hightech__badge">
             <Image
@@ -67,8 +68,8 @@ export default function ProductHighTech({ items, categoryName, accentColor, spec
                       : <i className={item.icon} />}
                   </div>
                 )}
-                <h3 className="sp-hightech__item-title">{item.title}</h3>
-                <p className="sp-hightech__item-desc">{item.description}</p>
+                <h3 className="sp-hightech__item-title">{withBrandMark(item.title)}</h3>
+                <p className="sp-hightech__item-desc">{withBrandMark(item.description)}</p>
               </div>
             </div>
           ))}

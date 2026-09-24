@@ -6,6 +6,7 @@ import DosageCalculator, {
   type FeedingRow,
   type FeedingVariant,
 } from '../ProductFeedingGuide/DosageCalculator';
+import { withBrandMark } from '@/components/ui/BrandText';
 
 export type ClinicalFeedingRow = FeedingRow;
 
@@ -63,7 +64,7 @@ export default function ClinicalFeedingGuide({ rows, notes, accentColor = CLINIC
         </div>
 
         {notes && (
-          <p className="sp-feeding-guide__notes mt_20">{notes}</p>
+          <p className="sp-feeding-guide__notes mt_20">{withBrandMark(notes)}</p>
         )}
 
         {hasCalculator && (

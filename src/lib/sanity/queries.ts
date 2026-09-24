@@ -398,10 +398,29 @@ export const wizardComplementaryQuery = groq`
   ] | order(name.es asc) ${wizardProductProjection}
 `;
 
-// Necesidades especiales que existen realmente entre productos activos de una especie
-// (evita ofrecer, ej. "Hairball" al elegir perro, o "Ansiedad" al elegir gato).
+// Necesidades especiales que existen realmente entre productos activos de la especie +
+// etapa + talla elegidas (evita ofrecer, ej. "Hairball" al elegir perro, o necesidades
+// sin productos para "cachorro"). `hasNoneResults` indica si la opción "Ninguna" trae
+// algo (productos sin necesidad especial o complementarios), con la misma lógica que
+// wizardExactMatchQuery / wizardComplementaryQuery.
 export const wizardAvailableSpecialNeedsQuery = groq`
-  array::unique(
-    *[_type == "product" && species == $species && isActive == true].specialNeeds[]
-  )
+  {
+    "needs": array::unique(
+      *[
+        _type == "product" &&
+        species == $species &&
+        isActive == true &&
+        ($lifeStage == null || $lifeStage in lifeStage) &&
+        ($breedSize == null || $breedSize in breedSize || "todas" in breedSize)
+      ].specialNeeds[]
+    ),
+    "hasNoneResults": count(*[
+      _type == "product" &&
+      species == $species &&
+      isActive == true &&
+      ($lifeStage == null || $lifeStage in lifeStage) &&
+      ($breedSize == null || $breedSize in breedSize || "todas" in breedSize) &&
+      (!defined(specialNeeds[0]) || category->slug.current in $complementaryCategories)
+    ]) > 0
+  }
 `;

@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { urlFor } from '@/lib/sanity/client';
-import { BrandMark } from '@/components/ui/BrandText';
+import { BrandMark, withBrandMark } from '@/components/ui/BrandText';
 
 type Props = {
   name: string;
@@ -53,7 +53,7 @@ export default function ProductKibble({ name, video, image, description, accentC
                 ) : (
                   <div className="sp-description__img-ph" style={{ borderColor: accentColor, color: accentColor }}>
                     <span className="sp-description__img-ph-brand">NUPEC<BrandMark /></span>
-                    <span className="sp-description__img-ph-name">{name}</span>
+                    <span className="sp-description__img-ph-name">{withBrandMark(name)}</span>
                   </div>
                 )}
               </div>
@@ -74,7 +74,7 @@ export default function ProductKibble({ name, video, image, description, accentC
 
                 {description && (
                   <div className="text-box mb_25">
-                    <h3>{description}</h3>
+                    <h3>{withBrandMark(description)}</h3>
                   </div>
                 )}
               </div>

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { urlFor } from '@/lib/sanity/client';
 import type { CategoryProductCard } from '@/components/sections/products/CategoryProductGrid/client';
-import { BrandMark } from '@/components/ui/BrandText';
+import { BrandMark, withBrandMark } from '@/components/ui/BrandText';
 
 const CATEGORY_COLOR: Record<string, string> = {
   'nutricion-diaria':        '#78BE20',
@@ -79,17 +79,17 @@ export default function ProductRelatedClient({ lang, products, categorySlug, spe
                           style={{ borderColor: primary, color: primary }}
                         >
                           <span className="canine-product-block__bag-brand">NUPEC<BrandMark /></span>
-                          <span className="canine-product-block__bag-name">{product.name}</span>
+                          <span className="canine-product-block__bag-name">{withBrandMark(product.name)}</span>
                         </div>
                       )}
                     </div>
 
                     <div className="canine-product-block__body">
                       <h3 className="canine-product-block__name" style={{ color: primary }}>
-                        {product.name}
+                        {withBrandMark(product.name)}
                       </h3>
                       {product.tagline && (
-                        <p className="canine-product-block__desc">{product.tagline}</p>
+                        <p className="canine-product-block__desc">{withBrandMark(product.tagline)}</p>
                       )}
                     </div>
 

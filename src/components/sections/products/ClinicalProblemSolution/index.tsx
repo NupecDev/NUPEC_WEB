@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { withBrandMark } from '@/components/ui/BrandText';
 
 export type ProblemSolutionItem = {
   problem: string;
@@ -43,11 +44,11 @@ export default function ClinicalProblemSolution({ items, accentColor = CLINICAL_
           {items.map((item, i) => (
             <div key={i} className="clin-ps__row wow fadeInUp" data-wow-delay={`${i * 80}ms`}>
               <div className="clin-ps__cell clin-ps__cell--problem">
-                <p>{item.problem}</p>
+                <p>{withBrandMark(item.problem)}</p>
               </div>
               <span className="clin-ps__check" style={{ borderColor: accentColor, color: accentColor }}>✓</span>
               <div className="clin-ps__cell clin-ps__cell--solution">
-                <p>{item.solution}</p>
+                <p>{withBrandMark(item.solution)}</p>
               </div>
             </div>
           ))}
